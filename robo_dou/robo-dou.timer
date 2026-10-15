@@ -1,0 +1,9 @@
+[Unit]
+Description=Robo DOU todos os dias as 09:30
+
+[Timer]
+OnCalendar=*-*-* 09:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

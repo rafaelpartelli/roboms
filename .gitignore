@@ -1,0 +1,13 @@
+.env
+*.env
+!.env.exemplo
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.bak*
+log.txt
+logs/
+bruto/
+robo_dou/saida/
+.robo.lock

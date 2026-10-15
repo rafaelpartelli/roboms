@@ -1,0 +1,6 @@
+[Unit]
+Description=Robo DOU - portarias do Ministerio da Saude
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash %h/robo_dou/run_robo.sh
