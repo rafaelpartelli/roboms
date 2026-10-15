@@ -1,0 +1,141 @@
+{
+  "quando_utc": "2026-10-15T21:13:09.090402+00:00",
+  "url": "https://wabi-brazil-south-api.analysis.windows.net/public/reports/querydata?synchronous=true",
+  "status_http": 200,
+  "corpo_resposta": {
+    "jobIds": [
+      "19a4c297-b117-4bef-b2dd-60c42ff91615"
+    ],
+    "results": [
+      {
+        "jobId": "19a4c297-b117-4bef-b2dd-60c42ff91615",
+        "result": {
+          "data": {
+            "timestamp": "2026-10-15T21:13:09.813Z",
+            "rootActivityId": "161cd5a2-b77b-4c86-bf89-b28fc564c2d6",
+            "descriptor": {
+              "Select": [
+                {
+                  "Kind": 2,
+                  "Value": "M0",
+                  "DynamicFormat": {
+                    "Format": "M1"
+                  },
+                  "Name": "Formulas._SomaLiquidado"
+                },
+                {
+                  "Kind": 2,
+                  "Value": "M2",
+                  "Format": "\"R$\"\\ #,0.00;-\"R$\"\\ #,0.00;\"R$\"\\ #,0.00",
+                  "Name": "Formulas._SomaLiquidado LY"
+                }
+              ],
+              "Version": 2
+            },
+            "metrics": {
+              "Version": "1.0.0",
+              "Events": [
+                {
+                  "Id": "88c86500-5db8-4eda-9d44-3332f4cbc9dc",
+                  "Name": "Execute Semantic Query",
+                  "Component": "DSE",
+                  "Start": "2026-10-15T21:13:09.8134918Z",
+                  "End": "2026-10-15T21:13:09.844742Z"
+                },
+                {
+                  "Id": "4b500f6f-f71b-4893-ad76-c5ddc0b4ad8f",
+                  "ParentId": "88c86500-5db8-4eda-9d44-3332f4cbc9dc",
+                  "Name": "Execute DAX Query",
+                  "Component": "DSE",
+                  "Start": "2026-10-15T21:13:09.8134918Z",
+                  "End": "2026-10-15T21:13:09.844742Z",
+                  "Metrics": {
+                    "RowCount": 1
+                  }
+                },
+                {
+                  "Id": "F2F8B821-E704-42D0-B681-49DBE0E1E372",
+                  "ParentId": "4b500f6f-f71b-4893-ad76-c5ddc0b4ad8f",
+                  "Name": "Execute Query",
+                  "Component": "AS",
+                  "Start": "2026-10-15T21:13:09.837Z",
+                  "End": "2026-10-15T21:13:09.847Z"
+                },
+                {
+                  "Id": "4ACEBCD0-FEDC-4B7C-B0CE-39BCBE23172D",
+                  "ParentId": "F2F8B821-E704-42D0-B681-49DBE0E1E372",
+                  "Name": "Serialize Rowset",
+                  "Component": "AS",
+                  "Start": "2026-10-15T21:13:09.847Z",
+                  "End": "2026-10-15T21:13:09.847Z"
+                }
+              ]
+            },
+            "fromCache": false,
+            "dsr": {
+              "Version": 2,
+              "MinorVersion": 1,
+              "DS": [
+                {
+                  "N": "DS0",
+                  "PH": [
+                    {
+                      "DM0": [
+                        {
+                          "S": [
+                            {
+                              "N": "M0",
+                              "T": 3
+                            },
+                            {
+                              "N": "M1",
+                              "T": 1
+                            },
+                            {
+                              "N": "M2",
+                              "T": 3
+                            }
+                          ],
+                          "C": [
+                            "3654204911.1299949",
+                            "R$ #,0,,,.00 Bi",
+                            "5074963769.7399883"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "IC": true,
+                  "HAD": true
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "valor_extraido": {
+    "S": [
+      {
+        "N": "M0",
+        "T": 3
+      },
+      {
+        "N": "M1",
+        "T": 1
+      },
+      {
+        "N": "M2",
+        "T": 3
+      }
+    ],
+    "C": [
+      "3654204911.1299949",
+      "R$ #,0,,,.00 Bi",
+      "5074963769.7399883"
+    ]
+  },
+  "erro": null,
+  "veredito": "REPLAY_OK"
+}
