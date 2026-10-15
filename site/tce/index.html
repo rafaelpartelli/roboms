@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel TCE-ES: gastos com a função saúde por município | Rafael Partelli</title>
+<meta name="description" content="Quanto cada município do Espírito Santo aplicou em saúde, o valor médio por habitante e a cobertura de plano de saúde privado, com dados do Painel de Controle do Tribunal de Contas do Espírito Santo (TCE-ES).">
+<link rel="canonical" href="https://partelli.pro/tce/">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Painel TCE-ES · Gastos com a função saúde">
+<meta property="og:description" content="Aplicação em saúde, valor médio por habitante e cobertura de plano de saúde privado nos 78 municípios do Espírito Santo, segundo o TCE-ES.">
+<meta property="og:url" content="https://partelli.pro/tce/">
+<meta property="og:image" content="https://partelli.pro/img/og.jpg">
+<meta name="theme-color" content="#0C326F">
+<link rel="stylesheet" href="/styles.css?v=20261015a">
+<style>.nav-reuniao .nr-t{display:none}@media(max-width:960px){.nav .nav-reuniao{margin:0!important;padding:10px 12px!important}.nav-reuniao .nr-t{display:inline;margin-left:8px}}@media(min-width:961px) and (max-width:1279px){.nav a{padding-left:9px;padding-right:9px}}</style><style id="nav-biblio">@media(min-width:961px){.topbar-in{justify-content:flex-start}.topbar-in .brand{margin-right:16px;flex:none}.topbar-in .nav{flex:1}.nav .nav-hl{margin-right:auto}}@media(min-width:961px){.nav a{padding-left:9px;padding-right:9px}}</style>
+<style>
+:root{
+  --azul:#0C326F; --azul2:#1351B4; --azul-claro:#EAF0FA; --verde:#168821; --verde-claro:#E7F4E8;
+  --amarelo:#C98B00; --amarelo-claro:#FFF6DC; --vermelho:#C0392B; --vermelho-claro:#FBEAE8;
+  --bg:#F3F6FB; --card:#FFFFFF; --txt:#1F2933; --muted:#4B5563; --linha:#D5DDEA;
+}
+html{scroll-padding-top:130px}
+.badge{display:inline-block;background:#FFD54A;color:#3A2C00;font-weight:bold;font-size:12px;padding:3px 8px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.filtro{position:sticky;top:60px;z-index:50;background:var(--card);border-bottom:1px solid var(--linha);box-shadow:0 2px 6px rgba(12,50,111,.08)}
+.filtro .in{max-width:1120px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.filtro label{font-weight:bold;color:var(--azul);font-size:14px}
+.filtro select{font:inherit;font-size:15px;padding:9px 10px;border-radius:8px;border:2px solid var(--azul2);background:var(--card);color:var(--txt);min-width:280px;max-width:100%;font-weight:bold}
+.atalhos{display:flex;gap:6px}.atalhos button{font:inherit;font-size:13.5px;border:1px solid var(--azul2);background:var(--card);color:var(--azul2);border-radius:999px;padding:7px 12px;cursor:pointer;font-weight:bold}.atalhos button.on{background:var(--azul2);color:#fff}
+.filtro .limpar{font:inherit;font-size:14px;border:1px solid var(--linha);background:var(--bg);color:var(--txt);border-radius:8px;padding:8px 12px;cursor:pointer}
+.filtro .ctx{font-size:13px;color:var(--muted);margin-left:auto}
+.filtro .nav2{display:flex;gap:6px;flex-wrap:wrap;width:100%}
+.filtro .nav2 a{font-size:13px;text-decoration:none;padding:4px 10px;border-radius:999px;background:var(--azul-claro);color:var(--azul)}
+@media(max-width:700px){.filtro .ctx{margin-left:0;width:100%}.filtro label{width:100%}.filtro select{min-width:0;flex:1 1 auto;width:100%}.filtro .limpar{flex:0 0 auto}.filtro .nav2{display:none}}
+.tce h2{font-size:22px;margin:40px 0 6px;color:var(--azul);line-height:1.25}
+.tce .lead{font-size:15px;line-height:1.5;color:var(--muted);margin:0 0 14px;max-width:860px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:12px;margin-top:18px}
+.kpi{background:var(--card);border:1px solid var(--linha);border-radius:10px;padding:14px 16px;border-top:4px solid var(--azul2)}
+.kpi.v{border-top-color:var(--verde)} .kpi.a{border-top-color:var(--amarelo)} .kpi.r{border-top-color:var(--vermelho)}
+.kpi .l{font-size:12.5px;color:var(--muted)}
+.kpi .n{font-size:24px;font-weight:bold;margin:4px 0 2px}
+.kpi .d{font-size:12.5px;color:var(--muted)}
+.alertas{margin-top:12px}
+.alerta{margin-top:8px;padding:10px 12px;border-radius:8px;font-size:14px}
+.alerta.r{background:var(--vermelho-claro);border-left:4px solid var(--vermelho)}
+.alerta.v{background:var(--verde-claro);border-left:4px solid var(--verde)}
+.alerta.a{background:var(--amarelo-claro);border-left:4px solid var(--amarelo)}
+.alerta.i{background:var(--azul-claro);border-left:4px solid var(--azul2)}
+.tce .card{display:block;border-top:1px solid var(--linha);background:var(--card);border:1px solid var(--linha);border-radius:10px;padding:16px}
+.tce .card h3{line-height:1.3;margin:0 0 2px;font-size:15px}
+.card .nota{font-size:12px;color:var(--muted);margin:8px 0 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:860px){.grid2{grid-template-columns:1fr}}
+.grid2>*{min-width:0}
+@media(max-width:560px){td.txt,th.txt{min-width:130px}}
+.chart{position:relative;height:280px}
+.chart.alto{height:320px}
+.barras .item{margin:9px 0}
+.barras .top{display:flex;justify-content:space-between;gap:10px;font-size:13.5px}
+.barras .top b{white-space:nowrap}
+.barras .trilho{height:10px;background:var(--azul-claro);border-radius:5px;overflow:hidden;margin-top:4px}
+.barras .trilho i{display:block;height:100%;background:var(--azul2)}
+.tabwrap{overflow-x:auto;border:1px solid var(--linha);border-radius:10px;background:var(--card)}
+.tce table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--linha);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+td.txt,th.txt{text-align:left;white-space:normal;min-width:180px}
+th{background:var(--azul-claro);color:var(--azul);position:sticky;top:0}
+th[data-k]{cursor:pointer;user-select:none}
+th.on::after{content:" ▾"} th.on.asc::after{content:" ▴"}
+#tab tbody tr{cursor:pointer}
+tr:hover td{background:var(--azul-claro)}
+tr.sel td{background:var(--amarelo-claro);font-weight:bold}
+td.alto{color:var(--vermelho);font-weight:bold} td.bom{color:var(--verde);font-weight:bold}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:bold}
+.pill.ok{background:var(--verde-claro);color:var(--verde)}
+.pill.par{background:var(--amarelo-claro);color:var(--amarelo)}
+.pill.pen{background:var(--vermelho-claro);color:var(--vermelho)}
+.tools{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
+.tools input{font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--linha);background:var(--card);color:var(--txt);min-width:240px}
+.leg{font-size:12px;color:var(--muted)}
+.vazio{padding:18px;color:var(--muted);text-align:center}
+ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
+.cta-box{margin-top:34px;background:#0C326F;color:#fff;border-radius:12px;padding:22px}
+.cta-box h3{margin:0 0 6px;font-size:19px}
+.cta-box p{margin:0 0 14px;color:#E6EEFB}
+.cta-box a{display:inline-block;background:#168821;color:#fff;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:8px}
+.tce-fonte{margin:36px 0 30px;font-size:12.5px;color:var(--muted)}
+.tce-fonte p{margin:6px 0}
+.tce{font-size:15px;line-height:1.45;padding-bottom:8px}
+.tce .card p{font-size:inherit;color:inherit;margin:0 0 8px}.tce .cta-box h3{color:#fff}.tce .card p.nota{font-size:12px;color:var(--muted)}
+.tce ul.rec li,.tce td,.tce th{font-family:inherit}
+.tce-hero .badge{font-size:12px;margin-left:0}
+.tce-hero .lead{max-width:78ch;font-size:17px;margin:0}
+.tce-hero h1{margin-bottom:10px}
+.tce-hero .tce-sel{display:inline-block;margin:0 0 12px}
+</style>
+</head>
+<body class="gz">
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="/" aria-label="Rafael Partelli, início"><svg class="flag" viewBox="0 0 30 21" width="30" height="21" aria-hidden="true" focusable="false" style="margin-right:-4px"><rect width="30" height="21" fill="#009C3B"/><path d="M2.5 10.5L15 2.4L27.5 10.5L15 18.6Z" fill="#FFDF00"/><circle cx="15" cy="10.5" r="5.1" fill="#002776"/><path d="M9.95 11.9Q14.6 8.7 20.05 9.3" fill="none" stroke="#fff" stroke-width="1"/></svg><svg class="flag" viewBox="0 0 30 21" width="30" height="21" aria-hidden="true" focusable="false"><rect width="30" height="7" fill="#4C93D6"/><rect y="7" width="30" height="7" fill="#fff"/><rect y="14" width="30" height="7" fill="#F1A7BF"/><path d="M9 11.6Q15 8.4 21 11.6" fill="none" stroke="#2F6DB5" stroke-width="1.3" stroke-linecap="round"/></svg><span>Rafael Partelli</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav" aria-label="Principal">
+      <a class="nav-hl" href="/gestor/">Área do Gestor <em>Guias e Radar</em></a>
+      <a href="/">Início</a>
+      <a href="/profissionais/">Para profissionais</a>
+      <a href="/cidadao/">Para o cidadão</a>
+      <a href="/gestor/radar/" data-conv="nav_radar">Radar Saúde</a>
+      <a class="nav-reuniao" href="/reuniao/" data-conv="nav_reuniao" aria-label="Reunião online" title="Reunião online" style="display:inline-flex;align-items:center;padding:8px 3px;margin:0 -2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10.5 22 7v10l-6-3.5z"/></svg><span class="nr-t">Reunião online</span></a>
+      <a class="nav-cta" href="/#contato" data-conv="nav_contato">Falar comigo</a>
+    </nav>
+  </div>
+</header>
+<main id="conteudo">
+<section class="page-hero tce-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="/">Início</a> &#8250; <a href="/gestor/">Área do Gestor</a> &#8250; Painel TCE-ES</p>
+    <span class="badge tce-sel">Atualizado em <span class="dt-extracao">...</span></span>
+    <h1>Painel TCE-ES: Gastos com a Função Saúde</h1>
+    <p class="lead">Quanto cada um dos 78 municípios do Espírito Santo aplicou em saúde, o valor médio por habitante e a cobertura de plano de saúde privado, extraídos do Painel de Controle do Tribunal de Contas do Espírito Santo. A página abre no panorama geral; use o filtro para ver um município específico.</p>
+  </div>
+</section>
+<div class="filtro"><div class="in">
+  <label for="munSel">Filtrar por município</label>
+  <select id="munSel"></select>
+  <div class="atalhos"><button type="button" data-u="ES">Panorama geral</button></div><button class="limpar" id="limpar" type="button" style="display:none">Voltar ao panorama</button>
+  <span class="ctx" id="ctx"></span>
+  <div class="nav2"><a href="#resumo">Resumo</a><a href="#evolucao">Evolução</a><a href="#subfuncao">Subfunção</a><a href="#ranking">Municípios</a><a href="#leitura">Leitura estratégica</a></div>
+</div></div>
+
+<div class="wrap tce">
+  <section id="resumo">
+    <div class="kpis" id="kpis"></div>
+    <div class="alertas" id="alertas"></div>
+  </section>
+
+  <section id="evolucao">
+    <h2>Evolução da aplicação em saúde <span class="ano"></span></h2>
+    <p class="lead" id="evoLead"></p>
+    <div class="card"><h3>Aplicação em saúde por ano (R$ milhões)</h3><div class="chart alto"><canvas id="cEvo"></canvas></div><p class="nota">Linha amarela: variação percentual sobre o ano anterior. O último ano pode estar parcial, conforme a data da extração no painel do TCE-ES.</p></div>
+  </section>
+
+  <section id="subfuncao">
+    <h2>Gasto por subfunção</h2>
+    <p class="lead" id="subLead"></p>
+    <div class="card"><h3>Participação de cada subfunção no total aplicado</h3><div class="barras" id="sub"></div></div>
+  </section>
+
+  <section id="ranking">
+    <h2 id="rkTit">Panorama dos 78 municípios</h2>
+    <p class="lead">Clique em qualquer linha para filtrar a página por aquele município. Clique nos títulos para ordenar.</p>
+    <div class="tools"><input type="search" id="busca" placeholder="Buscar município..." aria-label="Buscar município"><span class="leg">Vermelho: valor por habitante entre os 15 mais baixos do estado. Verde: cobertura de plano de saúde privado acima de 50%.</span></div>
+    <div class="tabwrap" style="max-height:560px;overflow:auto"><table id="tab"><thead></thead><tbody></tbody></table></div>
+  </section>
+
+  <section id="leitura">
+    <h2>Leitura estratégica</h2>
+    <div class="card" id="leituraTxt"></div>
+  </section>
+
+  <div class="cta-box">
+    <h3 id="ctaTit">Precisa qualificar o planejamento e a prestação de contas da sua saúde?</h3>
+    <p>Apoio técnico para PES, PAS, RAG, RDQA e análise de indicadores de gestão em saúde pública.</p>
+    <a href="/#contato">Falar comigo</a>
+  </div>
+
+  <div class="tce-fonte">
+    <p><b>Fonte:</b> Tribunal de Contas do Espírito Santo, Painel de Controle (paineldecontrole.tcees.tc.br), área temática Saúde, página "Gastos com a função saúde". Dados declarados pelos municípios ao TCE-ES. Extração automática; última em <span class="dt-extracao"></span>.</p>
+    <p><b>Notas:</b> valores de aplicação (liquidado) na função saúde, por município. A cobertura de plano de saúde privado usa a base de beneficiários ANS do próprio painel do TCE-ES. O ano mais recente pode estar parcial, pois reflete os lançamentos já declarados ao tribunal até a data da extração.</p>
+    <p>Dados públicos de transparência ativa, organizados por Rafael Partelli (CRA/ES 15721). Para valores oficiais, consulte o <a href="https://paineldecontrole.tcees.tc.br" target="_blank" rel="noopener">Painel de Controle do TCE-ES</a>.</p>
+  </div>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap foot-in">
+    <p><b>Rafael Tartaglias Partelli</b> · Administrador · CRA/ES 15721 · Espírito Santo</p>
+    <p><a href="/">Página inicial</a> · <a href="/profissionais/">Para profissionais de saúde</a> · <a href="/cidadao/">Para o cidadão</a> · <a href="/#privacidade">Aviso de privacidade</a></p>
+    <p class="lgpd">Este site não usa cookies de rastreamento nem armazena dados de formulário. Para solicitar informações ou exclusão, escreva para rafael@partelli.pro.</p>
+    <p class="copy">© <span id="ano">2026</span> Rafael Partelli. Todos os direitos reservados.</p>
+  </div>
+</footer>
+<div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>if(window.VLibras){new window.VLibras.Widget('https://vlibras.gov.br/app');}</script>
+<script src="/script.js?v=20261012g"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+function iniciar(D){
+const ANO=D.meta.anoRef;
+document.querySelectorAll('.ano').forEach(e=>e.textContent=ANO);
+document.querySelectorAll('.dt-extracao').forEach(e=>e.textContent=D.meta.extracao);
+// ---------- utilidades ----------
+const brl=v=>v==null||!isFinite(v)?'–':v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+const mi=v=>v==null||!isFinite(v)?'–':v===0?'R$ 0':(Math.abs(v)>=1e9?'R$ '+(v/1e9).toLocaleString('pt-BR',{maximumFractionDigits:2})+' bi':(Math.abs(v)>=1e6?'R$ '+(v/1e6).toLocaleString('pt-BR',{maximumFractionDigits:1})+' mi':'R$ '+(v/1e3).toLocaleString('pt-BR',{maximumFractionDigits:0})+' mil'));
+const pc=(v,d=1)=>v==null||!isFinite(v)?'–':(v*100).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const sum=a=>a.reduce((x,y)=>x+(y||0),0);
+const slug=s=>String(s).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+
+// ---------- rank auxiliar ----------
+const rankHab=D.m.map((m,i)=>[i,m.valorHab]).filter(x=>x[1]!=null).sort((a,b)=>b[1]-a[1]);
+const posHab=i=>rankHab.findIndex(x=>x[0]===i)+1;
+const N=D.m.length;
+
+// ---------- gráficos ----------
+const C=k=>getComputedStyle(document.documentElement).getPropertyValue(k).trim();
+Chart.defaults.locale='pt-BR';Chart.defaults.font.family='Arial, Helvetica, sans-serif';
+Chart.defaults.color=C('--muted');Chart.defaults.borderColor=C('--linha');
+const chEvo=new Chart(document.getElementById('cEvo'),{data:{labels:D.es.evolucao.map(e=>e[0]),datasets:[
+  {type:'bar',label:'Aplicado em saúde',data:D.es.evolucao.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:C('--azul2'),borderRadius:4,yAxisID:'y'},
+  {type:'line',label:'Variação sobre o ano anterior',data:D.es.evolucao.map(e=>e[2]==null?null:+(e[2]*100).toFixed(1)),borderColor:C('--amarelo'),backgroundColor:C('--amarelo'),yAxisID:'y1',tension:.25,pointRadius:3,spanGaps:false}]},
+  options:{maintainAspectRatio:false,plugins:{tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y1'?' Variação: '+c.parsed.y.toLocaleString('pt-BR')+'%':' '+c.dataset.label+': R$ '+c.parsed.y.toLocaleString('pt-BR',{maximumFractionDigits:2})+' mi'}}},scales:{y:{beginAtZero:true,title:{display:true,text:'R$ milhões'}},y1:{position:'right',grid:{display:false},ticks:{callback:v=>v+'%'}}}}});
+
+// ---------- gasto por subfunção ----------
+const totSub=sum(D.subfuncoes.map(s=>s[1]));
+document.getElementById('sub').innerHTML=D.subfuncoes.map(([n,v,yoy])=>`<div class="item"><div class="top"><span>${n}</span><b>${mi(v)} · ${pc(v/totSub)}</b></div><div class="trilho"><i style="width:${(v/D.subfuncoes[0][1]*100).toFixed(1)}%"></i></div></div>`).join('');
+const topSub=D.subfuncoes[0];
+document.getElementById('subLead').innerHTML=`O Espírito Santo aplicou <b>${mi(totSub)}</b> em saúde em ${ANO} (declarado ao TCE-ES). A subfunção com maior participação é <b>${topSub[0]}</b>, com ${pc(topSub[1]/totSub)} do total.`;
+
+// ---------- seletor ----------
+const sel=document.getElementById('munSel');
+sel.innerHTML='<option value="ES">Panorama geral: Espírito Santo (78 municípios)</option>'
+ +'<optgroup label="Município">'+D.m.map((m,i)=>`<option value="${i}">${m.n}</option>`).join('')+'</optgroup>';
+let atual='ES';
+const isES=()=>atual==='ES';
+const obj=()=>isES()?null:D.m[+atual];
+const nomeAtual=()=>isES()?'Espírito Santo':D.m[+atual].n;
+
+function render(){
+  const o=obj(),nome=nomeAtual();
+  document.getElementById('ctx').textContent=isES()?'Panorama geral: 78 municípios':'Município: '+nome+(o.pop?' · '+o.pop.toLocaleString('pt-BR')+' habitantes':'');
+  document.getElementById('limpar').style.display=isES()?'none':'';
+  document.querySelectorAll('[data-u]').forEach(b=>b.classList.toggle('on',b.dataset.u===atual));
+  document.getElementById('rkTit').textContent=isES()?'Panorama dos 78 municípios':'Ranking municipal';
+  // KPIs
+  const k=[];
+  const cresc=D.es.evolucao.length?D.es.evolucao[D.es.evolucao.length-1][2]:null;
+  if(isES()){
+    k.push(['',`Aplicação em saúde ${ANO}`,mi(D.es.aplicacao),cresc!=null?`${pc(cresc)} em relação a ${ANO-1}`:'']);
+    k.push(['',`Valor médio por habitante`,brl(D.es.valorHab),D.es.valorHabLY?`${pc(D.es.valorHab/D.es.valorHabLY-1)} em relação a ${ANO-1}`:'']);
+    k.push(['v',`População com plano de saúde privado`,pc(D.es.percComPlano),D.es.popComPlano?`${Math.round(D.es.popComPlano).toLocaleString('pt-BR')} pessoas`:'']);
+    k.push(['a',`Municípios com dado disponível`,String(N),'dos 78 municípios do Espírito Santo']);
+  }else{
+    const r=posHab(+atual);
+    k.push([r>N-15?'r':'',`Valor por habitante em ${ANO}`,brl(o.valorHab),`${r}º de ${N} no estado`+(o.varHab!=null?` · ${pc(o.varHab)} em relação a ${ANO-1}`:'')]);
+    k.push([o.percComPlano>.5?'v':'',`População com plano de saúde privado`,pc(o.percComPlano),o.pop?`${(o.benef||0).toLocaleString('pt-BR')} de ${o.pop.toLocaleString('pt-BR')} habitantes`:'']);
+    k.push(['',`Aplicação em saúde no ES em ${ANO}`,mi(D.es.aplicacao),'para comparação, panorama geral do estado']);
+    k.push(['',`Valor médio por habitante no ES`,brl(D.es.valorHab),'média estadual, para comparação']);
+  }
+  document.getElementById('kpis').innerHTML=k.map(([c,l,n,d])=>`<div class="kpi ${c}"><div class="l">${l}</div><div class="n">${n}</div><div class="d">${d}</div></div>`).join('');
+  // alertas
+  const al=[];
+  if(isES()){
+    al.push(['i','Você está no panorama geral. Escolha um município no filtro, ou clique em uma linha da tabela abaixo, para ver os dados detalhados.']);
+    if(cresc!=null&&cresc<0)al.push(['a',`A aplicação em saúde do ES caiu ${pc(Math.abs(cresc))} em ${ANO} em relação a ${ANO-1}. O ano mais recente costuma estar parcial no painel do TCE-ES, pois reflete apenas o já declarado até a data da extração.`]);
+    al.push(['r',`${pc(1-D.es.percComPlano)} da população do Espírito Santo depende exclusivamente do SUS, sem plano de saúde privado.`]);
+  }else{
+    const r=posHab(+atual);
+    if(r>N-15)al.push(['r',`<b>Valor por habitante baixo:</b> ${nome} está entre os 15 municípios com menor valor aplicado por habitante no estado (${r}º de ${N}).`]);
+    else if(r<=15)al.push(['v',`<b>Valor por habitante elevado:</b> ${nome} está entre os 15 municípios com maior valor aplicado por habitante no estado (${r}º de ${N}).`]);
+    if(o.percComPlano<.2)al.push(['i',`Menos de ${pc(.2,0)} da população de ${nome} tem plano de saúde privado; a quase totalidade depende do SUS.`]);
+  }
+  document.getElementById('alertas').innerHTML=al.map(([c,tx])=>`<div class="alerta ${c}">${tx}</div>`).join('');
+  document.getElementById('evoLead').innerHTML=isES()?`A aplicação em saúde do Espírito Santo soma <b>${mi(D.es.aplicacao)}</b> em ${ANO}, partindo de ${mi(D.es.evolucao[0][1])} em ${D.es.evolucao[0][0]}.`:`Valores de evolução são apresentados no consolidado do Espírito Santo; o painel do TCE-ES não publica série histórica por município nesta página.`;
+  leitura(o,nome);
+  document.getElementById('ctaTit').textContent=isES()?'Precisa qualificar o planejamento e a prestação de contas da sua saúde?':`Precisa de apoio técnico para a gestão da saúde de ${nome}?`;
+  document.title=(isES()?'Painel TCE-ES: Gastos com a Função Saúde':'Painel TCE-ES · '+nome)+' | Rafael Partelli';
+  drawRank();
+}
+
+const cols=[['n','Município',m=>m.n,'txt'],['valorHab','Valor por habitante',m=>brl(m.valorHab)],['varHab','Variação',m=>pc(m.varHab)],['percComPlano','Com plano privado',m=>pc(m.percComPlano)],['pop','População',m=>m.pop?m.pop.toLocaleString('pt-BR'):'–']];
+let sk='valorHab',asc=false;
+const tab=document.getElementById('tab');
+tab.querySelector('thead').innerHTML='<tr><th>#</th>'+cols.map(c=>`<th data-k="${c[0]}" class="${c[3]||''}">${c[1]}</th>`).join('')+'</tr>';
+function drawRank(){
+  const q=document.getElementById('busca').value.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const rows=D.m.map((m,i)=>[m,i]).sort((a,b)=>{const x=a[0][sk],y=b[0][sk];if(sk==='n')return asc?x.localeCompare(y):y.localeCompare(x);return (asc?1:-1)*((x??-1)-(y??-1));});
+  const pos=new Map(rows.map((r,k)=>[r[1],k+1]));
+  tab.querySelector('tbody').innerHTML=rows.filter(([m])=>m.n.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g,'').includes(q)).map(([m,i])=>`<tr data-i="${i}" class="${String(i)===atual?'sel':''}"><td>${pos.get(i)}</td>`+cols.map(c=>{let cl=c[3]||'';if(c[0]==='valorHab'&&posHab(i)>N-15)cl='alto';if(c[0]==='percComPlano'&&m.percComPlano>.5)cl='bom';return `<td class="${cl}">${c[2](m)}</td>`;}).join('')+'</tr>').join('');
+  tab.querySelectorAll('th[data-k]').forEach(th=>{th.className=(th.dataset.k===sk?('on'+(asc?' asc':'')):'')+(th.dataset.k==='n'?' txt':'');});
+}
+tab.querySelector('thead').onclick=e=>{const k=e.target.dataset.k;if(!k)return;if(k===sk)asc=!asc;else{sk=k;asc=k==='n';}drawRank();};
+tab.querySelector('tbody').onclick=e=>{const tr=e.target.closest('tr[data-i]');if(!tr)return;setSel(tr.dataset.i,true);};
+document.getElementById('busca').oninput=drawRank;
+
+function leitura(o,nome){
+  let h='';const rec=[];
+  if(isES()){
+    const top=[...D.m].sort((a,b)=>(b.valorHab||0)-(a.valorHab||0)).slice(0,5);
+    const bottom=[...D.m].sort((a,b)=>(a.valorHab||0)-(b.valorHab||0)).slice(0,5);
+    h=`<p><b>Valor por habitante:</b> os municípios com maior aplicação por habitante são ${top.map(m=>`${m.n} (${brl(m.valorHab)})`).join(', ')}. No outro extremo, ${bottom.map(m=>`${m.n} (${brl(m.valorHab)})`).join(', ')} aplicam bem menos por habitante, o que pode refletir tanto menor disponibilidade de recursos próprios quanto diferenças no perfil de gasto.</p>
+    <p><b>Cobertura de plano de saúde privado:</b> no conjunto do estado, ${pc(D.es.percComPlano)} da população tem plano privado; a grande maioria depende do SUS, o que reforça a importância do valor aplicado por habitante como indicador de capacidade de atenção.</p>`;
+    rec.push('Cruzar o valor aplicado por habitante com a produção SIA/SIH do município para avaliar se o gasto corresponde à oferta assistencial.');
+    rec.push('Priorizar diagnóstico nos municípios com valor por habitante mais baixo, verificando se há recurso federal ou estadual não aplicado (ver Radar de Recursos SUS).');
+    rec.push('Acompanhar a composição por subfunção: concentração excessiva em Administração Geral pode indicar baixa execução finalística.');
+  }else{
+    const r=posHab(+atual);
+    h=`<p><b>Valor por habitante:</b> ${nome} aplicou ${brl(o.valorHab)} por habitante em ${D.meta.anoRef}, ${r}º lugar entre os 78 municípios${o.varHab!=null?`, variação de ${pc(o.varHab)} em relação ao ano anterior`:''}.</p>
+    <p><b>Cobertura de plano de saúde privado:</b> ${pc(o.percComPlano)} da população tem plano privado; os demais ${pc(1-o.percComPlano)} dependem do SUS municipal para a atenção à saúde.</p>`;
+    if(r>N-15)rec.push('Avaliar se o valor por habitante reflete limitação de receita própria ou de repasses, cruzando com o Radar de Recursos SUS (repasses fundo a fundo, emendas e saldo em conta).');
+    if(o.percComPlano<.2)rec.push('Com cobertura de plano privado muito baixa, reforçar a rede própria do SUS municipal é prioridade, já que a população tem poucas alternativas assistenciais.');
+    rec.push('Comparar a composição por subfunção do município (quando disponível no painel do TCE-ES) com o padrão estadual para identificar desequilíbrios.');
+    rec.push('Usar este painel junto ao Radar de Recursos SUS e à produção SIA/SIH para compor o diagnóstico do Plano de Saúde e do Relatório Anual de Gestão.');
+  }
+  h+=`<p><b>Recomendações para alcançar e superar as metas:</b></p><ul class="rec">${rec.map(r=>`<li>${r}</li>`).join('')}</ul>`;
+  document.getElementById('leituraTxt').innerHTML=h;
+}
+
+function setSel(v,rolar){
+  atual=String(v);sel.value=atual;render();
+  if(rolar)document.getElementById('resumo').scrollIntoView({behavior:'smooth'});
+}
+sel.onchange=()=>setSel(sel.value,false);
+document.getElementById('limpar').onclick=()=>setSel('ES',false);
+document.querySelectorAll('[data-u]').forEach(b=>b.onclick=()=>setSel(b.dataset.u,false));
+let m0='';try{m0=new URLSearchParams(location.search).get('m')||'';}catch(e){}
+const i0=D.m.findIndex(m=>slug(m.n)===m0);
+setSel(i0>=0?i0:'ES',false);
+}
+fetch('/tce/dados.json?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(iniciar).catch(err=>{console.error(err);document.getElementById('kpis').innerHTML='<div class="alerta r">Não foi possível carregar os dados agora. Atualize a página em instantes.</div>';});
+</script>
+</body>
+</html>

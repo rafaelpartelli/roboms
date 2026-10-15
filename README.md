@@ -7,7 +7,7 @@ Robôs de Rafael Partelli para acesso a dados do Ministério da Saúde e monitor
 | Radar de Recursos SUS: Espírito Santo (InvestSUS/FNS) | `robo/` | Computador do Rafael (cron); GitHub Actions só manual | Diária | https://partelli.pro/gestor/recursos/ |
 | Radar Diário de Portarias MS (DOU/INLABS) | `robo_dou/` | **Hostinger** (cron, dias úteis 8h30 e 11h00). Versão local desativada em 15/10/2026 | Dias úteis | https://partelli.pro/radar/ |
 | Radar Saúde Pública (newsletter) | `tarefas_agendadas/` | Tarefa agendada do Claude (nuvem) | Seg, qua e sex às 06:53 | Newsletter HTML por e-mail |
-| Painel TCE-ES: Gastos com a função saúde | `robo_tce_es/` | **GitHub Actions** (HTTP puro, sem navegador) | Seg, qua e sex às 06:30 | Ainda não publica no site (falta decidir pasta de destino); grava em `resultados/dados-tce-es.json` |
+| Painel TCE-ES: Gastos com a função saúde | `robo_tce_es/` | **GitHub Actions** (HTTP puro, sem navegador) — falta cadastrar os segredos e rodar a primeira vez | Diária, 06:30 Brasília | https://partelli.pro/tce |
 
 ## 1. Radar de Recursos SUS: Espírito Santo (`robo/`)
 
@@ -43,7 +43,7 @@ Cópia de referência da instrução da tarefa agendada do Claude que produz a n
 
 ## 4. Painel TCE-ES: Gastos com a função saúde (`robo_tce_es/`)
 
-Acompanha os gastos com a função saúde por município do Painel de Controle do TCE-ES (https://paineldecontrole.tcees.tc.br), incorporado como relatório Power BI "publicar na web" (sem API REST própria do TCE-ES). **Extração validada e agendada** (seg/qua/sex às 06:30): a chamada de dados interna do Power BI é sem estado e pode ser reenviada via HTTP puro (`extrair.py`), sem navegador — confirmado contra os números reais da tela (R$ 3,65 Bi aplicado, R$ 880,38/habitante, 17,63% com plano privado, ranking por município e por subfunção). Cada execução grava o resultado em `resultados/dados-tce-es.json`. Falta decidir pasta de destino no site e escrever `montar.py`/`enviar.py` para publicar de fato. Detalhes completos em `robo_tce_es/LEIA-ME.md`.
+Acompanha os gastos com a função saúde por município do Painel de Controle do TCE-ES (https://paineldecontrole.tcees.tc.br), incorporado como relatório Power BI "publicar na web" (sem API REST própria do TCE-ES). A chamada de dados interna do Power BI é sem estado e pode ser reenviada via HTTP puro (`extrair.py`), sem navegador — confirmado contra os números reais da tela (R$ 3,65 Bi aplicado, R$ 880,38/habitante, 17,63% com plano privado, ranking por município e por subfunção). Pipeline completo (`extrair.py` → `montar.py` → `enviar.py`), publicado em **partelli.pro/tce**, agendado no GitHub Actions diariamente às 06:30 Brasília. A página reaproveita os mesmos componentes visuais (KPIs, alertas, gráficos, ranking ordenável, leitura estratégica) do Radar de Recursos SUS (`/gestor/recursos/`), com filtro por município. Falta cadastrar os segredos de FTP deste repositório e rodar a primeira execução manual para validar. Detalhes completos em `robo_tce_es/LEIA-ME.md`.
 
 ## Segurança
 

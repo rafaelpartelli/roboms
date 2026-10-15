@@ -1,27 +1,19 @@
-name: Robo TCE-ES (Gastos com a funcao saude)
+name: Robo Painel TCE-ES (Gastos com a funcao saude)
 
-# Agendado para segundas, quartas e sextas, 06:30 (horario de Brasilia).
-# A extracao ja foi validada (ver robo_tce_es/LEIA-ME.md): chamada direta via
-# HTTP, sem navegador, ao endpoint interno do Power BI do Painel de Controle
-# do TCE-ES. AINDA NAO publica no site: falta decidir com o Rafael a pasta
-# de destino e escrever montar.py/enviar.py (ver "Proximos passos" no
-# LEIA-ME.md do robo). Por enquanto, cada execucao so grava o resultado
-# bruto decodificado em resultados/dados-tce-es.json, para acompanhar que a
-# extracao continua funcionando ate a publicacao estar pronta.
+# Extracao validada por HTTP puro, sem navegador e sem bloqueio de IP (ver
+# robo_tce_es/LEIA-ME.md). Agendamento diario pela manha, dias uteis e fim de
+# semana (o TCE-ES nao tem janela de atualizacao conhecida).
 on:
-  schedule:
-    - cron: '30 9 * * 1,3,5'
   workflow_dispatch:
-
-permissions:
-  contents: write
+  schedule:
+    - cron: '30 9 * * *'  # 06:30 Brasilia (UTC-3)
 
 concurrency: robo-tce-es
 
 jobs:
   atualizar:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -32,33 +24,43 @@ jobs:
       - name: Instalar dependencias
         run: pip install -q requests
 
-      - name: Extrair dados do painel (HTTP puro, sem navegador)
+      - name: Extrair dados do Painel TCE-ES
         working-directory: robo_tce_es
-        run: python extrair.py dados_extraidos.json
+        run: python extrair.py bruto.json
 
-      # TODO (depende de decisao do Rafael sobre pasta de destino no site):
-      #   - name: Montar e conferir (trava de variacao)
-      #     working-directory: robo_tce_es
-      #     run: python montar.py dados_extraidos.json dados.json
-      #   - name: Enviar ao site
-      #     working-directory: robo_tce_es
-      #     run: python enviar.py dados.json
-
-      - name: Guardar resultado no repositorio
+      - name: Montar e conferir
+        working-directory: robo_tce_es
         run: |
-          mkdir -p resultados
-          cp robo_tce_es/dados_extraidos.json resultados/dados-tce-es.json
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add resultados/dados-tce-es.json
-          git commit -m "Atualiza dados extraidos do Painel TCE-ES ($(date -u +%Y-%m-%d))" || echo "sem mudanca para gravar"
-          git push
+          python montar.py bruto.json dados.json
+          curl -fsS "https://partelli.pro/tce/dados.json?x=$(date +%s)" -o publicado.json || echo '{}' > publicado.json
+          python - <<'PY'
+          import json, sys
+          n = json.load(open('dados.json')); a = json.load(open('publicado.json'))
+          if a.get('es'):
+              for chave, rotulo in [('aplicacao', 'aplicacao total'), ('valorHab', 'valor medio por habitante')]:
+                  vn, va = n['es'].get(chave), a['es'].get(chave)
+                  print(rotulo + ':', va, '->', vn)
+                  if va and not 0.6 < (vn / va) < 1.5:
+                      sys.exit(f"variacao suspeita em {rotulo}: {va} -> {vn}; publicacao suspensa")
+          PY
 
-      - name: Guardar artefato da execucao
+      - name: Enviar ao site
+        working-directory: robo_tce_es
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USUARIO: ${{ secrets.FTP_USUARIO }}
+          FTP_SENHA: ${{ secrets.FTP_SENHA }}
+        run: |
+          mkdir -p ~/.config/robo_tce_es
+          umask 077
+          printf 'FTP_HOST=%s\nFTP_USUARIO=%s\nFTP_SENHA=%s\nFTP_PASTA=domains/partelli.pro/public_html/tce\n' "$FTP_HOST" "$FTP_USUARIO" "$FTP_SENHA" > ~/.config/robo_tce_es/.env
+          python enviar.py dados.json
+
+      - name: Guardar dados do dia
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: dados-tce-es-${{ github.run_id }}
-          path: robo_tce_es/dados_extraidos.json
+          name: dados-tce-${{ github.run_id }}
+          path: robo_tce_es/dados.json
           retention-days: 30
           if-no-files-found: ignore
