@@ -1,0 +1,71 @@
+name: Robo InvestSUS (Radar de Recursos SUS ES)
+
+on:
+  schedule:
+    - cron: '15 12 * * *'   # 9h15 em Brasilia
+    - cron: '15 18 * * *'   # 15h15 em Brasilia (segunda tentativa)
+  workflow_dispatch:
+
+concurrency: robo-investsus
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar navegador automatico
+        run: |
+          pip install -q playwright
+          python -m playwright install --with-deps chromium > /dev/null
+
+      - name: Extrair dados do InvestSUS
+        working-directory: robo
+        run: |
+          for t in 1 2 3; do
+            if [ $t -eq 1 ]; then python extrair.py bruto.json && break
+            else xvfb-run -a env HEADLESS=0 python extrair.py bruto.json && break; fi
+            echo "falha na tentativa $t"; [ $t -eq 3 ] && exit 1; sleep 60
+          done
+
+      - name: Montar e conferir
+        working-directory: robo
+        run: |
+          python montar.py bruto.json dados.json
+          curl -fsS "https://partelli.pro/fundo/dados.json?x=$(date +%s)" -o publicado.json || echo '{}' > publicado.json
+          python - <<'PY'
+          import json, sys
+          n = json.load(open('dados.json')); a = json.load(open('publicado.json'))
+          tot = lambda d: sum(m['s'] for m in d['m']) + d['EST']['s']
+          if a.get('m'):
+              tn, ta = tot(n), tot(a)
+              print(f'saldo total: {ta:.0f} -> {tn:.0f}')
+              if ta and abs(tn / ta - 1) > 0.4:
+                  sys.exit('variacao suspeita do saldo total; publicacao suspensa')
+          PY
+
+      - name: Enviar ao site
+        working-directory: robo
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USUARIO: ${{ secrets.FTP_USUARIO }}
+          FTP_SENHA: ${{ secrets.FTP_SENHA }}
+        run: |
+          mkdir -p ~/.config/robo_investsus
+          umask 077
+          printf 'FTP_HOST=%s\nFTP_USUARIO=%s\nFTP_SENHA=%s\nFTP_PASTA=domains/partelli.pro/public_html/fundo\n' "$FTP_HOST" "$FTP_USUARIO" "$FTP_SENHA" > ~/.config/robo_investsus/.env
+          python enviar.py dados.json
+
+      - name: Guardar dados do dia
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dados-${{ github.run_id }}
+          path: robo/dados.json
+          retention-days: 30
+          if-no-files-found: ignore
