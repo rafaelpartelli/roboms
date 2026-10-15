@@ -39,18 +39,24 @@ jobs:
           python - <<'PY'
           import json, sys
           n = json.load(open('dados.json')); a = json.load(open('publicado.json'))
-          if a.get('es'):
-              for chave, rotulo in [('aplicacao', 'aplicacao total'), ('valorHab', 'valor medio por habitante')]:
-                  vn, va = n['es'].get(chave), a['es'].get(chave)
+          # aceita tanto o schema atual ("es") quanto o publicado hoje ("total"),
+          # ate o site ser trocado para consumir o schema novo
+          va_bloco = a.get('es') or a.get('total') or {}
+          chave_hab_antiga = 'valorHab' if 'es' in a else 'valorMedioHabitante'
+          chave_apl_antiga = 'aplicacao' if 'es' in a else 'aplicado'
+          if va_bloco:
+              for chave_nova, chave_antiga, rotulo in [
+                  ('aplicacao', chave_apl_antiga, 'aplicacao total'),
+                  ('valorHab', chave_hab_antiga, 'valor medio por habitante'),
+              ]:
+                  vn, va = n['es'].get(chave_nova), va_bloco.get(chave_antiga)
                   print(rotulo + ':', va, '->', vn)
                   if va and not 0.6 < (vn / va) < 1.5:
                       sys.exit(f"variacao suspeita em {rotulo}: {va} -> {vn}; publicacao suspensa")
           PY
 
       - name: Enviar ao site
-        id: enviar
         working-directory: robo_tce_es
-        continue-on-error: true
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USUARIO: ${{ secrets.FTP_USUARIO }}
@@ -60,53 +66,6 @@ jobs:
           umask 077
           printf 'FTP_HOST=%s\nFTP_USUARIO=%s\nFTP_SENHA=%s\nFTP_PASTA=domains/partelli.pro/public_html/tce\n' "$FTP_HOST" "$FTP_USUARIO" "$FTP_SENHA" > ~/.config/robo_tce_es/.env
           python enviar.py dados.json
-
-      - name: Diagnostico temporario de FTP (onde o enviar.py realmente grava)
-        if: always()
-        working-directory: robo_tce_es
-        env:
-          FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_USUARIO: ${{ secrets.FTP_USUARIO }}
-          FTP_SENHA: ${{ secrets.FTP_SENHA }}
-        run: |
-          set +e
-          echo "resultado do passo Enviar ao site: ${{ steps.enviar.outcome }}" > diagnostico_ftp.log
-          echo "chaves de primeiro nivel de dados.json gerado nesta execucao:" >> diagnostico_ftp.log
-          python -c "import json; print(sorted(json.load(open('dados.json')).keys()))" >> diagnostico_ftp.log 2>&1
-          python - <<'PY' >> diagnostico_ftp.log 2>&1
-          import sys, traceback
-          sys.path.insert(0, '.')
-          try:
-              import enviar
-              cfg = enviar.ler_env()
-              print('FTP_HOST:', cfg.get('FTP_HOST'))
-              print('FTP_PASTA (tentativa 1):', cfg.get('FTP_PASTA'))
-              ftp = enviar.conectar(cfg)
-              print('pwd apos conectar():', ftp.pwd())
-              print('nlst():', ftp.nlst())
-              try:
-                  print('tamanho dados.json no servidor:', ftp.size('dados.json'))
-              except Exception as e:
-                  print('erro ao pegar tamanho:', e)
-              ftp.quit()
-          except Exception:
-              print('ERRO no diagnostico:')
-              traceback.print_exc()
-          PY
-          cat diagnostico_ftp.log
-          set -e
-          mkdir -p ../resultados
-          cp diagnostico_ftp.log ../resultados/diagnostico-ftp-tce-es.log
-          cd ..
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add resultados/diagnostico-ftp-tce-es.log
-          git commit -m "Diagnostico temporario: onde o enviar.py do TCE-ES esta gravando" || echo "sem mudanca"
-          git push
-
-      - name: Falhar se o envio falhou
-        if: steps.enviar.outcome == 'failure'
-        run: exit 1
 
       - name: Guardar dados do dia
         if: always()

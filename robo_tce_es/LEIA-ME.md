@@ -1,15 +1,25 @@
 # Robô TCE-ES: Painel de Controle (recorte saúde)
 
 > **Situação em 15/10/2026:** pipeline completo (`extrair.py` → `montar.py` →
-> `enviar.py`). Publica em **partelli.pro/tce** (nível raiz, pasta `tce`,
-> mesmo padrão do `/fundo/` do InvestSUS). Agendado no GitHub Actions
-> (`.github/workflows/robo_tce_es.yml`), diariamente às 06:30 Brasília —
-> primeira opção porque a extração funciona por HTTP puro, sem navegador e
-> sem bloqueio de IP (ver seção abaixo), e segue a ordem de preferência do
-> `CLAUDE.md` raiz. Faltam os segredos `FTP_HOST`/`FTP_USUARIO`/`FTP_SENHA`
-> em Settings → Secrets and variables → Actions (os mesmos valores já usados
-> pelo robô `robo/`) e uma primeira execução manual (`workflow_dispatch`)
-> para validar o fluxo de ponta a ponta antes de confiar no agendamento.
+> `enviar.py`) e testado de ponta a ponta no GitHub Actions. Publica em
+> **partelli.pro/tce** (nível raiz, pasta `tce`, mesmo padrão do `/fundo/`
+> do InvestSUS). Agendado em `.github/workflows/robo_tce_es.yml`, segunda,
+> quarta e sexta às 06:30 Brasília (combinado com o Rafael) — primeira
+> opção porque a extração funciona por HTTP puro, sem navegador e sem
+> bloqueio de IP (ver seção abaixo), e segue a ordem de preferência do
+> `CLAUDE.md` raiz.
+>
+> **Pendência que bloqueia a publicação de verdade:** os segredos
+> `FTP_HOST`, `FTP_USUARIO` e `FTP_SENHA` ainda não estão cadastrados
+> *neste repositório* (Settings → Secrets and variables → Actions) — são os
+> mesmos valores já usados pelo robô `robo/` (InvestSUS), só precisam ser
+> adicionados aqui também. Testes em 15/10/2026 confirmaram: extração e
+> montagem rodam certinho (schema `meta`/`es`/`subfuncoes`/`m`), mas o passo
+> "Enviar ao site" falha porque `FTP_HOST` chega vazio ao workflow. O
+> `partelli.pro/tce/dados.json` publicado hoje foi colocado manualmente
+> (fora do robô, via upload direto no Hostinger) e está no schema antigo
+> (`total`/`evolucaoAno`/...) — será substituído pelo schema novo assim que
+> os segredos forem cadastrados e o workflow rodar com sucesso de verdade.
 
 ## O que é
 
