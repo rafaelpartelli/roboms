@@ -1,5 +1,5 @@
 {
-  "quando_utc": "2026-10-15T22:23:02.983797+00:00",
+  "quando_utc": "2026-10-15T22:32:47.242541+00:00",
   "ano_referencia": null,
   "consultas": {
     "kpi_aplicacao_total": {
@@ -1782,6 +1782,3836 @@
           "8360221.9900000114",
           "364244190.61999977"
         ]
+      },
+      "avisos": []
+    },
+    "evolucao_por_ano_municipio": {
+      "linhas": [
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Afonso Cláudio",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "25076767.470000044",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Água Doce do Norte",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "8034764.6499999957",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Águia Branca",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "9089314.4600000028",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Alegre",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "20127955.880000006",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Alfredo Chaves",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "15539213.560000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Alto Rio Novo",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "6938399.3900000025",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Anchieta",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "58182769.969999984",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Apiacá",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "6810337.370000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Aracruz",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "90651497.209999949",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Atílio Vivácqua",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "11989175.890000006",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Baixo Guandu",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "16059059.749999991",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Barra de São Francisco",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": 22357410.22,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Boa Esperança",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "11922078.860000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Bom Jesus do Norte",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "10012653.919999983",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Brejetuba",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "11057098.929999992",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Cachoeiro de Itapemirim",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "93173317.0199999",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Cariacica",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "113622846.11000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Castelo",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "28365131.329999965",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Colatina",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "126373226.47999994",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Conceição da Barra",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "20320805.319999997",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Conceição do Castelo",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "10199931.049999988",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Divino de São Lourenço",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "5713735.6000000061",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Domingos Martins",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "31823770.250000056",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Dores do Rio Preto",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "7013691.5500000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Ecoporanga",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "18264471.040000018",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Fundão",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "14283734.570000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Governador Lindenberg",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "11906813.060000017",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Guaçuí",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "17765747.019999992",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Guarapari",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "65844689.309999995",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Ibatiba",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "17412405.509999994",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Ibiraçu",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "10215845.650000028",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Ibitirama",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "7189321.3900000043",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Iconha",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "11452675.690000029",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Irupi",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "9636080.7200000118",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Itaguaçu",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "9799740.1799999978",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Itapemirim",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "64288398.249999985",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Itarana",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "9902511.6800000034",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Iúna",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "16657511.800000003",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Jaguaré",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "25320274.240000013",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Jerônimo Monteiro",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "6649346.0399999944",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "João Neiva",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "14075225.409999996",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Laranja da Terra",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "10684169.900000017",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Linhares",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "218166489.82999989",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Mantenópolis",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": 9167338.7,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Marataízes",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "64254772.649999909",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Marechal Floriano",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "12428683.630000025",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Marilândia",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "13296762.250000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Mimoso do Sul",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "21689219.689999983",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Montanha",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "18028293.38000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Mucurici",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "9032932.2299999967",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Muniz Freire",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "15558742.009999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Muqui",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "14844029.180000005",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Nova Venécia",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "36191588.449999973",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Pancas",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "16484270.600000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Pedro Canário",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "16313896.689999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Pinheiros",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "19203492.580000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Piúma",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "18248649.320000011",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Ponto Belo",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": 7201463.19,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Presidente Kennedy",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "46911383.500000112",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Rio Bananal",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "19166102.890000012",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Rio Novo do Sul",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "8631919.8200000152",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Santa Leopoldina",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "8048013.4600000121",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Santa Maria de Jetibá",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "37606573.970000006",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Santa Teresa",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "32973984.759999972",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "São Domingos do Norte",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "6990820.9299999978",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "São Gabriel da Palha",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "24727970.969999995",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "São José do Calçado",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "7444311.3700000029",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "São Mateus",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "61928113.370000064",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "São Roque do Canaã",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": 8455815.88,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Serra",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": 310410499.59,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Sooretama",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "20229265.220000021",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Vargem Alta",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "17000556.830000009",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Venda Nova do Imigrante",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "25073811.899999972",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Viana",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "47032542.939999931",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Vila Pavão",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "6998484.0399999944",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Vila Valério",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "14133885.010000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Vila Velha",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "189574585.1700002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "DIM_EsferaAdministrativa.Nome": "Vitória",
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "298229178.11000037",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Afonso Cláudio",
+          "Formulas._SomaLiquidado YoY %": "-0.01183667194566025",
+          "Formulas._SomaLiquidado": "24779942.000000048",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Água Doce do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.16295099073001509",
+          "Formulas._SomaLiquidado": "9344037.5099999979",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Águia Branca",
+          "Formulas._SomaLiquidado YoY %": "0.09764908936817672",
+          "Formulas._SomaLiquidado": "9976877.7400000039",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Alegre",
+          "Formulas._SomaLiquidado YoY %": "0.16060691802351104",
+          "Formulas._SomaLiquidado": "23360644.840000015",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Alfredo Chaves",
+          "Formulas._SomaLiquidado YoY %": "0.066244799070770868",
+          "Formulas._SomaLiquidado": 16568605.64,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Alto Rio Novo",
+          "Formulas._SomaLiquidado YoY %": "0.0953849472767225",
+          "Formulas._SomaLiquidado": "7600218.2499999963",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Anchieta",
+          "Formulas._SomaLiquidado YoY %": "-0.02050918047757631",
+          "Formulas._SomaLiquidado": "56989489.039999947",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Apiacá",
+          "Formulas._SomaLiquidado YoY %": "0.0649336774339564",
+          "Formulas._SomaLiquidado": "7252557.620000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Aracruz",
+          "Formulas._SomaLiquidado YoY %": "0.032647166909381131",
+          "Formulas._SomaLiquidado": "93611011.770000115",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Atílio Vivácqua",
+          "Formulas._SomaLiquidado YoY %": "0.17012620289450162",
+          "Formulas._SomaLiquidado": "14028848.860000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Baixo Guandu",
+          "Formulas._SomaLiquidado YoY %": "0.12208209699201221",
+          "Formulas._SomaLiquidado": "18019583.440000009",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Barra de São Francisco",
+          "Formulas._SomaLiquidado YoY %": "0.36606579740075185",
+          "Formulas._SomaLiquidado": "30541693.420000017",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Boa Esperança",
+          "Formulas._SomaLiquidado YoY %": "-0.0126467709004911",
+          "Formulas._SomaLiquidado": "11771303.059999999",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Bom Jesus do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.050285735832166362",
+          "Formulas._SomaLiquidado": "10516147.590000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Brejetuba",
+          "Formulas._SomaLiquidado YoY %": "0.13818075515762765",
+          "Formulas._SomaLiquidado": "12584977.209999988",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Cachoeiro de Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "0.10929436372662464",
+          "Formulas._SomaLiquidado": "103356635.41999988",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Cariacica",
+          "Formulas._SomaLiquidado YoY %": "0.25225651558007306",
+          "Formulas._SomaLiquidado": "142284949.35999948",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Castelo",
+          "Formulas._SomaLiquidado YoY %": "-0.064090269100121056",
+          "Formulas._SomaLiquidado": "26547202.429999992",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Colatina",
+          "Formulas._SomaLiquidado YoY %": "0.084977920316845479",
+          "Formulas._SomaLiquidado": "137112160.45000005",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Conceição da Barra",
+          "Formulas._SomaLiquidado YoY %": "0.061699761414770911",
+          "Formulas._SomaLiquidado": "21574594.160000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Conceição do Castelo",
+          "Formulas._SomaLiquidado YoY %": "-0.095062507309790309",
+          "Formulas._SomaLiquidado": "9230300.0300000068",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Divino de São Lourenço",
+          "Formulas._SomaLiquidado YoY %": "-0.0092871588247817015",
+          "Formulas._SomaLiquidado": "5660671.2299999967",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Domingos Martins",
+          "Formulas._SomaLiquidado YoY %": "0.014971912386777813",
+          "Formulas._SomaLiquidado": "32300232.950000003",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Dores do Rio Preto",
+          "Formulas._SomaLiquidado YoY %": "0.016769280365630333",
+          "Formulas._SomaLiquidado": "7131306.1100000031",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Ecoporanga",
+          "Formulas._SomaLiquidado YoY %": "0.0887326414463729",
+          "Formulas._SomaLiquidado": 19885125.8,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Fundão",
+          "Formulas._SomaLiquidado YoY %": "0.16918884400692086",
+          "Formulas._SomaLiquidado": "16700383.109999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Governador Lindenberg",
+          "Formulas._SomaLiquidado YoY %": "0.12802252057864896",
+          "Formulas._SomaLiquidado": "13431153.279999996",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Guaçuí",
+          "Formulas._SomaLiquidado YoY %": "0.093401058685118846",
+          "Formulas._SomaLiquidado": "19425086.599999987",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Guarapari",
+          "Formulas._SomaLiquidado YoY %": "0.07382055608335486",
+          "Formulas._SomaLiquidado": "70705380.889999926",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Ibatiba",
+          "Formulas._SomaLiquidado YoY %": "0.015567359710543216",
+          "Formulas._SomaLiquidado": "17683470.690000009",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Ibiraçu",
+          "Formulas._SomaLiquidado YoY %": "0.08562701316850474",
+          "Formulas._SomaLiquidado": "11090597.999999993",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Ibitirama",
+          "Formulas._SomaLiquidado YoY %": "0.132912988328653",
+          "Formulas._SomaLiquidado": "8144875.58000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Iconha",
+          "Formulas._SomaLiquidado YoY %": "0.19120457081588371",
+          "Formulas._SomaLiquidado": "13642479.62999999",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Irupi",
+          "Formulas._SomaLiquidado YoY %": "0.061969362581262691",
+          "Formulas._SomaLiquidado": "10233222.500000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Itaguaçu",
+          "Formulas._SomaLiquidado YoY %": "0.18294847894630772",
+          "Formulas._SomaLiquidado": "11592587.740000013",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "0.1219220141326179",
+          "Formulas._SomaLiquidado": "72126569.249999851",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Itarana",
+          "Formulas._SomaLiquidado YoY %": "0.052071674001801883",
+          "Formulas._SomaLiquidado": 10418152.04,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Iúna",
+          "Formulas._SomaLiquidado YoY %": "0.2436695383280463",
+          "Formulas._SomaLiquidado": "20716440.009999987",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Jaguaré",
+          "Formulas._SomaLiquidado YoY %": "0.095518871836674957",
+          "Formulas._SomaLiquidado": "27738838.270000037",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Jerônimo Monteiro",
+          "Formulas._SomaLiquidado YoY %": "0.55398351023403669",
+          "Formulas._SomaLiquidado": "10332974.099999983",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "João Neiva",
+          "Formulas._SomaLiquidado YoY %": "0.043984481382455379",
+          "Formulas._SomaLiquidado": "14694316.900000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Laranja da Terra",
+          "Formulas._SomaLiquidado YoY %": "0.04925541384361376",
+          "Formulas._SomaLiquidado": 11210423.11,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Linhares",
+          "Formulas._SomaLiquidado YoY %": "0.10882475309797068",
+          "Formulas._SomaLiquidado": "241908404.22000057",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Mantenópolis",
+          "Formulas._SomaLiquidado YoY %": "0.20125187585793186",
+          "Formulas._SomaLiquidado": "11012282.810000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Marataízes",
+          "Formulas._SomaLiquidado YoY %": "-0.017740920292553978",
+          "Formulas._SomaLiquidado": "63114833.850000083",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Marechal Floriano",
+          "Formulas._SomaLiquidado YoY %": "0.10966757547114085",
+          "Formulas._SomaLiquidado": "13791707.229999986",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Marilândia",
+          "Formulas._SomaLiquidado YoY %": "0.015552634251242845",
+          "Formulas._SomaLiquidado": "13503561.929999987",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Mimoso do Sul",
+          "Formulas._SomaLiquidado YoY %": "0.024663563634176953",
+          "Formulas._SomaLiquidado": "22224153.139999941",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Montanha",
+          "Formulas._SomaLiquidado YoY %": "0.2286531327792268",
+          "Formulas._SomaLiquidado": "22150519.140000008",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Mucurici",
+          "Formulas._SomaLiquidado YoY %": "0.067177760725877791",
+          "Formulas._SomaLiquidado": "9639744.3900000062",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Muniz Freire",
+          "Formulas._SomaLiquidado YoY %": "0.0074524617687908631",
+          "Formulas._SomaLiquidado": "15674692.940000003",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Muqui",
+          "Formulas._SomaLiquidado YoY %": "0.10684304785232271",
+          "Formulas._SomaLiquidado": "16430010.50000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Nova Venécia",
+          "Formulas._SomaLiquidado YoY %": "0.0071248022273530266",
+          "Formulas._SomaLiquidado": "36449446.359999977",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Pancas",
+          "Formulas._SomaLiquidado YoY %": "0.094545485682576216",
+          "Formulas._SomaLiquidado": "18042783.970000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Pedro Canário",
+          "Formulas._SomaLiquidado YoY %": "0.2133138431686378",
+          "Formulas._SomaLiquidado": "19793876.690000016",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Pinheiros",
+          "Formulas._SomaLiquidado YoY %": "0.153061835900687",
+          "Formulas._SomaLiquidado": "22142814.410000023",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Piúma",
+          "Formulas._SomaLiquidado YoY %": "0.072399432792650917",
+          "Formulas._SomaLiquidado": "19569841.180000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Ponto Belo",
+          "Formulas._SomaLiquidado YoY %": "0.266580880766815",
+          "Formulas._SomaLiquidado": "9121235.589999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Presidente Kennedy",
+          "Formulas._SomaLiquidado YoY %": "0.028213368936345417",
+          "Formulas._SomaLiquidado": 48234911.67,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Rio Bananal",
+          "Formulas._SomaLiquidado YoY %": "0.041538259737475609",
+          "Formulas._SomaLiquidado": "19962229.450000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Rio Novo do Sul",
+          "Formulas._SomaLiquidado YoY %": "0.16473637263233828",
+          "Formulas._SomaLiquidado": "10053910.980000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Santa Leopoldina",
+          "Formulas._SomaLiquidado YoY %": "0.0533868565373893",
+          "Formulas._SomaLiquidado": "8477671.60000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Santa Maria de Jetibá",
+          "Formulas._SomaLiquidado YoY %": "0.048177339457862609",
+          "Formulas._SomaLiquidado": "39418358.649999917",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Santa Teresa",
+          "Formulas._SomaLiquidado YoY %": "0.026770695335276998",
+          "Formulas._SomaLiquidado": 33856721.26,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "São Domingos do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.22945759390235157",
+          "Formulas._SomaLiquidado": "8594917.8799999971",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "São Gabriel da Palha",
+          "Formulas._SomaLiquidado YoY %": "0.048574745637530017",
+          "Formulas._SomaLiquidado": "25929125.869999971",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "São José do Calçado",
+          "Formulas._SomaLiquidado YoY %": "1.8901693119265597",
+          "Formulas._SomaLiquidado": "21515320.269999973",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "São Mateus",
+          "Formulas._SomaLiquidado YoY %": "0.066886719691455751",
+          "Formulas._SomaLiquidado": "66070281.729999952",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "São Roque do Canaã",
+          "Formulas._SomaLiquidado YoY %": "0.16603136940583357",
+          "Formulas._SomaLiquidado": "9859746.5699999947",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Serra",
+          "Formulas._SomaLiquidado YoY %": "-0.11534789482731063",
+          "Formulas._SomaLiquidado": "274605301.92999971",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Sooretama",
+          "Formulas._SomaLiquidado YoY %": "0.2227541352092639",
+          "Formulas._SomaLiquidado": "24735417.699999966",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Vargem Alta",
+          "Formulas._SomaLiquidado YoY %": "-0.030666497880822798",
+          "Formulas._SomaLiquidado": "16479209.290000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Venda Nova do Imigrante",
+          "Formulas._SomaLiquidado YoY %": "0.095557225584834538",
+          "Formulas._SomaLiquidado": "27469795.799999978",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Viana",
+          "Formulas._SomaLiquidado YoY %": "0.043535141670144238",
+          "Formulas._SomaLiquidado": "49080111.35999997",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Vila Pavão",
+          "Formulas._SomaLiquidado YoY %": "0.15854562126000327",
+          "Formulas._SomaLiquidado": "8108063.0400000112",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Vila Valério",
+          "Formulas._SomaLiquidado YoY %": "0.14254395295946945",
+          "Formulas._SomaLiquidado": "16148584.849999992",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Vila Velha",
+          "Formulas._SomaLiquidado YoY %": "0.035992227301361084",
+          "Formulas._SomaLiquidado": "196397796.73000008",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "DIM_EsferaAdministrativa.Nome": "Vitória",
+          "Formulas._SomaLiquidado YoY %": "-0.044642287499748495",
+          "Formulas._SomaLiquidado": "284915545.40000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Afonso Cláudio",
+          "Formulas._SomaLiquidado YoY %": "0.39355071008640491",
+          "Formulas._SomaLiquidado": "34532105.769999996",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Água Doce do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.22796214995074252",
+          "Formulas._SomaLiquidado": "11474124.38999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Águia Branca",
+          "Formulas._SomaLiquidado YoY %": "0.074665583703945257",
+          "Formulas._SomaLiquidado": "10721807.140000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Alegre",
+          "Formulas._SomaLiquidado YoY %": "0.27398347236719434",
+          "Formulas._SomaLiquidado": 29761075.43,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Alfredo Chaves",
+          "Formulas._SomaLiquidado YoY %": "0.12055573796613191",
+          "Formulas._SomaLiquidado": "18566046.120000016",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Alto Rio Novo",
+          "Formulas._SomaLiquidado YoY %": "0.2430044518787339",
+          "Formulas._SomaLiquidado": "9447105.1199999955",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Anchieta",
+          "Formulas._SomaLiquidado YoY %": "0.067250579090296025",
+          "Formulas._SomaLiquidado": "60822065.180000022",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Apiacá",
+          "Formulas._SomaLiquidado YoY %": "0.30906517223919672",
+          "Formulas._SomaLiquidado": 9494070.59,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Aracruz",
+          "Formulas._SomaLiquidado YoY %": "0.202305237299752",
+          "Formulas._SomaLiquidado": "112549009.71999986",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Atílio Vivácqua",
+          "Formulas._SomaLiquidado YoY %": "0.10492648004762757",
+          "Formulas._SomaLiquidado": "15500846.589999989",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Baixo Guandu",
+          "Formulas._SomaLiquidado YoY %": "0.56592259382439813",
+          "Formulas._SomaLiquidado": "28217272.839999985",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Barra de São Francisco",
+          "Formulas._SomaLiquidado YoY %": "0.35054813899051823",
+          "Formulas._SomaLiquidado": "41248027.209999979",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Boa Esperança",
+          "Formulas._SomaLiquidado YoY %": "0.18320178225026576",
+          "Formulas._SomaLiquidado": "13927826.760000005",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Bom Jesus do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.36347439566507572",
+          "Formulas._SomaLiquidado": "14338497.980000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Brejetuba",
+          "Formulas._SomaLiquidado YoY %": "0.31837385345571151",
+          "Formulas._SomaLiquidado": "16591704.899999993",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Cachoeiro de Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "0.10075557295071209",
+          "Formulas._SomaLiquidado": "113770392.43999983",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Cariacica",
+          "Formulas._SomaLiquidado YoY %": "0.12476823381427378",
+          "Formulas._SomaLiquidado": 160037591.19,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Castelo",
+          "Formulas._SomaLiquidado YoY %": "0.54046322763509347",
+          "Formulas._SomaLiquidado": "40894989.139999986",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Colatina",
+          "Formulas._SomaLiquidado YoY %": "0.20058685553298761",
+          "Formulas._SomaLiquidado": "164615057.57000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Conceição da Barra",
+          "Formulas._SomaLiquidado YoY %": "0.35863001466536021",
+          "Formulas._SomaLiquidado": 29311891.18,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Conceição do Castelo",
+          "Formulas._SomaLiquidado YoY %": "0.3174776995845916",
+          "Formulas._SomaLiquidado": "12160714.449999996",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Divino de São Lourenço",
+          "Formulas._SomaLiquidado YoY %": "0.35661869908668259",
+          "Formulas._SomaLiquidado": "7679372.4400000069",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Domingos Martins",
+          "Formulas._SomaLiquidado YoY %": "0.1182756946649211",
+          "Formulas._SomaLiquidado": "36120565.440000027",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Dores do Rio Preto",
+          "Formulas._SomaLiquidado YoY %": "0.25676640320239957",
+          "Formulas._SomaLiquidado": 8962385.93,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Ecoporanga",
+          "Formulas._SomaLiquidado YoY %": "0.23214799727341906",
+          "Formulas._SomaLiquidado": "24501417.929999996",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Fundão",
+          "Formulas._SomaLiquidado YoY %": "0.27848263057002542",
+          "Formulas._SomaLiquidado": "21351149.730000019",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Governador Lindenberg",
+          "Formulas._SomaLiquidado YoY %": "0.24100308160581",
+          "Formulas._SomaLiquidado": "16668102.609999977",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Guaçuí",
+          "Formulas._SomaLiquidado YoY %": "0.28011972621012693",
+          "Formulas._SomaLiquidado": "24866436.539999988",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Guarapari",
+          "Formulas._SomaLiquidado YoY %": "0.07016561211541042",
+          "Formulas._SomaLiquidado": "75666467.220000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Ibatiba",
+          "Formulas._SomaLiquidado YoY %": "0.055815025641891017",
+          "Formulas._SomaLiquidado": "18670474.059999987",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Ibiraçu",
+          "Formulas._SomaLiquidado YoY %": "0.28820739062041467",
+          "Formulas._SomaLiquidado": "14286990.30999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Ibitirama",
+          "Formulas._SomaLiquidado YoY %": "0.20757565089778637",
+          "Formulas._SomaLiquidado": "9835553.4299999978",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Iconha",
+          "Formulas._SomaLiquidado YoY %": "0.25511902926696889",
+          "Formulas._SomaLiquidado": "17122935.789999984",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Irupi",
+          "Formulas._SomaLiquidado YoY %": "0.35058041589538042",
+          "Formulas._SomaLiquidado": "13820789.899999974",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Itaguaçu",
+          "Formulas._SomaLiquidado YoY %": "0.28576392556162761",
+          "Formulas._SomaLiquidado": "14905331.120000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "0.031677944809498808",
+          "Formulas._SomaLiquidado": "74411390.72999984",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Itarana",
+          "Formulas._SomaLiquidado YoY %": "0.44071488901020206",
+          "Formulas._SomaLiquidado": "15009586.760000009",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Iúna",
+          "Formulas._SomaLiquidado YoY %": "0.30157256299751545",
+          "Formulas._SomaLiquidado": "26963949.919999957",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Jaguaré",
+          "Formulas._SomaLiquidado YoY %": "0.20111810760414839",
+          "Formulas._SomaLiquidado": "33317620.929999974",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Jerônimo Monteiro",
+          "Formulas._SomaLiquidado YoY %": "0.12633454583032644",
+          "Formulas._SomaLiquidado": "11638385.690000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "João Neiva",
+          "Formulas._SomaLiquidado YoY %": "0.247408097616296",
+          "Formulas._SomaLiquidado": "18329809.889999993",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Laranja da Terra",
+          "Formulas._SomaLiquidado YoY %": "0.37192898065378927",
+          "Formulas._SomaLiquidado": "15379904.349999981",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Linhares",
+          "Formulas._SomaLiquidado YoY %": "-0.026020837516151449",
+          "Formulas._SomaLiquidado": "235613744.94000044",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Mantenópolis",
+          "Formulas._SomaLiquidado YoY %": "0.041114230156607236",
+          "Formulas._SomaLiquidado": "11465044.340000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Marataízes",
+          "Formulas._SomaLiquidado YoY %": "0.23637222804793792",
+          "Formulas._SomaLiquidado": "78033427.750000015",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Marechal Floriano",
+          "Formulas._SomaLiquidado YoY %": "0.19817383841028877",
+          "Formulas._SomaLiquidado": "16524862.790000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Marilândia",
+          "Formulas._SomaLiquidado YoY %": "0.22874125478980378",
+          "Formulas._SomaLiquidado": "16592383.630000008",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Mimoso do Sul",
+          "Formulas._SomaLiquidado YoY %": "0.28979989156068314",
+          "Formulas._SomaLiquidado": "28664710.309999939",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Montanha",
+          "Formulas._SomaLiquidado YoY %": "0.28500486422459503",
+          "Formulas._SomaLiquidado": "28463524.840000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Mucurici",
+          "Formulas._SomaLiquidado YoY %": "0.29354520882684859",
+          "Formulas._SomaLiquidado": 12469445.17,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Muniz Freire",
+          "Formulas._SomaLiquidado YoY %": "0.29037972720886923",
+          "Formulas._SomaLiquidado": "20226305.999999993",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Muqui",
+          "Formulas._SomaLiquidado YoY %": "0.037546857928056378",
+          "Formulas._SomaLiquidado": "17046905.769999996",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Nova Venécia",
+          "Formulas._SomaLiquidado YoY %": "0.35148084921419409",
+          "Formulas._SomaLiquidado": "49260728.719999984",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Pancas",
+          "Formulas._SomaLiquidado YoY %": "0.18417410669690334",
+          "Formulas._SomaLiquidado": "21365797.589999974",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Pedro Canário",
+          "Formulas._SomaLiquidado YoY %": "0.28824337795750621",
+          "Formulas._SomaLiquidado": "25499330.569999963",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Pinheiros",
+          "Formulas._SomaLiquidado YoY %": "0.19759308410334836",
+          "Formulas._SomaLiquidado": "26518081.399999991",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Piúma",
+          "Formulas._SomaLiquidado YoY %": "0.32558784414212283",
+          "Formulas._SomaLiquidado": "25941543.579999946",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Ponto Belo",
+          "Formulas._SomaLiquidado YoY %": "0.28418737400466604",
+          "Formulas._SomaLiquidado": "11713375.579999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Presidente Kennedy",
+          "Formulas._SomaLiquidado YoY %": "0.065835388104901027",
+          "Formulas._SomaLiquidado": "51410475.800000072",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Rio Bananal",
+          "Formulas._SomaLiquidado YoY %": "0.27062773491965819",
+          "Formulas._SomaLiquidado": "25364562.390000012",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Rio Novo do Sul",
+          "Formulas._SomaLiquidado YoY %": "0.18404028478875681",
+          "Formulas._SomaLiquidado": "11904235.620000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Santa Leopoldina",
+          "Formulas._SomaLiquidado YoY %": "0.46267663635378248",
+          "Formulas._SomaLiquidado": "12400092.180000005",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Santa Maria de Jetibá",
+          "Formulas._SomaLiquidado YoY %": "0.21075589736662331",
+          "Formulas._SomaLiquidado": "47726010.200000048",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Santa Teresa",
+          "Formulas._SomaLiquidado YoY %": "0.048024740125117024",
+          "Formulas._SomaLiquidado": "35482681.500000022",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "São Domingos do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.42792519269538448",
+          "Formulas._SomaLiquidado": "12272899.770000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "São Gabriel da Palha",
+          "Formulas._SomaLiquidado YoY %": "0.32346611690847771",
+          "Formulas._SomaLiquidado": "34316319.530000016",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "São José do Calçado",
+          "Formulas._SomaLiquidado YoY %": "-0.32439129896345142",
+          "Formulas._SomaLiquidado": "14535937.580000006",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "São Mateus",
+          "Formulas._SomaLiquidado YoY %": "0.20652567724415044",
+          "Formulas._SomaLiquidado": "79715491.410000011",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "São Roque do Canaã",
+          "Formulas._SomaLiquidado YoY %": "0.39297199096264518",
+          "Formulas._SomaLiquidado": "13734350.810000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Serra",
+          "Formulas._SomaLiquidado YoY %": "0.39934361474184",
+          "Formulas._SomaLiquidado": "384267175.83000016",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Sooretama",
+          "Formulas._SomaLiquidado YoY %": "0.10166071018077101",
+          "Formulas._SomaLiquidado": "27250037.829999976",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Vargem Alta",
+          "Formulas._SomaLiquidado YoY %": "0.17788414470704161",
+          "Formulas._SomaLiquidado": "19410599.339999992",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Venda Nova do Imigrante",
+          "Formulas._SomaLiquidado YoY %": "0.38173338733009493",
+          "Formulas._SomaLiquidado": "37955933.999999985",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Viana",
+          "Formulas._SomaLiquidado YoY %": "0.24424748513855141",
+          "Formulas._SomaLiquidado": "61067805.13000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Vila Pavão",
+          "Formulas._SomaLiquidado YoY %": "0.13923849190989734",
+          "Formulas._SomaLiquidado": "9237017.50999999",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Vila Valério",
+          "Formulas._SomaLiquidado YoY %": "0.13716168324186034",
+          "Formulas._SomaLiquidado": "18363551.929999996",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Vila Velha",
+          "Formulas._SomaLiquidado YoY %": "0.2921574900297001",
+          "Formulas._SomaLiquidado": "253776884.07000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "DIM_EsferaAdministrativa.Nome": "Vitória",
+          "Formulas._SomaLiquidado YoY %": "0.14674500593255543",
+          "Formulas._SomaLiquidado": "326725478.80000031",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Afonso Cláudio",
+          "Formulas._SomaLiquidado YoY %": "0.10422684252075975",
+          "Formulas._SomaLiquidado": "38131278.120000005",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Água Doce do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.21544021713364292",
+          "Formulas._SomaLiquidado": "13946112.240000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Águia Branca",
+          "Formulas._SomaLiquidado YoY %": "0.27690310049729083",
+          "Formulas._SomaLiquidado": "13690708.779999994",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Alegre",
+          "Formulas._SomaLiquidado YoY %": "0.23876568159351555",
+          "Formulas._SomaLiquidado": "36866998.889999978",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Alfredo Chaves",
+          "Formulas._SomaLiquidado YoY %": "0.12513762354049324",
+          "Formulas._SomaLiquidado": "20889357.010000013",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Alto Rio Novo",
+          "Formulas._SomaLiquidado YoY %": "0.053883971177829441",
+          "Formulas._SomaLiquidado": 9956152.66,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Anchieta",
+          "Formulas._SomaLiquidado YoY %": "0.26731478554507021",
+          "Formulas._SomaLiquidado": "77080702.49000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Apiacá",
+          "Formulas._SomaLiquidado YoY %": "0.076835434609930212",
+          "Formulas._SomaLiquidado": "10223551.630000006",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Aracruz",
+          "Formulas._SomaLiquidado YoY %": "0.39744775303919083",
+          "Formulas._SomaLiquidado": "157281360.73999986",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Atílio Vivácqua",
+          "Formulas._SomaLiquidado YoY %": "0.072280979202958312",
+          "Formulas._SomaLiquidado": "16621262.960000025",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Baixo Guandu",
+          "Formulas._SomaLiquidado YoY %": "0.11636397814268766",
+          "Formulas._SomaLiquidado": "31500746.959999997",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Barra de São Francisco",
+          "Formulas._SomaLiquidado YoY %": "0.17716133556633498",
+          "Formulas._SomaLiquidado": "48555582.8000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Boa Esperança",
+          "Formulas._SomaLiquidado YoY %": "0.33438935594571972",
+          "Formulas._SomaLiquidado": "18585143.779999968",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Bom Jesus do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.09035674809224481",
+          "Formulas._SomaLiquidado": "15634078.030000024",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Brejetuba",
+          "Formulas._SomaLiquidado YoY %": "0.10425650651489041",
+          "Formulas._SomaLiquidado": "18321498.089999981",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Cachoeiro de Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "0.1672301696597728",
+          "Formulas._SomaLiquidado": "132796234.46999994",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Cariacica",
+          "Formulas._SomaLiquidado YoY %": "0.068362983025723439",
+          "Formulas._SomaLiquidado": "170978238.31999964",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Castelo",
+          "Formulas._SomaLiquidado YoY %": "0.16356309417520948",
+          "Formulas._SomaLiquidado": "47583900.099999972",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Colatina",
+          "Formulas._SomaLiquidado YoY %": "0.3039045959615625",
+          "Formulas._SomaLiquidado": "214642330.13000023",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Conceição da Barra",
+          "Formulas._SomaLiquidado YoY %": "0.24813247379147732",
+          "Formulas._SomaLiquidado": "36585123.249999985",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Conceição do Castelo",
+          "Formulas._SomaLiquidado YoY %": "0.15720039705397465",
+          "Formulas._SomaLiquidado": "14072383.590000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Divino de São Lourenço",
+          "Formulas._SomaLiquidado YoY %": "0.022804554847192182",
+          "Formulas._SomaLiquidado": "7854497.1100000031",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Domingos Martins",
+          "Formulas._SomaLiquidado YoY %": "0.16076737584980449",
+          "Formulas._SomaLiquidado": "41927573.959999971",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Dores do Rio Preto",
+          "Formulas._SomaLiquidado YoY %": "0.10043778152722332",
+          "Formulas._SomaLiquidado": 9862548.09,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Ecoporanga",
+          "Formulas._SomaLiquidado YoY %": "0.087287173587672379",
+          "Formulas._SomaLiquidado": "26640077.450000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Fundão",
+          "Formulas._SomaLiquidado YoY %": "0.22008112159868978",
+          "Formulas._SomaLiquidado": "26050134.709999986",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Governador Lindenberg",
+          "Formulas._SomaLiquidado YoY %": "0.091954513111794964",
+          "Formulas._SomaLiquidado": "18200809.869999964",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Guaçuí",
+          "Formulas._SomaLiquidado YoY %": "0.23131030860604568",
+          "Formulas._SomaLiquidado": "30618299.650000036",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Guarapari",
+          "Formulas._SomaLiquidado YoY %": "0.18510407138841448",
+          "Formulas._SomaLiquidado": "89672638.37000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Ibatiba",
+          "Formulas._SomaLiquidado YoY %": "0.24369453209266709",
+          "Formulas._SomaLiquidado": "23220366.499999963",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Ibiraçu",
+          "Formulas._SomaLiquidado YoY %": "0.085526156558304936",
+          "Formulas._SomaLiquidado": "15508901.680000024",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Ibitirama",
+          "Formulas._SomaLiquidado YoY %": "0.20582127425848587",
+          "Formulas._SomaLiquidado": "11859919.570000019",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Iconha",
+          "Formulas._SomaLiquidado YoY %": "0.1180870041678773",
+          "Formulas._SomaLiquidado": "19144931.980000008",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Irupi",
+          "Formulas._SomaLiquidado YoY %": "0.17052207703410732",
+          "Formulas._SomaLiquidado": "16177539.699999982",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Itaguaçu",
+          "Formulas._SomaLiquidado YoY %": "0.12673028829700936",
+          "Formulas._SomaLiquidado": 16794288.03,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "-0.0038089314985160472",
+          "Formulas._SomaLiquidado": "74127962.839999959",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Itarana",
+          "Formulas._SomaLiquidado YoY %": "0.11257819732273509",
+          "Formulas._SomaLiquidado": "16699338.980000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Iúna",
+          "Formulas._SomaLiquidado YoY %": "0.026352338292728927",
+          "Formulas._SomaLiquidado": "27674513.049999997",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Jaguaré",
+          "Formulas._SomaLiquidado YoY %": "0.21871467759687879",
+          "Formulas._SomaLiquidado": "40604673.649999939",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Jerônimo Monteiro",
+          "Formulas._SomaLiquidado YoY %": "-0.044307163702530926",
+          "Formulas._SomaLiquidado": "11122721.829999983",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "João Neiva",
+          "Formulas._SomaLiquidado YoY %": "0.13451473336584754",
+          "Formulas._SomaLiquidado": "20795439.380000018",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Laranja da Terra",
+          "Formulas._SomaLiquidado YoY %": "0.13678326159421295",
+          "Formulas._SomaLiquidado": "17483617.830000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Linhares",
+          "Formulas._SomaLiquidado YoY %": "-0.038499762067401869",
+          "Formulas._SomaLiquidado": "226542671.82000092",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Mantenópolis",
+          "Formulas._SomaLiquidado YoY %": "0.18725634514205464",
+          "Formulas._SomaLiquidado": "13611946.640000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Marataízes",
+          "Formulas._SomaLiquidado YoY %": "0.010370546871175265",
+          "Formulas._SomaLiquidado": "78842677.069999859",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Marechal Floriano",
+          "Formulas._SomaLiquidado YoY %": "0.20239374465631943",
+          "Formulas._SomaLiquidado": "19869391.649999991",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Marilândia",
+          "Formulas._SomaLiquidado YoY %": "0.21453825197025145",
+          "Formulas._SomaLiquidado": "20152084.610000025",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Mimoso do Sul",
+          "Formulas._SomaLiquidado YoY %": "0.20500826090504706",
+          "Formulas._SomaLiquidado": 34541212.72,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Montanha",
+          "Formulas._SomaLiquidado YoY %": "0.031218494371127947",
+          "Formulas._SomaLiquidado": "29352113.230000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Mucurici",
+          "Formulas._SomaLiquidado YoY %": "0.026952118191157282",
+          "Formulas._SomaLiquidado": "12805523.129999995",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Muniz Freire",
+          "Formulas._SomaLiquidado YoY %": "0.28499756653538405",
+          "Formulas._SomaLiquidado": "25990753.990000028",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Muqui",
+          "Formulas._SomaLiquidado YoY %": "0.1039034956782086",
+          "Formulas._SomaLiquidado": "18818138.87000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Nova Venécia",
+          "Formulas._SomaLiquidado YoY %": "0.22492063674043122",
+          "Formulas._SomaLiquidado": "60340483.190000027",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Pancas",
+          "Formulas._SomaLiquidado YoY %": "0.087209271835099814",
+          "Formulas._SomaLiquidado": "23229093.240000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Pedro Canário",
+          "Formulas._SomaLiquidado YoY %": "0.16548323409574384",
+          "Formulas._SomaLiquidado": "29719042.260000024",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Pinheiros",
+          "Formulas._SomaLiquidado YoY %": "0.209660963255058",
+          "Formulas._SomaLiquidado": "32077887.890000027",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Piúma",
+          "Formulas._SomaLiquidado YoY %": "0.093788290681200454",
+          "Formulas._SomaLiquidado": "28374556.610000011",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Ponto Belo",
+          "Formulas._SomaLiquidado YoY %": "0.17438521850931757",
+          "Formulas._SomaLiquidado": "13756015.140000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Presidente Kennedy",
+          "Formulas._SomaLiquidado YoY %": "0.45391022426600092",
+          "Formulas._SomaLiquidado": "74746216.399999917",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Rio Bananal",
+          "Formulas._SomaLiquidado YoY %": "0.068291401734684731",
+          "Formulas._SomaLiquidado": "27096743.909999978",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Rio Novo do Sul",
+          "Formulas._SomaLiquidado YoY %": "0.12672606105556786",
+          "Formulas._SomaLiquidado": "13412812.510000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Santa Leopoldina",
+          "Formulas._SomaLiquidado YoY %": "0.15965290025771395",
+          "Formulas._SomaLiquidado": "14379802.860000005",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Santa Maria de Jetibá",
+          "Formulas._SomaLiquidado YoY %": "0.1538722371559148",
+          "Formulas._SomaLiquidado": "55069718.160000063",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Santa Teresa",
+          "Formulas._SomaLiquidado YoY %": "0.15716141887416124",
+          "Formulas._SomaLiquidado": "41059190.069999978",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "São Domingos do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.13191705467663875",
+          "Formulas._SomaLiquidado": "13891904.559999999",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "São Gabriel da Palha",
+          "Formulas._SomaLiquidado YoY %": "0.31440525958991056",
+          "Formulas._SomaLiquidado": "45105550.879999988",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "São José do Calçado",
+          "Formulas._SomaLiquidado YoY %": "0.20126218167208124",
+          "Formulas._SomaLiquidado": 17461472.09,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "São Mateus",
+          "Formulas._SomaLiquidado YoY %": "0.065046668072719957",
+          "Formulas._SomaLiquidado": "84900718.520000041",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "São Roque do Canaã",
+          "Formulas._SomaLiquidado YoY %": "0.14495822682426526",
+          "Formulas._SomaLiquidado": "15725257.950000016",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Serra",
+          "Formulas._SomaLiquidado YoY %": "0.11014269316285537",
+          "Formulas._SomaLiquidado": "426591397.47000086",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Sooretama",
+          "Formulas._SomaLiquidado YoY %": "0.13866010878855234",
+          "Formulas._SomaLiquidado": "31028531.03999994",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Vargem Alta",
+          "Formulas._SomaLiquidado YoY %": "0.23497843678638086",
+          "Formulas._SomaLiquidado": "23971671.629999947",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Venda Nova do Imigrante",
+          "Formulas._SomaLiquidado YoY %": "0.399485449363466",
+          "Formulas._SomaLiquidado": "53118777.350000039",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Viana",
+          "Formulas._SomaLiquidado YoY %": "0.12225053813719718",
+          "Formulas._SomaLiquidado": 68533377.17,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Vila Pavão",
+          "Formulas._SomaLiquidado YoY %": "0.15166981641891661",
+          "Formulas._SomaLiquidado": "10637994.260000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Vila Valério",
+          "Formulas._SomaLiquidado YoY %": "0.14564972017371547",
+          "Formulas._SomaLiquidado": "21038198.129999988",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Vila Velha",
+          "Formulas._SomaLiquidado YoY %": "0.28769481533968733",
+          "Formulas._SomaLiquidado": "326787177.87000006",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "DIM_EsferaAdministrativa.Nome": "Vitória",
+          "Formulas._SomaLiquidado YoY %": "0.24749141902550612",
+          "Formulas._SomaLiquidado": "407587231.18000031",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Afonso Cláudio",
+          "Formulas._SomaLiquidado YoY %": "0.14746280474272325",
+          "Formulas._SomaLiquidado": "43754223.340000041",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Água Doce do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.082157733301018734",
+          "Formulas._SomaLiquidado": "15091893.209999997",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Águia Branca",
+          "Formulas._SomaLiquidado YoY %": "0.363414250492882",
+          "Formulas._SomaLiquidado": "18666107.45000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Alegre",
+          "Formulas._SomaLiquidado YoY %": "0.17475218417487004",
+          "Formulas._SomaLiquidado": "43309587.469999984",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Alfredo Chaves",
+          "Formulas._SomaLiquidado YoY %": "0.14479012247969372",
+          "Formulas._SomaLiquidado": "23913929.569999963",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Alto Rio Novo",
+          "Formulas._SomaLiquidado YoY %": "0.05546382110215687",
+          "Formulas._SomaLiquidado": "10508358.930000003",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Anchieta",
+          "Formulas._SomaLiquidado YoY %": "0.1339156276026289",
+          "Formulas._SomaLiquidado": "87403013.139999881",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Apiacá",
+          "Formulas._SomaLiquidado YoY %": "0.33608826309609913",
+          "Formulas._SomaLiquidado": "13659567.340000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Aracruz",
+          "Formulas._SomaLiquidado YoY %": "0.22759752281884024",
+          "Formulas._SomaLiquidado": "193078208.83000022",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Atílio Vivácqua",
+          "Formulas._SomaLiquidado YoY %": "0.36630618651857089",
+          "Formulas._SomaLiquidado": "22709734.410000008",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Baixo Guandu",
+          "Formulas._SomaLiquidado YoY %": "0.038010530401720331",
+          "Formulas._SomaLiquidado": "32698107.059999976",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Barra de São Francisco",
+          "Formulas._SomaLiquidado YoY %": "-0.0324238025622072",
+          "Formulas._SomaLiquidado": "46981226.169999994",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Boa Esperança",
+          "Formulas._SomaLiquidado YoY %": "0.0899341403965201",
+          "Formulas._SomaLiquidado": "20256582.709999997",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Bom Jesus do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.089322186272853349",
+          "Formulas._SomaLiquidado": "17030548.06000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Brejetuba",
+          "Formulas._SomaLiquidado YoY %": "0.057889056058080653",
+          "Formulas._SomaLiquidado": "19382112.320000008",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Cachoeiro de Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "0.22033465584907033",
+          "Formulas._SomaLiquidado": "162055847.08999982",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Cariacica",
+          "Formulas._SomaLiquidado YoY %": "0.24708077913947488",
+          "Formulas._SomaLiquidado": "213223674.65999997",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Castelo",
+          "Formulas._SomaLiquidado YoY %": "0.038666500352711033",
+          "Formulas._SomaLiquidado": "49423802.989999987",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Colatina",
+          "Formulas._SomaLiquidado YoY %": "0.29721054184121759",
+          "Formulas._SomaLiquidado": "278436293.36999911",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Conceição da Barra",
+          "Formulas._SomaLiquidado YoY %": "0.13828541250028559",
+          "Formulas._SomaLiquidado": "41644312.110000022",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Conceição do Castelo",
+          "Formulas._SomaLiquidado YoY %": "0.13784327136864255",
+          "Formulas._SomaLiquidado": "16012166.980000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Divino de São Lourenço",
+          "Formulas._SomaLiquidado YoY %": "0.54363888740421251",
+          "Formulas._SomaLiquidado": "12124507.180000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Domingos Martins",
+          "Formulas._SomaLiquidado YoY %": "0.16610596827386731",
+          "Formulas._SomaLiquidado": "48891994.229999952",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Dores do Rio Preto",
+          "Formulas._SomaLiquidado YoY %": "0.29593972605916885",
+          "Formulas._SomaLiquidado": "12781267.869999979",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Ecoporanga",
+          "Formulas._SomaLiquidado YoY %": "0.19608235147980071",
+          "Formulas._SomaLiquidado": "31863726.48000003",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Fundão",
+          "Formulas._SomaLiquidado YoY %": "0.11721599385157144",
+          "Formulas._SomaLiquidado": "29103627.139999952",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Governador Lindenberg",
+          "Formulas._SomaLiquidado YoY %": "0.083220943508489978",
+          "Formulas._SomaLiquidado": "19715498.439999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Guaçuí",
+          "Formulas._SomaLiquidado YoY %": "0.19396568417867877",
+          "Formulas._SomaLiquidado": "36557199.090000093",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Guarapari",
+          "Formulas._SomaLiquidado YoY %": "0.057330404050204183",
+          "Formulas._SomaLiquidado": "94813606.959999964",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Ibatiba",
+          "Formulas._SomaLiquidado YoY %": "0.38444785959773903",
+          "Formulas._SomaLiquidado": "32147386.699999992",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Ibiraçu",
+          "Formulas._SomaLiquidado YoY %": "0.13326840821135147",
+          "Formulas._SomaLiquidado": "17575748.319999982",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Ibitirama",
+          "Formulas._SomaLiquidado YoY %": "0.19030907390883739",
+          "Formulas._SomaLiquidado": "14116969.880000019",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Iconha",
+          "Formulas._SomaLiquidado YoY %": "0.18033611786172288",
+          "Formulas._SomaLiquidado": "22597454.689999957",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Irupi",
+          "Formulas._SomaLiquidado YoY %": "0.2057897975673034",
+          "Formulas._SomaLiquidado": "19506712.319999993",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Itaguaçu",
+          "Formulas._SomaLiquidado YoY %": "0.1813066504850227",
+          "Formulas._SomaLiquidado": "19839204.140000012",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "0.39099205805181597",
+          "Formulas._SomaLiquidado": "103111407.59000008",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Itarana",
+          "Formulas._SomaLiquidado YoY %": "0.15500541806475637",
+          "Formulas._SomaLiquidado": "19287826.999999985",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Iúna",
+          "Formulas._SomaLiquidado YoY %": "0.069252966675054609",
+          "Formulas._SomaLiquidado": "29591055.180000011",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Jaguaré",
+          "Formulas._SomaLiquidado YoY %": "0.061579346544017761",
+          "Formulas._SomaLiquidado": "43105082.920000032",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Jerônimo Monteiro",
+          "Formulas._SomaLiquidado YoY %": "0.69700089856513381",
+          "Formulas._SomaLiquidado": 18875268.94,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "João Neiva",
+          "Formulas._SomaLiquidado YoY %": "-0.0026996260561808695",
+          "Formulas._SomaLiquidado": "20739299.47000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Laranja da Terra",
+          "Formulas._SomaLiquidado YoY %": "0.10677844529389315",
+          "Formulas._SomaLiquidado": "19350491.359999992",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Linhares",
+          "Formulas._SomaLiquidado YoY %": "0.073566978424450855",
+          "Formulas._SomaLiquidado": "243208731.67000037",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Mantenópolis",
+          "Formulas._SomaLiquidado YoY %": "0.14706881190066248",
+          "Formulas._SomaLiquidado": "15613839.46000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Marataízes",
+          "Formulas._SomaLiquidado YoY %": "0.063464007387239424",
+          "Formulas._SomaLiquidado": "83846349.310000062",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Marechal Floriano",
+          "Formulas._SomaLiquidado YoY %": "0.20637204259849518",
+          "Formulas._SomaLiquidado": "23969878.589999974",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Marilândia",
+          "Formulas._SomaLiquidado YoY %": "0.11472352933913212",
+          "Formulas._SomaLiquidado": "22464002.880000036",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Mimoso do Sul",
+          "Formulas._SomaLiquidado YoY %": "0.17211881407271948",
+          "Formulas._SomaLiquidado": "40486405.289999932",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Montanha",
+          "Formulas._SomaLiquidado YoY %": "0.228352496717319",
+          "Formulas._SomaLiquidado": "36054741.569999956",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Mucurici",
+          "Formulas._SomaLiquidado YoY %": "0.37393868890696264",
+          "Formulas._SomaLiquidado": "17594003.659999978",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Muniz Freire",
+          "Formulas._SomaLiquidado YoY %": "0.21098366642652178",
+          "Formulas._SomaLiquidado": "31474378.559999984",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Muqui",
+          "Formulas._SomaLiquidado YoY %": "0.082005485274643977",
+          "Formulas._SomaLiquidado": "20361329.480000012",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Nova Venécia",
+          "Formulas._SomaLiquidado YoY %": "0.30779968601706409",
+          "Formulas._SomaLiquidado": "78913264.969999969",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Pancas",
+          "Formulas._SomaLiquidado YoY %": "0.1871130902568105",
+          "Formulas._SomaLiquidado": "27575560.659999989",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Pedro Canário",
+          "Formulas._SomaLiquidado YoY %": "0.11060225128533596",
+          "Formulas._SomaLiquidado": "33006035.240000065",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Pinheiros",
+          "Formulas._SomaLiquidado YoY %": "0.1607229206511199",
+          "Formulas._SomaLiquidado": "37233539.720000021",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Piúma",
+          "Formulas._SomaLiquidado YoY %": "0.10788659403830482",
+          "Formulas._SomaLiquidado": "31435790.87999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Ponto Belo",
+          "Formulas._SomaLiquidado YoY %": "0.0006243399641973125",
+          "Formulas._SomaLiquidado": "13764603.570000008",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Presidente Kennedy",
+          "Formulas._SomaLiquidado YoY %": "-0.068567131245454271",
+          "Formulas._SomaLiquidado": 69621082.77,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Rio Bananal",
+          "Formulas._SomaLiquidado YoY %": "0.26060467167031193",
+          "Formulas._SomaLiquidado": "34158281.960000046",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Rio Novo do Sul",
+          "Formulas._SomaLiquidado YoY %": "0.053339638458868396",
+          "Formulas._SomaLiquidado": "14128247.079999989",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Santa Leopoldina",
+          "Formulas._SomaLiquidado YoY %": "0.18653335766245771",
+          "Formulas._SomaLiquidado": "17062115.770000018",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Santa Maria de Jetibá",
+          "Formulas._SomaLiquidado YoY %": "0.1233661801257305",
+          "Formulas._SomaLiquidado": "61863458.929999843",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Santa Teresa",
+          "Formulas._SomaLiquidado YoY %": "0.093202630482380283",
+          "Formulas._SomaLiquidado": 44886014.59,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "São Domingos do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.18461634464324286",
+          "Formulas._SomaLiquidado": "16456577.199999996",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "São Gabriel da Palha",
+          "Formulas._SomaLiquidado YoY %": "0.038807910242731412",
+          "Formulas._SomaLiquidado": "46856003.049999982",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "São José do Calçado",
+          "Formulas._SomaLiquidado YoY %": "0.277335286798262",
+          "Formulas._SomaLiquidado": "22304154.459999997",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "São Mateus",
+          "Formulas._SomaLiquidado YoY %": "0.10498241905809402",
+          "Formulas._SomaLiquidado": "93813801.329999968",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "São Roque do Canaã",
+          "Formulas._SomaLiquidado YoY %": "0.047572553809839671",
+          "Formulas._SomaLiquidado": 16473348.63,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Serra",
+          "Formulas._SomaLiquidado YoY %": "0.19430392715743738",
+          "Formulas._SomaLiquidado": "509479781.29000133",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Sooretama",
+          "Formulas._SomaLiquidado YoY %": "0.36984824403082978",
+          "Formulas._SomaLiquidado": "42504378.760000013",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Vargem Alta",
+          "Formulas._SomaLiquidado YoY %": "0.0792956461000912",
+          "Formulas._SomaLiquidado": "25872520.820000019",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Venda Nova do Imigrante",
+          "Formulas._SomaLiquidado YoY %": "-0.41445191716183249",
+          "Formulas._SomaLiquidado": 31103598.24,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Viana",
+          "Formulas._SomaLiquidado YoY %": "0.18258562304554937",
+          "Formulas._SomaLiquidado": "81046586.540000081",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Vila Pavão",
+          "Formulas._SomaLiquidado YoY %": "0.16714421314229896",
+          "Formulas._SomaLiquidado": "12416073.440000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Vila Valério",
+          "Formulas._SomaLiquidado YoY %": "0.089964828656169615",
+          "Formulas._SomaLiquidado": "22930896.019999985",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Vila Velha",
+          "Formulas._SomaLiquidado YoY %": "0.16052439150739564",
+          "Formulas._SomaLiquidado": "379244490.75000089",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "DIM_EsferaAdministrativa.Nome": "Vitória",
+          "Formulas._SomaLiquidado YoY %": "0.21497613454751333",
+          "Formulas._SomaLiquidado": "495208758.63000047",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Afonso Cláudio",
+          "Formulas._SomaLiquidado YoY %": "0.10264901550415509",
+          "Formulas._SomaLiquidado": "48245551.289999969",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Água Doce do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.071004715252686826",
+          "Formulas._SomaLiquidado": "16163488.790000005",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Águia Branca",
+          "Formulas._SomaLiquidado YoY %": "0.13215117113236019",
+          "Formulas._SomaLiquidado": "21132855.409999985",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Alegre",
+          "Formulas._SomaLiquidado YoY %": "-0.050041622804678838",
+          "Formulas._SomaLiquidado": 41142305.43,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Alfredo Chaves",
+          "Formulas._SomaLiquidado YoY %": "0.098842217590425024",
+          "Formulas._SomaLiquidado": 26277635.4,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Alto Rio Novo",
+          "Formulas._SomaLiquidado YoY %": "0.22024732742926825",
+          "Formulas._SomaLiquidado": "12822796.899999989",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Anchieta",
+          "Formulas._SomaLiquidado YoY %": "0.04720750889206618",
+          "Formulas._SomaLiquidado": "91529091.6599998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Apiacá",
+          "Formulas._SomaLiquidado YoY %": "0.35217267577085892",
+          "Formulas._SomaLiquidado": "18470093.720000036",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Aracruz",
+          "Formulas._SomaLiquidado YoY %": "0.0641170449271149",
+          "Formulas._SomaLiquidado": "205457813.02000022",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Atílio Vivácqua",
+          "Formulas._SomaLiquidado YoY %": "0.15548670390637231",
+          "Formulas._SomaLiquidado": "26240796.160000034",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Baixo Guandu",
+          "Formulas._SomaLiquidado YoY %": "0.085296708610142",
+          "Formulas._SomaLiquidado": "35487147.970000021",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Barra de São Francisco",
+          "Formulas._SomaLiquidado YoY %": "0.0745265985040589",
+          "Formulas._SomaLiquidado": "50482577.149999969",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Boa Esperança",
+          "Formulas._SomaLiquidado YoY %": "0.10069266169920417",
+          "Formulas._SomaLiquidado": "22296271.939999975",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Bom Jesus do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.084489589820046659",
+          "Formulas._SomaLiquidado": "18469452.080000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Brejetuba",
+          "Formulas._SomaLiquidado YoY %": "0.057805497744633755",
+          "Formulas._SomaLiquidado": "20502504.970000006",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Cachoeiro de Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "-0.089242912487865839",
+          "Formulas._SomaLiquidado": 147593511.31,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Cariacica",
+          "Formulas._SomaLiquidado YoY %": "0.16425473928186973",
+          "Formulas._SomaLiquidado": "248246673.75000048",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Castelo",
+          "Formulas._SomaLiquidado YoY %": "0.0040446092349561286",
+          "Formulas._SomaLiquidado": "49623702.959999993",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Colatina",
+          "Formulas._SomaLiquidado YoY %": "0.04870527963817127",
+          "Formulas._SomaLiquidado": "291997610.90000081",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Conceição da Barra",
+          "Formulas._SomaLiquidado YoY %": "-0.24208215334115707",
+          "Formulas._SomaLiquidado": "31562967.359999992",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Conceição do Castelo",
+          "Formulas._SomaLiquidado YoY %": "-0.012988170824084041",
+          "Formulas._SomaLiquidado": "15804198.220000006",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Divino de São Lourenço",
+          "Formulas._SomaLiquidado YoY %": "-0.15923672536437011",
+          "Formulas._SomaLiquidado": "10193840.360000012",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Domingos Martins",
+          "Formulas._SomaLiquidado YoY %": "-0.033976412215574785",
+          "Formulas._SomaLiquidado": "47230819.67999997",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Dores do Rio Preto",
+          "Formulas._SomaLiquidado YoY %": "-0.083299524806842468",
+          "Formulas._SomaLiquidado": "11716594.330000017",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Ecoporanga",
+          "Formulas._SomaLiquidado YoY %": "0.028658909389432437",
+          "Formulas._SomaLiquidado": "32776906.13000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Fundão",
+          "Formulas._SomaLiquidado YoY %": "0.016262936840249674",
+          "Formulas._SomaLiquidado": "29576937.589999948",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Governador Lindenberg",
+          "Formulas._SomaLiquidado YoY %": "0.17838817622102193",
+          "Formulas._SomaLiquidado": 23232510.25,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Guaçuí",
+          "Formulas._SomaLiquidado YoY %": "-0.15783667632180515",
+          "Formulas._SomaLiquidado": "30787132.289999958",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Guarapari",
+          "Formulas._SomaLiquidado YoY %": "0.0818691511575426",
+          "Formulas._SomaLiquidado": "102575916.48000003",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Ibatiba",
+          "Formulas._SomaLiquidado YoY %": "0.20624690404461266",
+          "Formulas._SomaLiquidado": "38777685.679999948",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Ibiraçu",
+          "Formulas._SomaLiquidado YoY %": "0.033606845594614132",
+          "Formulas._SomaLiquidado": "18166413.78000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Ibitirama",
+          "Formulas._SomaLiquidado YoY %": "0.083828974635454023",
+          "Formulas._SomaLiquidado": "15300380.99000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Iconha",
+          "Formulas._SomaLiquidado YoY %": "-0.0074503005895812536",
+          "Formulas._SomaLiquidado": "22429096.860000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Irupi",
+          "Formulas._SomaLiquidado YoY %": "0.074146175750851112",
+          "Formulas._SomaLiquidado": "20953060.440000005",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Itaguaçu",
+          "Formulas._SomaLiquidado YoY %": "0.0063027971846855",
+          "Formulas._SomaLiquidado": "19964246.620000005",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "0.083648081735976487",
+          "Formulas._SomaLiquidado": "111736479.03999999",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Itarana",
+          "Formulas._SomaLiquidado YoY %": "0.096073518286946227",
+          "Formulas._SomaLiquidado": "21140876.399999939",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Iúna",
+          "Formulas._SomaLiquidado YoY %": "0.1878056262676345",
+          "Formulas._SomaLiquidado": "35148421.830000043",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Jaguaré",
+          "Formulas._SomaLiquidado YoY %": "0.20388349597449096",
+          "Formulas._SomaLiquidado": "51893497.919999957",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Jerônimo Monteiro",
+          "Formulas._SomaLiquidado YoY %": "1.0962130307002655",
+          "Formulas._SomaLiquidado": "39566584.709999993",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "João Neiva",
+          "Formulas._SomaLiquidado YoY %": "0.17784197799618184",
+          "Formulas._SomaLiquidado": "24427617.510000013",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Laranja da Terra",
+          "Formulas._SomaLiquidado YoY %": "0.068742632176756982",
+          "Formulas._SomaLiquidado": "20680695.069999985",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Linhares",
+          "Formulas._SomaLiquidado YoY %": "0.071475484496941633",
+          "Formulas._SomaLiquidado": "260592193.60000032",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Mantenópolis",
+          "Formulas._SomaLiquidado YoY %": "0.099989134895330636",
+          "Formulas._SomaLiquidado": "17175053.759999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Marataízes",
+          "Formulas._SomaLiquidado YoY %": "-0.0017132477583348493",
+          "Formulas._SomaLiquidado": "83702699.740000144",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Marechal Floriano",
+          "Formulas._SomaLiquidado YoY %": "0.31847302652524795",
+          "Formulas._SomaLiquidado": "31603638.370000008",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Marilândia",
+          "Formulas._SomaLiquidado YoY %": "0.0090191757489645249",
+          "Formulas._SomaLiquidado": 22666609.67,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Mimoso do Sul",
+          "Formulas._SomaLiquidado YoY %": "0.028846508886983233",
+          "Formulas._SomaLiquidado": "41654296.73999992",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Montanha",
+          "Formulas._SomaLiquidado YoY %": "-0.072692328272869575",
+          "Formulas._SomaLiquidado": "33433838.460000042",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Mucurici",
+          "Formulas._SomaLiquidado YoY %": "-0.13647815735420787",
+          "Formulas._SomaLiquidado": "15192806.459999992",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Muniz Freire",
+          "Formulas._SomaLiquidado YoY %": "-0.064201187202089269",
+          "Formulas._SomaLiquidado": 29453686.09,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Muqui",
+          "Formulas._SomaLiquidado YoY %": "0.043210327737400321",
+          "Formulas._SomaLiquidado": "21241149.200000003",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Nova Venécia",
+          "Formulas._SomaLiquidado YoY %": "-0.00808031134236108",
+          "Formulas._SomaLiquidado": "78275621.220000133",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Pancas",
+          "Formulas._SomaLiquidado YoY %": "0.45484431104219547",
+          "Formulas._SomaLiquidado": "40118147.549999952",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Pedro Canário",
+          "Formulas._SomaLiquidado YoY %": "0.021518229161289822",
+          "Formulas._SomaLiquidado": "33716266.669999994",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Pinheiros",
+          "Formulas._SomaLiquidado YoY %": "0.0645862122721651",
+          "Formulas._SomaLiquidado": "39638313.020000033",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Piúma",
+          "Formulas._SomaLiquidado YoY %": "0.057822789219420669",
+          "Formulas._SomaLiquidado": "33253495.990000006",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Ponto Belo",
+          "Formulas._SomaLiquidado YoY %": "0.237749870045839",
+          "Formulas._SomaLiquidado": 17037136.28,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Presidente Kennedy",
+          "Formulas._SomaLiquidado YoY %": "0.00950015187475702",
+          "Formulas._SomaLiquidado": "70282493.630000025",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Rio Bananal",
+          "Formulas._SomaLiquidado YoY %": "-0.080677717726760356",
+          "Formulas._SomaLiquidado": "31402469.730000071",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Rio Novo do Sul",
+          "Formulas._SomaLiquidado YoY %": "0.20206226956784062",
+          "Formulas._SomaLiquidado": "16983032.750000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Santa Leopoldina",
+          "Formulas._SomaLiquidado YoY %": "0.0024860082167859148",
+          "Formulas._SomaLiquidado": "17104532.329999991",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Santa Maria de Jetibá",
+          "Formulas._SomaLiquidado YoY %": "0.16291270298034793",
+          "Formulas._SomaLiquidado": "71941802.239999861",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Santa Teresa",
+          "Formulas._SomaLiquidado YoY %": "-0.15720040205066529",
+          "Formulas._SomaLiquidado": "37829915.049999975",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "São Domingos do Norte",
+          "Formulas._SomaLiquidado YoY %": "0.13922737590900755",
+          "Formulas._SomaLiquidado": "18747783.259999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "São Gabriel da Palha",
+          "Formulas._SomaLiquidado YoY %": "0.060885073721625979",
+          "Formulas._SomaLiquidado": "49708834.249999963",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "São José do Calçado",
+          "Formulas._SomaLiquidado YoY %": "-0.11123894090894849",
+          "Formulas._SomaLiquidado": "19823063.939999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "São Mateus",
+          "Formulas._SomaLiquidado YoY %": "0.016117708999777648",
+          "Formulas._SomaLiquidado": "95325864.879999861",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "São Roque do Canaã",
+          "Formulas._SomaLiquidado YoY %": "0.15540480065709622",
+          "Formulas._SomaLiquidado": 19033386.09,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Serra",
+          "Formulas._SomaLiquidado YoY %": "0.0095565605521577175",
+          "Formulas._SomaLiquidado": "514348655.6699993",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Sooretama",
+          "Formulas._SomaLiquidado YoY %": "0.15257597473940793",
+          "Formulas._SomaLiquidado": 48989525.78,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Vargem Alta",
+          "Formulas._SomaLiquidado YoY %": "0.12906746208582018",
+          "Formulas._SomaLiquidado": "29211821.419999965",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Venda Nova do Imigrante",
+          "Formulas._SomaLiquidado YoY %": "0.098053171741330478",
+          "Formulas._SomaLiquidado": "34153404.700000063",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Viana",
+          "Formulas._SomaLiquidado YoY %": "0.1039183586818077",
+          "Formulas._SomaLiquidado": "89468814.789999977",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Vila Pavão",
+          "Formulas._SomaLiquidado YoY %": "0.065268979272402883",
+          "Formulas._SomaLiquidado": "13226457.879999993",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Vila Valério",
+          "Formulas._SomaLiquidado YoY %": "0.076764069248087569",
+          "Formulas._SomaLiquidado": "24691164.909999959",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Vila Velha",
+          "Formulas._SomaLiquidado YoY %": "0.04243721744822479",
+          "Formulas._SomaLiquidado": "395338571.66999996",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "DIM_EsferaAdministrativa.Nome": "Vitória",
+          "Formulas._SomaLiquidado YoY %": "0.03142856966636947",
+          "Formulas._SomaLiquidado": "510772461.59999979",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Afonso Cláudio",
+          "Formulas._SomaLiquidado YoY %": "-0.34217983023487164",
+          "Formulas._SomaLiquidado": "31736896.739999987",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Água Doce do Norte",
+          "Formulas._SomaLiquidado YoY %": "-0.34153974192845088",
+          "Formulas._SomaLiquidado": "10643014.999999994",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Águia Branca",
+          "Formulas._SomaLiquidado YoY %": "-0.28074720641832984",
+          "Formulas._SomaLiquidado": "15199865.290000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Alegre",
+          "Formulas._SomaLiquidado YoY %": "-0.32132369082944756",
+          "Formulas._SomaLiquidado": "27922307.999999978",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Alfredo Chaves",
+          "Formulas._SomaLiquidado YoY %": "-0.22216214363032111",
+          "Formulas._SomaLiquidado": "20439739.589999989",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Alto Rio Novo",
+          "Formulas._SomaLiquidado YoY %": "-0.26363021315575774",
+          "Formulas._SomaLiquidado": "9442320.2200000025",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Anchieta",
+          "Formulas._SomaLiquidado YoY %": "-0.26516004234101009",
+          "Formulas._SomaLiquidado": "67259233.840000063",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Apiacá",
+          "Formulas._SomaLiquidado YoY %": "-0.20878388699372671",
+          "Formulas._SomaLiquidado": "14613835.760000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Aracruz",
+          "Formulas._SomaLiquidado YoY %": "-0.30498723791000526",
+          "Formulas._SomaLiquidado": "142795802.12000003",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Atílio Vivácqua",
+          "Formulas._SomaLiquidado YoY %": "-0.23794159186060326",
+          "Formulas._SomaLiquidado": "19997019.35000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Baixo Guandu",
+          "Formulas._SomaLiquidado YoY %": "-0.2841874748155484",
+          "Formulas._SomaLiquidado": 25402145,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Barra de São Francisco",
+          "Formulas._SomaLiquidado YoY %": "-0.36671289056802842",
+          "Formulas._SomaLiquidado": "31969965.359999977",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Boa Esperança",
+          "Formulas._SomaLiquidado YoY %": "-0.26810065853547255",
+          "Formulas._SomaLiquidado": "16318626.750000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Bom Jesus do Norte",
+          "Formulas._SomaLiquidado YoY %": "-0.28920743489646572",
+          "Formulas._SomaLiquidado": "13127949.220000008",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Brejetuba",
+          "Formulas._SomaLiquidado YoY %": "-0.26256337398171131",
+          "Formulas._SomaLiquidado": 15119298.09,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Cachoeiro de Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "-0.32570723714967925",
+          "Formulas._SomaLiquidado": "99521236.519999966",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Cariacica",
+          "Formulas._SomaLiquidado YoY %": "-0.23671508291458174",
+          "Formulas._SomaLiquidado": 189482941.79,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Castelo",
+          "Formulas._SomaLiquidado YoY %": "-0.27535786478921781",
+          "Formulas._SomaLiquidado": "35959426.070000008",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Colatina",
+          "Formulas._SomaLiquidado YoY %": "-0.25682225271933079",
+          "Formulas._SomaLiquidado": "217006126.67999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Conceição da Barra",
+          "Formulas._SomaLiquidado YoY %": "-0.20877990351284809",
+          "Formulas._SomaLiquidado": "24973254.080000021",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Conceição do Castelo",
+          "Formulas._SomaLiquidado YoY %": "-0.36340193472972021",
+          "Formulas._SomaLiquidado": "10060922.010000004",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Divino de São Lourenço",
+          "Formulas._SomaLiquidado YoY %": "-0.17987513098547275",
+          "Formulas._SomaLiquidado": "8360221.9900000114",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Domingos Martins",
+          "Formulas._SomaLiquidado YoY %": "-0.27786204620025273",
+          "Formulas._SomaLiquidado": "34107167.480000012",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Dores do Rio Preto",
+          "Formulas._SomaLiquidado YoY %": "-0.13553657788884191",
+          "Formulas._SomaLiquidado": "10128567.230000006",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Ecoporanga",
+          "Formulas._SomaLiquidado YoY %": "-0.28556795302388172",
+          "Formulas._SomaLiquidado": "23416872.139999986",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Fundão",
+          "Formulas._SomaLiquidado YoY %": "-0.20590677048522563",
+          "Formulas._SomaLiquidado": "23486845.889999986",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Governador Lindenberg",
+          "Formulas._SomaLiquidado YoY %": "-0.31999199785137283",
+          "Formulas._SomaLiquidado": "15798292.880000003",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Guaçuí",
+          "Formulas._SomaLiquidado YoY %": "-0.065933032699485569",
+          "Formulas._SomaLiquidado": "28757243.290000003",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Guarapari",
+          "Formulas._SomaLiquidado YoY %": "-0.21099942162564195",
+          "Formulas._SomaLiquidado": "80932457.429999873",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Ibatiba",
+          "Formulas._SomaLiquidado YoY %": "-0.33007026246028331",
+          "Formulas._SomaLiquidado": "25978324.789999995",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Ibiraçu",
+          "Formulas._SomaLiquidado YoY %": "-0.1728963012753747",
+          "Formulas._SomaLiquidado": "15025508.030000018",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Ibitirama",
+          "Formulas._SomaLiquidado YoY %": "-0.34507539671402687",
+          "Formulas._SomaLiquidado": "10020595.950000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Iconha",
+          "Formulas._SomaLiquidado YoY %": "0.074069005112853969",
+          "Formulas._SomaLiquidado": "24090397.750000052",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Irupi",
+          "Formulas._SomaLiquidado YoY %": "-0.25706101098804435",
+          "Formulas._SomaLiquidado": "15566845.540000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Itaguaçu",
+          "Formulas._SomaLiquidado YoY %": "-0.34541858659928742",
+          "Formulas._SomaLiquidado": "13068224.770000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Itapemirim",
+          "Formulas._SomaLiquidado YoY %": "-0.2508623608943818",
+          "Formulas._SomaLiquidado": "83706002.109999985",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Itarana",
+          "Formulas._SomaLiquidado YoY %": "-0.026170715893308494",
+          "Formulas._SomaLiquidado": "20587604.52999999",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Iúna",
+          "Formulas._SomaLiquidado YoY %": "-0.30678987102619643",
+          "Formulas._SomaLiquidado": "24365242.029999983",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Jaguaré",
+          "Formulas._SomaLiquidado YoY %": "-0.32317331596829058",
+          "Formulas._SomaLiquidado": "35122904.119999982",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Jerônimo Monteiro",
+          "Formulas._SomaLiquidado YoY %": "-0.39002713282199791",
+          "Formulas._SomaLiquidado": "24134543.119999994",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "João Neiva",
+          "Formulas._SomaLiquidado YoY %": "-0.38703175355229263",
+          "Formulas._SomaLiquidado": "14973353.87000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Laranja da Terra",
+          "Formulas._SomaLiquidado YoY %": "-0.29639782315111463",
+          "Formulas._SomaLiquidado": "14550982.070000002",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Linhares",
+          "Formulas._SomaLiquidado YoY %": "-0.2441497009985642",
+          "Formulas._SomaLiquidado": "196968687.45000029",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Mantenópolis",
+          "Formulas._SomaLiquidado YoY %": "-0.17805140017215357",
+          "Formulas._SomaLiquidado": "14117011.389999988",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Marataízes",
+          "Formulas._SomaLiquidado YoY %": "-0.25972868231884449",
+          "Formulas._SomaLiquidado": "61962707.830000021",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Marechal Floriano",
+          "Formulas._SomaLiquidado YoY %": "-0.29788458119228861",
+          "Formulas._SomaLiquidado": "22189401.790000014",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Marilândia",
+          "Formulas._SomaLiquidado YoY %": "-0.23293324616552569",
+          "Formulas._SomaLiquidado": "17386802.700000007",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Mimoso do Sul",
+          "Formulas._SomaLiquidado YoY %": "-0.23813619833544064",
+          "Formulas._SomaLiquidado": 31734900.87,
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Montanha",
+          "Formulas._SomaLiquidado YoY %": "-0.25313011158217",
+          "Formulas._SomaLiquidado": "24970727.199999984",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Mucurici",
+          "Formulas._SomaLiquidado YoY %": "-0.23210095575718898",
+          "Formulas._SomaLiquidado": "11666541.559999999",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Muniz Freire",
+          "Formulas._SomaLiquidado YoY %": "-0.23829702158681523",
+          "Formulas._SomaLiquidado": "22434960.419999991",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Muqui",
+          "Formulas._SomaLiquidado YoY %": "-0.243642635870192",
+          "Formulas._SomaLiquidado": "16065899.619999982",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Nova Venécia",
+          "Formulas._SomaLiquidado YoY %": "-0.26494499637009689",
+          "Formulas._SomaLiquidado": "57536887.040000118",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Pancas",
+          "Formulas._SomaLiquidado YoY %": "-0.2454384821165542",
+          "Formulas._SomaLiquidado": "30271610.310000006",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Pedro Canário",
+          "Formulas._SomaLiquidado YoY %": "-0.28121955027828155",
+          "Formulas._SomaLiquidado": "24234593.319999982",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Pinheiros",
+          "Formulas._SomaLiquidado YoY %": "-0.25198233095743472",
+          "Formulas._SomaLiquidado": "29650158.50999999",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Piúma",
+          "Formulas._SomaLiquidado YoY %": "-0.28607083787102322",
+          "Formulas._SomaLiquidado": "23740640.529999994",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Ponto Belo",
+          "Formulas._SomaLiquidado YoY %": "-0.24532060736676825",
+          "Formulas._SomaLiquidado": "12857575.659999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Presidente Kennedy",
+          "Formulas._SomaLiquidado YoY %": "-0.30783630193742839",
+          "Formulas._SomaLiquidado": "48646990.699999951",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Rio Bananal",
+          "Formulas._SomaLiquidado YoY %": "-0.32220941718904977",
+          "Formulas._SomaLiquidado": "21284298.259999972",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Rio Novo do Sul",
+          "Formulas._SomaLiquidado YoY %": "-0.18930964730077482",
+          "Formulas._SomaLiquidado": "13767980.809999995",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Santa Leopoldina",
+          "Formulas._SomaLiquidado YoY %": "-0.17657865071836165",
+          "Formulas._SomaLiquidado": "14084237.089999998",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Santa Maria de Jetibá",
+          "Formulas._SomaLiquidado YoY %": "-0.24897189467462361",
+          "Formulas._SomaLiquidado": "54030315.430000015",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Santa Teresa",
+          "Formulas._SomaLiquidado YoY %": "-0.29431910368511394",
+          "Formulas._SomaLiquidado": "26695848.359999981",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "São Domingos do Norte",
+          "Formulas._SomaLiquidado YoY %": "-0.27292168567560027",
+          "Formulas._SomaLiquidado": "13631106.649999999",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "São Gabriel da Palha",
+          "Formulas._SomaLiquidado YoY %": "-0.3413610907602404",
+          "Formulas._SomaLiquidado": "32740172.369999979",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "São José do Calçado",
+          "Formulas._SomaLiquidado YoY %": "-0.23966372677704248",
+          "Formulas._SomaLiquidado": "15072194.559999995",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "São Mateus",
+          "Formulas._SomaLiquidado YoY %": "-0.23735412417692103",
+          "Formulas._SomaLiquidado": "72699877.709999979",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "São Roque do Canaã",
+          "Formulas._SomaLiquidado YoY %": "-0.095217249386443284",
+          "Formulas._SomaLiquidado": "17221079.420000009",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Serra",
+          "Formulas._SomaLiquidado YoY %": "-0.29183407674016548",
+          "Formulas._SomaLiquidado": "364244190.61999977",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Sooretama",
+          "Formulas._SomaLiquidado YoY %": "-0.22992781948092508",
+          "Formulas._SomaLiquidado": "37725470.940000035",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Vargem Alta",
+          "Formulas._SomaLiquidado YoY %": "-0.4118272718100156",
+          "Formulas._SomaLiquidado": "17181596.700000003",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Venda Nova do Imigrante",
+          "Formulas._SomaLiquidado YoY %": "-0.40676146615625841",
+          "Formulas._SomaLiquidado": "20261115.729999989",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Viana",
+          "Formulas._SomaLiquidado YoY %": "-0.32469306459670372",
+          "Formulas._SomaLiquidado": "60418911.129999995",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Vila Pavão",
+          "Formulas._SomaLiquidado YoY %": "-0.30995772618753414",
+          "Formulas._SomaLiquidado": "9126815.0700000022",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Vila Valério",
+          "Formulas._SomaLiquidado YoY %": "-0.3363297292885794",
+          "Formulas._SomaLiquidado": "16386792.100000001",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Vila Velha",
+          "Formulas._SomaLiquidado YoY %": "-0.30141449951781363",
+          "Formulas._SomaLiquidado": "276177793.94999963",
+          "M2": "R$ #,0,,.00 Mi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "DIM_EsferaAdministrativa.Nome": "Vitória",
+          "Formulas._SomaLiquidado YoY %": "-0.3346374004279315",
+          "Formulas._SomaLiquidado": "339848892.84000039",
+          "M2": "R$ #,0,,.00 Mi"
+        }
+      ],
+      "valores_unicos": {
+        "Formulas.Eixo Y (MaximoAno) SomaLiquidado": "6089956523.6879883"
       },
       "avisos": []
     }
