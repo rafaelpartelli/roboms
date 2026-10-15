@@ -1,0 +1,323 @@
+{
+  "version": "1.0.0",
+  "queries": [
+    {
+      "Query": {
+        "Commands": [
+          {
+            "SemanticQueryDataShapeCommand": {
+              "Query": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "DIM_EsferaAdministrativa",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "f",
+                    "Entity": "Formulas",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "f1",
+                    "Entity": "FT_DespesaDotacaoMunicipio",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "p",
+                    "Entity": "ParameterAplicacaoSaude",
+                    "Type": 0
+                  }
+                ],
+                "Select": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "Nome"
+                    },
+                    "Name": "DIM_EsferaAdministrativa.Nome",
+                    "NativeReferenceName": "Esfera administrativa"
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "_MediaLiquidadaPorHabitante"
+                    },
+                    "Name": "Formulas._MediaLiquidadaPorHabitante",
+                    "NativeReferenceName": "Valor médio por habitante"
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "_MediaLiquidadaPorHabitante_Dummy"
+                    },
+                    "Name": "Formulas._MediaLiquidadaPorHabitante_Dummy",
+                    "NativeReferenceName": " "
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "_ValorMedioPorHabitante RotuloAnoAnterior Perc__"
+                    },
+                    "Name": "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__",
+                    "NativeReferenceName": "Último ano (Variação)"
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "And": {
+                        "Left": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "f"
+                                      }
+                                    },
+                                    "Property": "_SomaLiquidado"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "Right": {
+                          "Comparison": {
+                            "ComparisonKind": 1,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "f"
+                                  }
+                                },
+                                "Property": "_SomaLiquidado"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "0L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "Target": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "d"
+                            }
+                          },
+                          "Property": "Nome"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "f1"
+                                }
+                              },
+                              "Property": "AnoReferencia"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "2026L"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "p"
+                                }
+                              },
+                              "Property": "ParameterAplicacaoSaude Fields"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'''DIM_EsferaAdministrativa''[Nome]'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "Condition": {
+                      "Not": {
+                        "Expression": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "d"
+                                    }
+                                  },
+                                  "Property": "Nome"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Consórcio do Estado do Espírito Santo'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Estado do Espírito Santo'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "OrderBy": [
+                  {
+                    "Direction": 2,
+                    "Expression": {
+                      "Measure": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
+                          }
+                        },
+                        "Property": "_MediaLiquidadaPorHabitante"
+                      }
+                    }
+                  }
+                ]
+              },
+              "Binding": {
+                "Primary": {
+                  "Groupings": [
+                    {
+                      "Projections": [
+                        0,
+                        1,
+                        2,
+                        3
+                      ],
+                      "Subtotal": 1
+                    }
+                  ]
+                },
+                "DataReduction": {
+                  "DataVolume": 3,
+                  "Primary": {
+                    "Window": {
+                      "Count": 500
+                    }
+                  }
+                },
+                "Aggregates": [
+                  {
+                    "Select": 3,
+                    "Aggregations": [
+                      {
+                        "Min": {}
+                      },
+                      {
+                        "Max": {}
+                      }
+                    ]
+                  },
+                  {
+                    "Select": 2,
+                    "Aggregations": [
+                      {
+                        "Min": {}
+                      },
+                      {
+                        "Max": {}
+                      }
+                    ]
+                  }
+                ],
+                "Version": 1
+              },
+              "ExecutionMetricsKind": 1
+            }
+          }
+        ]
+      },
+      "CacheKey": "{\"Commands\":[{\"SemanticQueryDataShapeCommand\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EsferaAdministrativa\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"Formulas\",\"Type\":0},{\"Name\":\"f1\",\"Entity\":\"FT_DespesaDotacaoMunicipio\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"ParameterAplicacaoSaude\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Nome\"},\"Name\":\"DIM_EsferaAdministrativa.Nome\",\"NativeReferenceName\":\"Esfera administrativa\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"_MediaLiquidadaPorHabitante\"},\"Name\":\"Formulas._MediaLiquidadaPorHabitante\",\"NativeReferenceName\":\"Valor médio por habitante\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"_MediaLiquidadaPorHabitante_Dummy\"},\"Name\":\"Formulas._MediaLiquidadaPorHabitante_Dummy\",\"NativeReferenceName\":\" \"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"_ValorMedioPorHabitante RotuloAnoAnterior Perc__\"},\"Name\":\"Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__\",\"NativeReferenceName\":\"Último ano (Variação)\"}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Not\":{\"Expression\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"_SomaLiquidado\"}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":1,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"_SomaLiquidado\"}},\"Right\":{\"Literal\":{\"Value\":\"0L\"}}}}}},\"Target\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Nome\"}}]},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f1\"}},\"Property\":\"AnoReferencia\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2026L\"}}]]}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"ParameterAplicacaoSaude Fields\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'''DIM_EsferaAdministrativa''[Nome]'\"}}]]}}},{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Nome\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Consórcio do Estado do Espírito Santo'\"}}],[{\"Literal\":{\"Value\":\"'Estado do Espírito Santo'\"}}]]}}}}}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"_MediaLiquidadaPorHabitante\"}}}]},\"Binding\":{\"Primary\":{\"Groupings\":[{\"Projections\":[0,1,2,3],\"Subtotal\":1}]},\"DataReduction\":{\"DataVolume\":3,\"Primary\":{\"Window\":{\"Count\":500}}},\"Aggregates\":[{\"Select\":3,\"Aggregations\":[{\"Min\":{}},{\"Max\":{}}]},{\"Select\":2,\"Aggregations\":[{\"Min\":{}},{\"Max\":{}}]}],\"Version\":1},\"ExecutionMetricsKind\":1}}]}",
+      "QueryId": "",
+      "ApplicationContext": {
+        "DatasetId": "f5ebfd6a-e30f-49d3-b934-3eeafab08c8e",
+        "Sources": [
+          {
+            "ReportId": "fe419ce5-a6b0-4a69-9186-1842a5b27a10",
+            "VisualId": "57a227a0ae8349ee56fe"
+          }
+        ]
+      }
+    }
+  ],
+  "cancelQueries": [],
+  "modelId": 9177658
+}

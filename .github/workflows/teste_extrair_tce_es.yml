@@ -1,0 +1,38 @@
+name: Teste de extracao completa do Painel TCE-ES (sem navegador)
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/teste_extrair_tce_es.yml'
+      - 'robo_tce_es/extrair.py'
+      - 'robo_tce_es/dsr.py'
+permissions:
+  contents: write
+jobs:
+  teste:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install -q requests
+
+      - name: Extrair dados do painel (sem Playwright)
+        working-directory: robo_tce_es
+        run: python extrair.py dados_extraidos.json
+        continue-on-error: true
+
+      - name: Guardar resultado no repositorio
+        run: |
+          mkdir -p resultados
+          cp robo_tce_es/dados_extraidos.json resultados/teste-extracao-tce-es.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resultados/teste-extracao-tce-es.json
+          git commit -m "Resultado do teste de extracao completa do Painel TCE-ES" || echo "sem mudanca para gravar"
+          git push

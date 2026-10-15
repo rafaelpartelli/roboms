@@ -1,0 +1,352 @@
+{
+  "version": "1.0.0",
+  "queries": [
+    {
+      "Query": {
+        "Commands": [
+          {
+            "SemanticQueryDataShapeCommand": {
+              "Query": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "DIM_EsferaAdministrativa",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "p",
+                    "Entity": "PopulacaoHistorico",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "s",
+                    "Entity": "saude Beneficiario",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "f",
+                    "Entity": "Formulas",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "p1",
+                    "Entity": "ParameterAplicacaoSaude",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "f1",
+                    "Entity": "FT_DespesaDotacaoMunicipio",
+                    "Type": 0
+                  }
+                ],
+                "Select": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "Nome"
+                    },
+                    "Name": "DIM_EsferaAdministrativa.Nome",
+                    "NativeReferenceName": "Município"
+                  },
+                  {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "p"
+                            }
+                          },
+                          "Property": "Populacao"
+                        }
+                      },
+                      "Function": 0
+                    },
+                    "Name": "Sum(Populacao.Populacao)",
+                    "NativeReferenceName": "População"
+                  },
+                  {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "s"
+                            }
+                          },
+                          "Property": "Beneficiarios"
+                        }
+                      },
+                      "Function": 0
+                    },
+                    "Name": "Sum(saude Beneficiario.Beneficiarios)",
+                    "NativeReferenceName": "Beneficiarios"
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "_PercPopSemPlano YoY"
+                    },
+                    "Name": "Formulas._PercPopSemPlano YoY",
+                    "NativeReferenceName": "Variação"
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "_PercPopSemPlano"
+                    },
+                    "Name": "Formulas._PercPopSemPlano",
+                    "NativeReferenceName": "Percentual da população sem plano de saúde"
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "_PercPopSemPlano LY"
+                    },
+                    "Name": "Formulas.PopulacaoSemPlanoSaude% LY",
+                    "NativeReferenceName": "Percentual da população sem plano de saúde ano anterior"
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Not": {
+                        "Expression": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "f"
+                                  }
+                                },
+                                "Property": "_Whole"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "null"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "Target": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "d"
+                            }
+                          },
+                          "Property": "Nome"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "p1"
+                                }
+                              },
+                              "Property": "ParameterAplicacaoSaude Fields"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'''DIM_ClassificacaoFuncionalMunicipio''[NomeSubFuncao]'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "f1"
+                                }
+                              },
+                              "Property": "AnoReferencia"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "2026L"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "p1"
+                                }
+                              },
+                              "Property": "ParameterAplicacaoSaude Fields"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'''DIM_EsferaAdministrativa''[Nome]'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "Condition": {
+                      "Not": {
+                        "Expression": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "d"
+                                    }
+                                  },
+                                  "Property": "Nome"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Consórcio do Estado do Espírito Santo'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Estado do Espírito Santo'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "OrderBy": [
+                  {
+                    "Direction": 1,
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Nome"
+                      }
+                    }
+                  }
+                ]
+              },
+              "Binding": {
+                "Primary": {
+                  "Groupings": [
+                    {
+                      "Projections": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                      ]
+                    }
+                  ]
+                },
+                "DataReduction": {
+                  "DataVolume": 4,
+                  "Primary": {
+                    "Window": {
+                      "Count": 1000
+                    }
+                  }
+                },
+                "SuppressedJoinPredicates": [
+                  1,
+                  2,
+                  3
+                ],
+                "Version": 1
+              },
+              "ExecutionMetricsKind": 1
+            }
+          }
+        ]
+      },
+      "CacheKey": "{\"Commands\":[{\"SemanticQueryDataShapeCommand\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EsferaAdministrativa\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"PopulacaoHistorico\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"saude Beneficiario\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"Formulas\",\"Type\":0},{\"Name\":\"p1\",\"Entity\":\"ParameterAplicacaoSaude\",\"Type\":0},{\"Name\":\"f1\",\"Entity\":\"FT_DespesaDotacaoMunicipio\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Nome\"},\"Name\":\"DIM_EsferaAdministrativa.Nome\",\"NativeReferenceName\":\"Município\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Populacao\"}},\"Function\":0},\"Name\":\"Sum(Populacao.Populacao)\",\"NativeReferenceName\":\"População\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Beneficiarios\"}},\"Function\":0},\"Name\":\"Sum(saude Beneficiario.Beneficiarios)\",\"NativeReferenceName\":\"Beneficiarios\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"_PercPopSemPlano YoY\"},\"Name\":\"Formulas._PercPopSemPlano YoY\",\"NativeReferenceName\":\"Variação\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"_PercPopSemPlano\"},\"Name\":\"Formulas._PercPopSemPlano\",\"NativeReferenceName\":\"Percentual da população sem plano de saúde\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"_PercPopSemPlano LY\"},\"Name\":\"Formulas.PopulacaoSemPlanoSaude% LY\",\"NativeReferenceName\":\"Percentual da população sem plano de saúde ano anterior\"}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"_Whole\"}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}},\"Target\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Nome\"}}]},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p1\"}},\"Property\":\"ParameterAplicacaoSaude Fields\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'''DIM_ClassificacaoFuncionalMunicipio''[NomeSubFuncao]'\"}}]]}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f1\"}},\"Property\":\"AnoReferencia\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2026L\"}}]]}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p1\"}},\"Property\":\"ParameterAplicacaoSaude Fields\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'''DIM_EsferaAdministrativa''[Nome]'\"}}]]}}},{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Nome\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Consórcio do Estado do Espírito Santo'\"}}],[{\"Literal\":{\"Value\":\"'Estado do Espírito Santo'\"}}]]}}}}}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Nome\"}}}]},\"Binding\":{\"Primary\":{\"Groupings\":[{\"Projections\":[0,1,2,3,4,5]}]},\"DataReduction\":{\"DataVolume\":4,\"Primary\":{\"Window\":{\"Count\":1000}}},\"SuppressedJoinPredicates\":[1,2,3],\"Version\":1},\"ExecutionMetricsKind\":1}}]}",
+      "QueryId": "",
+      "ApplicationContext": {
+        "DatasetId": "f5ebfd6a-e30f-49d3-b934-3eeafab08c8e",
+        "Sources": [
+          {
+            "ReportId": "fe419ce5-a6b0-4a69-9186-1842a5b27a10",
+            "VisualId": "d7ec7c8950325f3da00e"
+          }
+        ]
+      }
+    }
+  ],
+  "cancelQueries": [],
+  "modelId": 9177658
+}

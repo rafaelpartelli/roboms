@@ -42,7 +42,7 @@ def montar_headers() -> dict:
 
 
 def main(out_path: str) -> int:
-    with open("consultas/aplicacao_saude_total.json", "r", encoding="utf-8") as f:
+    with open("consultas/kpi_aplicacao_total.json", "r", encoding="utf-8") as f:
         corpo = json.load(f)
 
     resultado = {

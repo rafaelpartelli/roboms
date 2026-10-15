@@ -1,0 +1,223 @@
+{
+  "version": "1.0.0",
+  "queries": [
+    {
+      "Query": {
+        "Commands": [
+          {
+            "SemanticQueryDataShapeCommand": {
+              "Query": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "f",
+                    "Entity": "FT_DespesaDotacaoMunicipio",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "f1",
+                    "Entity": "Formulas",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "p",
+                    "Entity": "ParameterAplicacaoSaude",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "d",
+                    "Entity": "DIM_EsferaAdministrativa",
+                    "Type": 0
+                  }
+                ],
+                "Select": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "AnoReferencia"
+                    },
+                    "Name": "FT_DespesaDotacaoMunicipio.AnoReferencia",
+                    "NativeReferenceName": "AnoReferencia"
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f1"
+                        }
+                      },
+                      "Property": "_SomaLiquidado YoY %"
+                    },
+                    "Name": "Formulas._SomaLiquidado YoY %",
+                    "NativeReferenceName": "Variação"
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f1"
+                        }
+                      },
+                      "Property": "_SomaLiquidado"
+                    },
+                    "Name": "Formulas._SomaLiquidado",
+                    "NativeReferenceName": "Valor aplicado"
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f1"
+                        }
+                      },
+                      "Property": "Eixo Y (MaximoAno) SomaLiquidado"
+                    },
+                    "Name": "Formulas.Eixo Y (MaximoAno) SomaLiquidado"
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "p"
+                                }
+                              },
+                              "Property": "ParameterAplicacaoSaude Fields"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'''DIM_ClassificacaoFuncionalMunicipio''[NomeSubFuncao]'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "p"
+                                }
+                              },
+                              "Property": "ParameterAplicacaoSaude Fields"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'''DIM_EsferaAdministrativa''[Nome]'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "Condition": {
+                      "Not": {
+                        "Expression": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "d"
+                                    }
+                                  },
+                                  "Property": "Nome"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Consórcio do Estado do Espírito Santo'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Estado do Espírito Santo'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "Binding": {
+                "Primary": {
+                  "Groupings": [
+                    {
+                      "Projections": [
+                        0,
+                        1,
+                        2
+                      ]
+                    }
+                  ]
+                },
+                "Projections": [
+                  3
+                ],
+                "DataReduction": {
+                  "DataVolume": 4,
+                  "Primary": {
+                    "Sample": {}
+                  }
+                },
+                "SuppressedJoinPredicates": [
+                  1
+                ],
+                "Version": 1
+              },
+              "ExecutionMetricsKind": 1
+            }
+          }
+        ]
+      },
+      "CacheKey": "{\"Commands\":[{\"SemanticQueryDataShapeCommand\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FT_DespesaDotacaoMunicipio\",\"Type\":0},{\"Name\":\"f1\",\"Entity\":\"Formulas\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"ParameterAplicacaoSaude\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"DIM_EsferaAdministrativa\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"AnoReferencia\"},\"Name\":\"FT_DespesaDotacaoMunicipio.AnoReferencia\",\"NativeReferenceName\":\"AnoReferencia\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f1\"}},\"Property\":\"_SomaLiquidado YoY %\"},\"Name\":\"Formulas._SomaLiquidado YoY %\",\"NativeReferenceName\":\"Variação\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f1\"}},\"Property\":\"_SomaLiquidado\"},\"Name\":\"Formulas._SomaLiquidado\",\"NativeReferenceName\":\"Valor aplicado\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f1\"}},\"Property\":\"Eixo Y (MaximoAno) SomaLiquidado\"},\"Name\":\"Formulas.Eixo Y (MaximoAno) SomaLiquidado\"}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"ParameterAplicacaoSaude Fields\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'''DIM_ClassificacaoFuncionalMunicipio''[NomeSubFuncao]'\"}}]]}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"ParameterAplicacaoSaude Fields\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'''DIM_EsferaAdministrativa''[Nome]'\"}}]]}}},{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Nome\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Consórcio do Estado do Espírito Santo'\"}}],[{\"Literal\":{\"Value\":\"'Estado do Espírito Santo'\"}}]]}}}}}]},\"Binding\":{\"Primary\":{\"Groupings\":[{\"Projections\":[0,1,2]}]},\"Projections\":[3],\"DataReduction\":{\"DataVolume\":4,\"Primary\":{\"Sample\":{}}},\"SuppressedJoinPredicates\":[1],\"Version\":1},\"ExecutionMetricsKind\":1}}]}",
+      "QueryId": "",
+      "ApplicationContext": {
+        "DatasetId": "f5ebfd6a-e30f-49d3-b934-3eeafab08c8e",
+        "Sources": [
+          {
+            "ReportId": "fe419ce5-a6b0-4a69-9186-1842a5b27a10",
+            "VisualId": "2eca88f33e4c47050ce3"
+          }
+        ]
+      }
+    }
+  ],
+  "cancelQueries": [],
+  "modelId": 9177658
+}
