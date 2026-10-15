@@ -6,11 +6,19 @@ DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$DIR"
 HOJE=$(date +%Y-%m-%d)
 mkdir -p bruto saida logs
-# roda uma vez por dia: se já publicou hoje, encerra (o agendamento tenta de hora em hora enquanto o computador estiver ligado)
+# roda uma vez por dia: se já publicou hoje, encerra (o agendamento confere a cada 10 minutos e ao ligar o computador)
 if [ "${1:-}" != "--forcar" ] && [ -f saida/ultimo_ok ] && [ "$(cat saida/ultimo_ok)" = "$HOJE" ]; then exit 0; fi
+# evita duas execuções ao mesmo tempo
+exec 9>"$DIR/.robo.lock"; flock -n 9 || exit 0
 LOG="logs/$HOJE.log"
 exec >>"$LOG" 2>&1
 echo "=== $(date '+%d/%m/%Y %H:%M:%S') início ==="
+# espera a internet ficar disponível (até 15 minutos), útil logo depois de ligar o computador
+for i in $(seq 1 30); do
+  curl -s -o /dev/null -m 15 https://investsuspaineis.saude.gov.br/ && break
+  [ "$i" -eq 1 ] && echo "aguardando conexão com a internet..."
+  sleep 30
+done
 
 PY="$DIR/.venv/bin/python"
 for tentativa in 1 2 3; do
