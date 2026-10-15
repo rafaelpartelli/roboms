@@ -1,0 +1,6 @@
+resultado do passo Enviar ao site: failure
+chaves de primeiro nivel de dados.json gerado nesta execucao:
+['es', 'm', 'meta', 'subfuncoes']
+FTP_HOST: 
+FTP_PASTA (tentativa 1): domains/partelli.pro/public_html/tce
+servidor FTP não informado em /home/runner/.config/robo_tce_es/.env
