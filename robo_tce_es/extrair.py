@@ -53,6 +53,7 @@ CONSULTAS_RELEVANTES = [
     "percentual_pop_sem_plano_por_municipio",
     "filtro_mes_min_max",
     "mapa_aplicacao_por_municipio",
+    "evolucao_por_ano_municipio",
 ]
 
 
