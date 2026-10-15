@@ -119,6 +119,7 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   <div class="wrap">
     <p class="crumb"><a href="/">Início</a> &#8250; <a href="/gestor/">Área do Gestor</a> &#8250; Painel TCE-ES</p>
     <span class="badge tce-sel">Atualizado em <span class="dt-extracao">...</span></span>
+    <span class="badge tce-sel" id="badgePeriodo" style="display:none"></span>
     <h1>Painel TCE-ES: Gastos com a Função Saúde</h1>
     <p class="lead">Quanto cada um dos 78 municípios do Espírito Santo aplicou em saúde, o valor médio por habitante e a cobertura de plano de saúde privado, extraídos do Painel de Controle do Tribunal de Contas do Espírito Santo. A página abre no panorama geral; use o filtro para ver um município específico.</p>
   </div>
@@ -152,7 +153,7 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   <section id="ranking">
     <h2 id="rkTit">Panorama dos 78 municípios</h2>
     <p class="lead">Clique em qualquer linha para filtrar a página por aquele município. Clique nos títulos para ordenar.</p>
-    <div class="tools"><input type="search" id="busca" placeholder="Buscar município..." aria-label="Buscar município"><span class="leg">Vermelho: valor por habitante entre os 15 mais baixos do estado. Verde: cobertura de plano de saúde privado acima de 50%.</span></div>
+    <div class="tools"><input type="search" id="busca" placeholder="Filtrar por município..." aria-label="Filtrar por município"><span class="leg">Vermelho: valor por habitante entre os 15 mais baixos do estado. Verde: cobertura de plano de saúde privado acima de 50%.</span></div>
     <div class="tabwrap" style="max-height:560px;overflow:auto"><table id="tab"><thead></thead><tbody></tbody></table></div>
   </section>
 
@@ -192,6 +193,7 @@ function iniciar(D){
 const ANO=D.meta.anoRef;
 document.querySelectorAll('.ano').forEach(e=>e.textContent=ANO);
 document.querySelectorAll('.dt-extracao').forEach(e=>e.textContent=D.meta.extracao);
+if(D.meta.periodo){const bp=document.getElementById('badgePeriodo');bp.textContent='Período em análise: '+D.meta.periodo;bp.style.display='';}
 // ---------- utilidades ----------
 const brl=v=>v==null||!isFinite(v)?'–':v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
 const mi=v=>v==null||!isFinite(v)?'–':v===0?'R$ 0':(Math.abs(v)>=1e9?'R$ '+(v/1e9).toLocaleString('pt-BR',{maximumFractionDigits:2})+' bi':(Math.abs(v)>=1e6?'R$ '+(v/1e6).toLocaleString('pt-BR',{maximumFractionDigits:1})+' mi':'R$ '+(v/1e3).toLocaleString('pt-BR',{maximumFractionDigits:0})+' mil'));
@@ -242,6 +244,8 @@ function render(){
     k.push(['',`Valor médio por habitante`,brl(D.es.valorHab),D.es.valorHabLY?`${pc(D.es.valorHab/D.es.valorHabLY-1)} em relação a ${ANO-1}`:'']);
     k.push(['v',`População com plano de saúde privado`,pc(D.es.percComPlano),D.es.popComPlano?`${Math.round(D.es.popComPlano).toLocaleString('pt-BR')} pessoas`:'']);
     k.push(['a',`Municípios com dado disponível`,String(N),'dos 78 municípios do Espírito Santo']);
+    if(D.es.valorHabMin!=null)k.push(['r',`Menor valor por habitante`,brl(D.es.valorHabMin),D.es.valorHabMinMunicipio||'']);
+    if(D.es.valorHabMax!=null)k.push(['v',`Maior valor por habitante`,brl(D.es.valorHabMax),D.es.valorHabMaxMunicipio||'']);
   }else{
     const r=posHab(+atual);
     k.push([r>N-15?'r':'',`Valor por habitante em ${ANO}`,brl(o.valorHab),`${r}º de ${N} no estado`+(o.varHab!=null?` · ${pc(o.varHab)} em relação a ${ANO-1}`:'')]);
@@ -270,7 +274,7 @@ function render(){
   drawRank();
 }
 
-const cols=[['n','Município',m=>m.n,'txt'],['valorHab','Valor por habitante',m=>brl(m.valorHab)],['varHab','Variação',m=>pc(m.varHab)],['percComPlano','Com plano privado',m=>pc(m.percComPlano)],['pop','População',m=>m.pop?m.pop.toLocaleString('pt-BR'):'–']];
+const cols=[['n','Município',m=>m.n,'txt'],['valorHab','Valor por habitante',m=>brl(m.valorHab)],['varHab','Variação',m=>pc(m.varHab)],['aplicado','Aplicado',m=>mi(m.aplicado)],['percAplicado','% do total ES',m=>pc(m.percAplicado,2)],['percComPlano','Com plano privado',m=>pc(m.percComPlano)],['pop','População',m=>m.pop?m.pop.toLocaleString('pt-BR'):'–']];
 let sk='valorHab',asc=false;
 const tab=document.getElementById('tab');
 tab.querySelector('thead').innerHTML='<tr><th>#</th>'+cols.map(c=>`<th data-k="${c[0]}" class="${c[3]||''}">${c[1]}</th>`).join('')+'</tr>';

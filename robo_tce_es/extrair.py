@@ -29,9 +29,19 @@ PASTA_CONSULTAS = Path(__file__).parent / "consultas"
 # Consultas que de fato importam para o dado publicado (as demais salvas em
 # consultas/ sao auxiliares da interface: badges HTML, legendas, opcoes de
 # filtro, min/max do mapa - uteis de referencia, nao para publicar).
-# "gestao_estadual" nao foi capturada da interface: e' a mesma consulta de
-# "mapa_aplicacao_por_municipio" com o filtro de esfera administrativa
-# invertido (em vez de excluir Estado do ES/Consorcio, inclui so esses dois).
+#
+# Duas consultas foram testadas em 15/10/2026 e descartadas por nao
+# retornarem dado util nesta pagina/fato (continuam salvas em consultas/
+# para referencia futura, caso alguma das outras 5 paginas do mesmo
+# relatorio Power BI as use de forma diferente):
+#   - "atualizado_em": a medida CustomLabels_VisualMunicipal_AlertLog_Right
+#     (rotulo nativo "dados atualizados ate") voltou sempre nula fora do
+#     contexto exato do visual que a usa no painel original.
+#   - "gestao_estadual": mesma consulta de "mapa_aplicacao_por_municipio"
+#     com o filtro de esfera administrativa invertido (em vez de excluir
+#     Estado do ES/Consorcio, inclui so esses dois) - voltou vazia, ou
+#     seja, a tabela de fatos desta pagina (FT_DespesaDotacaoMunicipio) so
+#     tem lancamento por MUNICIPIO, sem gasto estadual direto associado.
 CONSULTAS_RELEVANTES = [
     "kpi_aplicacao_total",
     "kpi_valor_medio_habitante",
@@ -41,10 +51,8 @@ CONSULTAS_RELEVANTES = [
     "tabela_valor_medio_por_municipio",
     "tabela_aplicacao_por_subfuncao",
     "percentual_pop_sem_plano_por_municipio",
-    "atualizado_em",
     "filtro_mes_min_max",
     "mapa_aplicacao_por_municipio",
-    "gestao_estadual",
 ]
 
 

@@ -22,6 +22,20 @@ def num(v):
         return None
 
 
+MESES_PT = [
+    None, "jan", "fev", "mar", "abr", "mai", "jun",
+    "jul", "ago", "set", "out", "nov", "dez",
+]
+
+
+def periodo_legivel(mes_min, mes_max, ano):
+    if mes_min is None or mes_max is None:
+        return None
+    if mes_min == mes_max:
+        return f"{MESES_PT[mes_min]}/{ano}"
+    return f"{MESES_PT[mes_min]} a {MESES_PT[mes_max]}/{ano}"
+
+
 def montar(R):
     C = R["consultas"]
 
@@ -61,6 +75,24 @@ def montar(R):
         subfuncoes.append([nome, num(linha.get("Formulas._SomaLiquidado")), num(linha.get("Formulas._SomaLiquidada RotuloAnoAnterior Perc__"))])
     subfuncoes.sort(key=lambda x: -(x[1] or 0))
 
+    # ---------------- Período em análise (mês mínimo/máximo do ano) ----------------
+    mes_min = mes_max = None
+    if C.get("filtro_mes_min_max", {}).get("linhas"):
+        linha_mes = C["filtro_mes_min_max"]["linhas"][0]
+        mes_min = linha_mes.get("Min(FT_DespesaDotacaoMunicipio.MesReferencia)")
+        mes_max = linha_mes.get("Max(FT_DespesaDotacaoMunicipio.MesReferencia)")
+        mes_min = int(mes_min) if mes_min is not None else None
+        mes_max = int(mes_max) if mes_max is not None else None
+
+    # ---------------- Valor bruto aplicado, por município (para % do total) ----------------
+    aplicado_mun = {}
+    if C.get("mapa_aplicacao_por_municipio", {}).get("linhas"):
+        for linha in C["mapa_aplicacao_por_municipio"]["linhas"]:
+            nome = linha.get("DIM_EsferaAdministrativa.Nome")
+            if nome is None:
+                continue
+            aplicado_mun[nome] = num(linha.get("Sum(FT_DespesaDotacaoMunicipio.Liquidada)"))
+
     # ---------------- Valor médio por habitante, por município ----------------
     valor_mun = {}
     for linha in C["tabela_valor_medio_por_municipio"]["linhas"]:
@@ -88,7 +120,7 @@ def montar(R):
         }
 
     # ---------------- Junta num único registro por município ----------------
-    nomes = sorted(set(valor_mun) | set(plano_mun))
+    nomes = sorted(set(valor_mun) | set(plano_mun) | set(aplicado_mun))
     municipios = []
     for nome in nomes:
         v = valor_mun.get(nome, {})
@@ -106,9 +138,27 @@ def montar(R):
                 benef=benef,
                 percComPlano=percComPlanoMun,
                 percSemPlanoYoY=p.get("percSemPlanoYoY"),
+                aplicado=aplicado_mun.get(nome),
             )
         )
     municipios.sort(key=lambda m: -(m["valorHab"] or 0))
+
+    # ---------------- Mínimo e máximo valor por habitante, com o município ----------------
+    com_valor_hab = [m for m in municipios if m["valorHab"] is not None]
+    valorHabMin = valorHabMax = None
+    valorHabMinMunicipio = valorHabMaxMunicipio = None
+    if com_valor_hab:
+        m_min = min(com_valor_hab, key=lambda m: m["valorHab"])
+        m_max = max(com_valor_hab, key=lambda m: m["valorHab"])
+        valorHabMin, valorHabMinMunicipio = m_min["valorHab"], m_min["n"]
+        valorHabMax, valorHabMaxMunicipio = m_max["valorHab"], m_max["n"]
+
+    # percentual aplicado de cada município sobre o total do ES (soma dos
+    # proprios municipios, que e' o denominador correto para "fatia no bolo
+    # municipal" - o total do ES/aplicacao acima pode incluir outras esferas)
+    total_aplicado_municipios = sum(m["aplicado"] for m in municipios if m["aplicado"] is not None) or None
+    for m in municipios:
+        m["percAplicado"] = (m["aplicado"] / total_aplicado_municipios) if (m["aplicado"] is not None and total_aplicado_municipios) else None
 
     D = dict(
         meta=dict(
@@ -116,6 +166,9 @@ def montar(R):
             .astimezone(dt.timezone(dt.timedelta(hours=-3)))
             .strftime("%d/%m/%Y %H:%M"),
             anoRef=anoRef,
+            mesMin=mes_min,
+            mesMax=mes_max,
+            periodo=periodo_legivel(mes_min, mes_max, anoRef),
             fonte="Painel de Controle do TCE-ES (paineldecontrole.tcees.tc.br), Gastos com a função saúde",
         ),
         es=dict(
@@ -123,6 +176,10 @@ def montar(R):
             aplicacaoLY=aplicacaoLY,
             valorHab=valorHab,
             valorHabLY=valorHabLY,
+            valorHabMin=valorHabMin,
+            valorHabMinMunicipio=valorHabMinMunicipio,
+            valorHabMax=valorHabMax,
+            valorHabMaxMunicipio=valorHabMaxMunicipio,
             percComPlano=percComPlano,
             popComPlano=popComPlano,
             evolucao=evolucao,
