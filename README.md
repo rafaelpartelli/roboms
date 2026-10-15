@@ -9,7 +9,7 @@ Lê diariamente os Painéis InvestSUS do Fundo Nacional de Saúde (repasses fund
 - `robo/extrair.js` e `robo/extrair.py`: abrem o InvestSUS em navegador automático e extraem os dados brutos do ES.
 - `robo/montar.py`: transforma os dados brutos no `dados.json` da página e confere os totais.
 - `robo/enviar.py`: envia ao site e guarda a versão anterior como `dados_anterior.json`.
-- `.github/workflows/robo.yml`: execução automática às 9h15 e 15h15 (horário de Brasília), ou manual em Actions › Run workflow.
+- `.github/workflows/robo.yml`: execução manual em Actions › Run workflow. O agendamento diário está desligado porque o InvestSUS bloqueia os servidores do GitHub (teste de 15/10/2026, HTTP 403); a rotina diária roda no computador do Rafael.
 - `.github/workflows/teste.yml`: teste rápido de acesso ao InvestSUS.
 
 ## Segredos necessários (Settings › Secrets and variables › Actions)

@@ -1,9 +1,8 @@
 name: Robo InvestSUS (Radar de Recursos SUS ES)
 
+# Agendamento desligado: o InvestSUS bloqueia os servidores do GitHub (teste de 15/10/2026, HTTP 403).
+# A execucao diaria roda no computador do Rafael. Manter apenas o disparo manual.
 on:
-  schedule:
-    - cron: '15 12 * * *'   # 9h15 em Brasilia
-    - cron: '15 18 * * *'   # 15h15 em Brasilia (segunda tentativa)
   workflow_dispatch:
 
 concurrency: robo-investsus
