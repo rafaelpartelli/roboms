@@ -1,5 +1,5 @@
 {
-  "quando_utc": "2026-10-15T21:18:04.662515+00:00",
+  "quando_utc": "2026-10-15T22:20:10.826517+00:00",
   "ano_referencia": null,
   "consultas": {
     "kpi_aplicacao_total": {
@@ -1372,6 +1372,436 @@
         }
       ],
       "valores_unicos": {},
+      "avisos": []
+    },
+    "atualizado_em": {
+      "linhas": [
+        {
+          "Formulas.CustomLabels_VisualMunicipal_AlertLog_Right": null
+        }
+      ],
+      "valores_unicos": {},
+      "avisos": [
+        "A data reduction algorithm was specified but the corresponding grouping does not exist. The data reduction will be ignored for primary, secondary, intersection and scoped."
+      ]
+    },
+    "filtro_mes_min_max": {
+      "linhas": [
+        {
+          "Min(FT_DespesaDotacaoMunicipio.MesReferencia)": 1,
+          "Max(FT_DespesaDotacaoMunicipio.MesReferencia)": 9
+        }
+      ],
+      "valores_unicos": {},
+      "avisos": []
+    },
+    "mapa_aplicacao_por_municipio": {
+      "linhas": [
+        {
+          "DIM_EsferaAdministrativa.Nome": "Afonso Cláudio",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "31736896.739999987"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Água Doce do Norte",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "10643014.999999994"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Águia Branca",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "15199865.290000001"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Alegre",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "27922307.999999978"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Alfredo Chaves",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "20439739.589999989"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Alto Rio Novo",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "9442320.2200000025"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Anchieta",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "67259233.840000063"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Apiacá",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "14613835.760000007"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Aracruz",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "142795802.12000003"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Atílio Vivácqua",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "19997019.35000002"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Baixo Guandu",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": 25402145
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Barra de São Francisco",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "31969965.359999977"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Boa Esperança",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "16318626.750000004"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Bom Jesus do Norte",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "13127949.220000008"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Brejetuba",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": 15119298.09
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Cachoeiro de Itapemirim",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "99521236.519999951"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Cariacica",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": 189482941.79
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Castelo",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "35959426.070000008"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Colatina",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "217006126.67999998"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Conceição da Barra",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "24973254.080000009"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Conceição do Castelo",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "10060922.010000004"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Divino de São Lourenço",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "8360221.9900000114"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Domingos Martins",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "34107167.480000012"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Dores do Rio Preto",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "10128567.230000006"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ecoporanga",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "23416872.139999986"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Fundão",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "23486845.889999986"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Governador Lindenberg",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "15798292.880000003"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Guaçuí",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "28757243.290000003"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Guarapari",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "80932457.429999873"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ibatiba",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "25978324.789999995"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ibiraçu",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "15025508.030000018"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ibitirama",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "10020595.950000001"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Iconha",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "24090397.750000052"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Irupi",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "15566845.540000007"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Itaguaçu",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "13068224.770000001"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Itapemirim",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "83706002.109999985"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Itarana",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "20587604.52999999"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Iúna",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "24365242.029999983"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Jaguaré",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "35122904.119999982"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Jerônimo Monteiro",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "24134543.119999994"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "João Neiva",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "14973353.87000002"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Laranja da Terra",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "14550982.070000002"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Linhares",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "196968687.45000029"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Mantenópolis",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "14117011.389999988"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Marataízes",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "61962707.830000021"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Marechal Floriano",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "22189401.790000014"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Marilândia",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "17386802.700000007"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Mimoso do Sul",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": 31734900.87
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Montanha",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "24970727.199999984"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Mucurici",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "11666541.559999999"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Muniz Freire",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "22434960.419999991"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Muqui",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "16065899.619999982"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Nova Venécia",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "57536887.040000118"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Pancas",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "30271610.310000006"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Pedro Canário",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "24234593.319999982"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Pinheiros",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "29650158.50999999"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Piúma",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "23740640.529999994"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ponto Belo",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "12857575.659999998"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Presidente Kennedy",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "48646990.699999951"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Rio Bananal",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "21284298.259999972"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Rio Novo do Sul",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "13767980.809999995"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Santa Leopoldina",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "14084237.089999998"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Santa Maria de Jetibá",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "54030315.430000015"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Santa Teresa",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "26695848.359999981"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Domingos do Norte",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": 13631106.65
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Gabriel da Palha",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "32740172.369999979"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São José do Calçado",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "15072194.559999995"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Mateus",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "72699877.709999979"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Roque do Canaã",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "17221079.420000009"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Serra",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "364244190.61999977"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Sooretama",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "37725470.940000035"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vargem Alta",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "17181596.700000003"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Venda Nova do Imigrante",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "20261115.729999989"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Viana",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "60418911.129999995"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vila Pavão",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "9126815.0700000022"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vila Valério",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "16386792.100000001"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vila Velha",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "276177793.94999963"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vitória",
+          "Formulas._SomaEquipamentoQuantidadeExistente": null,
+          "Sum(FT_DespesaDotacaoMunicipio.Liquidada)": "339848892.84000039"
+        }
+      ],
+      "valores_unicos": {
+        "C": [
+          "8360221.9900000114",
+          "364244190.61999977"
+        ]
+      },
+      "avisos": []
+    },
+    "gestao_estadual": {
+      "linhas": [],
+      "valores_unicos": {
+        "C": [],
+        "Ø": 3
+      },
       "avisos": []
     }
   },
