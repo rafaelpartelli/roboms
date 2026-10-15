@@ -1,25 +1,38 @@
 name: Teste de acesso ao InvestSUS
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/teste.yml']
+permissions:
+  contents: write
 jobs:
   teste:
     runs-on: ubuntu-24.04
     steps:
-      - name: Acesso simples
+      - uses: actions/checkout@v4
+      - name: Testar acesso
         run: |
-          curl -s -o /dev/null -w "Pagina do painel: HTTP %{http_code}\n" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" https://investsuspaineis.saude.gov.br/extensions/CGIN_InvestsusPaineis/CGIN_InvestsusPaineis.html
-      - name: Acesso com navegador automatico
-        run: |
-          pip install -q playwright && python -m playwright install --with-deps chromium > /dev/null
-          python - <<'PY'
+          mkdir -p resultados
+          R=resultados/teste-acesso.txt
+          echo "Teste em $(date -u '+%d/%m/%Y %H:%M UTC')" > $R
+          curl -s -o /dev/null -w "Acesso simples: HTTP %{http_code}\n" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" https://investsuspaineis.saude.gov.br/extensions/CGIN_InvestsusPaineis/CGIN_InvestsusPaineis.html >> $R
+          pip install -q playwright && python -m playwright install --with-deps chromium > /dev/null 2>&1
+          python - >> $R <<'PY'
           from playwright.sync_api import sync_playwright
           with sync_playwright() as p:
               b = p.chromium.launch(); pg = b.new_page()
-              r = pg.goto('https://investsuspaineis.saude.gov.br/extensions/CGIN_InvestsusPaineis/CGIN_InvestsusPaineis.html', timeout=120000)
-              print('Navegador: HTTP', r.status if r else 'sem resposta')
               try:
+                  r = pg.goto('https://investsuspaineis.saude.gov.br/extensions/CGIN_InvestsusPaineis/CGIN_InvestsusPaineis.html', timeout=120000)
+                  print('Navegador: HTTP', r.status if r else 'sem resposta')
                   pg.wait_for_function("typeof require === 'function'", timeout=60000)
-                  print('RESULTADO: PAINEL ACESSIVEL, o robo pode rodar no GitHub')
-              except Exception:
-                  print('RESULTADO: PAINEL BLOQUEADO para o GitHub')
+                  print('RESULTADO: PAINEL ACESSIVEL')
+              except Exception as e:
+                  print('RESULTADO: PAINEL BLOQUEADO', str(e)[:200])
               b.close()
           PY
+          cat $R
+      - name: Gravar resultado no repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resultados && git commit -m "Resultado do teste de acesso" && git push
