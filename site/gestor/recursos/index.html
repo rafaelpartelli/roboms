@@ -323,7 +323,7 @@ const chEm=new Chart(document.getElementById('cEm'),{data:{labels:[],datasets:[
   {type:'bar',label:'Pago',data:[],backgroundColor:C('--verde'),yAxisID:'y'},
   {type:'line',label:'% pago',data:[],borderColor:C('--amarelo'),backgroundColor:C('--amarelo'),yAxisID:'y1',tension:.25,pointRadius:3}]},
   options:{maintainAspectRatio:false,plugins:{tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y1'?' % pago: '+c.parsed.y.toLocaleString('pt-BR')+'%':tip(c)}}},scales:{y:{beginAtZero:true},y1:{position:'right',min:0,max:120,grid:{display:false},ticks:{callback:v=>v+'%'}}}}});
-const salLab=[],salIdx=[];const mIdx=mm=>Math.floor(mm/100)*12+mm%100;D.months.forEach((mm,i)=>{if(i>0&&mIdx(mm)-mIdx(D.months[i-1])>1){salLab.push('sem dados');salIdx.push(-1);}salLab.push(String(mm%100).padStart(2,'0')+'/'+Math.floor(mm/100));salIdx.push(i);});
+const salLab=[],salIdx=[];const SERIE_INI=2018;const mIdx=mm=>Math.floor(mm/100)*12+mm%100;let mAnt=null;D.months.forEach((mm,i)=>{if(Math.floor(mm/100)<SERIE_INI)return;if(mAnt!=null&&mIdx(mm)-mIdx(mAnt)>1){salLab.push('sem dados');salIdx.push(-1);}mAnt=mm;salLab.push(String(mm%100).padStart(2,'0')+'/'+Math.floor(mm/100));salIdx.push(i);});
 const chSal=new Chart(document.getElementById('cSaldo'),{type:'line',data:{labels:salLab,datasets:[{label:'Saldo',data:[],borderColor:C('--vermelho'),backgroundColor:'transparent',pointRadius:0,pointHitRadius:6,borderWidth:2,spanGaps:false}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:tip}}},scales:{x:{ticks:{maxTicksLimit:12}},y:{beginAtZero:true}}}});
 
 // ---------- capacidade de execução trimestral ----------
@@ -333,7 +333,7 @@ const NT=D.tri.length;
 // agregado do ES: soma de todos os entes por grupo e trimestre (ignora trimestres com carga incompleta do ente)
 ES.tri=(()=>{const o={};[...D.m,D.EST].forEach(m=>Object.entries(m.tri).forEach(([g,arr])=>{o[g]=o[g]||Array(NT).fill(null);arr.forEach((x,k)=>{if(!x)return;o[g][k]=o[g][k]||[0,0,0];o[g][k][0]+=x[0];o[g][k][1]+=x[1];o[g][k][2]+=x[2];});}));return o;})();
 let triG='TOTAL';
-const triLab=[],triIdx=[];D.tri.forEach((q,k)=>{const ano=+q.slice(2,6);if(k>0&&ano-(+D.tri[k-1].slice(2,6))>1){triLab.push('sem dados');triIdx.push(-1);}triLab.push(q.replace('*',' (parcial)').replace(/^(\d)T/,'$1º tri '));triIdx.push(k);});
+const triLab=[],triIdx=[];let tAnt=null;D.tri.forEach((q,k)=>{const ano=+q.slice(2,6);if(ano<SERIE_INI)return;if(tAnt!=null&&ano-tAnt>1){triLab.push('sem dados');triIdx.push(-1);}tAnt=ano;triLab.push(q.replace('*',' (parcial)').replace(/^(\d)T/,'$1º tri '));triIdx.push(k);});
 const chTri=new Chart(document.getElementById('cTri'),{data:{labels:triLab,datasets:[
   {type:'bar',label:'Disponível no trimestre (saldo inicial + repasses)',data:[],backgroundColor:C('--azul-claro'),borderColor:C('--azul2'),borderWidth:1,yAxisID:'y',order:2},
   {type:'bar',label:'Executado (estimado)',data:[],backgroundColor:C('--verde'),yAxisID:'y',order:3},
@@ -356,7 +356,7 @@ function drawTri(){
   const tx=triIdx.map(k=>k<0?null:taxa(s[k])).filter(x=>x!=null);chTri.options.scales.y1.min=Math.min(0,Math.floor(Math.min(...tx,0)*10)*10);chTri.options.scales.y1.max=100;
   chTri.update();
   // indicadores
-  const hist=D.tri.map((q,k)=>[q,s[k]]).filter(([q,x])=>x&&+q.slice(2,6)<ANO);
+  const hist=D.tri.map((q,k)=>[q,s[k]]).filter(([q,x])=>x&&+q.slice(2,6)>=SERIE_INI&&+q.slice(2,6)<ANO);
   const atual=D.tri.map((q,k)=>[q,s[k]]).filter(([q,x])=>x&&+q.slice(2,6)===ANO);
   const media=a=>{const d=sum(a.map(([,x])=>x[0]+x[1])),ex=sum(a.map(([,x])=>x[0]+x[1]-x[2]));return d>0?ex/d:null;};
   const compl=atual.filter(([q])=>!q.includes('*')),ultC=compl[compl.length-1],ultP=atual[atual.length-1];
@@ -434,7 +434,7 @@ function render(){
   drawProp();
   // saldo
   chSal.data.datasets[0].data=salIdx.map(j=>j<0?null:(o.sal[j]==null?null:+(o.sal[j]/1000).toFixed(2)));chSal.update();
-  document.getElementById('salTit').textContent='Saldo total em conta, '+nome+' (R$ milhões)';
+  document.getElementById('salTit').textContent='Saldo total em conta desde '+SERIE_INI+', '+nome+' (R$ milhões)';
   const cresc=o.salJan?(o.s/o.salJan-1):null;
   document.getElementById('salLead').innerHTML=`Em ${D.meta.saldoData}, ${isES?'os fundos de saúde do ES (municípios e Estado) somavam':isEST?'o Fundo Estadual de Saúde tinha':'o fundo municipal de saúde de '+nome+' tinha'} <b>${mi(o.s)}</b> em conta${cresc!=null?`, variação de ${pc(cresc)} desde janeiro de ${ANO}`:''}.${isES?` Os fundos municipais respondem por ${mi(ES.sMun)} e o Fundo Estadual por ${mi(D.EST.s)}. ${ES.nIdx} municípios têm mais dinheiro em conta do que receberam em todo o ano.`:` O índice de saldo é ${pc(o.idx,0)}.`}`;
   drawTri();
