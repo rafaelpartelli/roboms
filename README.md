@@ -5,7 +5,7 @@ Robôs de Rafael Partelli para acesso a dados do Ministério da Saúde e monitor
 | Robô | Pasta | Onde roda | Agenda | Saída |
 |---|---|---|---|---|
 | Radar de Recursos SUS: Espírito Santo (InvestSUS/FNS) | `robo/` | Computador do Rafael (cron); GitHub Actions só manual | Diária | https://partelli.pro/gestor/recursos/ |
-| Radar Diário de Portarias MS (DOU/INLABS) | `robo_dou/` | Computador do Rafael (systemd) | Todos os dias às 09:30 | CSV diário, `radar.json` no site e relatório por e-mail |
+| Radar Diário de Portarias MS (DOU/INLABS) | `robo_dou/` | **Hostinger** (cron, dias úteis 8h30 e 11h00). Versão local desativada em 15/10/2026 | Dias úteis | https://partelli.pro/radar/ |
 | Radar Saúde Pública (newsletter) | `tarefas_agendadas/` | Tarefa agendada do Claude (nuvem) | Seg, qua e sex às 06:53 | Newsletter HTML por e-mail |
 
 ## 1. Radar de Recursos SUS: Espírito Santo (`robo/`)
@@ -34,7 +34,7 @@ Se o saldo total variar mais de 40% em relação ao que está publicado, o robô
 
 ## 2. Radar Diário de Portarias MS (`robo_dou/`)
 
-Baixa o Diário Oficial da União pelo INLABS, filtra as portarias do Ministério da Saúde, grava CSV e `radar.json` e, opcionalmente, envia e-mail e publica no site. Detalhes e instalação em `robo_dou/LEIA-ME.md`. Credenciais apenas no `.env` local (modelo em `robo_dou/.env.exemplo`).
+Baixa o Diário Oficial da União pelo INLABS, filtra as portarias do Ministério da Saúde, grava CSV e `radar.json` e, opcionalmente, envia e-mail e publica no site. **Produção:** roda no Hostinger (`~/robo_dou/run_hostinger.sh`), com arquivo mensal em `radar/arquivo/`. **A cópia desta pasta é a versão local antiga**, desativada em 15/10/2026 (login no INLABS falhando desde 09/10); falta trazer para cá a versão do Hostinger. Detalhes e instalação em `robo_dou/LEIA-ME.md`. Credenciais apenas no `.env` local (modelo em `robo_dou/.env.exemplo`).
 
 ## 3. Radar Saúde Pública (`tarefas_agendadas/`)
 

@@ -1,5 +1,7 @@
 # Robô DOU: Radar Diário de Portarias do Ministério da Saúde
 
+> **Situação em 15/10/2026:** versão local desativada (timer systemd removido). O robô em produção roda no Hostinger.
+
 Baixa diariamente o Diário Oficial da União pelo INLABS (Imprensa Nacional), filtra as **portarias do Ministério da Saúde** (Seção 1 e edições extras), gera um CSV em `saida/` e atualiza `saida/radar.json`, lido pela página Radar Saúde do site partelli.pro.
 
 ## Arquivos
