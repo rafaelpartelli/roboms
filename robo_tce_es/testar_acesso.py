@@ -74,6 +74,11 @@ async def main(out_path: str) -> int:
                         idx = sum(1 for c in capturados if "querydata" in c["url"].lower())
                         with open(f"querydata_{idx}.json", "w", encoding="utf-8") as fq:
                             fq.write(texto)
+                        # essas respostas sao pequenas (poucos KB): grava o corpo
+                        # inteiro tambem no resultado (que vai pro repositorio),
+                        # ja que baixar o artefato de execucao do Actions nao e
+                        # sempre possivel a partir daqui.
+                        item["corpo_completo"] = texto
                 except Exception as e:  # noqa: BLE001
                     item["erro_leitura"] = str(e)[:200]
             else:
