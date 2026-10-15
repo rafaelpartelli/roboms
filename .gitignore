@@ -12,4 +12,5 @@ bruto/
 robo_dou/saida/
 robo_tce_es/resultado_teste.json
 robo_tce_es/captura_teste.png
+robo_tce_es/querydata_*.json
 .robo.lock

@@ -56,16 +56,28 @@ async def main(out_path: str) -> int:
         )
         if interessante:
             item = {"url": u, "status": resp.status, "frame": resp.frame.url if resp.frame else None}
-            try:
-                ct = resp.headers.get("content-type", "")
-                if "json" in ct:
+            # O Power BI as vezes declara "text/plain" num corpo que na verdade e JSON
+            # (resposta do endpoint "querydata"), entao sempre tentamos ler o corpo
+            # das chamadas de dados em vez de confiar so no content-type.
+            eh_querydata = "querydata" in u.lower()
+            ct = resp.headers.get("content-type", "")
+            if "json" in ct or eh_querydata:
+                try:
                     body = await resp.body()
                     item["tamanho_bytes"] = len(body)
-                    item["trecho"] = body[:300].decode("utf-8", errors="replace")
-                else:
                     item["content_type"] = ct
-            except Exception as e:  # noqa: BLE001
-                item["erro_leitura"] = str(e)[:200]
+                    texto = body.decode("utf-8", errors="replace")
+                    item["trecho"] = texto[:500]
+                    if eh_querydata:
+                        # guarda a resposta completa das chamadas de querydata num
+                        # arquivo separado (pode ser grande) para analise do formato
+                        idx = sum(1 for c in capturados if "querydata" in c["url"].lower())
+                        with open(f"querydata_{idx}.json", "w", encoding="utf-8") as fq:
+                            fq.write(texto)
+                except Exception as e:  # noqa: BLE001
+                    item["erro_leitura"] = str(e)[:200]
+            else:
+                item["content_type"] = ct
             capturados.append(item)
 
     async with async_playwright() as p:

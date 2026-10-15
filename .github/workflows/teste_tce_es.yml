@@ -46,5 +46,6 @@ jobs:
           path: |
             robo_tce_es/resultado_teste.json
             robo_tce_es/captura_teste.png
+            robo_tce_es/querydata_*.json
           retention-days: 14
           if-no-files-found: ignore
