@@ -29,6 +29,9 @@ PASTA_CONSULTAS = Path(__file__).parent / "consultas"
 # Consultas que de fato importam para o dado publicado (as demais salvas em
 # consultas/ sao auxiliares da interface: badges HTML, legendas, opcoes de
 # filtro, min/max do mapa - uteis de referencia, nao para publicar).
+# "gestao_estadual" nao foi capturada da interface: e' a mesma consulta de
+# "mapa_aplicacao_por_municipio" com o filtro de esfera administrativa
+# invertido (em vez de excluir Estado do ES/Consorcio, inclui so esses dois).
 CONSULTAS_RELEVANTES = [
     "kpi_aplicacao_total",
     "kpi_valor_medio_habitante",
@@ -38,6 +41,10 @@ CONSULTAS_RELEVANTES = [
     "tabela_valor_medio_por_municipio",
     "tabela_aplicacao_por_subfuncao",
     "percentual_pop_sem_plano_por_municipio",
+    "atualizado_em",
+    "filtro_mes_min_max",
+    "mapa_aplicacao_por_municipio",
+    "gestao_estadual",
 ]
 
 
