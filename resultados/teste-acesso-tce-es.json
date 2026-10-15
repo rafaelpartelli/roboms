@@ -1,5 +1,5 @@
 {
-  "quando_utc": "2026-10-15T21:01:34.784915+00:00",
+  "quando_utc": "2026-10-15T21:04:31.869359+00:00",
   "url_testada": "https://app.powerbi.com/view?r=eyJrIjogIjBiNDk5MmFlLWU2ODAtNGYwYy1iMzA3LTgzYzg4OWY2OTQ3OSIsICJ0IjogIjlkMTQzN2IxLTQ3MmMtNDUwMS05NDM5LWRjZmU5YTQxZjJiMCJ9&pageName=ReportSection544931c3083d7668ba47",
   "status_navegacao": 200,
   "qtd_chamadas_relevantes_capturadas": 28,
@@ -9,7 +9,8 @@
       "status": 200,
       "frame": "https://app.powerbi.com/view?r=eyJrIjogIjBiNDk5MmFlLWU2ODAtNGYwYy1iMzA3LTgzYzg4OWY2OTQ3OSIsICJ0IjogIjlkMTQzN2IxLTQ3MmMtNDUwMS05NDM5LWRjZmU5YTQxZjJiMCJ9&pageName=ReportSection544931c3083d7668ba47",
       "tamanho_bytes": 1123350,
-      "trecho": "{\"models\":[{\"id\":9177658,\"vsName\":\"sobe_wowvirtualserver\",\"dbName\":\"f5ebfd6a-e30f-49d3-b934-3eeafab08c8e\",\"currentRefreshStartingTime\":\"\",\"refreshSchedule\":{\"importAndRefreshBehavior\":0,\"executionTime\":null,\"localTimeZoneId\":\"UTC\",\"refreshEnabled\":false,\"isDaily\":false,\"isRefreshable\":false,\"numberO"
+      "content_type": "application/json; charset=utf-8",
+      "trecho": "{\"models\":[{\"id\":9177658,\"vsName\":\"sobe_wowvirtualserver\",\"dbName\":\"f5ebfd6a-e30f-49d3-b934-3eeafab08c8e\",\"currentRefreshStartingTime\":\"\",\"refreshSchedule\":{\"importAndRefreshBehavior\":0,\"executionTime\":null,\"localTimeZoneId\":\"UTC\",\"refreshEnabled\":false,\"isDaily\":false,\"isRefreshable\":false,\"numberOfTimeIntervals\":4,\"refreshNotificationEnabled\":true,\"forceQueryRefreshEnabled\":false,\"forceModelRefreshEnabled\":false,\"refreshDisabledReason\":0},\"nextRefreshTime\":\"/Date(1792540800000)/\",\"NextRefreshT"
     },
     {
       "url": "https://wabi-brazil-south-api.analysis.windows.net/public/reports/resourcePackage/69665017/1%2F9d1437b1-472c-4501-9439-dcfe9a41f2b0%2FResourcePackage%2FBlobIdV2-c3b157f9-d1b9-4533-ab06-5d9e7ef278a5OPRkbtXdAPGi9uWDWHx4O6MtNl6sKdIJU3jjBvhHyT0%3D.json",
@@ -22,7 +23,8 @@
       "status": 200,
       "frame": "https://app.powerbi.com/view?r=eyJrIjogIjBiNDk5MmFlLWU2ODAtNGYwYy1iMzA3LTgzYzg4OWY2OTQ3OSIsICJ0IjogIjlkMTQzN2IxLTQ3MmMtNDUwMS05NDM5LWRjZmU5YTQxZjJiMCJ9&pageName=ReportSection544931c3083d7668ba47",
       "tamanho_bytes": 63840,
-      "trecho": "{\"schemas\":[{\"modelId\":9177658,\"schema\":{\"Entities\":[{\"Name\":\"Formulas\",\"EdmName\":\"Sandbox.Formulas\",\"Properties\":[{\"Name\":\"Coluna\",\"DataType\":4,\"Hidden\":true,\"FormatString\":\"0\",\"Column\":{\"DefaultAggregate\":2},\"StableName\":\"28735039-6a9b-43fe-abc0-e2a670224ad9\"},{\"Name\":\"_MINSomaQtdExistenteLeitos\","
+      "content_type": "application/json; charset=utf-8",
+      "trecho": "{\"schemas\":[{\"modelId\":9177658,\"schema\":{\"Entities\":[{\"Name\":\"Formulas\",\"EdmName\":\"Sandbox.Formulas\",\"Properties\":[{\"Name\":\"Coluna\",\"DataType\":4,\"Hidden\":true,\"FormatString\":\"0\",\"Column\":{\"DefaultAggregate\":2},\"StableName\":\"28735039-6a9b-43fe-abc0-e2a670224ad9\"},{\"Name\":\"_MINSomaQtdExistenteLeitos\",\"EdmName\":\"v_MINSomaQtdExistenteLeitos\",\"DataType\":4,\"FormatString\":\"0\",\"Measure\":{},\"StableName\":\"0a35c614-c436-4a0c-8313-f82beae29249\"},{\"Name\":\"_MAXSomaQtdExistente\",\"EdmName\":\"v_MAXSomaQtdExistent"
     },
     {
       "url": "https://wabi-brazil-south-api.analysis.windows.net/public/reports/resourcePackage/69665017/1%2F9d1437b1-472c-4501-9439-dcfe9a41f2b0%2FResourcePackage%2FBlobIdV2-b47202d1-1008-4887-81f2-aa4d76a7749eYL3JA2pm0JKUVU.QgDJLJcxI0.png",
@@ -46,25 +48,31 @@
       "url": "https://wabi-brazil-south-api.analysis.windows.net/public/reports/querydata?synchronous=true",
       "status": 200,
       "frame": "https://app.powerbi.com/view?r=eyJrIjogIjBiNDk5MmFlLWU2ODAtNGYwYy1iMzA3LTgzYzg4OWY2OTQ3OSIsICJ0IjogIjlkMTQzN2IxLTQ3MmMtNDUwMS05NDM5LWRjZmU5YTQxZjJiMCJ9&pageName=ReportSection544931c3083d7668ba47",
-      "content_type": "text/plain; charset=utf-8"
+      "tamanho_bytes": 1636,
+      "content_type": "text/plain; charset=utf-8",
+      "trecho": "{\"jobIds\":[\"e8b99330-7263-43fb-9e5e-dde44aea6f78\"],\"results\":[{\"jobId\":\"e8b99330-7263-43fb-9e5e-dde44aea6f78\",\"result\":{\"data\":{\"timestamp\":\"2026-10-15T20:52:36.804Z\",\"rootActivityId\":\"75b58a94-ea52-4b38-afb4-1848c2f31f30\",\"descriptor\":{\"Select\":[{\"Kind\":2,\"Value\":\"M0\",\"Name\":\"Formulas.CustomLabels_VisualMunicipal_AlertLog_Right\"}],\"Version\":2},\"metrics\":{\"Version\":\"1.0.0\",\"Events\":[{\"Id\":\"6b6197c3-9bc1-42a5-8fd5-a19ecf329d9c\",\"Name\":\"Execute Semantic Query\",\"Component\":\"DSE\",\"Start\":\"2026-10-15"
     },
     {
       "url": "https://wabi-brazil-south-api.analysis.windows.net/public/reports/querydata?synchronous=true",
       "status": 200,
       "frame": "https://app.powerbi.com/view?r=eyJrIjogIjBiNDk5MmFlLWU2ODAtNGYwYy1iMzA3LTgzYzg4OWY2OTQ3OSIsICJ0IjogIjlkMTQzN2IxLTQ3MmMtNDUwMS05NDM5LWRjZmU5YTQxZjJiMCJ9&pageName=ReportSection544931c3083d7668ba47",
-      "content_type": "text/plain; charset=utf-8"
+      "tamanho_bytes": 1668,
+      "content_type": "text/plain; charset=utf-8",
+      "trecho": "{\"jobIds\":[\"e2b4e185-c9fa-4cfd-8563-6ca5201f399c\"],\"results\":[{\"jobId\":\"e2b4e185-c9fa-4cfd-8563-6ca5201f399c\",\"result\":{\"data\":{\"timestamp\":\"2026-10-15T20:52:36.789Z\",\"rootActivityId\":\"fccfc6d5-88f3-434b-afa6-faffbe7e1bcc\",\"descriptor\":{\"Select\":[{\"Kind\":2,\"Value\":\"M0\",\"Format\":\"\\\"R$\\\"\\\\ #,0.00;-\\\"R$\\\"\\\\ #,0.00;\\\"R$\\\"\\\\ #,0.00\",\"Name\":\"Formulas._MINXAplicadoSaude\"}],\"Version\":2},\"metrics\":{\"Version\":\"1.0.0\",\"Events\":[{\"Id\":\"50c81e9c-af57-4fc2-9837-2f38d8997caa\",\"Name\":\"Execute Semantic Query\",\"C"
+    },
+    {
+      "url": "https://wabi-brazil-south-api.analysis.windows.net/public/reports/resourcePackage/69665017/1%2F9d1437b1-472c-4501-9439-dcfe9a41f2b0%2FResourcePackage%2FBlobIdV2-44ab0e5a-e291-4866-abcf-643c68d1f875Um2QikfXbaTetp23jc-QuT-z1aVZ28V3lqjVhyvv8Tk%3D.json",
+      "status": 200,
+      "frame": "https://app.powerbi.com/view?r=eyJrIjogIjBiNDk5MmFlLWU2ODAtNGYwYy1iMzA3LTgzYzg4OWY2OTQ3OSIsICJ0IjogIjlkMTQzN2IxLTQ3MmMtNDUwMS05NDM5LWRjZmU5YTQxZjJiMCJ9&pageName=ReportSection544931c3083d7668ba47",
+      "content_type": "application/octet-stream"
     },
     {
       "url": "https://wabi-brazil-south-api.analysis.windows.net/public/reports/querydata?synchronous=true",
       "status": 200,
       "frame": "https://app.powerbi.com/view?r=eyJrIjogIjBiNDk5MmFlLWU2ODAtNGYwYy1iMzA3LTgzYzg4OWY2OTQ3OSIsICJ0IjogIjlkMTQzN2IxLTQ3MmMtNDUwMS05NDM5LWRjZmU5YTQxZjJiMCJ9&pageName=ReportSection544931c3083d7668ba47",
-      "content_type": "text/plain; charset=utf-8"
-    },
-    {
-      "url": "https://wabi-brazil-south-api.analysis.windows.net/public/reports/querydata?synchronous=true",
-      "status": 200,
-      "frame": "https://app.powerbi.com/view?r=eyJrIjogIjBiNDk5MmFlLWU2ODAtNGYwYy1iMzA3LTgzYzg4OWY2OTQ3OSIsICJ0IjogIjlkMTQzN2IxLTQ3MmMtNDUwMS05NDM5LWRjZmU5YTQxZjJiMCJ9&pageName=ReportSection544931c3083d7668ba47",
-      "content_type": "text/plain; charset=utf-8"
+      "tamanho_bytes": 2479,
+      "content_type": "text/plain; charset=utf-8",
+      "trecho": "{\"jobIds\":[\"a4fc921c-9d70-4e38-a3b6-98444330d229\"],\"results\":[{\"jobId\":\"a4fc921c-9d70-4e38-a3b6-98444330d229\",\"result\":{\"data\":{\"timestamp\":\"2026-10-15T20:52:36.789Z\",\"rootActivityId\":\"10605cba-2fce-4977-95c3-31e7326f35ce\",\"descriptor\":{\"Select\":[{\"Kind\":1,\"Depth\":0,\"Value\":\"G0\",\"Format\":\"0\",\"GroupKeys\":[{\"Source\":{\"Entity\":\"FT_DespesaDotacaoMunicipio\",\"Property\":\"AnoReferencia\"},\"Calc\":\"G0\",\"IsSameAsSelect\":true}],\"Name\":\"FT_DespesaDotacaoMunicipio.AnoReferencia\"},{\"Kind\":2,\"Value\":\"M0\",\"Format"
     }
   ],
   "erros": [],
