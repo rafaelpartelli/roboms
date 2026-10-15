@@ -48,9 +48,7 @@ jobs:
           PY
 
       - name: Enviar ao site
-        id: enviar
         working-directory: robo_tce_es
-        continue-on-error: true
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USUARIO: ${{ secrets.FTP_USUARIO }}
@@ -59,22 +57,7 @@ jobs:
           mkdir -p ~/.config/robo_tce_es
           umask 077
           printf 'FTP_HOST=%s\nFTP_USUARIO=%s\nFTP_SENHA=%s\nFTP_PASTA=domains/partelli.pro/public_html/tce\n' "$FTP_HOST" "$FTP_USUARIO" "$FTP_SENHA" > ~/.config/robo_tce_es/.env
-          python enviar.py dados.json 2>&1 | tee envio.log
-
-      - name: Guardar log de envio (diagnostico temporario)
-        if: steps.enviar.outcome == 'failure'
-        run: |
-          mkdir -p resultados
-          cp robo_tce_es/envio.log resultados/envio-tce-es-diagnostico.log
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add resultados/envio-tce-es-diagnostico.log
-          git commit -m "Diagnostico temporario: log de falha no envio do robo TCE-ES" || echo "sem mudanca"
-          git push
-
-      - name: Falhar se o envio falhou
-        if: steps.enviar.outcome == 'failure'
-        run: exit 1
+          python enviar.py dados.json
 
       - name: Guardar dados do dia
         if: always()
