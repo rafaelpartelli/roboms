@@ -11,6 +11,16 @@
 > sexta às 06:30 Brasília — primeira opção porque a extração funciona por
 > HTTP puro, sem navegador e sem bloqueio de IP (ver seção abaixo), e segue
 > a ordem de preferência do `CLAUDE.md` raiz.
+>
+> **Pedido do Rafael em 15/10/2026 (parcialmente atendido):** filtro por
+> município (já existia na página), período em análise, mínimo/máximo
+> valor por habitante e percentual aplicado por município foram
+> implementados. **Gestão estadual** foi testada e não é possível com
+> este dataset: a tabela de fatos desta página só registra lançamento por
+> município, sem linha de gasto estadual direto (ver nota em
+> `extrair.py`). **Estabelecimentos de saúde** ainda não foi feito: é uma
+> página diferente do mesmo relatório Power BI (CNES), exige descoberta
+> própria (como a feita para esta página) — ver "Próximos passos".
 
 ## O que é
 
@@ -80,10 +90,12 @@ arquivo.
 
 ## Arquivos
 
-- `consultas/*.json`: corpo exato de cada consulta Power BI capturada (21 ao
-  todo — 8 usadas em `extrair.py`, as demais são auxiliares da interface:
+- `consultas/*.json`: corpo exato de cada consulta Power BI capturada (22 ao
+  todo — 10 usadas em `extrair.py`, as demais são auxiliares da interface:
   badges HTML, legendas, opções de filtro, min/max do mapa — guardadas de
-  referência).
+  referência). `gestao_estadual.json` não foi capturada da interface, foi
+  derivada de `mapa_aplicacao_por_municipio.json` para testar se dava para
+  trazer o gasto estadual — voltou vazia (ver nota em `extrair.py`).
 - `dsr.py`: decodificador do formato DSR.
 - `extrair.py`: reenvia as 8 consultas relevantes via HTTP puro, decodifica
   e grava um JSON com os dados brutos (ainda não é o formato final do site).
@@ -109,9 +121,12 @@ arquivo.
 ## Página publicada
 
 `partelli.pro/tce` (arquivos em `site/tce/` neste repositório):
-KPIs (aplicação total do ES, valor médio por habitante, população com plano
-de saúde privado), gráfico de evolução por ano com variação, gasto por
-subfunção, ranking dos 78 municípios (ordenável, buscável, clicável) e
+KPIs (aplicação total do ES, valor médio por habitante, menor e maior valor
+por habitante com o município, população com plano de saúde privado),
+selo com o período em análise (mês inicial/final do ano, já que o ano mais
+recente costuma estar parcial), gráfico de evolução por ano com variação,
+gasto por subfunção, ranking dos 78 municípios (ordenável, buscável,
+clicável, com valor aplicado em R$ e percentual sobre o total do ES) e
 leitura estratégica com recomendações — mesmos componentes visuais e mesma
 lógica de filtro por ente do Radar de Recursos SUS (`/gestor/recursos/`),
 para manter a mesma experiência entre as páginas de dados do site. Tem
@@ -119,15 +134,17 @@ também um cartão na Área do Gestor (`/gestor/`) com os KPIs principais.
 
 ## Próximos passos
 
-1. Cadastrar os segredos `FTP_HOST`/`FTP_USUARIO`/`FTP_SENHA` deste
-   repositório em Settings → Secrets and variables → Actions (mesmos valores
-   do robô `robo/`), se ainda não estiverem lá.
-2. Rodar manualmente o workflow (`Actions` → `Robo Painel TCE-ES` → `Run
-   workflow`) pelo menos uma vez e conferir o resultado em
-   `partelli.pro/tce` antes de confiar no agendamento diário.
-3. Se útil, repetir o processo para as outras 5 páginas do mesmo relatório
-   (mesmo `k`/`t`/`DatasetId`, só muda `pageName` e as consultas de cada
-   página — usar `testar_acesso.py` com o novo `PAGE_NAME` para capturar).
+1. **Estabelecimentos de saúde (CNES):** página diferente do mesmo
+   relatório Power BI do TCE-ES. Para implementar, repetir o processo de
+   descoberta feito para esta página (usar `testar_acesso.py` com o
+   `pageName` certo — falta identificar qual dos 6 é o de estabelecimentos,
+   listados no topo deste arquivo) e depois seguir o mesmo padrão
+   extrair/montar/enviar.
+2. Rodar o agendamento por algumas semanas e conferir se a trava de 40%
+   nunca dispara por engano (troca de ano em janeiro, por exemplo).
+3. Se útil, repetir o processo também para as demais páginas do mesmo
+   relatório (Distribuição de leitos, Distribuição de equipamentos, Planos
+   Municipais de Saúde, Detalhamento dos planos de saúde).
 
 ## Segurança
 
