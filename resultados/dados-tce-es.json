@@ -1,0 +1,1379 @@
+{
+  "quando_utc": "2026-10-15T21:40:48.561977+00:00",
+  "ano_referencia": null,
+  "consultas": {
+    "kpi_aplicacao_total": {
+      "linhas": [
+        {
+          "Formulas._SomaLiquidado": "3654204911.1299949",
+          "M1": "R$ #,0,,,.00 Bi",
+          "Formulas._SomaLiquidado LY": "5074963769.7399883"
+        }
+      ],
+      "valores_unicos": {},
+      "avisos": []
+    },
+    "kpi_valor_medio_habitante": {
+      "linhas": [
+        {
+          "Formulas._MediaLiquidadaPorHabitante": "880.38450242272734",
+          "Formulas._MediaLiquidadaPorHabitante LY": "1229.7415342873744"
+        }
+      ],
+      "valores_unicos": {},
+      "avisos": []
+    },
+    "kpi_populacao_com_plano": {
+      "linhas": [
+        {
+          "Formulas._SomaPopulacaoComPlano_": null
+        }
+      ],
+      "valores_unicos": {},
+      "avisos": []
+    },
+    "kpi_percentual_pop_com_plano": {
+      "linhas": [
+        {
+          "Formulas._MediaPercPopComPlano": "0.17629141467306286",
+          "Formulas._SomaPopulacaoComPlano": 1416415
+        }
+      ],
+      "valores_unicos": {},
+      "avisos": []
+    },
+    "evolucao_por_ano": {
+      "linhas": [
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2020,
+          "Formulas._SomaLiquidado YoY %": null,
+          "Formulas._SomaLiquidado": "2803482357.809998",
+          "M2": "R$ #,0,,,.00 Bi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2021,
+          "Formulas._SomaLiquidado YoY %": "0.054545247903560988",
+          "Formulas._SomaLiquidado": "2956398998.010004",
+          "M2": "R$ #,0,,,.00 Bi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2022,
+          "Formulas._SomaLiquidado YoY %": "0.20072006485911933",
+          "Formulas._SomaLiquidado": "3549807596.6400075",
+          "M2": "R$ #,0,,,.00 Bi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2023,
+          "Formulas._SomaLiquidado YoY %": "0.16799312708227992",
+          "Formulas._SomaLiquidado": "4146150875.3399949",
+          "M2": "R$ #,0,,,.00 Bi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2024,
+          "Formulas._SomaLiquidado YoY %": "0.16478329035336298",
+          "Formulas._SomaLiquidado": "4829367258.8799953",
+          "M2": "R$ #,0,,,.00 Bi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2025,
+          "Formulas._SomaLiquidado YoY %": "0.050854800990420536",
+          "Formulas._SomaLiquidado": "5074963769.73999",
+          "M2": "R$ #,0,,,.00 Bi"
+        },
+        {
+          "FT_DespesaDotacaoMunicipio.AnoReferencia": 2026,
+          "Formulas._SomaLiquidado YoY %": "-0.27995448304112347",
+          "Formulas._SomaLiquidado": 3654204911.13,
+          "M2": "R$ #,0,,,.00 Bi"
+        }
+      ],
+      "valores_unicos": {
+        "Formulas.Eixo Y (MaximoAno) SomaLiquidado": "6089956523.6879883"
+      },
+      "avisos": []
+    },
+    "tabela_valor_medio_por_municipio": {
+      "linhas": [
+        {
+          "A0": "880.38450242272836",
+          "A1": "880.38450242272836",
+          "A2": "0.023806582818803847"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Presidente Kennedy",
+          "Formulas._MediaLiquidadaPorHabitante": "3232.3581860465083",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "3232.3581860465083",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.18251735122586671"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Mucurici",
+          "Formulas._MediaLiquidadaPorHabitante": "2058.6803529204162",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "2058.6803529204162",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.30112601392181843"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Anchieta",
+          "Formulas._MediaLiquidadaPorHabitante": "2013.9304081204918",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "2013.9304081204918",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.12498314549621498"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Jerônimo Monteiro",
+          "Formulas._MediaLiquidadaPorHabitante": "1992.6141941875821",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1992.6141941875821",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "-0.030050230465415214"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Apiacá",
+          "Formulas._MediaLiquidadaPorHabitante": "1964.7533960742144",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1964.7533960742144",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.38933815132236432"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ponto Belo",
+          "Formulas._MediaLiquidadaPorHabitante": "1936.3818765060239",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1936.3818765060239",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.39921490089762657"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Iconha",
+          "Formulas._MediaLiquidadaPorHabitante": "1881.915299585974",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1881.915299585974",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.7963130757812118"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Itapemirim",
+          "Formulas._MediaLiquidadaPorHabitante": "1875.9329040138048",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1875.9329040138048",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.12968624502896353"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Itarana",
+          "Formulas._MediaLiquidadaPorHabitante": "1872.1109875420559",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1872.1109875420559",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.67416334835266123"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Atílio Vivácqua",
+          "Formulas._MediaLiquidadaPorHabitante": "1805.1109721971493",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1805.1109721971493",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.25692019958641288"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Colatina",
+          "Formulas._MediaLiquidadaPorHabitante": "1668.7259343447934",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1668.7259343447934",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.22437367508014608"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Pancas",
+          "Formulas._MediaLiquidadaPorHabitante": "1600.4869572803218",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1600.4869572803218",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.2062273410492497"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Divino de São Lourenço",
+          "Formulas._MediaLiquidadaPorHabitante": "1550.7738805416457",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1550.7738805416457",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.33588232499971776"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Roque do Canaã",
+          "Formulas._MediaLiquidadaPorHabitante": "1534.5820192479068",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1534.5820192479068",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.37385625759598906"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Domingos do Norte",
+          "Formulas._MediaLiquidadaPorHabitante": "1499.7366762020024",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1499.7366762020024",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.2004677390615878"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Águia Branca",
+          "Formulas._MediaLiquidadaPorHabitante": "1492.6706559952863",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1492.6706559952863",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.12351309301444287"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Dores do Rio Preto",
+          "Formulas._MediaLiquidadaPorHabitante": "1463.8773276485049",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1463.8773276485049",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.4712221816393723"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Alfredo Chaves",
+          "Formulas._MediaLiquidadaPorHabitante": "1421.7960204507506",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1421.7960204507506",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.28473395504077587"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Governador Lindenberg",
+          "Formulas._MediaLiquidadaPorHabitante": "1373.6451508564476",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1373.6451508564476",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.20807181983585549"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Aracruz",
+          "Formulas._MediaLiquidadaPorHabitante": "1369.0347649179325",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1369.0347649179325",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.11171568283259577"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Marataízes",
+          "Formulas._MediaLiquidadaPorHabitante": "1333.6498962570763",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1333.6498962570763",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.23450459943600449"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Marilândia",
+          "Formulas._MediaLiquidadaPorHabitante": "1322.1903193916355",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1322.1903193916355",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.23893389358125766"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São José do Calçado",
+          "Formulas._MediaLiquidadaPorHabitante": "1316.2339149419261",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1316.2339149419261",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.20234558721455706"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Sooretama",
+          "Formulas._MediaLiquidadaPorHabitante": "1306.4645705776436",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1306.4645705776436",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.10423369225773821"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Mimoso do Sul",
+          "Formulas._MediaLiquidadaPorHabitante": "1268.8377461916757",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1268.8377461916757",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.19971381413072714"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Montanha",
+          "Formulas._MediaLiquidadaPorHabitante": "1255.3781710321243",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1255.3781710321243",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.22522242095911821"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Laranja da Terra",
+          "Formulas._MediaLiquidadaPorHabitante": "1252.0204844260886",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1252.0204844260886",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.27174933127723228"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Fundão",
+          "Formulas._MediaLiquidadaPorHabitante": "1240.0003109656293",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1240.0003109656293",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.24964583372525231"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ibiraçu",
+          "Formulas._MediaLiquidadaPorHabitante": "1216.6403263157908",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1216.6403263157908",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.29832405839116954"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Alto Rio Novo",
+          "Formulas._MediaLiquidadaPorHabitante": "1214.9151080802885",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1214.9151080802885",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.24265749101349854"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Bom Jesus do Norte",
+          "Formulas._MediaLiquidadaPorHabitante": "1208.0564295573763",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1208.0564295573763",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.162917397405752"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Rio Novo do Sul",
+          "Formulas._MediaLiquidadaPorHabitante": "1200.242420887455",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1200.242420887455",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.30335180596012068"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Muniz Freire",
+          "Formulas._MediaLiquidadaPorHabitante": "1192.9682239710726",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1192.9682239710726",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.22991371916307649"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Pinheiros",
+          "Formulas._MediaLiquidadaPorHabitante": "1192.6374043682872",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1192.6374043682872",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.2123723688970714"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Santa Maria de Jetibá",
+          "Formulas._MediaLiquidadaPorHabitante": "1175.2107760739536",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1175.2107760739536",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.21645473153319"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Boa Esperança",
+          "Formulas._MediaLiquidadaPorHabitante": "1163.2066968422555",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1163.2066968422555",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.15364507972741487"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Marechal Floriano",
+          "Formulas._MediaLiquidadaPorHabitante": "1158.171187953443",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1158.171187953443",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.21941037162668564"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vila Valério",
+          "Formulas._MediaLiquidadaPorHabitante": "1146.8116803135281",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1146.8116803135281",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.0087476005718445174"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Muqui",
+          "Formulas._MediaLiquidadaPorHabitante": "1134.5974307909592",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1134.5974307909592",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.20640960145527612"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Santa Teresa",
+          "Formulas._MediaLiquidadaPorHabitante": "1113.3940176001993",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1113.3940176001993",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.0797074793903573"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Pedro Canário",
+          "Formulas._MediaLiquidadaPorHabitante": "1111.5256304178315",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1111.5256304178315",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.15401372210736172"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Jaguaré",
+          "Formulas._MediaLiquidadaPorHabitante": "1102.4830221608381",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1102.4830221608381",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.13390013379583007"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Brejetuba",
+          "Formulas._MediaLiquidadaPorHabitante": "1095.6013108695652",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1095.6013108695652",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.22504010977171141"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Nova Venécia",
+          "Formulas._MediaLiquidadaPorHabitante": "1095.2939605185531",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1095.2939605185531",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.17723091246690448"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Mantenópolis",
+          "Formulas._MediaLiquidadaPorHabitante": "1078.4577074102358",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1078.4577074102358",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.25658539329148033"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Linhares",
+          "Formulas._MediaLiquidadaPorHabitante": "1061.1336403208704",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1061.1336403208704",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.23788116627413383"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "João Neiva",
+          "Formulas._MediaLiquidadaPorHabitante": "1054.2388136309244",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1054.2388136309244",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "-0.023227071253319357"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Irupi",
+          "Formulas._MediaLiquidadaPorHabitante": "1052.3116027851015",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1052.3116027851015",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.11505934322031797"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Rio Bananal",
+          "Formulas._MediaLiquidadaPorHabitante": "1039.9324893731359",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1039.9324893731359",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.09789411855115096"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ecoporanga",
+          "Formulas._MediaLiquidadaPorHabitante": "1038.2580535603433",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1038.2580535603433",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.25627293154102226"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Santa Leopoldina",
+          "Formulas._MediaLiquidadaPorHabitante": "1009.6227304659496",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "1009.6227304659496",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.30503398680486765"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ibitirama",
+          "Formulas._MediaLiquidadaPorHabitante": "990.27531870738221",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "990.27531870738221",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.01873712506675039"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vitória",
+          "Formulas._MediaLiquidadaPorHabitante": "988.1195366566368",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "988.1195366566368",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.097426816419155085"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Piúma",
+          "Formulas._MediaLiquidadaPorHabitante": "981.992080162144",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "981.992080162144",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.13729820128829534"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vila Pavão",
+          "Formulas._MediaLiquidadaPorHabitante": "977.1750610278375",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "977.1750610278375",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.24005798611812007"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Afonso Cláudio",
+          "Formulas._MediaLiquidadaPorHabitante": "977.15128975645757",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "977.15128975645757",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.077208780549404124"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Gabriel da Palha",
+          "Formulas._MediaLiquidadaPorHabitante": "954.16233992947218",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "954.16233992947218",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.099263052776465618"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ibatiba",
+          "Formulas._MediaLiquidadaPorHabitante": "935.65009148208162",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "935.65009148208162",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.051100503615227916"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Itaguaçu",
+          "Formulas._MediaLiquidadaPorHabitante": "933.17800414167391",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "933.17800414167391",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.080797111267260566"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Guaçuí",
+          "Formulas._MediaLiquidadaPorHabitante": "912.11758722405489",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "912.11758722405489",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.57945449589352438"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Alegre",
+          "Formulas._MediaLiquidadaPorHabitante": "909.72886325872275",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "909.72886325872275",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.048352336298520412"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Castelo",
+          "Formulas._MediaLiquidadaPorHabitante": "904.70792940347724",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "904.70792940347724",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.15176681444084711"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Domingos Martins",
+          "Formulas._MediaLiquidadaPorHabitante": "885.94647721959609",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "885.94647721959609",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.17262285343270278"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Conceição da Barra",
+          "Formulas._MediaLiquidadaPorHabitante": "864.39562770412965",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "864.39562770412965",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.25501306365009724"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Água Doce do Norte",
+          "Formulas._MediaLiquidadaPorHabitante": "844.01387787470219",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "844.01387787470219",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.030741858314113042"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vargem Alta",
+          "Formulas._MediaLiquidadaPorHabitante": "841.69875569490046",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "841.69875569490046",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "-0.068949644925084666"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Conceição do Castelo",
+          "Formulas._MediaLiquidadaPorHabitante": "806.48673426853736",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "806.48673426853736",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.0598302030532997"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Iúna",
+          "Formulas._MediaLiquidadaPorHabitante": "795.57376183634767",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "795.57376183634767",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.028669260954530665"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Venda Nova do Imigrante",
+          "Formulas._MediaLiquidadaPorHabitante": "790.52343854857543",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "790.52343854857543",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.068640995718580552"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Baixo Guandu",
+          "Formulas._MediaLiquidadaPorHabitante": "771.39826905557243",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "771.39826905557243",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.14230273757637577"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Viana",
+          "Formulas._MediaLiquidadaPorHabitante": "758.9266700581577",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "758.9266700581577",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.0922418674750731"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Barra de São Francisco",
+          "Formulas._MediaLiquidadaPorHabitante": "701.495707201474",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "701.495707201474",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.0027681216747737526"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Serra",
+          "Formulas._MediaLiquidadaPorHabitante": "620.62288293937092",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "620.62288293937092",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.11746647288769536"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Guarapari",
+          "Formulas._MediaLiquidadaPorHabitante": "587.91984127445266",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "587.91984127445266",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.32980431006066879"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vila Velha",
+          "Formulas._MediaLiquidadaPorHabitante": "540.98198269580269",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "540.98198269580269",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.10487698390008036"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Mateus",
+          "Formulas._MediaLiquidadaPorHabitante": "536.72851760797323",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "536.72851760797323",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.22476582485466373"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Cariacica",
+          "Formulas._MediaLiquidadaPorHabitante": "502.7219519306791",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "502.7219519306791",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.35759864325293522"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Cachoeiro de Itapemirim",
+          "Formulas._MediaLiquidadaPorHabitante": "501.70258419999271",
+          "Formulas._MediaLiquidadaPorHabitante_Dummy": "501.70258419999271",
+          "Formulas._ValorMedioPorHabitante RotuloAnoAnterior Perc__": "0.1297250265645486"
+        }
+      ],
+      "valores_unicos": {
+        "C": [
+          "501.70258419999271",
+          "3232.3581860465083",
+          "-0.068949644925084666",
+          "0.7963130757812118"
+        ]
+      },
+      "avisos": []
+    },
+    "tabela_aplicacao_por_subfuncao": {
+      "linhas": [
+        {
+          "A0": "3654204911.1299992",
+          "A1": "R$ #,0,,,.00 Bi",
+          "A2": "3654204911.1299992",
+          "A3": "0.029886041026346108"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Assistência Hospitalar E Ambulatorial",
+          "Formulas._SomaLiquidado": "1469760231.7699995",
+          "M1": "R$ #,0,,,.00 Bi",
+          "Formulas._SomaLiquidado_Dummy": "1469760231.7699995",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "0.0564406508698957"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Atenção Básica",
+          "Formulas._SomaLiquidado": 1287466200.57,
+          "M1": "R$ #,0,,,.00 Bi",
+          "Formulas._SomaLiquidado_Dummy": 1287466200.57,
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "-0.0048107942818370287"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Administração Geral",
+          "Formulas._SomaLiquidado": 612386183.42,
+          "M1": "R$ #,0,,.00 Mi",
+          "Formulas._SomaLiquidado_Dummy": 612386183.42,
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "0.0725718701243913"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Vigilância Epidemiológica",
+          "Formulas._SomaLiquidado": "154814219.61999995",
+          "M1": "R$ #,0,,.00 Mi",
+          "Formulas._SomaLiquidado_Dummy": "154814219.61999995",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "0.077106779578498236"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Suporte Profilático E Terapêutico",
+          "Formulas._SomaLiquidado": "83017553.540000036",
+          "M1": "R$ #,0,,.00 Mi",
+          "Formulas._SomaLiquidado_Dummy": "83017553.540000036",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "-0.14367531457812713"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Vigilância Sanitária",
+          "Formulas._SomaLiquidado": "31657754.140000004",
+          "M1": "R$ #,0,,.00 Mi",
+          "Formulas._SomaLiquidado_Dummy": "31657754.140000004",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "-0.11221856194946546"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Tecnologia Da Informação",
+          "Formulas._SomaLiquidado": "7341481.7599999979",
+          "M1": "R$ #,0,,.00 Mi",
+          "Formulas._SomaLiquidado_Dummy": "7341481.7599999979",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "0.39364143058518614"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Outras Transferências",
+          "Formulas._SomaLiquidado": 2695197.23,
+          "M1": "R$ #,0,,.00 Mi",
+          "Formulas._SomaLiquidado_Dummy": 2695197.23,
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "0.01304255288639514"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Previdência Do Regime Estatutário",
+          "Formulas._SomaLiquidado": "2535404.3899999997",
+          "M1": "R$ #,0,,.00 Mi",
+          "Formulas._SomaLiquidado_Dummy": "2535404.3899999997",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "4.6687586229362878"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Previdência Básica",
+          "Formulas._SomaLiquidado": 797885.44,
+          "M1": "R$ #,0,.00 Mil",
+          "Formulas._SomaLiquidado_Dummy": 797885.44,
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "0.36147012243745552"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Outros Encargos Especiais",
+          "Formulas._SomaLiquidado": "681371.03999999969",
+          "M1": "R$ #,0,.00 Mil",
+          "Formulas._SomaLiquidado_Dummy": "681371.03999999969",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "-0.8219465052095849"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Preservação E Conservação Ambiental",
+          "Formulas._SomaLiquidado": "272961.22000000003",
+          "M1": "R$ #,0,.00 Mil",
+          "Formulas._SomaLiquidado_Dummy": "272961.22000000003",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": null
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Direitos Individuais, Coletivos E Difusos",
+          "Formulas._SomaLiquidado": 266144.33,
+          "M1": "R$ #,0,.00 Mil",
+          "Formulas._SomaLiquidado_Dummy": 266144.33,
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": null
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Alimentação E Nutrição",
+          "Formulas._SomaLiquidado": "237617.06999999998",
+          "M1": "R$ #,0,.00 Mil",
+          "Formulas._SomaLiquidado_Dummy": "237617.06999999998",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "-0.81792906383804331"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Assistência À Pessoa Com Deficiência",
+          "Formulas._SomaLiquidado": 132000,
+          "M1": "R$ #,0,.00 Mil",
+          "Formulas._SomaLiquidado_Dummy": 132000,
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "0.5714285714285714"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Controle Interno",
+          "Formulas._SomaLiquidado": "63406.600000000006",
+          "M1": "R$ #,0,.00 Mil",
+          "Formulas._SomaLiquidado_Dummy": "63406.600000000006",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": null
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Assistência Comunitária",
+          "Formulas._SomaLiquidado": "30001.809999999998",
+          "M1": "R$ #,0,.00 Mil",
+          "Formulas._SomaLiquidado_Dummy": "30001.809999999998",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "-0.227654032535428"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Formação De Recursos Humanos",
+          "Formulas._SomaLiquidado": 26068,
+          "M1": "R$ #,0,.00 Mil",
+          "Formulas._SomaLiquidado_Dummy": 26068,
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "0.86935055342615064"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Serviços Financeiros",
+          "Formulas._SomaLiquidado": "12516.580000000002",
+          "M1": "R$ #,0,.00 Mil",
+          "Formulas._SomaLiquidado_Dummy": "12516.580000000002",
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "0.010187767092939523"
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Controle Externo",
+          "Formulas._SomaLiquidado": 10223,
+          "M1": "R$ #,0,.00 Mil",
+          "Formulas._SomaLiquidado_Dummy": 10223,
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": null
+        },
+        {
+          "DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao": "Planejamento E Orçamento",
+          "Formulas._SomaLiquidado": 489.6,
+          "M1": "R$ #,0.00",
+          "Formulas._SomaLiquidado_Dummy": 489.6,
+          "Formulas._SomaLiquidada RotuloAnoAnterior Perc__": "-0.57299843014128726"
+        }
+      ],
+      "valores_unicos": {
+        "C": [
+          489.6,
+          "1469760231.7699995",
+          "-0.8219465052095849",
+          "4.6687586229362878"
+        ]
+      },
+      "avisos": []
+    },
+    "percentual_pop_sem_plano_por_municipio": {
+      "linhas": [
+        {
+          "DIM_EsferaAdministrativa.Nome": "Afonso Cláudio",
+          "Sum(Populacao.Populacao)": 32479,
+          "Sum(saude Beneficiario.Beneficiarios)": 3037,
+          "Formulas._PercPopSemPlano YoY": "-0.0015898380891135185",
+          "Formulas._PercPopSemPlano": "0.90649342652175258",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.907936899186591"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Água Doce do Norte",
+          "Sum(Populacao.Populacao)": 12610,
+          "Sum(saude Beneficiario.Beneficiarios)": 559,
+          "Formulas._PercPopSemPlano YoY": "-0.00065573349209127542",
+          "Formulas._PercPopSemPlano": "0.95567010309278355",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.95629717918156532"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Águia Branca",
+          "Sum(Populacao.Populacao)": 10183,
+          "Sum(saude Beneficiario.Beneficiarios)": 1271,
+          "Formulas._PercPopSemPlano YoY": "-8.2969657965395385E-07",
+          "Formulas._PercPopSemPlano": "0.87518413041343412",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.87518485655131617"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Alegre",
+          "Sum(Populacao.Populacao)": 30693,
+          "Sum(saude Beneficiario.Beneficiarios)": 5156,
+          "Formulas._PercPopSemPlano YoY": "-0.0038416673428217827",
+          "Formulas._PercPopSemPlano": "0.83201381422474174",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.83522246107745424"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Alfredo Chaves",
+          "Sum(Populacao.Populacao)": 14376,
+          "Sum(saude Beneficiario.Beneficiarios)": 1741,
+          "Formulas._PercPopSemPlano YoY": "0.016083634901487755",
+          "Formulas._PercPopSemPlano": "0.87889538119087374",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.864983305509182"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Alto Rio Novo",
+          "Sum(Populacao.Populacao)": 7772,
+          "Sum(saude Beneficiario.Beneficiarios)": 528,
+          "Formulas._PercPopSemPlano YoY": "0.0010816933112743649",
+          "Formulas._PercPopSemPlano": "0.93206381883685019",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.93105670103092786"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Anchieta",
+          "Sum(Populacao.Populacao)": 33397,
+          "Sum(saude Beneficiario.Beneficiarios)": 8673,
+          "Formulas._PercPopSemPlano YoY": "-0.0016059262271850146",
+          "Formulas._PercPopSemPlano": "0.74030601551037511",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.7414968046763788"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Apiacá",
+          "Sum(Populacao.Populacao)": 7438,
+          "Sum(saude Beneficiario.Beneficiarios)": 628,
+          "Formulas._PercPopSemPlano YoY": "0.0010217800484000161",
+          "Formulas._PercPopSemPlano": "0.91556870126378054",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.91463414634146345"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Aracruz",
+          "Sum(Populacao.Populacao)": 104304,
+          "Sum(saude Beneficiario.Beneficiarios)": 42905,
+          "Formulas._PercPopSemPlano YoY": "-0.028127075893305643",
+          "Formulas._PercPopSemPlano": "0.588654318146955",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.60569062430463516"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Atílio Vivácqua",
+          "Sum(Populacao.Populacao)": 11078,
+          "Sum(saude Beneficiario.Beneficiarios)": 2688,
+          "Formulas._PercPopSemPlano YoY": "-0.015908178044493303",
+          "Formulas._PercPopSemPlano": "0.75735692363242468",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.769599855151186"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Baixo Guandu",
+          "Sum(Populacao.Populacao)": 32930,
+          "Sum(saude Beneficiario.Beneficiarios)": 5327,
+          "Formulas._PercPopSemPlano YoY": "-2.40377222407763E-05",
+          "Formulas._PercPopSemPlano": "0.83823261463710907",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.83825276432422546"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Barra de São Francisco",
+          "Sum(Populacao.Populacao)": 45574,
+          "Sum(saude Beneficiario.Beneficiarios)": 6653,
+          "Formulas._PercPopSemPlano YoY": "5.7014541927938255E-05",
+          "Formulas._PercPopSemPlano": "0.85401764163777594",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.85396895298910058"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Boa Esperança",
+          "Sum(Populacao.Populacao)": 14029,
+          "Sum(saude Beneficiario.Beneficiarios)": 1317,
+          "Formulas._PercPopSemPlano YoY": "-0.001829983087347843",
+          "Formulas._PercPopSemPlano": "0.90612303086463752",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.907784260708695"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Bom Jesus do Norte",
+          "Sum(Populacao.Populacao)": 10867,
+          "Sum(saude Beneficiario.Beneficiarios)": 1191,
+          "Formulas._PercPopSemPlano YoY": "0.0013669160855960968",
+          "Formulas._PercPopSemPlano": "0.89040213490383735",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.88918669131238448"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Brejetuba",
+          "Sum(Populacao.Populacao)": 13800,
+          "Sum(saude Beneficiario.Beneficiarios)": 669,
+          "Formulas._PercPopSemPlano YoY": "0.003303244995488475",
+          "Formulas._PercPopSemPlano": "0.95152173913043481",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.948388977985129"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Cachoeiro de Itapemirim",
+          "Sum(Populacao.Populacao)": 198367,
+          "Sum(saude Beneficiario.Beneficiarios)": 77743,
+          "Formulas._PercPopSemPlano YoY": "-0.039410006016020731",
+          "Formulas._PercPopSemPlano": "0.60808501414045679",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.6330328422623549"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Cariacica",
+          "Sum(Populacao.Populacao)": 376914,
+          "Sum(saude Beneficiario.Beneficiarios)": 147480,
+          "Formulas._PercPopSemPlano YoY": "-0.0039824457518095845",
+          "Formulas._PercPopSemPlano": "0.60871710788137345",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.61115098351940456"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Castelo",
+          "Sum(Populacao.Populacao)": 39747,
+          "Sum(saude Beneficiario.Beneficiarios)": 9201,
+          "Formulas._PercPopSemPlano YoY": "-0.00076170000108578893",
+          "Formulas._PercPopSemPlano": "0.76851083100611373",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.76909665192672139"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Colatina",
+          "Sum(Populacao.Populacao)": 130043,
+          "Sum(saude Beneficiario.Beneficiarios)": 46343,
+          "Formulas._PercPopSemPlano YoY": "0.0045436607832869177",
+          "Formulas._PercPopSemPlano": "0.64363325976792285",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.64072203617914791"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Conceição da Barra",
+          "Sum(Populacao.Populacao)": 28891,
+          "Sum(saude Beneficiario.Beneficiarios)": 2917,
+          "Formulas._PercPopSemPlano YoY": "-0.0011228834648562417",
+          "Formulas._PercPopSemPlano": "0.89903430133951745",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.90004494692805037"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Conceição do Castelo",
+          "Sum(Populacao.Populacao)": 12475,
+          "Sum(saude Beneficiario.Beneficiarios)": 1393,
+          "Formulas._PercPopSemPlano YoY": "0.0022012654889154936",
+          "Formulas._PercPopSemPlano": "0.88833667334669342",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.88638550352790246"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Divino de São Lourenço",
+          "Sum(Populacao.Populacao)": 5391,
+          "Sum(saude Beneficiario.Beneficiarios)": 156,
+          "Formulas._PercPopSemPlano YoY": "-0.002697168925691188",
+          "Formulas._PercPopSemPlano": "0.97106288258208129",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.97368908652955344"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Domingos Martins",
+          "Sum(Populacao.Populacao)": 38498,
+          "Sum(saude Beneficiario.Beneficiarios)": 5998,
+          "Formulas._PercPopSemPlano YoY": "-0.0021694742049410869",
+          "Formulas._PercPopSemPlano": "0.844199698685646",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.8460351501203055"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Dores do Rio Preto",
+          "Sum(Populacao.Populacao)": 6919,
+          "Sum(saude Beneficiario.Beneficiarios)": 253,
+          "Formulas._PercPopSemPlano YoY": "-0.0017082087341807215",
+          "Formulas._PercPopSemPlano": "0.9634340222575517",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.9650825847580411"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ecoporanga",
+          "Sum(Populacao.Populacao)": 22554,
+          "Sum(saude Beneficiario.Beneficiarios)": 1643,
+          "Formulas._PercPopSemPlano YoY": "0.00066098801222331746",
+          "Formulas._PercPopSemPlano": "0.92715261151015338",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.92654017955862189"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Fundão",
+          "Sum(Populacao.Populacao)": 18941,
+          "Sum(saude Beneficiario.Beneficiarios)": 5506,
+          "Formulas._PercPopSemPlano YoY": "-0.036271495979570877",
+          "Formulas._PercPopSemPlano": "0.70930785069426117",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.73600380992697634"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Governador Lindenberg",
+          "Sum(Populacao.Populacao)": 11501,
+          "Sum(saude Beneficiario.Beneficiarios)": 1828,
+          "Formulas._PercPopSemPlano YoY": "-0.0019940043489573133",
+          "Formulas._PercPopSemPlano": "0.84105729936527263",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.84273772204806685"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Guaçuí",
+          "Sum(Populacao.Populacao)": 31528,
+          "Sum(saude Beneficiario.Beneficiarios)": 3746,
+          "Formulas._PercPopSemPlano YoY": "0.00094253777694393315",
+          "Formulas._PercPopSemPlano": "0.88118497843187",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.880355210388949"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Guarapari",
+          "Sum(Populacao.Populacao)": 137659,
+          "Sum(saude Beneficiario.Beneficiarios)": 38567,
+          "Formulas._PercPopSemPlano YoY": "-0.0064937260796680959",
+          "Formulas._PercPopSemPlano": "0.7198366979274875",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.72454167308581119"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ibatiba",
+          "Sum(Populacao.Populacao)": 27765,
+          "Sum(saude Beneficiario.Beneficiarios)": 2109,
+          "Formulas._PercPopSemPlano YoY": "0.00393920890406953",
+          "Formulas._PercPopSemPlano": "0.9240410588870881",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.92041535054278767"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ibiraçu",
+          "Sum(Populacao.Populacao)": 12350,
+          "Sum(saude Beneficiario.Beneficiarios)": 3110,
+          "Formulas._PercPopSemPlano YoY": "6.3422668985924861E-05",
+          "Formulas._PercPopSemPlano": "0.74817813765182184",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.74813068920676207"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ibitirama",
+          "Sum(Populacao.Populacao)": 10119,
+          "Sum(saude Beneficiario.Beneficiarios)": 298,
+          "Formulas._PercPopSemPlano YoY": "-0.00040489991397720318",
+          "Formulas._PercPopSemPlano": "0.97055044964917481",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.9709435846230654"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Iconha",
+          "Sum(Populacao.Populacao)": 12801,
+          "Sum(saude Beneficiario.Beneficiarios)": 3911,
+          "Formulas._PercPopSemPlano YoY": "-0.01634986123298254",
+          "Formulas._PercPopSemPlano": "0.694476993984845",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.706020328381548"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Irupi",
+          "Sum(Populacao.Populacao)": 14793,
+          "Sum(saude Beneficiario.Beneficiarios)": 858,
+          "Formulas._PercPopSemPlano YoY": "-0.00047319188516396023",
+          "Formulas._PercPopSemPlano": "0.941999594402758",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.94244555199016866"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Itaguaçu",
+          "Sum(Populacao.Populacao)": 14004,
+          "Sum(saude Beneficiario.Beneficiarios)": 1708,
+          "Formulas._PercPopSemPlano YoY": "0.0031214160111534706",
+          "Formulas._PercPopSemPlano": "0.87803484718651814",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.87530266343825669"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Itapemirim",
+          "Sum(Populacao.Populacao)": 44621,
+          "Sum(saude Beneficiario.Beneficiarios)": 5813,
+          "Formulas._PercPopSemPlano YoY": "0.0001383297952332044",
+          "Formulas._PercPopSemPlano": "0.86972501736850361",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.86960472512494325"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Itarana",
+          "Sum(Populacao.Populacao)": 10997,
+          "Sum(saude Beneficiario.Beneficiarios)": 1627,
+          "Formulas._PercPopSemPlano YoY": "2.7257800945729733E-05",
+          "Formulas._PercPopSemPlano": "0.85205055924343",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.85202733485193627"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Iúna",
+          "Sum(Populacao.Populacao)": 30626,
+          "Sum(saude Beneficiario.Beneficiarios)": 2331,
+          "Formulas._PercPopSemPlano YoY": "0.00029508277337440077",
+          "Formulas._PercPopSemPlano": "0.92388819956899371",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.9236156564995418"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Jaguaré",
+          "Sum(Populacao.Populacao)": 31858,
+          "Sum(saude Beneficiario.Beneficiarios)": 3495,
+          "Formulas._PercPopSemPlano YoY": "-0.0021782668637976305",
+          "Formulas._PercPopSemPlano": "0.89029443153995858",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.89223796393141264"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Jerônimo Monteiro",
+          "Sum(Populacao.Populacao)": 12112,
+          "Sum(saude Beneficiario.Beneficiarios)": 1832,
+          "Formulas._PercPopSemPlano YoY": "0.00054571315500531563",
+          "Formulas._PercPopSemPlano": "0.84874504623513869",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.84828212751899568"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "João Neiva",
+          "Sum(Populacao.Populacao)": 14203,
+          "Sum(saude Beneficiario.Beneficiarios)": 7062,
+          "Formulas._PercPopSemPlano YoY": "-0.067316913906342549",
+          "Formulas._PercPopSemPlano": "0.50278110258396114",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.539069604756908"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Laranja da Terra",
+          "Sum(Populacao.Populacao)": 11622,
+          "Sum(saude Beneficiario.Beneficiarios)": 539,
+          "Formulas._PercPopSemPlano YoY": "0.00055726400027221955",
+          "Formulas._PercPopSemPlano": "0.95362244019962139",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.95309131671984137"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Linhares",
+          "Sum(Populacao.Populacao)": 185621,
+          "Sum(saude Beneficiario.Beneficiarios)": 64550,
+          "Formulas._PercPopSemPlano YoY": "-0.0040599906877169792",
+          "Formulas._PercPopSemPlano": "0.65224839861869077",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.65490731622387743"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Mantenópolis",
+          "Sum(Populacao.Populacao)": 13090,
+          "Sum(saude Beneficiario.Beneficiarios)": 672,
+          "Formulas._PercPopSemPlano YoY": "0.00015216275919505053",
+          "Formulas._PercPopSemPlano": "0.948663101604278",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.94851877237072579"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Marataízes",
+          "Sum(Populacao.Populacao)": 46461,
+          "Sum(saude Beneficiario.Beneficiarios)": 7199,
+          "Formulas._PercPopSemPlano YoY": "-0.00052214353404652714",
+          "Formulas._PercPopSemPlano": "0.84505284001635783",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.84549430940308579"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Marechal Floriano",
+          "Sum(Populacao.Populacao)": 19159,
+          "Sum(saude Beneficiario.Beneficiarios)": 3842,
+          "Formulas._PercPopSemPlano YoY": "0.0035149467460430721",
+          "Formulas._PercPopSemPlano": "0.79946761313220938",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.79666736975321661"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Marilândia",
+          "Sum(Populacao.Populacao)": 13150,
+          "Sum(saude Beneficiario.Beneficiarios)": 3113,
+          "Formulas._PercPopSemPlano YoY": "-0.0050882477693787375",
+          "Formulas._PercPopSemPlano": "0.76326996197718633",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.76717353098494689"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Mimoso do Sul",
+          "Sum(Populacao.Populacao)": 25011,
+          "Sum(saude Beneficiario.Beneficiarios)": 3197,
+          "Formulas._PercPopSemPlano YoY": "-0.0025001107463117158",
+          "Formulas._PercPopSemPlano": "0.87217624245332059",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.87436224489795922"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Montanha",
+          "Sum(Populacao.Populacao)": 19891,
+          "Sum(saude Beneficiario.Beneficiarios)": 2003,
+          "Formulas._PercPopSemPlano YoY": "-0.0015596759801306491",
+          "Formulas._PercPopSemPlano": "0.8993011914936403",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.9007060010085729"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Mucurici",
+          "Sum(Populacao.Populacao)": 5667,
+          "Sum(saude Beneficiario.Beneficiarios)": 248,
+          "Formulas._PercPopSemPlano YoY": "0.002338711263295103",
+          "Formulas._PercPopSemPlano": "0.9562378683606847",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.95400672209446313"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Muniz Freire",
+          "Sum(Populacao.Populacao)": 18806,
+          "Sum(saude Beneficiario.Beneficiarios)": 1783,
+          "Formulas._PercPopSemPlano YoY": "0.0019842025364345262",
+          "Formulas._PercPopSemPlano": "0.90518983303201106",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.90339730979850075"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Muqui",
+          "Sum(Populacao.Populacao)": 14160,
+          "Sum(saude Beneficiario.Beneficiarios)": 2692,
+          "Formulas._PercPopSemPlano YoY": "-0.01048689275269226",
+          "Formulas._PercPopSemPlano": "0.8098870056497175",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.81847021501586181"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Nova Venécia",
+          "Sum(Populacao.Populacao)": 52531,
+          "Sum(saude Beneficiario.Beneficiarios)": 10790,
+          "Formulas._PercPopSemPlano YoY": "0.0045063619839169388",
+          "Formulas._PercPopSemPlano": "0.79459747577620832",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.79103279565782436"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Pancas",
+          "Sum(Populacao.Populacao)": 18914,
+          "Sum(saude Beneficiario.Beneficiarios)": 2198,
+          "Formulas._PercPopSemPlano YoY": "-0.0028289451327214044",
+          "Formulas._PercPopSemPlano": "0.8837897853441895",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.88629707112970713"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Pedro Canário",
+          "Sum(Populacao.Populacao)": 21803,
+          "Sum(saude Beneficiario.Beneficiarios)": 3277,
+          "Formulas._PercPopSemPlano YoY": "-0.0036923597413943319",
+          "Formulas._PercPopSemPlano": "0.84969958262624412",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.85284860648633853"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Pinheiros",
+          "Sum(Populacao.Populacao)": 24861,
+          "Sum(saude Beneficiario.Beneficiarios)": 2646,
+          "Formulas._PercPopSemPlano YoY": "-0.0062708370253547769",
+          "Formulas._PercPopSemPlano": "0.89356823941112584",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.899207020086141"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Piúma",
+          "Sum(Populacao.Populacao)": 24176,
+          "Sum(saude Beneficiario.Beneficiarios)": 3919,
+          "Formulas._PercPopSemPlano YoY": "-0.014616870665302314",
+          "Formulas._PercPopSemPlano": "0.837897088021178",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.8503261960521914"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Ponto Belo",
+          "Sum(Populacao.Populacao)": 6640,
+          "Sum(saude Beneficiario.Beneficiarios)": 214,
+          "Formulas._PercPopSemPlano YoY": "-0.0043181826627917948",
+          "Formulas._PercPopSemPlano": "0.96777108433734937",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.97196822065657318"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Presidente Kennedy",
+          "Sum(Populacao.Populacao)": 15050,
+          "Sum(saude Beneficiario.Beneficiarios)": 2241,
+          "Formulas._PercPopSemPlano YoY": "-0.0051563888251189242",
+          "Formulas._PercPopSemPlano": "0.85109634551495017",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.855507675733908"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Rio Bananal",
+          "Sum(Populacao.Populacao)": 20467,
+          "Sum(saude Beneficiario.Beneficiarios)": 3646,
+          "Formulas._PercPopSemPlano YoY": "-0.005834724527349777",
+          "Formulas._PercPopSemPlano": "0.82185957883422089",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.82668304668304671"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Rio Novo do Sul",
+          "Sum(Populacao.Populacao)": 11471,
+          "Sum(saude Beneficiario.Beneficiarios)": 2416,
+          "Formulas._PercPopSemPlano YoY": "0.0014377350143773165",
+          "Formulas._PercPopSemPlano": "0.7893819196233981",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.78824862697236509"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Santa Leopoldina",
+          "Sum(Populacao.Populacao)": 13950,
+          "Sum(saude Beneficiario.Beneficiarios)": 885,
+          "Formulas._PercPopSemPlano YoY": "-0.00071903307203289885",
+          "Formulas._PercPopSemPlano": "0.9365591397849462",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.93723304133787011"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Santa Maria de Jetibá",
+          "Sum(Populacao.Populacao)": 45975,
+          "Sum(saude Beneficiario.Beneficiarios)": 5411,
+          "Formulas._PercPopSemPlano YoY": "0.0023700707860201471",
+          "Formulas._PercPopSemPlano": "0.88230560087003806",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.88021941854086672"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Santa Teresa",
+          "Sum(Populacao.Populacao)": 23977,
+          "Sum(saude Beneficiario.Beneficiarios)": 4907,
+          "Formulas._PercPopSemPlano YoY": "-0.0066710935254217967",
+          "Formulas._PercPopSemPlano": "0.79534553947533049",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.80068699731903492"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Domingos do Norte",
+          "Sum(Populacao.Populacao)": 9089,
+          "Sum(saude Beneficiario.Beneficiarios)": 1522,
+          "Formulas._PercPopSemPlano YoY": "-0.00048238542350161821",
+          "Formulas._PercPopSemPlano": "0.8325448344152272",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.83294663573085848"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Gabriel da Palha",
+          "Sum(Populacao.Populacao)": 34313,
+          "Sum(saude Beneficiario.Beneficiarios)": 7174,
+          "Formulas._PercPopSemPlano YoY": "-0.0083566092415856674",
+          "Formulas._PercPopSemPlano": "0.7909247224084166",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.79758986928104569"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São José do Calçado",
+          "Sum(Populacao.Populacao)": 11451,
+          "Sum(saude Beneficiario.Beneficiarios)": 962,
+          "Formulas._PercPopSemPlano YoY": "0.0035871728473150315",
+          "Formulas._PercPopSemPlano": "0.9159898698803598",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.91271580054333534"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Mateus",
+          "Sum(Populacao.Populacao)": 135450,
+          "Sum(saude Beneficiario.Beneficiarios)": 35991,
+          "Formulas._PercPopSemPlano YoY": "-0.0022149471166900514",
+          "Formulas._PercPopSemPlano": "0.73428571428571421",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.735915728707141"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "São Roque do Canaã",
+          "Sum(Populacao.Populacao)": 11222,
+          "Sum(saude Beneficiario.Beneficiarios)": 2356,
+          "Formulas._PercPopSemPlano YoY": "0.00088484844716249891",
+          "Formulas._PercPopSemPlano": "0.79005524861878451",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.78935678749111582"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Serra",
+          "Sum(Populacao.Populacao)": 586901,
+          "Sum(saude Beneficiario.Beneficiarios)": 246877,
+          "Formulas._PercPopSemPlano YoY": "0.0062727390060640211",
+          "Formulas._PercPopSemPlano": "0.579354950834979",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.57574346236113993"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Sooretama",
+          "Sum(Populacao.Populacao)": 28876,
+          "Sum(saude Beneficiario.Beneficiarios)": 5015,
+          "Formulas._PercPopSemPlano YoY": "-0.0084083668098075218",
+          "Formulas._PercPopSemPlano": "0.8263263609918271",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.83333333333333337"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vargem Alta",
+          "Sum(Populacao.Populacao)": 20413,
+          "Sum(saude Beneficiario.Beneficiarios)": 3550,
+          "Formulas._PercPopSemPlano YoY": "-0.0025463432212221391",
+          "Formulas._PercPopSemPlano": "0.82609121638171756",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.82820009808729766"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Venda Nova do Imigrante",
+          "Sum(Populacao.Populacao)": 25630,
+          "Sum(saude Beneficiario.Beneficiarios)": 6262,
+          "Formulas._PercPopSemPlano YoY": "-0.0072724681162328721",
+          "Formulas._PercPopSemPlano": "0.75567694108466643",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.76121283717267185"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Viana",
+          "Sum(Populacao.Populacao)": 79611,
+          "Sum(saude Beneficiario.Beneficiarios)": 22927,
+          "Formulas._PercPopSemPlano YoY": "0.0035230037020384007",
+          "Formulas._PercPopSemPlano": "0.71201215912373916",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.70951254380527051"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vila Pavão",
+          "Sum(Populacao.Populacao)": 9340,
+          "Sum(saude Beneficiario.Beneficiarios)": 512,
+          "Formulas._PercPopSemPlano YoY": "-0.0016829675019616134",
+          "Formulas._PercPopSemPlano": "0.94518201284796577",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.94677540508638269"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vila Valério",
+          "Sum(Populacao.Populacao)": 14289,
+          "Sum(saude Beneficiario.Beneficiarios)": 1890,
+          "Formulas._PercPopSemPlano YoY": "-0.001700674887836776",
+          "Formulas._PercPopSemPlano": "0.86773042200293937",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.86920866334898716"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vila Velha",
+          "Sum(Populacao.Populacao)": 510512,
+          "Sum(saude Beneficiario.Beneficiarios)": 260515,
+          "Formulas._PercPopSemPlano YoY": "-0.0040055255646587375",
+          "Formulas._PercPopSemPlano": "0.48969857711473974",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.491667965720758"
+        },
+        {
+          "DIM_EsferaAdministrativa.Nome": "Vitória",
+          "Sum(Populacao.Populacao)": 343935,
+          "Sum(saude Beneficiario.Beneficiarios)": 229203,
+          "Formulas._PercPopSemPlano YoY": "-0.0018108960251970489",
+          "Formulas._PercPopSemPlano": "0.33358628810676438",
+          "Formulas.PopulacaoSemPlanoSaude% LY": "0.33419147411890104"
+        }
+      ],
+      "valores_unicos": {},
+      "avisos": []
+    }
+  },
+  "erros": {}
+}
