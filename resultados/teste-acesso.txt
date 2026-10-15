@@ -1,0 +1,4 @@
+Teste em 15/10/2026 19:57 UTC
+Acesso simples: HTTP 403
+Navegador: HTTP 403
+RESULTADO: PAINEL BLOQUEADO Page.wait_for_function: Timeout 60000ms exceeded.
