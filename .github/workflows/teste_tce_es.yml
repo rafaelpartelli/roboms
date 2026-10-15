@@ -1,0 +1,50 @@
+name: Teste de acesso ao Painel TCE-ES (Power BI)
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/teste_tce_es.yml', 'robo_tce_es/testar_acesso.py']
+permissions:
+  contents: write
+jobs:
+  teste:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar Playwright
+        run: |
+          pip install -q playwright
+          python -m playwright install --with-deps chromium > /dev/null
+
+      - name: Testar acesso ao relatorio Power BI do TCE-ES
+        working-directory: robo_tce_es
+        run: |
+          python testar_acesso.py resultado_teste.json
+          echo "status_saida=$?" >> "$GITHUB_ENV"
+        continue-on-error: true
+
+      - name: Guardar resultado no repositorio
+        run: |
+          mkdir -p resultados
+          cp robo_tce_es/resultado_teste.json resultados/teste-acesso-tce-es.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resultados/teste-acesso-tce-es.json
+          git commit -m "Resultado do teste de acesso ao Painel TCE-ES" || echo "sem mudanca para gravar"
+          git push
+
+      - name: Guardar captura de tela e log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: teste-tce-es-${{ github.run_id }}
+          path: |
+            robo_tce_es/resultado_teste.json
+            robo_tce_es/captura_teste.png
+          retention-days: 14
+          if-no-files-found: ignore

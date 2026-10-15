@@ -7,6 +7,7 @@ Robôs de Rafael Partelli para acesso a dados do Ministério da Saúde e monitor
 | Radar de Recursos SUS: Espírito Santo (InvestSUS/FNS) | `robo/` | Computador do Rafael (cron); GitHub Actions só manual | Diária | https://partelli.pro/gestor/recursos/ |
 | Radar Diário de Portarias MS (DOU/INLABS) | `robo_dou/` | **Hostinger** (cron, dias úteis 8h30 e 11h00). Versão local desativada em 15/10/2026 | Dias úteis | https://partelli.pro/radar/ |
 | Radar Saúde Pública (newsletter) | `tarefas_agendadas/` | Tarefa agendada do Claude (nuvem) | Seg, qua e sex às 06:53 | Newsletter HTML por e-mail |
+| Painel TCE-ES: Gastos com a função saúde | `robo_tce_es/` | Em teste de acesso (GitHub Actions, manual) — ainda não extrai nem publica dados | — | A definir |
 
 ## 1. Radar de Recursos SUS: Espírito Santo (`robo/`)
 
@@ -39,6 +40,10 @@ Baixa o Diário Oficial da União pelo INLABS, filtra as portarias do Ministéri
 ## 3. Radar Saúde Pública (`tarefas_agendadas/`)
 
 Cópia de referência da instrução da tarefa agendada do Claude que produz a newsletter. Serve para versionar e recriar a tarefa se necessário.
+
+## 4. Painel TCE-ES: Gastos com a função saúde (`robo_tce_es/`)
+
+**Fase de teste de acesso**, ainda não extrai nem publica dados. Acompanha os gastos com a função saúde por município do Painel de Controle do TCE-ES (https://paineldecontrole.tcees.tc.br), que é incorporado como relatório Power BI "publicar na web" (sem API REST própria). Detalhes, achados e próximos passos em `robo_tce_es/LEIA-ME.md`. Teste manual em Actions › "Teste de acesso ao Painel TCE-ES (Power BI)"; resultado gravado em `resultados/teste-acesso-tce-es.json`.
 
 ## Segurança
 
