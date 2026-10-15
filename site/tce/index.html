@@ -39,6 +39,7 @@ html{scroll-padding-top:130px}
 .kpi{background:var(--card);border:1px solid var(--linha);border-radius:10px;padding:14px 16px;border-top:4px solid var(--azul2)}
 .kpi.v{border-top-color:var(--verde)} .kpi.a{border-top-color:var(--amarelo)} .kpi.r{border-top-color:var(--vermelho)}
 .kpi .l{font-size:12.5px;color:var(--muted)}
+.kpi .exp{font-size:11.5px;color:var(--muted);line-height:1.35;margin:2px 0 6px;min-height:28px}
 .kpi .n{font-size:24px;font-weight:bold;margin:4px 0 2px}
 .kpi .d{font-size:12.5px;color:var(--muted)}
 .alertas{margin-top:12px}
@@ -139,7 +140,7 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   </section>
 
   <section id="evolucao">
-    <h2>Evolução da aplicação em saúde <span class="ano"></span></h2>
+    <h2>Evolução da aplicação em saúde <span id="evoTit"></span><span class="ano"></span></h2>
     <p class="lead" id="evoLead"></p>
     <div class="card"><h3>Aplicação em saúde por ano (R$ milhões)</h3><div class="chart alto"><canvas id="cEvo"></canvas></div><p class="nota">Linha amarela: variação percentual sobre o ano anterior. O último ano pode estar parcial, conforme a data da extração no painel do TCE-ES.</p></div>
   </section>
@@ -240,20 +241,20 @@ function render(){
   const k=[];
   const cresc=D.es.evolucao.length?D.es.evolucao[D.es.evolucao.length-1][2]:null;
   if(isES()){
-    k.push(['',`Aplicação em saúde ${ANO}`,mi(D.es.aplicacao),cresc!=null?`${pc(cresc)} em relação a ${ANO-1}`:'']);
-    k.push(['',`Valor médio por habitante`,brl(D.es.valorHab),D.es.valorHabLY?`${pc(D.es.valorHab/D.es.valorHabLY-1)} em relação a ${ANO-1}`:'']);
-    k.push(['v',`População com plano de saúde privado`,pc(D.es.percComPlano),D.es.popComPlano?`${Math.round(D.es.popComPlano).toLocaleString('pt-BR')} pessoas`:'']);
-    k.push(['a',`Municípios com dado disponível`,String(N),'dos 78 municípios do Espírito Santo']);
-    if(D.es.valorHabMin!=null)k.push(['r',`Menor valor por habitante`,brl(D.es.valorHabMin),D.es.valorHabMinMunicipio||'']);
-    if(D.es.valorHabMax!=null)k.push(['v',`Maior valor por habitante`,brl(D.es.valorHabMax),D.es.valorHabMaxMunicipio||'']);
+    k.push(['',`Aplicação em saúde ${ANO}`,'Soma do valor liquidado (efetivamente empenhado e pago) em saúde por todos os municípios do ES no período em análise.',mi(D.es.aplicacao),cresc!=null?`${pc(cresc)} em relação a ${ANO-1}`:'']);
+    k.push(['',`Valor médio por habitante`,'Total aplicado dividido pela população do estado. Mede a intensidade do gasto, não o resultado em saúde.',brl(D.es.valorHab),D.es.valorHabLY?`${pc(D.es.valorHab/D.es.valorHabLY-1)} em relação a ${ANO-1}`:'']);
+    k.push(['v',`População com plano de saúde privado`,'Parcela da população com plano privado (base ANS). O restante depende do SUS para toda a atenção à saúde.',pc(D.es.percComPlano),D.es.popComPlano?`${Math.round(D.es.popComPlano).toLocaleString('pt-BR')} pessoas`:'']);
+    k.push(['a',`Municípios com dado disponível`,'Quantos dos 78 municípios tinham lançamento declarado ao TCE-ES na data da extração.',String(N),'dos 78 municípios do Espírito Santo']);
+    if(D.es.valorHabMin!=null)k.push(['r',`Menor valor por habitante`,'O município que menos aplicou por habitante no estado, entre os com dado disponível.',brl(D.es.valorHabMin),D.es.valorHabMinMunicipio||'']);
+    if(D.es.valorHabMax!=null)k.push(['v',`Maior valor por habitante`,'O município que mais aplicou por habitante no estado, entre os com dado disponível.',brl(D.es.valorHabMax),D.es.valorHabMaxMunicipio||'']);
   }else{
     const r=posHab(+atual);
-    k.push([r>N-15?'r':'',`Valor por habitante em ${ANO}`,brl(o.valorHab),`${r}º de ${N} no estado`+(o.varHab!=null?` · ${pc(o.varHab)} em relação a ${ANO-1}`:'')]);
-    k.push([o.percComPlano>.5?'v':'',`População com plano de saúde privado`,pc(o.percComPlano),o.pop?`${(o.benef||0).toLocaleString('pt-BR')} de ${o.pop.toLocaleString('pt-BR')} habitantes`:'']);
-    k.push(['',`Aplicação em saúde no ES em ${ANO}`,mi(D.es.aplicacao),'para comparação, panorama geral do estado']);
-    k.push(['',`Valor médio por habitante no ES`,brl(D.es.valorHab),'média estadual, para comparação']);
+    k.push([r>N-15?'r':'',`Valor por habitante em ${ANO}`,'Valor liquidado em saúde por este município dividido pela sua população.',brl(o.valorHab),`${r}º de ${N} no estado`+(o.varHab!=null?` · ${pc(o.varHab)} em relação a ${ANO-1}`:'')]);
+    k.push([o.percComPlano>.5?'v':'',`População com plano de saúde privado`,'Parcela da população do município com plano privado (base ANS). O restante depende do SUS municipal.',pc(o.percComPlano),o.pop?`${(o.benef||0).toLocaleString('pt-BR')} de ${o.pop.toLocaleString('pt-BR')} habitantes`:'']);
+    k.push(['',`Aplicação em saúde no ES em ${ANO}`,'Panorama geral do estado, para comparar com o município selecionado.',mi(D.es.aplicacao),'para comparação, panorama geral do estado']);
+    k.push(['',`Valor médio por habitante no ES`,'Média estadual de valor aplicado por habitante, para comparar com o município selecionado.',brl(D.es.valorHab),'média estadual, para comparação']);
   }
-  document.getElementById('kpis').innerHTML=k.map(([c,l,n,d])=>`<div class="kpi ${c}"><div class="l">${l}</div><div class="n">${n}</div><div class="d">${d}</div></div>`).join('');
+  document.getElementById('kpis').innerHTML=k.map(([c,l,exp,n,d])=>`<div class="kpi ${c}"><div class="l">${l}</div><div class="exp">${exp}</div><div class="n">${n}</div><div class="d">${d}</div></div>`).join('');
   // alertas
   const al=[];
   if(isES()){
@@ -267,7 +268,15 @@ function render(){
     if(o.percComPlano<.2)al.push(['i',`Menos de ${pc(.2,0)} da população de ${nome} tem plano de saúde privado; a quase totalidade depende do SUS.`]);
   }
   document.getElementById('alertas').innerHTML=al.map(([c,tx])=>`<div class="alerta ${c}">${tx}</div>`).join('');
-  document.getElementById('evoLead').innerHTML=isES()?`A aplicação em saúde do Espírito Santo soma <b>${mi(D.es.aplicacao)}</b> em ${ANO}, partindo de ${mi(D.es.evolucao[0][1])} em ${D.es.evolucao[0][0]}.`:`Valores de evolução são apresentados no consolidado do Espírito Santo; o painel do TCE-ES não publica série histórica por município nesta página.`;
+  // evolução: ES ou município selecionado
+  const serieEvo=isES()?D.es.evolucao:(o.evolucao||D.es.evolucao);
+  chEvo.data.labels=serieEvo.map(e=>e[0]);
+  chEvo.data.datasets[0].data=serieEvo.map(e=>+(e[1]/1e6).toFixed(2));
+  chEvo.data.datasets[0].label=isES()?'Aplicado em saúde (ES)':'Aplicado em saúde ('+nome+')';
+  chEvo.data.datasets[1].data=serieEvo.map(e=>e[2]==null?null:+(e[2]*100).toFixed(1));
+  chEvo.update();
+  document.getElementById('evoTit').textContent=isES()?'':'· '+nome+' ';
+  document.getElementById('evoLead').innerHTML=isES()?`A aplicação em saúde do Espírito Santo soma <b>${mi(D.es.aplicacao)}</b> em ${ANO}, partindo de ${mi(D.es.evolucao[0][1])} em ${D.es.evolucao[0][0]}.`:(o.evolucao?`A aplicação em saúde de <b>${nome}</b> soma <b>${mi(serieEvo[serieEvo.length-1][1])}</b> em ${ANO}, partindo de ${mi(serieEvo[0][1])} em ${serieEvo[0][0]}.`:`O painel do TCE-ES não trouxe série histórica para ${nome}; exibindo o consolidado do Espírito Santo para referência.`);
   leitura(o,nome);
   document.getElementById('ctaTit').textContent=isES()?'Precisa qualificar o planejamento e a prestação de contas da sua saúde?':`Precisa de apoio técnico para a gestão da saúde de ${nome}?`;
   document.title=(isES()?'Painel TCE-ES: Gastos com a Função Saúde':'Painel TCE-ES · '+nome)+' | Rafael Partelli';

@@ -66,6 +66,20 @@ def montar(R):
     evolucao.sort(key=lambda x: x[0])
     anoRef = evolucao[-1][0] if evolucao else None
 
+    # ---------------- Evolução por ano, por município ----------------
+    evolucao_mun = {}
+    if C.get("evolucao_por_ano_municipio", {}).get("linhas"):
+        for linha in C["evolucao_por_ano_municipio"]["linhas"]:
+            ano = linha.get("FT_DespesaDotacaoMunicipio.AnoReferencia")
+            nome = linha.get("DIM_EsferaAdministrativa.Nome")
+            if ano is None or nome is None:
+                continue
+            evolucao_mun.setdefault(nome, []).append(
+                [int(ano), num(linha.get("Formulas._SomaLiquidado")), num(linha.get("Formulas._SomaLiquidado YoY %"))]
+            )
+        for lista in evolucao_mun.values():
+            lista.sort(key=lambda x: x[0])
+
     # ---------------- Gasto por subfunção ----------------
     subfuncoes = []
     for linha in C["tabela_aplicacao_por_subfuncao"]["linhas"]:
@@ -139,6 +153,7 @@ def montar(R):
                 percComPlano=percComPlanoMun,
                 percSemPlanoYoY=p.get("percSemPlanoYoY"),
                 aplicado=aplicado_mun.get(nome),
+                evolucao=evolucao_mun.get(nome) or None,
             )
         )
     municipios.sort(key=lambda m: -(m["valorHab"] or 0))
