@@ -44,6 +44,9 @@ jobs:
           if a.get('m'):
               tn, ta = tot(n), tot(a)
               print(f'saldo total: {ta:.0f} -> {tn:.0f}')
+              fb = lambda d: sum(m['fb'] for m in d['m']) + d['EST']['fb']
+              if n['meta']['anoFaf'] == a['meta']['anoFaf'] and fb(a) and not 0.6 < fb(n) / fb(a) < 1.5:
+                  sys.exit('variacao suspeita do fundo a fundo; publicacao suspensa')
               if ta and abs(tn / ta - 1) > 0.4:
                   sys.exit('variacao suspeita do saldo total; publicacao suspensa')
           PY

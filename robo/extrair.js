@@ -38,10 +38,14 @@ async function extrairInvestsus(UF) {
   const U = `UF={'${UF}'}`, UC = `UF_C={'${UF}'}`, UP = `SG_UF_PROPOSTA={'${UF}'}`;
 
   // 1. Repasses fundo a fundo (ano corrente do painel)
-  R.fafAno = (await pull(A.FAF, ['ANO'], [`Sum({<${U}>} VL_BRUTO)`]))[0];
-  R.fafTot = await pull(A.FAF, ['MUNICIPIO', 'TP_REPASSE'], [`Sum({<${U}>} VL_BRUTO)`, `Sum({<${U}>} VL_LIQUIDO)`, `Max({<${U}>} QT_POPULACAO)`]);
-  R.fafMes = await pull(A.FAF, ['MUNICIPIO', 'TP_REPASSE', 'MES'], [`Sum({<${U}>} VL_BRUTO)`]);
-  R.fafComp = await pull(A.FAF, ['MUNICIPIO', 'TP_REPASSE', 'BLOCO', 'COMPONENTE'], [`Sum({<${U}>} VL_BRUTO)`]);
+  // o painel pode trazer varios anos: usa sempre o ano mais recente com repasse
+  const anosFaf = (await pull(A.FAF, ['ANO'], [`Sum({<${U}>} VL_BRUTO)`])).filter(r => +r[1] > 0).map(r => +r[0]).filter(a => a > 2000);
+  const anoFaf = Math.max(...anosFaf);
+  const UF2 = `${U},ANO={${anoFaf}}`;
+  R.fafAno = (await pull(A.FAF, ['ANO'], [`Sum({<${UF2}>} VL_BRUTO)`])).find(r => +r[0] === anoFaf);
+  R.fafTot = await pull(A.FAF, ['MUNICIPIO', 'TP_REPASSE'], [`Sum({<${UF2}>} VL_BRUTO)`, `Sum({<${UF2}>} VL_LIQUIDO)`, `Max({<${UF2}>} QT_POPULACAO)`]);
+  R.fafMes = await pull(A.FAF, ['MUNICIPIO', 'TP_REPASSE', 'MES'], [`Sum({<${UF2}>} VL_BRUTO)`]);
+  R.fafComp = await pull(A.FAF, ['MUNICIPIO', 'TP_REPASSE', 'BLOCO', 'COMPONENTE'], [`Sum({<${UF2}>} VL_BRUTO)`]);
 
   // 2. Saldos em conta por ente, esfera, tipo de conta e data (desde 2013)
   R.saldo = await pull(A.SAL, ['MUN_C', 'ESFERA_C', 'TIPO_C', 'DT_SALDO'],

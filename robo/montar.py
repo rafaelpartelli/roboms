@@ -192,6 +192,9 @@ def validar(D):
     if s <= 0: erros.append('saldo total zerado')
     ep = sum(sum(a[1] for a in m['ano'] if a[0] == D['meta']['anoEm']) for m in D['m'] + [D['EST']])
     if ep <= 0: erros.append('emendas do ano corrente zeradas')
+    import datetime
+    hoje = datetime.date.today().year
+    if not (hoje - 1 <= D['meta']['anoFaf'] <= hoje): erros.append(f"ano do fundo a fundo fora do esperado: {D['meta']['anoFaf']}")
     if erros: raise SystemExit('VALIDAÇÃO FALHOU: ' + '; '.join(erros))
     return dict(faf=round(fb), saldo=round(s), emendas=round(ep))
 
