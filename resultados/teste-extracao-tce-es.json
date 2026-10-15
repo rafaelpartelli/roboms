@@ -1,5 +1,5 @@
 {
-  "quando_utc": "2026-10-15T22:20:10.826517+00:00",
+  "quando_utc": "2026-10-15T22:23:02.983797+00:00",
   "ano_referencia": null,
   "consultas": {
     "kpi_aplicacao_total": {
@@ -1374,17 +1374,6 @@
       "valores_unicos": {},
       "avisos": []
     },
-    "atualizado_em": {
-      "linhas": [
-        {
-          "Formulas.CustomLabels_VisualMunicipal_AlertLog_Right": null
-        }
-      ],
-      "valores_unicos": {},
-      "avisos": [
-        "A data reduction algorithm was specified but the corresponding grouping does not exist. The data reduction will be ignored for primary, secondary, intersection and scoped."
-      ]
-    },
     "filtro_mes_min_max": {
       "linhas": [
         {
@@ -1793,14 +1782,6 @@
           "8360221.9900000114",
           "364244190.61999977"
         ]
-      },
-      "avisos": []
-    },
-    "gestao_estadual": {
-      "linhas": [],
-      "valores_unicos": {
-        "C": [],
-        "Ø": 3
       },
       "avisos": []
     }
