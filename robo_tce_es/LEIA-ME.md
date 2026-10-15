@@ -1,25 +1,16 @@
 # Robô TCE-ES: Painel de Controle (recorte saúde)
 
-> **Situação em 15/10/2026:** pipeline completo (`extrair.py` → `montar.py` →
-> `enviar.py`) e testado de ponta a ponta no GitHub Actions. Publica em
-> **partelli.pro/tce** (nível raiz, pasta `tce`, mesmo padrão do `/fundo/`
-> do InvestSUS). Agendado em `.github/workflows/robo_tce_es.yml`, segunda,
-> quarta e sexta às 06:30 Brasília (combinado com o Rafael) — primeira
-> opção porque a extração funciona por HTTP puro, sem navegador e sem
-> bloqueio de IP (ver seção abaixo), e segue a ordem de preferência do
-> `CLAUDE.md` raiz.
->
-> **Pendência que bloqueia a publicação de verdade:** os segredos
-> `FTP_HOST`, `FTP_USUARIO` e `FTP_SENHA` ainda não estão cadastrados
-> *neste repositório* (Settings → Secrets and variables → Actions) — são os
-> mesmos valores já usados pelo robô `robo/` (InvestSUS), só precisam ser
-> adicionados aqui também. Testes em 15/10/2026 confirmaram: extração e
-> montagem rodam certinho (schema `meta`/`es`/`subfuncoes`/`m`), mas o passo
-> "Enviar ao site" falha porque `FTP_HOST` chega vazio ao workflow. O
-> `partelli.pro/tce/dados.json` publicado hoje foi colocado manualmente
-> (fora do robô, via upload direto no Hostinger) e está no schema antigo
-> (`total`/`evolucaoAno`/...) — será substituído pelo schema novo assim que
-> os segredos forem cadastrados e o workflow rodar com sucesso de verdade.
+> **Situação em 15/10/2026:** completo, testado de ponta a ponta e
+> publicando de verdade. Pipeline (`extrair.py` → `montar.py` →
+> `enviar.py`) rodou com sucesso no GitHub Actions, com os segredos
+> `FTP_HOST`/`FTP_USUARIO`/`FTP_SENHA` já cadastrados neste repositório
+> (Settings → Secrets and variables → Actions). Publica em
+> **partelli.pro/tce** (schema `meta`/`es`/`subfuncoes`/`m`, confirmado
+> direto no servidor), com `dados_anterior.json` preservado a cada envio.
+> Agendado em `.github/workflows/robo_tce_es.yml` para segunda, quarta e
+> sexta às 06:30 Brasília — primeira opção porque a extração funciona por
+> HTTP puro, sem navegador e sem bloqueio de IP (ver seção abaixo), e segue
+> a ordem de preferência do `CLAUDE.md` raiz.
 
 ## O que é
 
