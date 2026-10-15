@@ -1,0 +1,61 @@
+name: Robo TCE-ES (Gastos com a funcao saude)
+
+# Agendado para segundas, quartas e sextas, 06:30 (horario de Brasilia).
+# A extracao ja foi validada (ver robo_tce_es/LEIA-ME.md): chamada direta via
+# HTTP, sem navegador, ao endpoint interno do Power BI do Painel de Controle
+# do TCE-ES. AINDA NAO publica no site: falta decidir com o Rafael a pasta
+# de destino e escrever montar.py/enviar.py (ver "Proximos passos" no
+# LEIA-ME.md do robo). Por enquanto, cada execucao so grava o resultado
+# bruto decodificado em resultados/dados-tce-es.json, para acompanhar que a
+# extracao continua funcionando ate a publicacao estar pronta.
+on:
+  schedule:
+    - cron: '30 9 * * 1,3,5'
+  workflow_dispatch:
+
+concurrency: robo-tce-es
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install -q requests
+
+      - name: Extrair dados do painel (HTTP puro, sem navegador)
+        working-directory: robo_tce_es
+        run: python extrair.py dados_extraidos.json
+
+      # TODO (depende de decisao do Rafael sobre pasta de destino no site):
+      #   - name: Montar e conferir (trava de variacao)
+      #     working-directory: robo_tce_es
+      #     run: python montar.py dados_extraidos.json dados.json
+      #   - name: Enviar ao site
+      #     working-directory: robo_tce_es
+      #     run: python enviar.py dados.json
+
+      - name: Guardar resultado no repositorio
+        run: |
+          mkdir -p resultados
+          cp robo_tce_es/dados_extraidos.json resultados/dados-tce-es.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resultados/dados-tce-es.json
+          git commit -m "Atualiza dados extraidos do Painel TCE-ES ($(date -u +%Y-%m-%d))" || echo "sem mudanca para gravar"
+          git push
+
+      - name: Guardar artefato da execucao
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dados-tce-es-${{ github.run_id }}
+          path: robo_tce_es/dados_extraidos.json
+          retention-days: 30
+          if-no-files-found: ignore

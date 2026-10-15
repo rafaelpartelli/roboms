@@ -1,7 +1,11 @@
 # Robô TCE-ES: Painel de Controle (recorte saúde)
 
-> **Situação em 15/10/2026:** extração validada e funcionando. Falta decidir
-> onde publicar no site (`montar.py`/`enviar.py`) e o agendamento definitivo.
+> **Situação em 15/10/2026:** extração validada e **agendada** (segundas,
+> quartas e sextas, 06:30 horário de Brasília, via GitHub Actions —
+> `.github/workflows/robo_tce_es.yml`). Cada execução grava o resultado bruto
+> decodificado em `resultados/dados-tce-es.json`. Ainda **não publica no
+> site**: falta decidir a pasta de destino e escrever `montar.py`/`enviar.py`
+> (ver "Próximos passos").
 
 ## O que é
 
@@ -86,12 +90,14 @@ arquivo.
 
 ## Próximos passos
 
-1. **Decidir com o Rafael:** pasta de destino no site (`partelli.pro/<área>/`)
-   e frequência de atualização.
+1. **Decidir com o Rafael:** pasta de destino no site (`partelli.pro/<área>/`).
+   Frequência de atualização já decidida: segundas, quartas e sextas.
 2. Escrever `montar.py`: transforma a saída de `extrair.py` no JSON final do
    site (padrão parecido com o `dados.json` do robô InvestSUS), com a trava
    de variação (seguir o padrão de 40% usado no InvestSUS) antes de publicar.
-3. Escrever `enviar.py` (publicação — FTP ou cópia local, a definir).
+3. Escrever `enviar.py` (publicação — FTP ou cópia local, a definir) e
+   acrescentar os passos de montagem/envio ao `robo_tce_es.yml` (já deixados
+   como `TODO` comentado no workflow).
 4. Rodar manualmente uma vez do jeito de produção, conferir no site, só então
    agendar. Dado que a extração funciona por HTTP puro e sem bloqueio, o
    **GitHub Actions é a primeira opção** (ordem de preferência do
