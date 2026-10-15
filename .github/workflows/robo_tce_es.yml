@@ -48,7 +48,9 @@ jobs:
           PY
 
       - name: Enviar ao site
+        id: enviar
         working-directory: robo_tce_es
+        continue-on-error: true
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USUARIO: ${{ secrets.FTP_USUARIO }}
@@ -59,10 +61,18 @@ jobs:
           printf 'FTP_HOST=%s\nFTP_USUARIO=%s\nFTP_SENHA=%s\nFTP_PASTA=domains/partelli.pro/public_html/tce\n' "$FTP_HOST" "$FTP_USUARIO" "$FTP_SENHA" > ~/.config/robo_tce_es/.env
           python enviar.py dados.json
 
-      - name: Diagnostico temporario de FTP (onde o enviar.py realmente gravou)
+      - name: Diagnostico temporario de FTP (onde o enviar.py realmente grava)
+        if: always()
         working-directory: robo_tce_es
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USUARIO: ${{ secrets.FTP_USUARIO }}
+          FTP_SENHA: ${{ secrets.FTP_SENHA }}
         run: |
-          python - <<'PY' > diagnostico_ftp.log 2>&1
+          echo "resultado do passo Enviar ao site: ${{ steps.enviar.outcome }}" > diagnostico_ftp.log
+          echo "chaves de primeiro nivel de dados.json gerado nesta execucao:" >> diagnostico_ftp.log
+          python -c "import json; print(sorted(json.load(open('dados.json')).keys()))" >> diagnostico_ftp.log 2>&1
+          python - <<'PY' >> diagnostico_ftp.log 2>&1
           import sys
           sys.path.insert(0, '.')
           import enviar
@@ -73,11 +83,12 @@ jobs:
           print('pwd apos conectar():', ftp.pwd())
           print('nlst():', ftp.nlst())
           try:
-              print('tamanho dados.json:', ftp.size('dados.json'))
+              print('tamanho dados.json no servidor:', ftp.size('dados.json'))
           except Exception as e:
               print('erro ao pegar tamanho:', e)
           ftp.quit()
           PY
+          cat diagnostico_ftp.log
           mkdir -p ../resultados
           cp diagnostico_ftp.log ../resultados/diagnostico-ftp-tce-es.log
           cd ..
@@ -86,6 +97,10 @@ jobs:
           git add resultados/diagnostico-ftp-tce-es.log
           git commit -m "Diagnostico temporario: onde o enviar.py do TCE-ES esta gravando" || echo "sem mudanca"
           git push
+
+      - name: Falhar se o envio falhou
+        if: steps.enviar.outcome == 'failure'
+        run: exit 1
 
       - name: Guardar dados do dia
         if: always()
