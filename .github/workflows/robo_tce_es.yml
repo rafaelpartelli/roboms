@@ -59,6 +59,34 @@ jobs:
           printf 'FTP_HOST=%s\nFTP_USUARIO=%s\nFTP_SENHA=%s\nFTP_PASTA=domains/partelli.pro/public_html/tce\n' "$FTP_HOST" "$FTP_USUARIO" "$FTP_SENHA" > ~/.config/robo_tce_es/.env
           python enviar.py dados.json
 
+      - name: Diagnostico temporario de FTP (onde o enviar.py realmente gravou)
+        working-directory: robo_tce_es
+        run: |
+          python - <<'PY' > diagnostico_ftp.log 2>&1
+          import sys
+          sys.path.insert(0, '.')
+          import enviar
+          cfg = enviar.ler_env()
+          print('FTP_HOST:', cfg.get('FTP_HOST'))
+          print('FTP_PASTA (tentativa 1):', cfg.get('FTP_PASTA'))
+          ftp = enviar.conectar(cfg)
+          print('pwd apos conectar():', ftp.pwd())
+          print('nlst():', ftp.nlst())
+          try:
+              print('tamanho dados.json:', ftp.size('dados.json'))
+          except Exception as e:
+              print('erro ao pegar tamanho:', e)
+          ftp.quit()
+          PY
+          mkdir -p ../resultados
+          cp diagnostico_ftp.log ../resultados/diagnostico-ftp-tce-es.log
+          cd ..
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resultados/diagnostico-ftp-tce-es.log
+          git commit -m "Diagnostico temporario: onde o enviar.py do TCE-ES esta gravando" || echo "sem mudanca"
+          git push
+
       - name: Guardar dados do dia
         if: always()
         uses: actions/upload-artifact@v4
