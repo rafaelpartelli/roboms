@@ -1,12 +1,24 @@
 #!/usr/bin/env python3
 """
 Extrai os dados do painel "Gastos com a funcao saude" do Painel de Controle
-do TCE-ES, direto via HTTP (sem navegador), reenviando as consultas
-capturadas em `consultas/` ao endpoint interno do Power BI.
+do TCE-ES, direto via HTTP (sem navegador). Duas fontes, ambas sem
+sessao/cookie/token dinamico (so o que vai na URL/corpo da chamada):
 
-Como isso foi descoberto, e por que funciona sem sessao/cookie/token
-dinamico, esta documentado em LEIA-ME.md e nos commits do teste de acesso
-(testar_acesso.py) e do teste de replay (testar_replay.py).
+1. Power BI "publicar na web" (consultas/*.json reenviadas ao endpoint
+   interno do Power BI) - traz valor por habitante, populacao com/sem plano
+   de saude privado, gasto por subfuncao, evolucao anual em R$.
+2. API REST propria do Painel de Controle (paineldecontrole.tcees.tc.br/api)
+   - descoberta em 16/10/2026 explorando a pagina publica
+   /municipio/<ano>/<cidade>/gestaoFiscal/saude - traz o indicador oficial
+   de "Limite constitucional" (percentual da receita aplicado em saude,
+   EC29/LC141) por municipio e para o ES, que o Power BI desta pagina nao
+   tem (nao ha campo de receita nas consultas Power BI capturadas).
+   Testada e confirmada acessivel de IP de nuvem compartilhada (GitHub
+   Actions) em 16/10/2026 - ver resultados/teste-api-rest-tce-es.json e
+   testar_api_rest.py.
+
+Como isso foi descoberto esta documentado em LEIA-ME.md e nos commits do
+teste de acesso (testar_acesso.py) e do teste de replay (testar_replay.py).
 
 Uso: python extrair.py [saida.json]
 Saida: grava um JSON com os dados brutos decodificados de cada consulta
@@ -25,6 +37,14 @@ import dsr
 URL = "https://wabi-brazil-south-api.analysis.windows.net/public/reports/querydata?synchronous=true"
 RESOURCE_KEY = "0b4992ae-e680-4f0c-b307-83c889f69479"
 PASTA_CONSULTAS = Path(__file__).parent / "consultas"
+
+API_REST_BASE = "https://paineldecontrole.tcees.tc.br"
+API_REST_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "Accept": "application/json, text/plain, */*",
+    "Referer": f"{API_REST_BASE}/municipio/2026/afonso-claudio/gestaoFiscal/saude",
+}
+MUNICIPIOS_TCE = json.loads((Path(__file__).parent / "municipios_tce_es.json").read_text(encoding="utf-8"))["municipios"]
 
 # Consultas que de fato importam para o dado publicado (as demais salvas em
 # consultas/ sao auxiliares da interface: badges HTML, legendas, opcoes de
@@ -94,6 +114,43 @@ def executar_consulta(nome: str, ano: int | None) -> dict:
     return decodificado
 
 
+def get_api_rest(caminho: str, params: dict) -> dict:
+    resp = requests.get(f"{API_REST_BASE}{caminho}", headers=API_REST_HEADERS, params=params, timeout=20)
+    resp.raise_for_status()
+    return resp.json()
+
+
+def extrair_limite_constitucional(ano: int) -> dict:
+    """Extrai o indicador oficial de limite constitucional (EC29/LC141) de
+    aplicacao em saude, da API REST propria do Painel de Controle: o
+    percentual da receita aplicado em saude, para o ES e para cada um dos
+    78 municipios, mais a evolucao anual (2022-ano) do valor e do
+    percentual. Nao depende das consultas Power BI acima."""
+    resultado = {"estado": None, "municipios": {}, "erros": {}}
+
+    try:
+        resultado["estado"] = get_api_rest("/api/EstadoControllers/Saude/GetSumario", {"anoExercicio": ano})
+    except Exception as e:  # noqa: BLE001
+        resultado["erros"]["estado"] = str(e)[:300]
+
+    for m in MUNICIPIOS_TCE:
+        nome = m["nome"]
+        try:
+            sumario = get_api_rest(
+                "/api/MunicipioControllers/Saude/GetSumario",
+                {"anoExercicio": ano, "idEsferaAdministrativa": m["id"]},
+            )
+            evolucao = get_api_rest(
+                "/api/MunicipioControllers/Saude/GetGraficosEvolucaoAnualAplicacao",
+                {"idEsferaAdministrativa": m["id"], "anoExercicio": ano},
+            )
+            resultado["municipios"][nome] = {"sumario": sumario, "evolucao": evolucao}
+        except Exception as e:  # noqa: BLE001
+            resultado["erros"][nome] = str(e)[:300]
+
+    return resultado
+
+
 def main(out_path: str, ano: int | None) -> int:
     resultado = {
         "quando_utc": datetime.now(timezone.utc).isoformat(),
@@ -108,6 +165,9 @@ def main(out_path: str, ano: int | None) -> int:
         except Exception as e:  # noqa: BLE001
             resultado["erros"][nome] = str(e)[:500]
 
+    ano_limite = ano or datetime.now().year
+    resultado["limite_constitucional"] = extrair_limite_constitucional(ano_limite)
+
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(resultado, f, ensure_ascii=False, indent=2)
 
@@ -120,7 +180,13 @@ def main(out_path: str, ano: int | None) -> int:
             n = len(resultado["consultas"][nome]["linhas"])
             print(f"  [OK] {nome}: {n} linha(s)")
 
-    return 1 if resultado["erros"] else 0
+    lc = resultado["limite_constitucional"]
+    print(f"Limite constitucional (API REST): estado {'OK' if lc['estado'] else 'ERRO'}, "
+          f"{len(lc['municipios'])} municipio(s) OK, {len(lc['erros'])} erro(s)")
+
+    erros_consultas = 1 if resultado["erros"] else 0
+    erros_limite = 1 if lc["erros"] else 0
+    return 1 if (erros_consultas or erros_limite) else 0
 
 
 if __name__ == "__main__":

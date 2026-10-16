@@ -16,7 +16,7 @@ concurrency: robo-tce-es
 jobs:
   atualizar:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 

@@ -175,6 +175,37 @@ def montar(R):
     for m in municipios:
         m["percAplicado"] = (m["aplicado"] / total_aplicado_municipios) if (m["aplicado"] is not None and total_aplicado_municipios) else None
 
+    # ---------------- Limite constitucional (EC29/LC141), API REST do TCE-ES ----------------
+    # Percentual da receita aplicado em saude - indicador oficial, distinto
+    # do "percAplicado" acima (que e' fatia do gasto total do ES, nao da
+    # receita do proprio municipio). Fonte: extrair_limite_constitucional()
+    # em extrair.py (API REST propria do Painel de Controle, nao Power BI).
+    lc = R.get("limite_constitucional") or {}
+    limiteEstado = None
+    if lc.get("estado"):
+        e = lc["estado"]
+        limiteEstado = dict(
+            percentual=num(e.get("aplicacaoPercentual")),
+            aplicacao=num(e.get("aplicacao")),
+            aplicacaoPerCapita=num(e.get("aplicacaoPerCapita")),
+            populacao=e.get("populacao"),
+        )
+
+    limite_mun = lc.get("municipios") or {}
+    for m in municipios:
+        info = limite_mun.get(m["n"])
+        if not info:
+            m["limitePercentual"] = None
+            m["limiteEvolucao"] = None
+            continue
+        sumario = info.get("sumario") or {}
+        m["limitePercentual"] = num(sumario.get("aplicacaoPercentual"))
+        evo = info.get("evolucao") or {}
+        pontos_valor = {p["ano"]: num(p.get("valor")) for p in (evo.get("aplicacao") or [])}
+        pontos_perc = {p["ano"]: num(p.get("valor")) for p in (evo.get("percentual") or [])}
+        anos = sorted(set(pontos_valor) | set(pontos_perc))
+        m["limiteEvolucao"] = [[a, pontos_valor.get(a), pontos_perc.get(a)] for a in anos] or None
+
     D = dict(
         meta=dict(
             extracao=dt.datetime.fromisoformat(R["quando_utc"].replace("Z", "+00:00"))
@@ -198,6 +229,7 @@ def montar(R):
             percComPlano=percComPlano,
             popComPlano=popComPlano,
             evolucao=evolucao,
+            limiteConstitucional=limiteEstado,
         ),
         subfuncoes=subfuncoes,
         m=municipios,
