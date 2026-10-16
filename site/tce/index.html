@@ -101,6 +101,8 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
 .tce-hero .lead{max-width:78ch;font-size:17px;margin:0}
 .tce-hero h1{margin-bottom:10px}
 .tce-hero .tce-sel{display:inline-block;margin:0 0 12px}
+.competencia{display:inline-flex;align-items:center;gap:8px;background:var(--azul2);color:#fff;font-weight:bold;font-size:15px;padding:8px 16px;border-radius:999px;margin:0 0 14px}
+.competencia .r{font-weight:normal;opacity:.9;font-size:13px}
 </style>
 </head>
 <body class="gz">
@@ -125,9 +127,13 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   <div class="wrap">
     <p class="crumb"><a href="/">Início</a> &#8250; <a href="/gestor/">Área do Gestor</a> &#8250; Painel TCE-ES</p>
     <span class="badge tce-sel">Atualizado em <span class="dt-extracao">...</span></span>
-    <span class="badge tce-sel" id="badgePeriodo" style="display:none"></span>
     <h1>Painel TCE-ES: Gastos com a Função Saúde</h1>
     <p class="lead">Quanto cada um dos 78 municípios do Espírito Santo aplicou em saúde, o valor médio por habitante e a cobertura de plano de saúde privado, extraídos do Painel de Controle do Tribunal de Contas do Espírito Santo. A página abre no panorama geral; use o filtro para ver um município específico.</p>
+    <div class="competencia" id="competenciaBadge" style="display:none">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <span>Competência em análise: <span id="competenciaTxt"></span></span>
+      <span class="r" id="competenciaParcial"></span>
+    </div>
   </div>
 </section>
 <div class="filtro"><div class="in">
@@ -151,6 +157,14 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
       <h3 id="limCardTit">Percentual da receita aplicado em saúde</h3>
       <div class="gauge"><span class="valor" id="limValor">–</span><span class="pill" id="limPill"></span></div>
       <p class="nota">A Constituição (EC 29/2000, regulamentada pela LC 141/2012) exige que municípios apliquem no mínimo <b>15% da receita de impostos e transferências</b> em ações e serviços públicos de saúde. O ano mais recente pode estar parcial.</p>
+    </div>
+    <div class="card" style="margin-top:14px" id="limQuadroCard">
+      <h3 id="limQuadroTit">Receita e valor liquidado em saúde</h3>
+      <div class="kpis" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:4px">
+        <div class="kpi"><div class="l">Valor liquidado em saúde</div><div class="exp">Valor efetivamente empenhado e pago em ações e serviços públicos de saúde, declarado ao TCE-ES.</div><div class="n" id="limLiquidado">–</div></div>
+        <div class="kpi"><div class="l">Receita (calculada)</div><div class="exp">Receita de impostos e transferências, obtida a partir do valor liquidado e do percentual declarado (valor liquidado ÷ percentual). Não é um dado bruto da fonte, é calculada a partir dos dois valores oficiais.</div><div class="n" id="limReceita">–</div></div>
+      </div>
+      <p class="nota" style="margin-top:8px">A API do TCE-ES só publica o percentual já calculado, não a receita em reais. A receita acima é obtida por cálculo direto (valor liquidado ÷ percentual), sujeita a pequena imprecisão de arredondamento do percentual (2 casas decimais).</p>
     </div>
     <div class="card" style="margin-top:14px" id="limComparCard">
       <h3>Comparação entre os 78 municípios</h3>
@@ -209,12 +223,17 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
 <script>if(window.VLibras){new window.VLibras.Widget('https://vlibras.gov.br/app');}</script>
 <script src="/script.js?v=20261012g"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 <script>
 function iniciar(D){
 const ANO=D.meta.anoRef;
 document.querySelectorAll('.ano').forEach(e=>e.textContent=ANO);
 document.querySelectorAll('.dt-extracao').forEach(e=>e.textContent=D.meta.extracao);
-if(D.meta.periodo){const bp=document.getElementById('badgePeriodo');bp.textContent='Período em análise: '+D.meta.periodo;bp.style.display='';}
+if(D.meta.periodo){
+  document.getElementById('competenciaTxt').textContent=D.meta.periodo;
+  document.getElementById('competenciaParcial').textContent=(D.meta.mesMax!=null&&D.meta.mesMax<12)?'· ano ainda parcial':'';
+  document.getElementById('competenciaBadge').style.display='';
+}
 // ---------- utilidades ----------
 const brl=v=>v==null||!isFinite(v)?'–':v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
 const mi=v=>v==null||!isFinite(v)?'–':v===0?'R$ 0':(Math.abs(v)>=1e9?'R$ '+(v/1e9).toLocaleString('pt-BR',{maximumFractionDigits:2})+' bi':(Math.abs(v)>=1e6?'R$ '+(v/1e6).toLocaleString('pt-BR',{maximumFractionDigits:1})+' mi':'R$ '+(v/1e3).toLocaleString('pt-BR',{maximumFractionDigits:0})+' mil'));
@@ -233,16 +252,20 @@ const N=D.m.length;
 const C=k=>getComputedStyle(document.documentElement).getPropertyValue(k).trim();
 Chart.defaults.locale='pt-BR';Chart.defaults.font.family='Arial, Helvetica, sans-serif';
 Chart.defaults.color=C('--muted');Chart.defaults.borderColor=C('--linha');
+if(window.ChartDataLabels)Chart.register(window.ChartDataLabels);
 const chEvo=new Chart(document.getElementById('cEvo'),{data:{labels:D.es.evolucao.map(e=>e[0]),datasets:[
-  {type:'bar',label:'Aplicado em saúde',data:D.es.evolucao.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:C('--azul2'),borderRadius:4,yAxisID:'y'},
-  {type:'line',label:'Variação sobre o ano anterior',data:D.es.evolucao.map(e=>e[2]==null?null:+(e[2]*100).toFixed(1)),borderColor:C('--amarelo'),backgroundColor:C('--amarelo'),yAxisID:'y1',tension:.25,pointRadius:3,spanGaps:false}]},
-  options:{maintainAspectRatio:false,plugins:{tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y1'?' Variação: '+c.parsed.y.toLocaleString('pt-BR')+'%':' '+c.dataset.label+': R$ '+c.parsed.y.toLocaleString('pt-BR',{maximumFractionDigits:2})+' mi'}}},scales:{y:{beginAtZero:true,title:{display:true,text:'R$ milhões'}},y1:{position:'right',grid:{display:false},ticks:{callback:v=>v+'%'}}}}});
+  {type:'bar',label:'Aplicado em saúde',data:D.es.evolucao.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:C('--azul2'),borderRadius:4,yAxisID:'y',datalabels:{anchor:'end',align:'end',color:C('--azul'),font:{weight:'bold',size:11},formatter:v=>v.toLocaleString('pt-BR',{maximumFractionDigits:1})+' mi'}},
+  {type:'line',label:'Variação sobre o ano anterior',data:D.es.evolucao.map(e=>e[2]==null?null:+(e[2]*100).toFixed(1)),borderColor:C('--amarelo'),backgroundColor:C('--amarelo'),yAxisID:'y1',tension:.25,pointRadius:3,spanGaps:false,datalabels:{align:'top',color:C('--amarelo'),font:{weight:'bold',size:10},formatter:v=>v==null?'':v.toLocaleString('pt-BR')+'%'}}]},
+  options:{maintainAspectRatio:false,layout:{padding:{top:18}},plugins:{tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y1'?' Variação: '+c.parsed.y.toLocaleString('pt-BR')+'%':' '+c.dataset.label+': R$ '+c.parsed.y.toLocaleString('pt-BR',{maximumFractionDigits:2})+' mi'}},legend:{labels:{boxWidth:14}}},scales:{y:{beginAtZero:true,title:{display:true,text:'R$ milhões'}},y1:{position:'right',grid:{display:false},ticks:{callback:v=>v+'%'}}}}});
 
 // ---------- gasto por subfunção ----------
+// O painel do TCE-ES só declara subfunção em nível estadual, não por
+// município; por isso esta seção sempre mostra o Espírito Santo, mesmo com
+// um município selecionado (ver nota adicionada em render() para deixar
+// isso explícito ao usuário, em vez de parecer um dado do município).
 const totSub=sum(D.subfuncoes.map(s=>s[1]));
 document.getElementById('sub').innerHTML=D.subfuncoes.map(([n,v,yoy])=>`<div class="item"><div class="top"><span>${n}</span><b>${mi(v)} · ${pc(v/totSub)}</b></div><div class="trilho"><i style="width:${(v/D.subfuncoes[0][1]*100).toFixed(1)}%"></i></div></div>`).join('');
 const topSub=D.subfuncoes[0];
-document.getElementById('subLead').innerHTML=`O Espírito Santo aplicou <b>${mi(totSub)}</b> em saúde em ${ANO} (declarado ao TCE-ES). A subfunção com maior participação é <b>${topSub[0]}</b>, com ${pc(topSub[1]/totSub)} do total.`;
 
 // ---------- seletor ----------
 const sel=document.getElementById('munSel');
@@ -304,6 +327,11 @@ function render(){
   chEvo.update();
   document.getElementById('evoTit').textContent=isES()?'':'· '+nome+' ';
   document.getElementById('evoLead').innerHTML=isES()?`A aplicação em saúde do Espírito Santo soma <b>${mi(D.es.aplicacao)}</b> em ${ANO}, partindo de ${mi(D.es.evolucao[0][1])} em ${D.es.evolucao[0][0]}.`:(o.evolucao?`A aplicação em saúde de <b>${nome}</b> soma <b>${mi(serieEvo[serieEvo.length-1][1])}</b> em ${ANO}, partindo de ${mi(serieEvo[0][1])} em ${serieEvo[0][0]}.`:`O painel do TCE-ES não trouxe série histórica para ${nome}; exibindo o consolidado do Espírito Santo para referência.`);
+  // subfunção: o TCE-ES só declara esse detalhamento em nível estadual, não
+  // por município, então o quadro continua mostrando o ES mesmo com um
+  // município selecionado; a frase abaixo deixa isso explícito para não
+  // parecer um dado do município escolhido.
+  document.getElementById('subLead').innerHTML=`O Espírito Santo aplicou <b>${mi(totSub)}</b> em saúde em ${ANO} (declarado ao TCE-ES). A subfunção com maior participação é <b>${topSub[0]}</b>, com ${pc(topSub[1]/totSub)} do total.`+(isES()?'':` <i>O TCE-ES só declara esse detalhamento em nível estadual; não há quebra por município disponível para ${nome}.</i>`);
   leitura(o,nome);
   renderLimite(o,nome);
   document.getElementById('ctaTit').textContent=isES()?'Precisa qualificar o planejamento e a prestação de contas da sua saúde?':`Precisa de apoio técnico para a gestão da saúde de ${nome}?`;
@@ -324,6 +352,11 @@ function renderLimite(o,nome){
   document.getElementById('limPill').className='pill '+(valor==null?'par':(okLimite?'ok':'pen'));
   document.getElementById('limPill').textContent=valor==null?'Sem dado declarado':(okLimite?'Acima do limite mínimo':'Abaixo do limite mínimo');
   document.getElementById('limLead').innerHTML=isES()?`No conjunto do Espírito Santo, o percentual aplicado em saúde ${okLimite?'tende a obedecer':'está abaixo de'} o mínimo constitucional de 15% da receita.`:`Em ${nome}, o percentual aplicado em saúde ${valor==null?'não está disponível nesta extração':(okLimite?'tende a obedecer':'está abaixo de')+' o mínimo constitucional de 15% da receita.'}`;
+  const liquidado=isES()?D.es.limiteConstitucional?.aplicacao:o.limiteValorLiquidado;
+  const receita=isES()?D.es.limiteConstitucional?.receitaCalculada:o.limiteReceitaCalculada;
+  document.getElementById('limQuadroTit').textContent=isES()?'Receita e valor liquidado em saúde no Espírito Santo':`Receita e valor liquidado em saúde em ${nome}`;
+  document.getElementById('limLiquidado').textContent=liquidado!=null?mi(liquidado):'sem dado';
+  document.getElementById('limReceita').textContent=receita!=null?mi(receita):'sem dado';
   document.getElementById('limBarras').innerHTML=municipiosOrdenadosLimite.map(([m,i])=>{
     const w=(m.limitePercentual/maxLimitePerc*100).toFixed(1);
     const refLeft=(LIMITE_MIN/maxLimitePerc*100).toFixed(1);
@@ -333,7 +366,7 @@ function renderLimite(o,nome){
   }).join('');
 }
 
-const cols=[['n','Município',m=>m.n,'txt'],['valorHab','Valor por habitante',m=>brl(m.valorHab)],['varHab','Variação',m=>pc(m.varHab)],['aplicado','Aplicado',m=>mi(m.aplicado)],['percAplicado','% do total ES',m=>pc(m.percAplicado,2)],['limitePercentual','% do limite (15%)',m=>pc2(m.limitePercentual)],['percComPlano','Com plano privado',m=>pc(m.percComPlano)],['pop','População',m=>m.pop?m.pop.toLocaleString('pt-BR'):'–']];
+const cols=[['n','Município',m=>m.n,'txt'],['valorHab','Valor por habitante',m=>brl(m.valorHab)],['varHab','Variação',m=>pc(m.varHab)],['aplicado','Aplicado',m=>mi(m.aplicado)],['percAplicado','% do total ES',m=>pc(m.percAplicado,2)],['limitePercentual','% do limite (15%)',m=>pc2(m.limitePercentual)],['limiteValorLiquidado','Valor liquidado em saúde',m=>mi(m.limiteValorLiquidado)],['limiteReceitaCalculada','Receita (calculada)',m=>mi(m.limiteReceitaCalculada)],['percComPlano','Com plano privado',m=>pc(m.percComPlano)],['pop','População',m=>m.pop?m.pop.toLocaleString('pt-BR'):'–']];
 let sk='valorHab',asc=false;
 const tab=document.getElementById('tab');
 tab.querySelector('thead').innerHTML='<tr><th>#</th>'+cols.map(c=>`<th data-k="${c[0]}" class="${c[3]||''}">${c[1]}</th>`).join('')+'</tr>';

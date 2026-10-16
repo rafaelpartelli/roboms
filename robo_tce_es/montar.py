@@ -190,15 +190,30 @@ def montar(R):
     # do "percAplicado" acima (que e' fatia do gasto total do ES, nao da
     # receita do proprio municipio). Fonte: extrair_limite_constitucional()
     # em extrair.py (API REST propria do Painel de Controle, nao Power BI).
+    # Receita (arrecadação): a API REST só devolve o percentual já calculado
+    # (aplicacaoPercentual), não a receita bruta em R$. Como
+    # percentual = valor liquidado / receita * 100, a receita é obtida por
+    # cálculo simples a partir dos dois valores que a própria fonte declara -
+    # não é um dado novo nem estimado por fora, é derivação direta do
+    # percentual oficial. Fica marcada como "calculada" na página e tem
+    # pequena imprecisão de arredondamento (o percentual vem com 2 casas).
+    def receita_calculada(valor_liquidado, percentual):
+        if valor_liquidado is None or not percentual:
+            return None
+        return valor_liquidado / (percentual / 100)
+
     lc = R.get("limite_constitucional") or {}
     limiteEstado = None
     if lc.get("estado"):
         e = lc["estado"]
+        percEstado = num(e.get("aplicacaoPercentual"))
+        aplicacaoEstado = num(e.get("aplicacao"))
         limiteEstado = dict(
-            percentual=num(e.get("aplicacaoPercentual")),
-            aplicacao=num(e.get("aplicacao")),
+            percentual=percEstado,
+            aplicacao=aplicacaoEstado,
             aplicacaoPerCapita=num(e.get("aplicacaoPerCapita")),
             populacao=e.get("populacao"),
+            receitaCalculada=receita_calculada(aplicacaoEstado, percEstado),
         )
 
     limite_mun = lc.get("municipios") or {}
@@ -206,10 +221,14 @@ def montar(R):
         info = limite_mun.get(m["n"])
         if not info:
             m["limitePercentual"] = None
+            m["limiteValorLiquidado"] = None
+            m["limiteReceitaCalculada"] = None
             m["limiteEvolucao"] = None
             continue
         sumario = info.get("sumario") or {}
         m["limitePercentual"] = num(sumario.get("aplicacaoPercentual"))
+        m["limiteValorLiquidado"] = num(sumario.get("aplicacao"))
+        m["limiteReceitaCalculada"] = receita_calculada(m["limiteValorLiquidado"], m["limitePercentual"])
         evo = info.get("evolucao") or {}
         pontos_valor = {p["ano"]: num(p.get("valor")) for p in (evo.get("aplicacao") or [])}
         pontos_perc = {p["ano"]: num(p.get("valor")) for p in (evo.get("percentual") or [])}

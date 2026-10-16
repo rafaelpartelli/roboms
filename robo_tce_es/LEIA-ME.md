@@ -43,6 +43,23 @@
 > estadual em saúde). Conclusão: nenhuma das fontes atualmente usadas
 > expõe o gasto estadual direto; seria preciso outra fonte (ex.: SIOPS,
 > portal da transparência do Estado) para atender esse pedido.
+>
+> **Pedido do Rafael em 16/10/2026 (ajustes finos):** Presidente Kennedy
+> (distorção por royalties de petróleo) excluído do destaque de
+> maior/menor valor por habitante do panorama geral (ver `montar.py`).
+> Competência em análise (período de referência) ganhou um selo
+> destacado no topo da página, em vez do badge discreto anterior.
+> Quadro de **valor liquidado em saúde** e **receita (calculada)** foi
+> adicionado — como a API REST só expõe o percentual já calculado, a
+> receita é obtida por cálculo direto (valor liquidado ÷ percentual),
+> deixado explícito na página como derivação, não dado bruto da fonte.
+> Gráfico de evolução ganhou rótulos com os valores sobre as barras/linha
+> (plugin `chartjs-plugin-datalabels`). O quadro de "gasto por subfunção"
+> só existe em nível estadual na fonte (não por município); ao selecionar
+> um município a página agora deixa isso explícito em vez de simplesmente
+> continuar mostrando o ES sem aviso — todas as demais seções (KPIs,
+> limite constitucional, evolução, ranking, leitura estratégica) já
+> atualizavam corretamente por município.
 > **Estabelecimentos de saúde** ainda não foi feito: é uma página
 > diferente do mesmo relatório Power BI (CNES), exige descoberta própria
 > (como a feita para esta página) — ver "Próximos passos".
@@ -217,6 +234,17 @@ municípios ganhou uma coluna com esse percentual, e os alertas e a leitura
 estratégica agora citam nominalmente os municípios abaixo do limite
 mínimo. Modelo de referência usado nesta seção: página oficial do TCE-ES
 em `paineldecontrole.tcees.tc.br/municipio/<ano>/<município>/gestaoFiscal/saude`.
+
+Nessa mesma seção, um quadro dedicado mostra **valor liquidado em saúde**
+e **receita (calculada)** — tanto em cards (ES ou município selecionado)
+quanto como colunas na tabela dos 78 municípios; a receita é calculada a
+partir do valor liquidado e do percentual declarado, com nota explicando
+que não é um valor bruto da fonte. A competência em análise (período de
+referência, ex. "jan a set/2026") aparece em destaque logo abaixo do
+título da página, com aviso quando o ano ainda está parcial. O gráfico de
+evolução por ano mostra os valores (R$ milhões e variação %) diretamente
+sobre as barras/linha, não só no tooltip. O "Maior/menor valor por
+habitante" do panorama geral exclui Presidente Kennedy (ver nota acima).
 
 ## Próximos passos
 
