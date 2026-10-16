@@ -200,8 +200,13 @@ até essa descoberta.
   no futuro, adicionar o nome ao mesmo conjunto.
 - `enviar.py`: publica `dados.json` em `partelli.pro/tce` por FTP(S), nos
   mesmos moldes do `robo/enviar.py` (guarda a versão anterior como
-  `dados_anterior.json`). Credenciais em `~/.config/robo_tce_es/.env`
-  (modelo em `.env.exemplo`).
+  `dados_anterior.json`). **Também reenvia `site/tce/index.html` e
+  `.htaccess` a cada execução** (lidos direto do repositório, relativo ao
+  próprio script) — por isso uma mudança só na página (sem mexer em
+  `extrair.py`/`montar.py`) só vai ao ar depois de uma execução do
+  workflow `robo_tce_es.yml` (manual via `workflow_dispatch` ou no
+  próximo agendamento); só dar `git push` não publica a página sozinho.
+  Credenciais em `~/.config/robo_tce_es/.env` (modelo em `.env.exemplo`).
 - `robo.sh`: encadeia `extrair.py` → `montar.py` → trava de variação (40%,
   comparando com `saida/publicado.json`) → `enviar.py`. Para uso no
   computador ou Hostinger, se um dia for preciso trocar de GitHub Actions.
