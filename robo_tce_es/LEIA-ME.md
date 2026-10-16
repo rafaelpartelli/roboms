@@ -164,6 +164,15 @@ até essa descoberta.
   e o resto do pipeline publica normalmente. Valida (`validar()`) antes de
   gravar: aplicação e valor por habitante positivos, percentual com plano
   entre 0 e 1, pelo menos 70 municípios.
+  **Exclusão do destaque de maior/menor valor por habitante:** a pedido
+  do Rafael em 16/10/2026, `EXCLUIR_DOS_EXTREMOS_PANORAMA` em `montar.py`
+  tira Presidente Kennedy do cálculo dos KPIs "Maior/menor valor por
+  habitante" do panorama geral dos 78 municípios — o valor per capita do
+  município é inflado por royalties de petróleo, não por gestão de
+  saúde, e distorcia a comparação. O município continua normalmente na
+  tabela, no ranking e em todos os demais cálculos (só sai desse
+  destaque específico). Para excluir outro município do mesmo destaque
+  no futuro, adicionar o nome ao mesmo conjunto.
 - `enviar.py`: publica `dados.json` em `partelli.pro/tce` por FTP(S), nos
   mesmos moldes do `robo/enviar.py` (guarda a versão anterior como
   `dados_anterior.json`). Credenciais em `~/.config/robo_tce_es/.env`

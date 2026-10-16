@@ -159,7 +159,17 @@ def montar(R):
     municipios.sort(key=lambda m: -(m["valorHab"] or 0))
 
     # ---------------- Mínimo e máximo valor por habitante, com o município ----------------
-    com_valor_hab = [m for m in municipios if m["valorHab"] is not None]
+    # Municípios excluídos apenas do destaque de maior/menor valor por habitante
+    # no panorama geral dos 78: casos com distorção estrutural conhecida que não
+    # refletem gestão de saúde (royalties de petróleo per capita, população muito
+    # pequena etc.), a pedido do Rafael em 16/10/2026. Continuam normalmente na
+    # tabela, no ranking e em todos os demais cálculos — só saem do "maior/menor"
+    # do panorama geral.
+    EXCLUIR_DOS_EXTREMOS_PANORAMA = {"Presidente Kennedy"}
+    com_valor_hab = [
+        m for m in municipios
+        if m["valorHab"] is not None and m["n"] not in EXCLUIR_DOS_EXTREMOS_PANORAMA
+    ]
     valorHabMin = valorHabMax = None
     valorHabMinMunicipio = valorHabMaxMunicipio = None
     if com_valor_hab:
