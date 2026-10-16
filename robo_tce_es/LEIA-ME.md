@@ -1,26 +1,43 @@
 # Robô TCE-ES: Painel de Controle (recorte saúde)
 
-> **Situação em 15/10/2026:** completo, testado de ponta a ponta e
-> publicando de verdade. Pipeline (`extrair.py` → `montar.py` →
-> `enviar.py`) rodou com sucesso no GitHub Actions, com os segredos
-> `FTP_HOST`/`FTP_USUARIO`/`FTP_SENHA` já cadastrados neste repositório
-> (Settings → Secrets and variables → Actions). Publica em
-> **partelli.pro/tce** (schema `meta`/`es`/`subfuncoes`/`m`, confirmado
-> direto no servidor), com `dados_anterior.json` preservado a cada envio.
-> Agendado em `.github/workflows/robo_tce_es.yml` para segunda, quarta e
-> sexta às 06:30 Brasília — primeira opção porque a extração funciona por
-> HTTP puro, sem navegador e sem bloqueio de IP (ver seção abaixo), e segue
-> a ordem de preferência do `CLAUDE.md` raiz.
+> **Situação em 16/10/2026:** completo, testado de ponta a ponta e
+> publicando de verdade, agora com **duas fontes de dados**. Pipeline
+> (`extrair.py` → `montar.py` → `enviar.py`) rodou com sucesso no GitHub
+> Actions, com os segredos `FTP_HOST`/`FTP_USUARIO`/`FTP_SENHA` já
+> cadastrados neste repositório (Settings → Secrets and variables →
+> Actions). Publica em **partelli.pro/tce** (schema `meta`/`es`/
+> `subfuncoes`/`m`, confirmado direto no servidor), com
+> `dados_anterior.json` preservado a cada envio. Agendado em
+> `.github/workflows/robo_tce_es.yml` para segunda, quarta e sexta às
+> 06:30 Brasília — primeira opção porque a extração funciona por HTTP
+> puro, sem navegador e sem bloqueio de IP (ver seção abaixo), e segue a
+> ordem de preferência do `CLAUDE.md` raiz.
 >
-> **Pedido do Rafael em 15/10/2026 (parcialmente atendido):** filtro por
-> município (já existia na página), período em análise, mínimo/máximo
-> valor por habitante e percentual aplicado por município foram
-> implementados. **Gestão estadual** foi testada e não é possível com
-> este dataset: a tabela de fatos desta página só registra lançamento por
-> município, sem linha de gasto estadual direto (ver nota em
-> `extrair.py`). **Estabelecimentos de saúde** ainda não foi feito: é uma
-> página diferente do mesmo relatório Power BI (CNES), exige descoberta
-> própria (como a feita para esta página) — ver "Próximos passos".
+> **Migração de 16/10/2026:** além das consultas Power BI já existentes,
+> `extrair.py` passou a buscar também o indicador oficial de **limite
+> constitucional de aplicação em saúde** (EC 29/2000, LC 141/2012 — mínimo
+> de 15% da receita) direto da **API REST própria** do Painel de Controle
+> (`paineldecontrole.tcees.tc.br/api`), descoberta ao explorar a página
+> pública `/municipio/<ano>/<cidade>/gestaoFiscal/saude` que o Rafael
+> indicou como modelo. Essa API é mais simples que o Power BI (JSON
+> direto, sem decodificação DSR) e traz exatamente o dado de receita que
+> não existia nas consultas Power BI desta página — testada e confirmada
+> acessível de IP de nuvem compartilhada (GitHub Actions) em 16/10/2026.
+> A página (`site/tce/index.html`) ganhou uma nova seção "Limite
+> constitucional" com o percentual atual (ES e por município), selo de
+> conformidade e comparação entre os 78 municípios com linha de
+> referência nos 15%.
+>
+> **Pedido do Rafael em 15–16/10/2026:** filtro por município, período em
+> análise, mínimo/máximo valor por habitante, percentual aplicado por
+> município, cards explicados, evolução por ano reativa ao filtro e o
+> indicador de limite constitucional de 15% foram implementados.
+> **Gestão estadual** foi testada e não é possível com o dataset Power BI
+> desta página: a tabela de fatos só registra lançamento por município,
+> sem linha de gasto estadual direto (ver nota em `extrair.py`).
+> **Estabelecimentos de saúde** ainda não foi feito: é uma página
+> diferente do mesmo relatório Power BI (CNES), exige descoberta própria
+> (como a feita para esta página) — ver "Próximos passos".
 
 ## O que é
 
@@ -88,6 +105,35 @@ comprime linhas repetindo só o que mudou entre uma linha e a seguinte
 testado manualmente contra os números da tela — ver comentários no próprio
 arquivo.
 
+## Como a extração do limite constitucional funciona (API REST própria)
+
+O **mesmo site** `paineldecontrole.tcees.tc.br` também tem páginas fora do
+relatório Power BI, como `/municipio/<ano>/<cidade>/gestaoFiscal/saude`
+("Limites com saúde"), que consomem uma **API REST própria** do TCE-ES
+(`/api/...`), bem mais simples que o Power BI:
+
+- `GET /api/Settings/GetAll` → inclui `esferasAdministrativas`, a lista dos
+  78 municípios do ES com o id usado nas demais chamadas
+  (`idEsferaAdministrativa`). Capturada uma vez e versionada em
+  `municipios_tce_es.json` (não muda, não precisa reconsultar a cada
+  execução).
+- `GET /api/MunicipioControllers/Saude/GetSumario?anoExercicio=<ano>&idEsferaAdministrativa=<id>`
+  → `aplicacao`, `aplicacaoPercentual` (percentual da receita aplicado —
+  **o indicador oficial do limite de 15%**), `aplicacaoPerCapita`,
+  `rankingMunicipal`, por município.
+- `GET /api/MunicipioControllers/Saude/GetGraficosEvolucaoAnualAplicacao?idEsferaAdministrativa=<id>&anoExercicio=<ano>`
+  → evolução anual (valor e percentual) desde 2022, por município.
+- `GET /api/EstadoControllers/Saude/GetSumario?anoExercicio=<ano>` →
+  o mesmo indicador agregado para o Espírito Santo inteiro.
+
+Não depende de sessão, cookie ou token dinâmico — só os parâmetros na URL.
+Testada e confirmada acessível de IP de nuvem compartilhada (GitHub
+Actions, `teste_api_rest_tce_es.yml`) em 16/10/2026. Essa API **não
+existia nas consultas Power BI já capturadas** desta página, que não têm
+nenhum campo de receita — por isso os dois pedidos do Rafael de
+"percentual de recursos próprios" e "limite de 15%" ficaram sem resposta
+até essa descoberta.
+
 ## Arquivos
 
 - `consultas/*.json`: corpo exato de cada consulta Power BI capturada (22 ao
@@ -97,15 +143,27 @@ arquivo.
   derivada de `mapa_aplicacao_por_municipio.json` para testar se dava para
   trazer o gasto estadual — voltou vazia (ver nota em `extrair.py`).
 - `dsr.py`: decodificador do formato DSR.
-- `extrair.py`: reenvia as 8 consultas relevantes via HTTP puro, decodifica
-  e grava um JSON com os dados brutos (ainda não é o formato final do site).
-  Aceita um ano de referência opcional (`python extrair.py saida.json 2025`).
+- `municipios_tce_es.json`: lista estável dos 78 municípios do ES com o id
+  usado pela API REST (`idEsferaAdministrativa`), capturada de
+  `api/Settings/GetAll` em 16/10/2026.
+- `extrair.py`: reenvia as consultas Power BI relevantes via HTTP puro,
+  decodifica, **e também** busca o indicador de limite constitucional de
+  cada um dos 78 municípios e do ES na API REST própria (ver seção acima),
+  gravando tudo num único JSON com os dados brutos (ainda não é o formato
+  final do site). Aceita um ano de referência opcional
+  (`python extrair.py saida.json 2025`).
+- `testar_api_rest.py`: teste de acesso isolado à API REST (usado para
+  confirmar que respondia de IP de nuvem antes de integrar a produção).
 - `montar.py`: transforma a saída de `extrair.py` no `dados.json` final da
-  página (`meta`, `es` com os 4 KPIs e a série `evolucao` por ano,
-  `subfuncoes` com valor e variação, `m` com os 78 municípios — valor por
-  habitante, variação, população e cobertura de plano de saúde privado).
-  Valida (`validar()`) antes de gravar: aplicação e valor por habitante
-  positivos, percentual com plano entre 0 e 1, pelo menos 70 municípios.
+  página (`meta`, `es` com os KPIs, a série `evolucao` por ano e
+  `limiteConstitucional` (percentual, aplicação, per capita e população do
+  ES), `subfuncoes` com valor e variação, `m` com os 78 municípios — valor
+  por habitante, variação, população, cobertura de plano de saúde privado,
+  `limitePercentual` e `limiteEvolucao` por município). Degradação
+  graciosa: se a API REST falhar numa execução, esses campos ficam `null`
+  e o resto do pipeline publica normalmente. Valida (`validar()`) antes de
+  gravar: aplicação e valor por habitante positivos, percentual com plano
+  entre 0 e 1, pelo menos 70 municípios.
 - `enviar.py`: publica `dados.json` em `partelli.pro/tce` por FTP(S), nos
   mesmos moldes do `robo/enviar.py` (guarda a versão anterior como
   `dados_anterior.json`). Credenciais em `~/.config/robo_tce_es/.env`
@@ -132,6 +190,17 @@ lógica de filtro por ente do Radar de Recursos SUS (`/gestor/recursos/`),
 para manter a mesma experiência entre as páginas de dados do site. Tem
 também um cartão na Área do Gestor (`/gestor/`) com os KPIs principais.
 
+Desde 16/10/2026, inclui também a seção **"Limite constitucional de
+aplicação em saúde"**: um indicador em formato de velocímetro com o
+percentual da receita aplicado em saúde (ES ou do município selecionado),
+selo "Acima"/"Abaixo" do mínimo de 15% exigido pela EC 29/2000 e LC
+141/2012, e uma lista comparativa dos 78 municípios ordenada do maior para
+o menor percentual, com linha de referência nos 15%. A tabela de
+municípios ganhou uma coluna com esse percentual, e os alertas e a leitura
+estratégica agora citam nominalmente os municípios abaixo do limite
+mínimo. Modelo de referência usado nesta seção: página oficial do TCE-ES
+em `paineldecontrole.tcees.tc.br/municipio/<ano>/<município>/gestaoFiscal/saude`.
+
 ## Próximos passos
 
 1. **Estabelecimentos de saúde (CNES):** página diferente do mesmo
@@ -141,10 +210,18 @@ também um cartão na Área do Gestor (`/gestor/`) com os KPIs principais.
    listados no topo deste arquivo) e depois seguir o mesmo padrão
    extrair/montar/enviar.
 2. Rodar o agendamento por algumas semanas e conferir se a trava de 40%
-   nunca dispara por engano (troca de ano em janeiro, por exemplo).
+   nunca dispara por engano (troca de ano em janeiro, por exemplo) — isso
+   agora vale tanto para os dados do Power BI quanto para a API REST do
+   limite constitucional.
 3. Se útil, repetir o processo também para as demais páginas do mesmo
    relatório (Distribuição de leitos, Distribuição de equipamentos, Planos
    Municipais de Saúde, Detalhamento dos planos de saúde).
+4. **Arrecadação total em R$ (não só o percentual):** a API REST usada
+   para o limite constitucional só expõe o percentual já calculado, não a
+   receita bruta do município. Se o Rafael quiser esse valor em reais,
+   investigar a página "Comparação de Municípios" do mesmo painel
+   (`paineldecontrole.tcees.tc.br`), que parece trazer a composição da
+   receita arrecadada.
 
 ## Segurança
 
