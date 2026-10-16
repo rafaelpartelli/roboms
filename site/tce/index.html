@@ -76,6 +76,20 @@ th{background:var(--azul-claro);color:var(--azul);position:sticky;top:0}
 th[data-k]{cursor:pointer;user-select:none}
 th.on::after{content:" ▾"} th.on.asc::after{content:" ▴"}
 #tab tbody tr{cursor:pointer}
+/* Em telas estreitas, a tabela de municípios vira uma lista de cartões
+   empilhados (um por município), para nunca precisar de rolagem
+   horizontal - cada célula mostra seu rótulo ao lado do valor. */
+@media(max-width:760px){
+  .tabwrap{overflow-x:visible}
+  #tab{width:100%}
+  #tab thead{display:none}
+  #tab,#tab tbody,#tab tr,#tab td{display:block;width:100%}
+  #tab tr{border-bottom:6px solid var(--bg);padding:6px 0}
+  #tab td{text-align:right;white-space:normal;border-bottom:none;padding:4px 10px;display:flex;justify-content:space-between;gap:10px}
+  #tab td::before{content:attr(data-label);font-weight:bold;color:var(--azul);text-align:left}
+  #tab td.txt{font-size:15px;font-weight:bold;text-align:left}
+  #tab td.txt::before{content:none}
+}
 tr:hover td{background:var(--azul-claro)}
 tr.sel td{background:var(--amarelo-claro);font-weight:bold}
 td.alto{color:var(--vermelho);font-weight:bold} td.bom{color:var(--verde);font-weight:bold}
@@ -180,9 +194,10 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   </section>
 
   <section id="subfuncao">
-    <h2>Gasto por subfunção</h2>
+    <h2>Gasto por subfunção <span id="subTit"></span></h2>
     <p class="lead" id="subLead"></p>
-    <div class="card"><h3>Participação de cada subfunção no total aplicado</h3><div class="barras" id="sub"></div></div>
+    <div class="card" id="subCard"><h3>Participação de cada subfunção no total aplicado (Espírito Santo)</h3><div class="barras" id="sub"></div></div>
+    <div class="alerta i" id="subAviso" style="display:none">O TCE-ES só declara o gasto por subfunção em nível estadual, não por município. Esta seção mostra o panorama geral; não há quebra disponível por município nesta fonte.</div>
   </section>
 
   <section id="ranking">
@@ -289,9 +304,7 @@ function render(){
     k.push(['',`Aplicação em saúde ${ANO}`,'Soma do valor liquidado (efetivamente empenhado e pago) em saúde por todos os municípios do ES no período em análise.',mi(D.es.aplicacao),cresc!=null?`${pc(cresc)} em relação a ${ANO-1}`:'']);
     k.push(['',`Valor médio por habitante`,'Total aplicado dividido pela população do estado. Mede a intensidade do gasto, não o resultado em saúde.',brl(D.es.valorHab),D.es.valorHabLY?`${pc(D.es.valorHab/D.es.valorHabLY-1)} em relação a ${ANO-1}`:'']);
     k.push(['v',`População com plano de saúde privado`,'Parcela da população com plano privado (base ANS). O restante depende do SUS para toda a atenção à saúde.',pc(D.es.percComPlano),D.es.popComPlano?`${Math.round(D.es.popComPlano).toLocaleString('pt-BR')} pessoas`:'']);
-    k.push(['a',`Municípios com dado disponível`,'Quantos dos 78 municípios tinham lançamento declarado ao TCE-ES na data da extração.',String(N),'dos 78 municípios do Espírito Santo']);
     if(D.es.valorHabMin!=null)k.push(['r',`Menor valor por habitante`,'O município que menos aplicou por habitante no estado, entre os com dado disponível.',brl(D.es.valorHabMin),D.es.valorHabMinMunicipio||'']);
-    if(D.es.valorHabMax!=null)k.push(['v',`Maior valor por habitante`,'O município que mais aplicou por habitante no estado, entre os com dado disponível.',brl(D.es.valorHabMax),D.es.valorHabMaxMunicipio||'']);
     if(D.es.limiteConstitucional)k.push([D.es.limiteConstitucional.percentual>=LIMITE_MIN?'v':'r',`Limite constitucional (15%)`,'Percentual da receita de impostos e transferências aplicado em saúde no conjunto do estado, frente ao mínimo de 15% (EC 29/LC 141).',pc2(D.es.limiteConstitucional.percentual),D.es.limiteConstitucional.percentual>=LIMITE_MIN?'acima do mínimo constitucional':'abaixo do mínimo constitucional']);
   }else{
     const r=posHab(+atual);
@@ -328,10 +341,12 @@ function render(){
   document.getElementById('evoTit').textContent=isES()?'':'· '+nome+' ';
   document.getElementById('evoLead').innerHTML=isES()?`A aplicação em saúde do Espírito Santo soma <b>${mi(D.es.aplicacao)}</b> em ${ANO}, partindo de ${mi(D.es.evolucao[0][1])} em ${D.es.evolucao[0][0]}.`:(o.evolucao?`A aplicação em saúde de <b>${nome}</b> soma <b>${mi(serieEvo[serieEvo.length-1][1])}</b> em ${ANO}, partindo de ${mi(serieEvo[0][1])} em ${serieEvo[0][0]}.`:`O painel do TCE-ES não trouxe série histórica para ${nome}; exibindo o consolidado do Espírito Santo para referência.`);
   // subfunção: o TCE-ES só declara esse detalhamento em nível estadual, não
-  // por município, então o quadro continua mostrando o ES mesmo com um
-  // município selecionado; a frase abaixo deixa isso explícito para não
-  // parecer um dado do município escolhido.
-  document.getElementById('subLead').innerHTML=`O Espírito Santo aplicou <b>${mi(totSub)}</b> em saúde em ${ANO} (declarado ao TCE-ES). A subfunção com maior participação é <b>${topSub[0]}</b>, com ${pc(topSub[1]/totSub)} do total.`+(isES()?'':` <i>O TCE-ES só declara esse detalhamento em nível estadual; não há quebra por município disponível para ${nome}.</i>`);
+  // por município. Em vez de misturar o dado global com o contexto do
+  // município selecionado, a seção deixa claro que é sempre o panorama do
+  // ES e mostra um aviso separado quando um município está selecionado.
+  document.getElementById('subTit').textContent=isES()?'':'(panorama estadual)';
+  document.getElementById('subLead').innerHTML=`O Espírito Santo aplicou <b>${mi(totSub)}</b> em saúde em ${ANO} (declarado ao TCE-ES). A subfunção com maior participação é <b>${topSub[0]}</b>, com ${pc(topSub[1]/totSub)} do total.`;
+  document.getElementById('subAviso').style.display=isES()?'none':'';
   leitura(o,nome);
   renderLimite(o,nome);
   document.getElementById('ctaTit').textContent=isES()?'Precisa qualificar o planejamento e a prestação de contas da sua saúde?':`Precisa de apoio técnico para a gestão da saúde de ${nome}?`;
@@ -366,7 +381,7 @@ function renderLimite(o,nome){
   }).join('');
 }
 
-const cols=[['n','Município',m=>m.n,'txt'],['valorHab','Valor por habitante',m=>brl(m.valorHab)],['varHab','Variação',m=>pc(m.varHab)],['aplicado','Aplicado',m=>mi(m.aplicado)],['percAplicado','% do total ES',m=>pc(m.percAplicado,2)],['limitePercentual','% do limite (15%)',m=>pc2(m.limitePercentual)],['limiteValorLiquidado','Valor liquidado em saúde',m=>mi(m.limiteValorLiquidado)],['limiteReceitaCalculada','Receita (calculada)',m=>mi(m.limiteReceitaCalculada)],['percComPlano','Com plano privado',m=>pc(m.percComPlano)],['pop','População',m=>m.pop?m.pop.toLocaleString('pt-BR'):'–']];
+const cols=[['n','Município',m=>m.n,'txt'],['valorHab','Valor/habitante',m=>brl(m.valorHab)],['varHab','Variação',m=>pc(m.varHab)],['aplicado','Aplicado',m=>mi(m.aplicado)],['percAplicado','% do total ES',m=>pc(m.percAplicado,2)],['limitePercentual','% do limite (15%)',m=>pc2(m.limitePercentual)],['percComPlano','Com plano privado',m=>pc(m.percComPlano)],['pop','População',m=>m.pop?m.pop.toLocaleString('pt-BR'):'–']];
 let sk='valorHab',asc=false;
 const tab=document.getElementById('tab');
 tab.querySelector('thead').innerHTML='<tr><th>#</th>'+cols.map(c=>`<th data-k="${c[0]}" class="${c[3]||''}">${c[1]}</th>`).join('')+'</tr>';
@@ -374,7 +389,7 @@ function drawRank(){
   const q=document.getElementById('busca').value.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
   const rows=D.m.map((m,i)=>[m,i]).sort((a,b)=>{const x=a[0][sk],y=b[0][sk];if(sk==='n')return asc?x.localeCompare(y):y.localeCompare(x);return (asc?1:-1)*((x??-1)-(y??-1));});
   const pos=new Map(rows.map((r,k)=>[r[1],k+1]));
-  tab.querySelector('tbody').innerHTML=rows.filter(([m])=>m.n.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g,'').includes(q)).map(([m,i])=>`<tr data-i="${i}" class="${String(i)===atual?'sel':''}"><td>${pos.get(i)}</td>`+cols.map(c=>{let cl=c[3]||'';if(c[0]==='valorHab'&&posHab(i)>N-15)cl='alto';if(c[0]==='percComPlano'&&m.percComPlano>.5)cl='bom';if(c[0]==='limitePercentual'&&m.limitePercentual!=null&&m.limitePercentual<LIMITE_MIN)cl='alto';return `<td class="${cl}">${c[2](m)}</td>`;}).join('')+'</tr>').join('');
+  tab.querySelector('tbody').innerHTML=rows.filter(([m])=>m.n.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g,'').includes(q)).map(([m,i])=>`<tr data-i="${i}" class="${String(i)===atual?'sel':''}"><td data-label="Posição">${pos.get(i)}º</td>`+cols.map(c=>{let cl=c[3]||'';if(c[0]==='valorHab'&&posHab(i)>N-15)cl='alto';if(c[0]==='percComPlano'&&m.percComPlano>.5)cl='bom';if(c[0]==='limitePercentual'&&m.limitePercentual!=null&&m.limitePercentual<LIMITE_MIN)cl='alto';return `<td class="${cl}" data-label="${c[1]}">${c[2](m)}</td>`;}).join('')+'</tr>').join('');
   tab.querySelectorAll('th[data-k]').forEach(th=>{th.className=(th.dataset.k===sk?('on'+(asc?' asc':'')):'')+(th.dataset.k==='n'?' txt':'');});
 }
 tab.querySelector('thead').onclick=e=>{const k=e.target.dataset.k;if(!k)return;if(k===sk)asc=!asc;else{sk=k;asc=k==='n';}drawRank();};

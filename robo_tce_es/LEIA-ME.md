@@ -236,15 +236,29 @@ mínimo. Modelo de referência usado nesta seção: página oficial do TCE-ES
 em `paineldecontrole.tcees.tc.br/municipio/<ano>/<município>/gestaoFiscal/saude`.
 
 Nessa mesma seção, um quadro dedicado mostra **valor liquidado em saúde**
-e **receita (calculada)** — tanto em cards (ES ou município selecionado)
-quanto como colunas na tabela dos 78 municípios; a receita é calculada a
-partir do valor liquidado e do percentual declarado, com nota explicando
-que não é um valor bruto da fonte. A competência em análise (período de
-referência, ex. "jan a set/2026") aparece em destaque logo abaixo do
-título da página, com aviso quando o ano ainda está parcial. O gráfico de
-evolução por ano mostra os valores (R$ milhões e variação %) diretamente
-sobre as barras/linha, não só no tooltip. O "Maior/menor valor por
-habitante" do panorama geral exclui Presidente Kennedy (ver nota acima).
+e **receita (calculada)** — somente em cards (ES ou município
+selecionado); a receita é calculada a partir do valor liquidado e do
+percentual declarado, com nota explicando que não é um valor bruto da
+fonte (não entra como coluna na tabela dos 78 municípios, para não
+sobrecarregar a tabela — ver ajuste de 16/10/2026 abaixo). A competência
+em análise (período de referência, ex. "jan a set/2026") aparece em
+destaque logo abaixo do título da página, com aviso quando o ano ainda
+está parcial. O gráfico de evolução por ano mostra os valores (R$
+milhões e variação %) diretamente sobre as barras/linha, não só no
+tooltip. O "Menor valor por habitante" do panorama geral exclui
+Presidente Kennedy (ver nota acima); os cards "Municípios com dado
+disponível" e "Maior valor por habitante" foram removidos do panorama
+geral a pedido do Rafael em 16/10/2026.
+
+> **Ajuste de 16/10/2026 (revisão de usabilidade):** a seção "Gasto por
+> subfunção" deixou de misturar o dado estadual com o contexto do
+> município selecionado — agora mostra um aviso separado e explícito
+> ("não há quebra por município disponível") em vez de exibir o número
+> global sem indicação. A tabela dos 78 municípios voltou a ter 8
+> colunas (as duas de receita/liquidado saíram, ficando só nos cards) e
+> ganhou um layout responsivo: em telas estreitas (≤760px), cada linha
+> vira um cartão empilhado com rótulo ao lado do valor, para nunca
+> precisar de rolagem horizontal.
 
 ## Próximos passos
 
