@@ -1,5 +1,5 @@
 {
-  "quando_utc": "2026-10-15T22:32:47.242541+00:00",
+  "quando_utc": "2026-10-16T10:29:30.577418+00:00",
   "ano_referencia": null,
   "consultas": {
     "kpi_aplicacao_total": {
@@ -5616,5 +5616,6100 @@
       "avisos": []
     }
   },
-  "erros": {}
+  "erros": {},
+  "limite_constitucional": {
+    "estado": {
+      "aplicacao": 2651420242.17,
+      "aplicacaoPercentual": 15.71,
+      "aplicacaoPerCapita": 319.39496380001214,
+      "populacao": 8301384
+    },
+    "municipios": {
+      "Afonso Cláudio": {
+        "sumario": {
+          "aplicacao": 16646481.67,
+          "valorDeclarado": 16646481.67,
+          "aplicacaoPercentual": 22.78,
+          "aplicacaoPerCapita": 512.5306096246806,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 24,
+          "rankingPerCapitaMunicipal": 55
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20972412.78,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 24308195.81,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 23786235.91,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 23607483.94,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 16646481.67,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.35,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 29.08,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 25.42,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 23.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 22.78,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Água Doce do Norte": {
+        "sumario": {
+          "aplicacao": 5934607.48,
+          "valorDeclarado": 5934607.48,
+          "aplicacaoPercentual": 17.27,
+          "aplicacaoPerCapita": 470.62708009516257,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 71,
+          "rankingPerCapitaMunicipal": 59
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 5871819.27,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 7122864.57,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 6518211.88,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 9316085.66,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 5934607.48,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 17.43,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19.89,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 15.75,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 19.6,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17.27,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Águia Branca": {
+        "sumario": {
+          "aplicacao": 8247881.62,
+          "valorDeclarado": 8247881.62,
+          "aplicacaoPercentual": 21.38,
+          "aplicacaoPerCapita": 809.9657880781695,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 58,
+          "rankingPerCapitaMunicipal": 15
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 6680533.87,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 7545595.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 8152851.35,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 10883258.94,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 8247881.62,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 19.37,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 20.55,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17.68,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 20.37,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 21.38,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Alegre": {
+        "sumario": {
+          "aplicacao": 15553326.07,
+          "valorDeclarado": 15553326.07,
+          "aplicacaoPercentual": 25.32,
+          "aplicacaoPerCapita": 506.73854201283683,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 28,
+          "rankingPerCapitaMunicipal": 56
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 15784342.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 18578527.18,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 16958984.89,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 20222591.47,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 15553326.07,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 22.65,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 24.68,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20.9,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 23.43,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 25.32,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Alfredo Chaves": {
+        "sumario": {
+          "aplicacao": 10148757.07,
+          "valorDeclarado": 10148757.07,
+          "aplicacaoPercentual": 17.91,
+          "aplicacaoPerCapita": 705.951382164719,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 48,
+          "rankingPerCapitaMunicipal": 28
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 15645348.54,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 16435247.24,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 18912065.73,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 15799195.3,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 10148757.07,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.6,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 27.33,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 26.96,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 20.93,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17.91,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Alto Rio Novo": {
+        "sumario": {
+          "aplicacao": 4882834.11,
+          "valorDeclarado": 4882834.11,
+          "aplicacaoPercentual": 18.23,
+          "aplicacaoPerCapita": 628.2596641791044,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 77,
+          "rankingPerCapitaMunicipal": 42
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 5592484.44,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 5868057.28,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 5752884.66,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 7606205.9,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 4882834.11,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 21.75,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 22.08,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17.41,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 21.05,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 18.23,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Anchieta": {
+        "sumario": {
+          "aplicacao": 51004133.5,
+          "valorDeclarado": 51004133.5,
+          "aplicacaoPercentual": 20.08,
+          "aplicacaoPerCapita": 1527.207039554451,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 8,
+          "rankingPerCapitaMunicipal": 2
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 42740828.68,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 51649378.45,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 65752108.15,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 64505691.36,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 51004133.5,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 26.3,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 21.66,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 19.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18.95,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 20.08,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Apiacá": {
+        "sumario": {
+          "aplicacao": 5185150.75,
+          "valorDeclarado": 5185150.75,
+          "aplicacaoPercentual": 19.67,
+          "aplicacaoPerCapita": 697.1162610916913,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 74,
+          "rankingPerCapitaMunicipal": 30
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 5247602.68,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 6106557.08,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 6620839.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 7452195.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 5185150.75,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 22.27,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 23.16,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 21.39,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 21.11,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 19.67,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Aracruz": {
+        "sumario": {
+          "aplicacao": 74359311.89,
+          "valorDeclarado": 74359311.89,
+          "aplicacaoPercentual": 18.42,
+          "aplicacaoPerCapita": 712.9094942667587,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 6,
+          "rankingPerCapitaMunicipal": 27
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 80238784.22,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 74641520.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 104382277.55,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 114650876.78,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 74359311.89,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 18.56,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19.14,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 21.83,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 18.42,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Atílio Vivácqua": {
+        "sumario": {
+          "aplicacao": 10214938.86,
+          "valorDeclarado": 10214938.86,
+          "aplicacaoPercentual": 28.94,
+          "aplicacaoPerCapita": 922.092332551002,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 46,
+          "rankingPerCapitaMunicipal": 5
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 10342409.57,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 10626560.89,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 11120576.35,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 14674569.4,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 10214938.86,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 26.89,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 24.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 28.56,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 28.94,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Baixo Guandu": {
+        "sumario": {
+          "aplicacao": 12373531.51,
+          "valorDeclarado": 12373531.51,
+          "aplicacaoPercentual": 15.48,
+          "aplicacaoPerCapita": 375.75255116914667,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 37,
+          "rankingPerCapitaMunicipal": 68
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 15404565.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19440996.12,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20850223.75,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 21801536.57,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 12373531.51,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 19.01,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 22.09,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20.59,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 20.12,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 15.48,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Barra de São Francisco": {
+        "sumario": {
+          "aplicacao": 14789245.48,
+          "valorDeclarado": 14789245.48,
+          "aplicacaoPercentual": 14.51,
+          "aplicacaoPerCapita": 324.5105867380524,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 30,
+          "rankingPerCapitaMunicipal": 77
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 17196687.17,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19301004.7,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 23181755.58,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 25509486.67,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 14789245.48,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 15.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 16.1,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 18.18,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18.43,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 14.51,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Boa Esperança": {
+        "sumario": {
+          "aplicacao": 6082870.08,
+          "valorDeclarado": 6082870.08,
+          "aplicacaoPercentual": 11.82,
+          "aplicacaoPerCapita": 433.592563974624,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 70,
+          "rankingPerCapitaMunicipal": 62
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 9361237.22,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 9956539.39,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 10845600.77,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 11824192.5,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 6082870.08,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20.82,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 20.36,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 19.01,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 17.25,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 11.82,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Bom Jesus do Norte": {
+        "sumario": {
+          "aplicacao": 8120288.51,
+          "valorDeclarado": 8120288.51,
+          "aplicacaoPercentual": 23.27,
+          "aplicacaoPerCapita": 747.2428922425693,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 59,
+          "rankingPerCapitaMunicipal": 18
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 9397127.79,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 8476769.16,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 9759501.57,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 11643137.47,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 8120288.51,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 31.47,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 25.38,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 25.44,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 24.94,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 23.27,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Brejetuba": {
+        "sumario": {
+          "aplicacao": 11204847.83,
+          "valorDeclarado": 11204847.83,
+          "aplicacaoPercentual": 25.26,
+          "aplicacaoPerCapita": 811.9454949275363,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 41,
+          "rankingPerCapitaMunicipal": 14
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 11062709.68,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 11065563.57,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 11593337.1,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 13256731.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 11204847.83,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.74,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 25.94,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 23.51,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 22.38,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 25.26,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Cachoeiro de Itapemirim": {
+        "sumario": {
+          "aplicacao": 54430181.79,
+          "valorDeclarado": 54430181.79,
+          "aplicacaoPercentual": 14.66,
+          "aplicacaoPerCapita": 274.3913140290472,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 7,
+          "rankingPerCapitaMunicipal": 78
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 74399179.39,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 85753659.25,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 97370407.92,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 91116694.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 54430181.79,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 18.84,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19.48,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20.06,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 17.99,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 14.66,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Cariacica": {
+        "sumario": {
+          "aplicacao": 123119007.62,
+          "valorDeclarado": 123119007.62,
+          "aplicacaoPercentual": 15.41,
+          "aplicacaoPerCapita": 326.6501313827558,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 4,
+          "rankingPerCapitaMunicipal": 76
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 107336857.31,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 114091892.94,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 132844414.87,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 162865728.39,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 123119007.62,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 16.5,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 16.04,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 15.96,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 16.53,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 15.41,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Castelo": {
+        "sumario": {
+          "aplicacao": 24042017.23,
+          "valorDeclarado": 24042017.23,
+          "aplicacaoPercentual": 25.15,
+          "aplicacaoPerCapita": 604.87627317785,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 16,
+          "rankingPerCapitaMunicipal": 44
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 18693887.23,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 29623204.04,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 27106309.94,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 29632958.05,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 24042017.23,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 18.7,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 28.53,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 23.67,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 23.42,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 25.15,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Colatina": {
+        "sumario": {
+          "aplicacao": 43933781.26,
+          "valorDeclarado": 43933781.26,
+          "aplicacaoPercentual": 16.95,
+          "aplicacaoPerCapita": 337.84041632383133,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 11,
+          "rankingPerCapitaMunicipal": 75
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 49638275.49,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 63766534.09,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 59749112.29,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 69758804.45,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 43933781.26,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 23.24,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 18.97,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 20.7,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 16.95,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Conceição da Barra": {
+        "sumario": {
+          "aplicacao": 10612357.88,
+          "valorDeclarado": 10612357.88,
+          "aplicacaoPercentual": 15.41,
+          "aplicacaoPerCapita": 367.3240067841196,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 45,
+          "rankingPerCapitaMunicipal": 69
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 16260025.09,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 18026229.86,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 19853585.51,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18352033.83,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 10612357.88,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20.89,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 20.35,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 19.78,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 19.12,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 15.41,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Conceição do Castelo": {
+        "sumario": {
+          "aplicacao": 7249824.8,
+          "valorDeclarado": 7249824.8,
+          "aplicacaoPercentual": 17.04,
+          "aplicacaoPerCapita": 581.1482805611222,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 65,
+          "rankingPerCapitaMunicipal": 46
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 7563290.22,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 8088001.72,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 9178168.12,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 9690352.3,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Set / 2026",
+              "valor": 7249824.8,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 17.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 17.99,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 18.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18.84,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Set / 2026",
+              "valor": 17.04,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Divino de São Lourenço": {
+        "sumario": {
+          "aplicacao": 5403115.29,
+          "valorDeclarado": 5403115.29,
+          "aplicacaoPercentual": 17.85,
+          "aplicacaoPerCapita": 1002.2473177518086,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 73,
+          "rankingPerCapitaMunicipal": 4
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 3802111.85,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 4390109.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 5583952.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 5698384.67,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Set / 2026",
+              "valor": 5403115.29,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 16.65,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 18.31,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 19.53,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18.66,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Set / 2026",
+              "valor": 17.85,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Domingos Martins": {
+        "sumario": {
+          "aplicacao": 17974005.67,
+          "valorDeclarado": 17974005.67,
+          "aplicacaoPercentual": 17.54,
+          "aplicacaoPerCapita": 466.8815437165567,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 21,
+          "rankingPerCapitaMunicipal": 60
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 21542952.9,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 23367800.56,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 27937746.66,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 28896613.85,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17974005.67,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 19.32,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19.4,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20.59,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 19.48,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17.54,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Dores do Rio Preto": {
+        "sumario": {
+          "aplicacao": 5787207.12,
+          "valorDeclarado": 5787207.12,
+          "aplicacaoPercentual": 17.38,
+          "aplicacaoPerCapita": 836.4224772365949,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 72,
+          "rankingPerCapitaMunicipal": 9
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 5788101.18,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 4838057.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 6448665.7,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 7682846.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 5787207.12,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 21.13,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 16.1,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 18.97,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 17.95,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17.38,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Ecoporanga": {
+        "sumario": {
+          "aplicacao": 14531696.15,
+          "valorDeclarado": 14531696.15,
+          "aplicacaoPercentual": 24.11,
+          "aplicacaoPerCapita": 644.3068258402058,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 31,
+          "rankingPerCapitaMunicipal": 40
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 15782153.95,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 21184005.3,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 18275647.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 20430641.15,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 14531696.15,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 23.33,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 29.18,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 21.85,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 24.38,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 24.11,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Fundão": {
+        "sumario": {
+          "aplicacao": 15646320.05,
+          "valorDeclarado": 15646320.05,
+          "aplicacaoPercentual": 26.35,
+          "aplicacaoPerCapita": 826.0556491209545,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 27,
+          "rankingPerCapitaMunicipal": 12
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 15256652.89,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 16962933.35,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17842339.22,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 22442791.0,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 15646320.05,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.91,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 29.57,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 27.32,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 28.55,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 26.35,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Guaçuí": {
+        "sumario": {
+          "aplicacao": 10695067.01,
+          "valorDeclarado": 10695067.01,
+          "aplicacaoPercentual": 15.75,
+          "aplicacaoPerCapita": 339.2244040218219,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 44,
+          "rankingPerCapitaMunicipal": 73
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 11087239.15,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 12602412.9,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 15820641.44,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 14687149.83,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 10695067.01,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 17.24,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 17.87,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 19.83,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 16.54,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 15.75,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Guarapari": {
+        "sumario": {
+          "aplicacao": 46611546.77,
+          "valorDeclarado": 46611546.77,
+          "aplicacaoPercentual": 17.27,
+          "aplicacaoPerCapita": 338.60152093215845,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 10,
+          "rankingPerCapitaMunicipal": 74
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 48019305.44,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 51070987.87,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 52900895.74,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 58641903.14,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 46611546.77,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 19.64,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 18.82,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17.95,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 17.17,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17.27,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Ibatiba": {
+        "sumario": {
+          "aplicacao": 20309671.74,
+          "valorDeclarado": 20309671.74,
+          "aplicacaoPercentual": 35.58,
+          "aplicacaoPerCapita": 731.4846655861696,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 19,
+          "rankingPerCapitaMunicipal": 24
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 13818979.48,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 16942669.59,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20021168.42,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 24019972.52,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 20309671.74,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 25.54,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 26.99,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 29.31,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 33.32,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 35.58,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Ibiraçu": {
+        "sumario": {
+          "aplicacao": 8045915.0,
+          "valorDeclarado": 8045915.0,
+          "aplicacaoPercentual": 21.32,
+          "aplicacaoPerCapita": 651.4910931174089,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 60,
+          "rankingPerCapitaMunicipal": 39
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 9974462.4,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 9650704.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 7250776.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 11255798.86,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 8045915.0,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.43,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 26.33,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17.01,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 22.05,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 21.32,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Ibitirama": {
+        "sumario": {
+          "aplicacao": 6596077.05,
+          "valorDeclarado": 6596077.05,
+          "aplicacaoPercentual": 20.68,
+          "aplicacaoPerCapita": 651.8506818855618,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 68,
+          "rankingPerCapitaMunicipal": 38
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 5348418.4,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 6677331.29,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 7258289.22,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 10051713.03,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Set / 2026",
+              "valor": 6596077.05,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20.07,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 23.11,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 22.11,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 25.58,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Set / 2026",
+              "valor": 20.68,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Iconha": {
+        "sumario": {
+          "aplicacao": 9176586.29,
+          "valorDeclarado": 9176586.29,
+          "aplicacaoPercentual": 21.14,
+          "aplicacaoPerCapita": 716.8647988438403,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 54,
+          "rankingPerCapitaMunicipal": 26
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 11563458.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 10230071.6,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 11486649.87,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 13445448.41,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 9176586.29,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 25.83,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 21.95,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 22.4,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 23.65,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 21.14,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Irupi": {
+        "sumario": {
+          "aplicacao": 10889695.1,
+          "valorDeclarado": 10889695.1,
+          "aplicacaoPercentual": 25.73,
+          "aplicacaoPerCapita": 736.1383830189955,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 43,
+          "rankingPerCapitaMunicipal": 22
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 9208722.11,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 10787673.83,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 13040873.56,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 14395075.22,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 10889695.1,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 24.21,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 26.4,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 27.62,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 26.36,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 25.73,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Itaguaçu": {
+        "sumario": {
+          "aplicacao": 7634913.42,
+          "valorDeclarado": 7634913.42,
+          "aplicacaoPercentual": 17.37,
+          "aplicacaoPerCapita": 545.1951885175664,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 62,
+          "rankingPerCapitaMunicipal": 51
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 8498843.65,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 7320955.65,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 8446831.54,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 10092630.67,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 7634913.42,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20.71,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 17.4,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 16.67,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 17.41,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17.37,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Itapemirim": {
+        "sumario": {
+          "aplicacao": 32288756.47,
+          "valorDeclarado": 32288756.47,
+          "aplicacaoPercentual": 20.98,
+          "aplicacaoPerCapita": 723.6224304699581,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 14,
+          "rankingPerCapitaMunicipal": 25
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 34394820.08,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 27831949.7,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 52845539.36,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 41970531.34,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 32288756.47,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 21.72,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 15.53,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 18.57,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 15.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 20.98,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Itarana": {
+        "sumario": {
+          "aplicacao": 8821154.98,
+          "valorDeclarado": 8821154.98,
+          "aplicacaoPercentual": 23.19,
+          "aplicacaoPerCapita": 802.1419459852688,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 56,
+          "rankingPerCapitaMunicipal": 16
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 9305322.03,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 10729354.8,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 12578949.45,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 12774016.2,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 8821154.98,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 25.83,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 26.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 25.98,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 24.26,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 23.19,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Iúna": {
+        "sumario": {
+          "aplicacao": 17101249.63,
+          "valorDeclarado": 17101249.63,
+          "aplicacaoPercentual": 27.56,
+          "aplicacaoPerCapita": 558.3899180434925,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 23,
+          "rankingPerCapitaMunicipal": 49
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 18486537.64,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 18194891.27,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17907276.21,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 23030364.99,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17101249.63,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 31.47,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 26.98,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 23.07,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 26.65,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 27.56,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Jaguaré": {
+        "sumario": {
+          "aplicacao": 23516543.1,
+          "valorDeclarado": 23516543.1,
+          "aplicacaoPercentual": 22.53,
+          "aplicacaoPerCapita": 738.1675905581016,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 17,
+          "rankingPerCapitaMunicipal": 20
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 22939512.03,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 24345855.79,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 24231357.81,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 31952179.15,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 23516543.1,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.07,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 26.26,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 23.49,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 22.53,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Jerônimo Monteiro": {
+        "sumario": {
+          "aplicacao": 5082066.9,
+          "valorDeclarado": 5082066.9,
+          "aplicacaoPercentual": 15.89,
+          "aplicacaoPerCapita": 419.5894071994716,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 75,
+          "rankingPerCapitaMunicipal": 63
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 5722154.87,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 6219663.33,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 7248125.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 6648485.14,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 5082066.9,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 18.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19.38,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 18.97,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 16.47,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 15.89,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "João Neiva": {
+        "sumario": {
+          "aplicacao": 7797379.66,
+          "valorDeclarado": 7797379.66,
+          "aplicacaoPercentual": 14.67,
+          "aplicacaoPerCapita": 548.9952587481519,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 61,
+          "rankingPerCapitaMunicipal": 50
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 9922000.46,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 10172217.72,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 10660398.5,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 13118543.96,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 7797379.66,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 17.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 17.37,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 15.17,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 17.77,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 14.67,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Laranja da Terra": {
+        "sumario": {
+          "aplicacao": 11678813.52,
+          "valorDeclarado": 11678813.52,
+          "aplicacaoPercentual": 30.26,
+          "aplicacaoPerCapita": 1004.8884460505938,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 39,
+          "rankingPerCapitaMunicipal": 3
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 10313509.33,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 10911459.1,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 11818587.62,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 15354002.92,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 11678813.52,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.98,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 27.67,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 25.66,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 29.06,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 30.26,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Linhares": {
+        "sumario": {
+          "aplicacao": 121314313.26,
+          "valorDeclarado": 121314313.26,
+          "aplicacaoPercentual": 25.93,
+          "aplicacaoPerCapita": 653.559205370082,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 5,
+          "rankingPerCapitaMunicipal": 37
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 139464779.93,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 150992624.62,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 152536549.55,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 180559321.14,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 121314313.26,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.7,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 28.21,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 26.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 28.97,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 25.93,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Mantenópolis": {
+        "sumario": {
+          "aplicacao": 7339906.64,
+          "valorDeclarado": 7339906.64,
+          "aplicacaoPercentual": 18.56,
+          "aplicacaoPerCapita": 560.7262521008404,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 64,
+          "rankingPerCapitaMunicipal": 48
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 6307446.54,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 6422572.15,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 6988929.13,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 9953089.51,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 7339906.64,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 17.29,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 15.54,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 14.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 17.75,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 18.56,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Marataízes": {
+        "sumario": {
+          "aplicacao": 16234729.34,
+          "valorDeclarado": 16234729.34,
+          "aplicacaoPercentual": 17.67,
+          "aplicacaoPerCapita": 349.4270321344784,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 25,
+          "rankingPerCapitaMunicipal": 72
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20274360.86,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 21102587.11,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 24081700.35,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 24288430.37,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 16234729.34,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 21.87,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19.66,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20.12,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18.72,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17.67,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Marechal Floriano": {
+        "sumario": {
+          "aplicacao": 15720999.22,
+          "valorDeclarado": 15720999.22,
+          "aplicacaoPercentual": 26.07,
+          "aplicacaoPerCapita": 820.5542679680568,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 26,
+          "rankingPerCapitaMunicipal": 13
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 12025657.33,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 13384222.16,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 15479667.17,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 23570189.13,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 15720999.22,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 18.06,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19.96,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20.35,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 29.6,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 26.07,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Marilândia": {
+        "sumario": {
+          "aplicacao": 9268021.58,
+          "valorDeclarado": 9268021.58,
+          "aplicacaoPercentual": 20.82,
+          "aplicacaoPerCapita": 704.7925155893536,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 52,
+          "rankingPerCapitaMunicipal": 29
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 10401257.84,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 12084103.6,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 11715302.24,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 11377607.19,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 9268021.58,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 25.5,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 27.52,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 22.65,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 19.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 20.82,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Mimoso do Sul": {
+        "sumario": {
+          "aplicacao": 10200506.19,
+          "valorDeclarado": 10200506.19,
+          "aplicacaoPercentual": 17.58,
+          "aplicacaoPerCapita": 407.8407976490344,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 47,
+          "rankingPerCapitaMunicipal": 65
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 10445160.71,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 11818144.2,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 12275588.67,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 13984532.74,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 10200506.19,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 16.97,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 18.14,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 16.61,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18.38,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17.58,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Montanha": {
+        "sumario": {
+          "aplicacao": 13644289.5,
+          "valorDeclarado": 13644289.5,
+          "aplicacaoPercentual": 23.51,
+          "aplicacaoPerCapita": 685.9529184053089,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 34,
+          "rankingPerCapitaMunicipal": 31
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 16310485.6,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 16084008.48,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 14761840.73,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 16893621.94,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 13644289.5,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.41,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 25.24,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20.45,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 20.91,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 23.51,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Mucurici": {
+        "sumario": {
+          "aplicacao": 9608036.65,
+          "valorDeclarado": 9608036.65,
+          "aplicacaoPercentual": 32.9,
+          "aplicacaoPerCapita": 1695.4361478736546,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 50,
+          "rankingPerCapitaMunicipal": 1
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 7453159.07,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 7764023.43,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 12543160.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 11143974.54,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 9608036.65,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 26.85,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 26.1,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 33.84,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 27.51,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 32.9,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Muniz Freire": {
+        "sumario": {
+          "aplicacao": 12587807.44,
+          "valorDeclarado": 12587807.44,
+          "aplicacaoPercentual": 23.38,
+          "aplicacaoPerCapita": 669.3506029990428,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 35,
+          "rankingPerCapitaMunicipal": 34
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 12456300.03,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 16003940.83,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 14154829.38,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 14749978.55,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 12587807.44,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 21.72,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 24.79,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 19.52,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 19.73,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 23.38,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Muqui": {
+        "sumario": {
+          "aplicacao": 9432557.29,
+          "valorDeclarado": 9432557.29,
+          "aplicacaoPercentual": 24.62,
+          "aplicacaoPerCapita": 666.1410515536724,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 51,
+          "rankingPerCapitaMunicipal": 35
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 11390980.44,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 11009140.8,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 13605868.43,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 15261738.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 9432557.29,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 29.82,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 27.27,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 29.35,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 28.56,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 24.62,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Nova Venécia": {
+        "sumario": {
+          "aplicacao": 25079041.78,
+          "valorDeclarado": 25079041.78,
+          "aplicacaoPercentual": 18.86,
+          "aplicacaoPerCapita": 477.4141322266852,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 15,
+          "rankingPerCapitaMunicipal": 58
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 24423824.05,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 24001631.18,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 29694459.31,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 32681562.08,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 25079041.78,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 19.47,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 17.38,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17.86,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18.5,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 18.86,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Pancas": {
+        "sumario": {
+          "aplicacao": 12378592.88,
+          "valorDeclarado": 12378592.88,
+          "aplicacaoPercentual": 23.93,
+          "aplicacaoPerCapita": 654.4672137041345,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 36,
+          "rankingPerCapitaMunicipal": 36
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 10951228.48,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 11546102.39,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 12786001.93,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 16624436.16,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 12378592.88,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 20.78,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 19.73,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 23.9,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 23.93,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Pedro Canário": {
+        "sumario": {
+          "aplicacao": 11377733.38,
+          "valorDeclarado": 11377733.38,
+          "aplicacaoPercentual": 21.31,
+          "aplicacaoPerCapita": 521.8425620327478,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 40,
+          "rankingPerCapitaMunicipal": 53
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 14453288.86,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 14318702.77,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 13609888.36,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 16136040.96,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 11377733.38,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.08,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 24.62,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20.18,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 22.27,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 21.31,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Pinheiros": {
+        "sumario": {
+          "aplicacao": 20811812.6,
+          "valorDeclarado": 20811812.6,
+          "aplicacaoPercentual": 26.66,
+          "aplicacaoPerCapita": 837.1269297292948,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 18,
+          "rankingPerCapitaMunicipal": 8
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 18729638.8,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19613511.97,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 22568131.73,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 27021620.5,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 20811812.6,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 24.9,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 24.12,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 23.51,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 25.37,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 26.66,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Piúma": {
+        "sumario": {
+          "aplicacao": 14036977.44,
+          "valorDeclarado": 14036977.44,
+          "aplicacaoPercentual": 21.61,
+          "aplicacaoPerCapita": 580.6162078093978,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 32,
+          "rankingPerCapitaMunicipal": 47
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 14008016.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 13268048.94,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 15629727.41,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 21413469.13,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 14036977.44,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 30.42,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 25.0,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 23.0,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 26.3,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 21.61,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Ponto Belo": {
+        "sumario": {
+          "aplicacao": 4957461.16,
+          "valorDeclarado": 4957461.16,
+          "aplicacaoPercentual": 19.9,
+          "aplicacaoPerCapita": 746.6055963855422,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 76,
+          "rankingPerCapitaMunicipal": 19
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 7032001.25,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 5769228.9,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 7200527.39,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 9379895.92,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 4957461.16,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 26.87,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 20.98,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 22.62,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 26.24,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 19.9,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Presidente Kennedy": {
+        "sumario": {
+          "aplicacao": 11035769.54,
+          "valorDeclarado": 11035769.54,
+          "aplicacaoPercentual": 16.16,
+          "aplicacaoPerCapita": 733.2737235880398,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 42,
+          "rankingPerCapitaMunicipal": 23
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 9977912.31,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 11524271.31,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17230451.58,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 22327100.48,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 11035769.54,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 19.83,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 18.19,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 16.31,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 19.16,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 16.16,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Rio Bananal": {
+        "sumario": {
+          "aplicacao": 17180304.89,
+          "valorDeclarado": 17180304.89,
+          "aplicacaoPercentual": 23.1,
+          "aplicacaoPerCapita": 839.4149064347487,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 22,
+          "rankingPerCapitaMunicipal": 7
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 15780455.35,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 18881107.26,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 24563221.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 22700709.81,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17180304.89,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 22.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 23.42,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 25.89,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 21.55,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 23.1,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Rio Novo do Sul": {
+        "sumario": {
+          "aplicacao": 6998782.67,
+          "valorDeclarado": 6998782.67,
+          "aplicacaoPercentual": 19.98,
+          "aplicacaoPerCapita": 610.1283820067997,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 67,
+          "rankingPerCapitaMunicipal": 43
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 7291830.61,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 7133321.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 6385193.73,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 8136985.88,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 6998782.67,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 21.86,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 20.0,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 15.1,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 17.19,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 19.98,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Santa Leopoldina": {
+        "sumario": {
+          "aplicacao": 8411119.0,
+          "valorDeclarado": 8411119.0,
+          "aplicacaoPercentual": 17.6,
+          "aplicacaoPerCapita": 602.9475985663082,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 57,
+          "rankingPerCapitaMunicipal": 45
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 8695829.04,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 8590879.78,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 9698002.58,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 12333714.7,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 8411119.0,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 19.84,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 17.25,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17.74,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18.25,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17.6,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Santa Maria de Jetibá": {
+        "sumario": {
+          "aplicacao": 33872997.66,
+          "valorDeclarado": 33872997.66,
+          "aplicacaoPercentual": 21.54,
+          "aplicacaoPerCapita": 736.7699327895596,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 13,
+          "rankingPerCapitaMunicipal": 21
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 31509607.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 31847398.04,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 40033474.95,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 46084440.84,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 33872997.66,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 21.24,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 18.68,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20.05,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 21.0,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 21.54,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Santa Teresa": {
+        "sumario": {
+          "aplicacao": 9184815.47,
+          "valorDeclarado": 9184815.47,
+          "aplicacaoPercentual": 12.91,
+          "aplicacaoPerCapita": 383.06775117821246,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 53,
+          "rankingPerCapitaMunicipal": 67
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 12569935.96,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 12756643.06,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 13422405.26,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 16064384.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 9184815.47,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 17.55,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 16.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 15.11,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 16.22,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 12.91,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "São Domingos do Norte": {
+        "sumario": {
+          "aplicacao": 7531269.14,
+          "valorDeclarado": 7531269.14,
+          "aplicacaoPercentual": 21.37,
+          "aplicacaoPerCapita": 828.6136142589944,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 63,
+          "rankingPerCapitaMunicipal": 11
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 6654057.98,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 7659757.49,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 8940844.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 10660535.4,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 7531269.14,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 19.49,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 20.72,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 21.06,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 22.61,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 21.37,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "São Gabriel da Palha": {
+        "sumario": {
+          "aplicacao": 15472260.32,
+          "valorDeclarado": 15472260.32,
+          "aplicacaoPercentual": 18.82,
+          "aplicacaoPerCapita": 450.915405822866,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 29,
+          "rankingPerCapitaMunicipal": 61
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 18833011.89,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 21987798.0,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 19571156.76,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 21466717.74,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 15472260.32,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 21.58,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 23.21,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 18.28,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 19.23,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 18.82,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "São José do Calçado": {
+        "sumario": {
+          "aplicacao": 4755032.95,
+          "valorDeclarado": 4755032.95,
+          "aplicacaoPercentual": 14.27,
+          "aplicacaoPerCapita": 415.2504541088115,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 78,
+          "rankingPerCapitaMunicipal": 64
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 5987434.15,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 6002232.88,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 7042742.78,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 8015931.78,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 4755032.95,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 17.66,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 17.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17.57,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 17.32,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 14.27,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "São Mateus": {
+        "sumario": {
+          "aplicacao": 48819335.3,
+          "valorDeclarado": 48819335.3,
+          "aplicacaoPercentual": 15.57,
+          "aplicacaoPerCapita": 360.42329494278334,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 9,
+          "rankingPerCapitaMunicipal": 70
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 55800637.06,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 45188266.03,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 48856180.64,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 58119233.55,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Set / 2026",
+              "valor": 48819335.3,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 24.0,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 17.09,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 15.61,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 16.52,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Set / 2026",
+              "valor": 15.57,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "São Roque do Canaã": {
+        "sumario": {
+          "aplicacao": 7213368.07,
+          "valorDeclarado": 7213368.07,
+          "aplicacaoPercentual": 18.83,
+          "aplicacaoPerCapita": 642.7881010515059,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 66,
+          "rankingPerCapitaMunicipal": 41
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 8200314.94,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 8615059.21,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 9106199.11,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 9948588.47,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 7213368.07,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 23.54,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 23.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 20.7,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 21.13,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 18.83,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Serra": {
+        "sumario": {
+          "aplicacao": 225923931.3,
+          "valorDeclarado": 225923931.3,
+          "aplicacaoPercentual": 17.44,
+          "aplicacaoPerCapita": 384.9438513480127,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 2,
+          "rankingPerCapitaMunicipal": 66
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 304398688.1,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 343843712.43,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 374941421.72,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 374394904.89,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 225923931.3,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 24.05,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 23.28,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 22.37,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 20.77,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17.44,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Sooretama": {
+        "sumario": {
+          "aplicacao": 19673418.53,
+          "valorDeclarado": 19673418.53,
+          "aplicacaoPercentual": 22.84,
+          "aplicacaoPerCapita": 681.3069168167336,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 20,
+          "rankingPerCapitaMunicipal": 33
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 19489505.93,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 21519803.56,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 24690023.28,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 22793171.02,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Set / 2026",
+              "valor": 19673418.53,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 26.78,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 27.37,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 26.29,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 22.05,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Set / 2026",
+              "valor": 22.84,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Vargem Alta": {
+        "sumario": {
+          "aplicacao": 9813818.01,
+          "valorDeclarado": 9813818.01,
+          "aplicacaoPercentual": 17.72,
+          "aplicacaoPerCapita": 480.7631416254348,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 49,
+          "rankingPerCapitaMunicipal": 57
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 11621774.96,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 12141392.0,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 13667510.14,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 15362513.16,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 9813818.01,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20.93,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 20.28,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 19.97,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 20.58,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 17.72,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Venda Nova do Imigrante": {
+        "sumario": {
+          "aplicacao": 13790606.53,
+          "valorDeclarado": 13790606.53,
+          "aplicacaoPercentual": 19.37,
+          "aplicacaoPerCapita": 538.0650226297308,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 33,
+          "rankingPerCapitaMunicipal": 52
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 16178415.25,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19859765.24,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17242601.34,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 19391264.3,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 13790606.53,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20.7,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 23.61,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 18.99,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18.81,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 19.37,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Viana": {
+        "sumario": {
+          "aplicacao": 41297647.71,
+          "valorDeclarado": 41297647.71,
+          "aplicacaoPercentual": 14.69,
+          "aplicacaoPerCapita": 518.7429841353581,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 12,
+          "rankingPerCapitaMunicipal": 54
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 43617862.64,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 43083898.4,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 47179327.57,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 54610147.28,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 41297647.71,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 17.92,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 16.39,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 16.19,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 15.71,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 14.69,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Vila Pavão": {
+        "sumario": {
+          "aplicacao": 6389581.98,
+          "valorDeclarado": 6389581.98,
+          "aplicacaoPercentual": 20.66,
+          "aplicacaoPerCapita": 684.1094197002142,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 69,
+          "rankingPerCapitaMunicipal": 32
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 5546477.81,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 6016652.26,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 6653204.51,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 8372533.24,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 6389581.98,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 18.66,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 19.21,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 18.42,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 19.46,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 20.66,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Vila Valério": {
+        "sumario": {
+          "aplicacao": 12252561.45,
+          "valorDeclarado": 12252561.45,
+          "aplicacaoPercentual": 19.15,
+          "aplicacaoPerCapita": 857.482080621457,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 38,
+          "rankingPerCapitaMunicipal": 6
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 14803429.83,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 14303902.4,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 15403319.05,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 18481592.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 12252561.45,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.37,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 23.72,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 21.45,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 22.19,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 19.15,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Vila Velha": {
+        "sumario": {
+          "aplicacao": 182486123.13,
+          "valorDeclarado": 182486123.13,
+          "aplicacaoPercentual": 18.73,
+          "aplicacaoPerCapita": 357.4570688446109,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 3,
+          "rankingPerCapitaMunicipal": 71
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 195865813.08,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 210818276.19,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 245925931.1,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 262474083.6,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 182486123.13,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 22.1,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 20.62,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 21.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 19.4,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 18.73,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Vitória": {
+        "sumario": {
+          "aplicacao": 286244511.43,
+          "valorDeclarado": 286244511.43,
+          "aplicacaoPercentual": 16.27,
+          "aplicacaoPerCapita": 832.2633969500051,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 1,
+          "rankingPerCapitaMunicipal": 10
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 312256225.65,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 368030653.88,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 425070433.52,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 432597552.77,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 286244511.43,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 16.88,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 17.46,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17.98,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 17.68,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 16.27,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "Governador Lindenberg": {
+        "sumario": {
+          "aplicacao": 8883796.8,
+          "valorDeclarado": 8883796.8,
+          "aplicacaoPercentual": 21.86,
+          "aplicacaoPerCapita": 772.4369011390314,
+          "participacaoMunicipal": 26858294.822564103,
+          "participacaoPerCapitaMunicipal": 504.72234416815314,
+          "rankingMunicipal": 55,
+          "rankingPerCapitaMunicipal": 17
+        },
+        "evolucao": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 11467276.69,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 11706768.17,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 11455378.55,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 14444273.06,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 8883796.8,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 29.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 27.91,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 22.06,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 24.36,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 21.86,
+              "displayValue": null
+            }
+          ]
+        }
+      }
+    },
+    "erros": {}
+  }
 }
