@@ -60,8 +60,13 @@ html{scroll-padding-top:130px}
 .barras .item{margin:9px 0}
 .barras .top{display:flex;justify-content:space-between;gap:10px;font-size:13.5px}
 .barras .top b{white-space:nowrap}
-.barras .trilho{height:10px;background:var(--azul-claro);border-radius:5px;overflow:hidden;margin-top:4px}
+.barras .trilho{height:10px;background:var(--azul-claro);border-radius:5px;overflow:hidden;margin-top:4px;position:relative}
 .barras .trilho i{display:block;height:100%;background:var(--azul2)}
+.barras .trilho i.ok{background:var(--verde)} .barras .trilho i.baixo{background:var(--vermelho)}
+.barras .trilho .ref{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--txt);opacity:.55}
+.gauge{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.gauge .valor{font-size:34px;font-weight:bold}
+.gauge .pill{font-size:13px;padding:4px 12px}
 .tabwrap{overflow-x:auto;border:1px solid var(--linha);border-radius:10px;background:var(--card)}
 .tce table{border-collapse:collapse;width:100%;font-size:13.5px}
 th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--linha);white-space:nowrap}
@@ -130,13 +135,28 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   <select id="munSel"></select>
   <div class="atalhos"><button type="button" data-u="ES">Panorama geral</button></div><button class="limpar" id="limpar" type="button" style="display:none">Voltar ao panorama</button>
   <span class="ctx" id="ctx"></span>
-  <div class="nav2"><a href="#resumo">Resumo</a><a href="#evolucao">Evolução</a><a href="#subfuncao">Subfunção</a><a href="#ranking">Municípios</a><a href="#leitura">Leitura estratégica</a></div>
+  <div class="nav2"><a href="#resumo">Resumo</a><a href="#limite">Limite 15%</a><a href="#evolucao">Evolução</a><a href="#subfuncao">Subfunção</a><a href="#ranking">Municípios</a><a href="#leitura">Leitura estratégica</a></div>
 </div></div>
 
 <div class="wrap tce">
   <section id="resumo">
     <div class="kpis" id="kpis"></div>
     <div class="alertas" id="alertas"></div>
+  </section>
+
+  <section id="limite">
+    <h2>Limite constitucional de aplicação em saúde <span id="limTit"></span></h2>
+    <p class="lead" id="limLead"></p>
+    <div class="card">
+      <h3 id="limCardTit">Percentual da receita aplicado em saúde</h3>
+      <div class="gauge"><span class="valor" id="limValor">–</span><span class="pill" id="limPill"></span></div>
+      <p class="nota">A Constituição (EC 29/2000, regulamentada pela LC 141/2012) exige que municípios apliquem no mínimo <b>15% da receita de impostos e transferências</b> em ações e serviços públicos de saúde. O ano mais recente pode estar parcial.</p>
+    </div>
+    <div class="card" style="margin-top:14px" id="limComparCard">
+      <h3>Comparação entre os 78 municípios</h3>
+      <p class="nota" style="margin:0 0 10px">Ordenado do maior para o menor percentual aplicado. A linha vertical marca o mínimo constitucional de 15%.</p>
+      <div class="barras" id="limBarras" style="max-height:560px;overflow:auto"></div>
+    </div>
   </section>
 
   <section id="evolucao">
@@ -154,7 +174,7 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   <section id="ranking">
     <h2 id="rkTit">Panorama dos 78 municípios</h2>
     <p class="lead">Clique em qualquer linha para filtrar a página por aquele município. Clique nos títulos para ordenar.</p>
-    <div class="tools"><input type="search" id="busca" placeholder="Filtrar por município..." aria-label="Filtrar por município"><span class="leg">Vermelho: valor por habitante entre os 15 mais baixos do estado. Verde: cobertura de plano de saúde privado acima de 50%.</span></div>
+    <div class="tools"><input type="search" id="busca" placeholder="Filtrar por município..." aria-label="Filtrar por município"><span class="leg">Vermelho: valor por habitante entre os 15 mais baixos do estado, ou abaixo do limite constitucional de 15%. Verde: cobertura de plano de saúde privado acima de 50%.</span></div>
     <div class="tabwrap" style="max-height:560px;overflow:auto"><table id="tab"><thead></thead><tbody></tbody></table></div>
   </section>
 
@@ -199,6 +219,8 @@ if(D.meta.periodo){const bp=document.getElementById('badgePeriodo');bp.textConte
 const brl=v=>v==null||!isFinite(v)?'–':v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
 const mi=v=>v==null||!isFinite(v)?'–':v===0?'R$ 0':(Math.abs(v)>=1e9?'R$ '+(v/1e9).toLocaleString('pt-BR',{maximumFractionDigits:2})+' bi':(Math.abs(v)>=1e6?'R$ '+(v/1e6).toLocaleString('pt-BR',{maximumFractionDigits:1})+' mi':'R$ '+(v/1e3).toLocaleString('pt-BR',{maximumFractionDigits:0})+' mil'));
 const pc=(v,d=1)=>v==null||!isFinite(v)?'–':(v*100).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const pc2=(v,d=2)=>v==null||!isFinite(v)?'–':v.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const LIMITE_MIN=15;
 const sum=a=>a.reduce((x,y)=>x+(y||0),0);
 const slug=s=>String(s).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 
@@ -247,10 +269,12 @@ function render(){
     k.push(['a',`Municípios com dado disponível`,'Quantos dos 78 municípios tinham lançamento declarado ao TCE-ES na data da extração.',String(N),'dos 78 municípios do Espírito Santo']);
     if(D.es.valorHabMin!=null)k.push(['r',`Menor valor por habitante`,'O município que menos aplicou por habitante no estado, entre os com dado disponível.',brl(D.es.valorHabMin),D.es.valorHabMinMunicipio||'']);
     if(D.es.valorHabMax!=null)k.push(['v',`Maior valor por habitante`,'O município que mais aplicou por habitante no estado, entre os com dado disponível.',brl(D.es.valorHabMax),D.es.valorHabMaxMunicipio||'']);
+    if(D.es.limiteConstitucional)k.push([D.es.limiteConstitucional.percentual>=LIMITE_MIN?'v':'r',`Limite constitucional (15%)`,'Percentual da receita de impostos e transferências aplicado em saúde no conjunto do estado, frente ao mínimo de 15% (EC 29/LC 141).',pc2(D.es.limiteConstitucional.percentual),D.es.limiteConstitucional.percentual>=LIMITE_MIN?'acima do mínimo constitucional':'abaixo do mínimo constitucional']);
   }else{
     const r=posHab(+atual);
     k.push([r>N-15?'r':'',`Valor por habitante em ${ANO}`,'Valor liquidado em saúde por este município dividido pela sua população.',brl(o.valorHab),`${r}º de ${N} no estado`+(o.varHab!=null?` · ${pc(o.varHab)} em relação a ${ANO-1}`:'')]);
     k.push([o.percComPlano>.5?'v':'',`População com plano de saúde privado`,'Parcela da população do município com plano privado (base ANS). O restante depende do SUS municipal.',pc(o.percComPlano),o.pop?`${(o.benef||0).toLocaleString('pt-BR')} de ${o.pop.toLocaleString('pt-BR')} habitantes`:'']);
+    if(o.limitePercentual!=null)k.push([o.limitePercentual>=LIMITE_MIN?'v':'r',`Limite constitucional (15%)`,'Percentual da receita de impostos e transferências aplicado em saúde pelo município, frente ao mínimo de 15% (EC 29/LC 141).',pc2(o.limitePercentual),o.limitePercentual>=LIMITE_MIN?'acima do mínimo constitucional':'abaixo do mínimo constitucional']);
     k.push(['',`Aplicação em saúde no ES em ${ANO}`,'Panorama geral do estado, para comparar com o município selecionado.',mi(D.es.aplicacao),'para comparação, panorama geral do estado']);
     k.push(['',`Valor médio por habitante no ES`,'Média estadual de valor aplicado por habitante, para comparar com o município selecionado.',brl(D.es.valorHab),'média estadual, para comparação']);
   }
@@ -261,11 +285,14 @@ function render(){
     al.push(['i','Você está no panorama geral. Escolha um município no filtro, ou clique em uma linha da tabela abaixo, para ver os dados detalhados.']);
     if(cresc!=null&&cresc<0)al.push(['a',`A aplicação em saúde do ES caiu ${pc(Math.abs(cresc))} em ${ANO} em relação a ${ANO-1}. O ano mais recente costuma estar parcial no painel do TCE-ES, pois reflete apenas o já declarado até a data da extração.`]);
     al.push(['r',`${pc(1-D.es.percComPlano)} da população do Espírito Santo depende exclusivamente do SUS, sem plano de saúde privado.`]);
+    const abaixo15=D.m.filter(m=>m.limitePercentual!=null&&m.limitePercentual<LIMITE_MIN);
+    if(abaixo15.length)al.push(['r',`<b>${abaixo15.length} município${abaixo15.length>1?'s':''} abaixo do limite constitucional de 15%:</b> ${abaixo15.map(m=>`${m.n} (${pc2(m.limitePercentual)})`).join(', ')}.`]);
   }else{
     const r=posHab(+atual);
     if(r>N-15)al.push(['r',`<b>Valor por habitante baixo:</b> ${nome} está entre os 15 municípios com menor valor aplicado por habitante no estado (${r}º de ${N}).`]);
     else if(r<=15)al.push(['v',`<b>Valor por habitante elevado:</b> ${nome} está entre os 15 municípios com maior valor aplicado por habitante no estado (${r}º de ${N}).`]);
     if(o.percComPlano<.2)al.push(['i',`Menos de ${pc(.2,0)} da população de ${nome} tem plano de saúde privado; a quase totalidade depende do SUS.`]);
+    if(o.limitePercentual!=null&&o.limitePercentual<LIMITE_MIN)al.push(['r',`<b>Abaixo do limite constitucional:</b> ${nome} aplicou ${pc2(o.limitePercentual)} da receita em saúde em ${ANO}, abaixo do mínimo de 15% exigido pela EC 29/LC 141.`]);
   }
   document.getElementById('alertas').innerHTML=al.map(([c,tx])=>`<div class="alerta ${c}">${tx}</div>`).join('');
   // evolução: ES ou município selecionado
@@ -278,12 +305,35 @@ function render(){
   document.getElementById('evoTit').textContent=isES()?'':'· '+nome+' ';
   document.getElementById('evoLead').innerHTML=isES()?`A aplicação em saúde do Espírito Santo soma <b>${mi(D.es.aplicacao)}</b> em ${ANO}, partindo de ${mi(D.es.evolucao[0][1])} em ${D.es.evolucao[0][0]}.`:(o.evolucao?`A aplicação em saúde de <b>${nome}</b> soma <b>${mi(serieEvo[serieEvo.length-1][1])}</b> em ${ANO}, partindo de ${mi(serieEvo[0][1])} em ${serieEvo[0][0]}.`:`O painel do TCE-ES não trouxe série histórica para ${nome}; exibindo o consolidado do Espírito Santo para referência.`);
   leitura(o,nome);
+  renderLimite(o,nome);
   document.getElementById('ctaTit').textContent=isES()?'Precisa qualificar o planejamento e a prestação de contas da sua saúde?':`Precisa de apoio técnico para a gestão da saúde de ${nome}?`;
   document.title=(isES()?'Painel TCE-ES: Gastos com a Função Saúde':'Painel TCE-ES · '+nome)+' | Rafael Partelli';
   drawRank();
 }
 
-const cols=[['n','Município',m=>m.n,'txt'],['valorHab','Valor por habitante',m=>brl(m.valorHab)],['varHab','Variação',m=>pc(m.varHab)],['aplicado','Aplicado',m=>mi(m.aplicado)],['percAplicado','% do total ES',m=>pc(m.percAplicado,2)],['percComPlano','Com plano privado',m=>pc(m.percComPlano)],['pop','População',m=>m.pop?m.pop.toLocaleString('pt-BR'):'–']];
+// ---------- limite constitucional (15%) ----------
+const municipiosOrdenadosLimite=D.m.map((m,i)=>[m,i]).filter(([m])=>m.limitePercentual!=null).sort((a,b)=>b[0].limitePercentual-a[0].limitePercentual);
+const maxLimitePerc=Math.max(LIMITE_MIN,...municipiosOrdenadosLimite.map(([m])=>m.limitePercentual))*1.05;
+function renderLimite(o,nome){
+  const valor=isES()?D.es.limiteConstitucional?.percentual:o.limitePercentual;
+  document.getElementById('limTit').textContent=isES()?'':'· '+nome;
+  document.getElementById('limCardTit').textContent=isES()?'Percentual da receita aplicado em saúde no Espírito Santo':`Percentual da receita aplicado em saúde em ${nome}`;
+  const okLimite=valor!=null&&valor>=LIMITE_MIN;
+  document.getElementById('limValor').textContent=valor!=null?pc2(valor):'sem dado';
+  document.getElementById('limValor').style.color=valor==null?'':(okLimite?'var(--verde)':'var(--vermelho)');
+  document.getElementById('limPill').className='pill '+(valor==null?'par':(okLimite?'ok':'pen'));
+  document.getElementById('limPill').textContent=valor==null?'Sem dado declarado':(okLimite?'Acima do limite mínimo':'Abaixo do limite mínimo');
+  document.getElementById('limLead').innerHTML=isES()?`No conjunto do Espírito Santo, o percentual aplicado em saúde ${okLimite?'tende a obedecer':'está abaixo de'} o mínimo constitucional de 15% da receita.`:`Em ${nome}, o percentual aplicado em saúde ${valor==null?'não está disponível nesta extração':(okLimite?'tende a obedecer':'está abaixo de')+' o mínimo constitucional de 15% da receita.'}`;
+  document.getElementById('limBarras').innerHTML=municipiosOrdenadosLimite.map(([m,i])=>{
+    const w=(m.limitePercentual/maxLimitePerc*100).toFixed(1);
+    const refLeft=(LIMITE_MIN/maxLimitePerc*100).toFixed(1);
+    const cl=m.limitePercentual>=LIMITE_MIN?'ok':'baixo';
+    const sel=String(i)===atual?' style="font-weight:bold"':'';
+    return `<div class="item"><div class="top"><span${sel}>${m.n}</span><b>${pc2(m.limitePercentual)}</b></div><div class="trilho"><i class="${cl}" style="width:${w}%"></i><span class="ref" style="left:${refLeft}%"></span></div></div>`;
+  }).join('');
+}
+
+const cols=[['n','Município',m=>m.n,'txt'],['valorHab','Valor por habitante',m=>brl(m.valorHab)],['varHab','Variação',m=>pc(m.varHab)],['aplicado','Aplicado',m=>mi(m.aplicado)],['percAplicado','% do total ES',m=>pc(m.percAplicado,2)],['limitePercentual','% do limite (15%)',m=>pc2(m.limitePercentual)],['percComPlano','Com plano privado',m=>pc(m.percComPlano)],['pop','População',m=>m.pop?m.pop.toLocaleString('pt-BR'):'–']];
 let sk='valorHab',asc=false;
 const tab=document.getElementById('tab');
 tab.querySelector('thead').innerHTML='<tr><th>#</th>'+cols.map(c=>`<th data-k="${c[0]}" class="${c[3]||''}">${c[1]}</th>`).join('')+'</tr>';
@@ -291,7 +341,7 @@ function drawRank(){
   const q=document.getElementById('busca').value.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
   const rows=D.m.map((m,i)=>[m,i]).sort((a,b)=>{const x=a[0][sk],y=b[0][sk];if(sk==='n')return asc?x.localeCompare(y):y.localeCompare(x);return (asc?1:-1)*((x??-1)-(y??-1));});
   const pos=new Map(rows.map((r,k)=>[r[1],k+1]));
-  tab.querySelector('tbody').innerHTML=rows.filter(([m])=>m.n.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g,'').includes(q)).map(([m,i])=>`<tr data-i="${i}" class="${String(i)===atual?'sel':''}"><td>${pos.get(i)}</td>`+cols.map(c=>{let cl=c[3]||'';if(c[0]==='valorHab'&&posHab(i)>N-15)cl='alto';if(c[0]==='percComPlano'&&m.percComPlano>.5)cl='bom';return `<td class="${cl}">${c[2](m)}</td>`;}).join('')+'</tr>').join('');
+  tab.querySelector('tbody').innerHTML=rows.filter(([m])=>m.n.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g,'').includes(q)).map(([m,i])=>`<tr data-i="${i}" class="${String(i)===atual?'sel':''}"><td>${pos.get(i)}</td>`+cols.map(c=>{let cl=c[3]||'';if(c[0]==='valorHab'&&posHab(i)>N-15)cl='alto';if(c[0]==='percComPlano'&&m.percComPlano>.5)cl='bom';if(c[0]==='limitePercentual'&&m.limitePercentual!=null&&m.limitePercentual<LIMITE_MIN)cl='alto';return `<td class="${cl}">${c[2](m)}</td>`;}).join('')+'</tr>').join('');
   tab.querySelectorAll('th[data-k]').forEach(th=>{th.className=(th.dataset.k===sk?('on'+(asc?' asc':'')):'')+(th.dataset.k==='n'?' txt':'');});
 }
 tab.querySelector('thead').onclick=e=>{const k=e.target.dataset.k;if(!k)return;if(k===sk)asc=!asc;else{sk=k;asc=k==='n';}drawRank();};
@@ -308,12 +358,16 @@ function leitura(o,nome){
     rec.push('Cruzar o valor aplicado por habitante com a produção SIA/SIH do município para avaliar se o gasto corresponde à oferta assistencial.');
     rec.push('Priorizar diagnóstico nos municípios com valor por habitante mais baixo, verificando se há recurso federal ou estadual não aplicado (ver Radar de Recursos SUS).');
     rec.push('Acompanhar a composição por subfunção: concentração excessiva em Administração Geral pode indicar baixa execução finalística.');
+    const abaixo15ES=D.m.filter(m=>m.limitePercentual!=null&&m.limitePercentual<LIMITE_MIN);
+    if(abaixo15ES.length)rec.push(`Apoiar prioritariamente os ${abaixo15ES.length} municípios abaixo do limite constitucional de 15% na regularização da aplicação, para evitar apontamento de descumprimento pelo TCE-ES.`);
   }else{
     const r=posHab(+atual);
     h=`<p><b>Valor por habitante:</b> ${nome} aplicou ${brl(o.valorHab)} por habitante em ${D.meta.anoRef}, ${r}º lugar entre os 78 municípios${o.varHab!=null?`, variação de ${pc(o.varHab)} em relação ao ano anterior`:''}.</p>
     <p><b>Cobertura de plano de saúde privado:</b> ${pc(o.percComPlano)} da população tem plano privado; os demais ${pc(1-o.percComPlano)} dependem do SUS municipal para a atenção à saúde.</p>`;
     if(r>N-15)rec.push('Avaliar se o valor por habitante reflete limitação de receita própria ou de repasses, cruzando com o Radar de Recursos SUS (repasses fundo a fundo, emendas e saldo em conta).');
     if(o.percComPlano<.2)rec.push('Com cobertura de plano privado muito baixa, reforçar a rede própria do SUS municipal é prioridade, já que a população tem poucas alternativas assistenciais.');
+    if(o.limitePercentual!=null&&o.limitePercentual<LIMITE_MIN)rec.push(`Priorizar a regularização do limite constitucional: faltam ${pc2(LIMITE_MIN-o.limitePercentual)} de receita aplicada em saúde para atingir os 15% exigidos pela EC 29/LC 141.`);
+    else if(o.limitePercentual!=null)rec.push(`Manter o monitoramento mensal do limite constitucional: a folga atual sobre os 15% (${pc2(o.limitePercentual-LIMITE_MIN)}) pode reduzir se a receita cair ou a aplicação desacelerar no restante do ano.`);
     rec.push('Comparar a composição por subfunção do município (quando disponível no painel do TCE-ES) com o padrão estadual para identificar desequilíbrios.');
     rec.push('Usar este painel junto ao Radar de Recursos SUS e à produção SIA/SIH para compor o diagnóstico do Plano de Saúde e do Relatório Anual de Gestão.');
   }
