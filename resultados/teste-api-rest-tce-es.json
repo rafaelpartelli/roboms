@@ -1,0 +1,136 @@
+{
+  "testes": {
+    "settings": {
+      "status_http": 200,
+      "total_esferas": 80,
+      "amostra": [
+        {
+          "id": 1,
+          "codigo": "001",
+          "nome": "Afonso Cláudio",
+          "codigoIBGE": 3200102
+        },
+        {
+          "id": 2,
+          "codigo": "002",
+          "nome": "Água Doce do Norte",
+          "codigoIBGE": 3200169
+        },
+        {
+          "id": 3,
+          "codigo": "003",
+          "nome": "Águia Branca",
+          "codigoIBGE": 3200136
+        },
+        {
+          "id": 4,
+          "codigo": "004",
+          "nome": "Alegre",
+          "codigoIBGE": 3200201
+        },
+        {
+          "id": 5,
+          "codigo": "005",
+          "nome": "Alfredo Chaves",
+          "codigoIBGE": 3200300
+        }
+      ]
+    },
+    "sumario_afonso_claudio": {
+      "status_http": 200,
+      "dados": {
+        "aplicacao": 16646481.67,
+        "valorDeclarado": 16646481.67,
+        "aplicacaoPercentual": 22.78,
+        "aplicacaoPerCapita": 512.5306096246806,
+        "participacaoMunicipal": 26858294.822564103,
+        "participacaoPerCapitaMunicipal": 504.72234416815314,
+        "rankingMunicipal": 24,
+        "rankingPerCapitaMunicipal": 55
+      }
+    },
+    "sumario_vitoria": {
+      "status_http": 200,
+      "dados": {
+        "aplicacao": 286244511.43,
+        "valorDeclarado": 286244511.43,
+        "aplicacaoPercentual": 16.27,
+        "aplicacaoPerCapita": 832.2633969500051,
+        "participacaoMunicipal": 26858294.822564103,
+        "participacaoPerCapitaMunicipal": 504.72234416815314,
+        "rankingMunicipal": 1,
+        "rankingPerCapitaMunicipal": 10
+      }
+    },
+    "evolucao_afonso_claudio": {
+      "status_http": 200,
+      "dados": {
+        "aplicacao": [
+          {
+            "ano": 2022,
+            "nome": "2022",
+            "valor": 20972412.78,
+            "displayValue": null
+          },
+          {
+            "ano": 2023,
+            "nome": "2023",
+            "valor": 24308195.81,
+            "displayValue": null
+          },
+          {
+            "ano": 2024,
+            "nome": "2024",
+            "valor": 23786235.91,
+            "displayValue": null
+          },
+          {
+            "ano": 2025,
+            "nome": "2025",
+            "valor": 23607483.94,
+            "displayValue": null
+          },
+          {
+            "ano": 2026,
+            "nome": "Ago / 2026",
+            "valor": 16646481.67,
+            "displayValue": null
+          }
+        ],
+        "percentual": [
+          {
+            "ano": 2022,
+            "nome": "2022",
+            "valor": 27.35,
+            "displayValue": null
+          },
+          {
+            "ano": 2023,
+            "nome": "2023",
+            "valor": 29.08,
+            "displayValue": null
+          },
+          {
+            "ano": 2024,
+            "nome": "2024",
+            "valor": 25.42,
+            "displayValue": null
+          },
+          {
+            "ano": 2025,
+            "nome": "2025",
+            "valor": 23.63,
+            "displayValue": null
+          },
+          {
+            "ano": 2026,
+            "nome": "Ago / 2026",
+            "valor": 22.78,
+            "displayValue": null
+          }
+        ]
+      }
+    }
+  },
+  "erros": {}
+}
