@@ -283,9 +283,13 @@ document.getElementById('sub').innerHTML=D.subfuncoes.map(([n,v,yoy])=>`<div cla
 const topSub=D.subfuncoes[0];
 
 // ---------- seletor ----------
+// Lista em ordem alfabética para facilitar achar o município no dropdown;
+// o array D.m em si continua na ordem de valorHab (usada pelo ranking por
+// padrão), só a montagem das <option> aqui é que segue o nome.
 const sel=document.getElementById('munSel');
+const ordemAlfabetica=D.m.map((m,i)=>i).sort((a,b)=>D.m[a].n.localeCompare(D.m[b].n,'pt-BR'));
 sel.innerHTML='<option value="ES">Panorama geral: Espírito Santo (78 municípios)</option>'
- +'<optgroup label="Município">'+D.m.map((m,i)=>`<option value="${i}">${m.n}</option>`).join('')+'</optgroup>';
+ +'<optgroup label="Município">'+ordemAlfabetica.map(i=>`<option value="${i}">${D.m[i].n}</option>`).join('')+'</optgroup>';
 let atual='ES';
 const isES=()=>atual==='ES';
 const obj=()=>isES()?null:D.m[+atual];

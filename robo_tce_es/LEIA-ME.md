@@ -263,7 +263,10 @@ geral a pedido do Rafael em 16/10/2026.
 > colunas (as duas de receita/liquidado saíram, ficando só nos cards) e
 > ganhou um layout responsivo: em telas estreitas (≤760px), cada linha
 > vira um cartão empilhado com rótulo ao lado do valor, para nunca
-> precisar de rolagem horizontal.
+> precisar de rolagem horizontal. O dropdown de filtro por município
+> passou a listar os 78 em ordem alfabética (o array de dados em si
+> continua ordenado por valor por habitante, usado como ordenação padrão
+> da tabela; só a lista do `<select>` segue o nome).
 
 ## Próximos passos
 
