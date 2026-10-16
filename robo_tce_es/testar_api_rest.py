@@ -32,13 +32,6 @@ def main(out_path: str) -> int:
         "sumario_afonso_claudio": f"{BASE}/api/MunicipioControllers/Saude/GetSumario?anoExercicio=2026&idEsferaAdministrativa=1",
         "sumario_vitoria": f"{BASE}/api/MunicipioControllers/Saude/GetSumario?anoExercicio=2026&idEsferaAdministrativa=77",
         "evolucao_afonso_claudio": f"{BASE}/api/MunicipioControllers/Saude/GetGraficosEvolucaoAnualAplicacao?idEsferaAdministrativa=1&anoExercicio=2026",
-        # teste temporario (16/10/2026): existe gasto proprio do governo
-        # estadual, separado da soma dos municipios, via o mesmo endpoint
-        # generico usando o id de esfera 80 (Consorcio) e 81 (Estado do ES)?
-        "sumario_estado_id81": f"{BASE}/api/MunicipioControllers/Saude/GetSumario?anoExercicio=2026&idEsferaAdministrativa=81",
-        "sumario_consorcio_id80": f"{BASE}/api/MunicipioControllers/Saude/GetSumario?anoExercicio=2026&idEsferaAdministrativa=80",
-        "evolucao_estado_id81": f"{BASE}/api/MunicipioControllers/Saude/GetGraficosEvolucaoAnualAplicacao?idEsferaAdministrativa=81&anoExercicio=2026",
-        "sumario_estado_controller": f"{BASE}/api/EstadoControllers/Saude/GetSumario?anoExercicio=2026",
     }
 
     for nome, url in testes.items():
@@ -51,16 +44,6 @@ def main(out_path: str) -> int:
                 # historico de prestacao de contas) - guarda so o resumo da
                 # lista de esferas administrativas, que e' o que precisamos
                 esferas = dados.get("esferasAdministrativas", [])
-                nao_municipais = [
-                    {
-                        "id": e.get("idEsferaAdministrativa"),
-                        "codigo": e.get("codigoEsferaAdministrativa"),
-                        "nome": e.get("nomeEsferaAdministrativa"),
-                        "codigoIBGE": e.get("codigoIBGE"),
-                    }
-                    for e in esferas
-                    if (e.get("codigoEsferaAdministrativa") or 0) >= 500
-                ]
                 resultado["testes"][nome] = {
                     "status_http": resp.status_code,
                     "total_esferas": len(esferas),
@@ -73,7 +56,6 @@ def main(out_path: str) -> int:
                         }
                         for e in esferas[:5]
                     ],
-                    "nao_municipais": nao_municipais,
                 }
             else:
                 resultado["testes"][nome] = {"status_http": resp.status_code, "dados": dados}

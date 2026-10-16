@@ -32,9 +32,17 @@
 > análise, mínimo/máximo valor por habitante, percentual aplicado por
 > município, cards explicados, evolução por ano reativa ao filtro e o
 > indicador de limite constitucional de 15% foram implementados.
-> **Gestão estadual** foi testada e não é possível com o dataset Power BI
-> desta página: a tabela de fatos só registra lançamento por município,
-> sem linha de gasto estadual direto (ver nota em `extrair.py`).
+> **Gestão estadual** foi testada em duas fontes diferentes e não é
+> possível em nenhuma delas: no Power BI, a tabela de fatos só registra
+> lançamento por município, sem linha de gasto estadual direto (ver nota
+> em `extrair.py`). Na API REST (16/10/2026), os ids de esfera
+> administrativa 80 (Consórcio do Estado) e 81 (Estado do Espírito Santo)
+> não retornam dado próprio nos endpoints de município, e o endpoint
+> `EstadoControllers/Saude/GetSumario` devolve a mesma soma agregada dos
+> 78 municípios que já temos (não o orçamento próprio do governo
+> estadual em saúde). Conclusão: nenhuma das fontes atualmente usadas
+> expõe o gasto estadual direto; seria preciso outra fonte (ex.: SIOPS,
+> portal da transparência do Estado) para atender esse pedido.
 > **Estabelecimentos de saúde** ainda não foi feito: é uma página
 > diferente do mesmo relatório Power BI (CNES), exige descoberta própria
 > (como a feita para esta página) — ver "Próximos passos".
