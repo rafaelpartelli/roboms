@@ -1,5 +1,5 @@
 {
-  "quando_utc": "2026-10-19T14:43:18.764668+00:00",
+  "quando_utc": "2026-10-19T15:19:04.134924+00:00",
   "ano_referencia": null,
   "consultas": {
     "kpi_aplicacao_total": {
@@ -12075,6 +12075,1899 @@
           "rankingPerCapitaMunicipal": 17
         }
       }
+    },
+    "erros": {}
+  },
+  "subfuncao_por_municipio": {
+    "municipios": {
+      "Afonso Cláudio": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          12469907.469999997
+        ],
+        [
+          "Atenção Básica",
+          10666258.67
+        ],
+        [
+          "Administração Geral",
+          6923368.399999999
+        ],
+        [
+          "Vigilância Epidemiológica",
+          831633.7000000001
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          493556.35
+        ],
+        [
+          "Vigilância Sanitária",
+          352172.15
+        ]
+      ],
+      "Alegre": [
+        [
+          "Administração Geral",
+          17913288.68
+        ],
+        [
+          "Atenção Básica",
+          6489763.609999999
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          2986403.96
+        ],
+        [
+          "Vigilância Epidemiológica",
+          531576.75
+        ],
+        [
+          "Vigilância Sanitária",
+          1275.0
+        ]
+      ],
+      "Águia Branca": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          11658649.580000002
+        ],
+        [
+          "Atenção Básica",
+          2495325.1700000004
+        ],
+        [
+          "Administração Geral",
+          921782.6400000001
+        ],
+        [
+          "Vigilância Epidemiológica",
+          124107.9
+        ]
+      ],
+      "Água Doce do Norte": [
+        [
+          "Atenção Básica",
+          5941540.5600000005
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          2786932.18
+        ],
+        [
+          "Administração Geral",
+          1442529.5999999999
+        ],
+        [
+          "Vigilância Epidemiológica",
+          213825.89
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          152924.41
+        ],
+        [
+          "Vigilância Sanitária",
+          105262.36
+        ]
+      ],
+      "Alfredo Chaves": [
+        [
+          "Administração Geral",
+          7026695.629999999
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          6176591.799999999
+        ],
+        [
+          "Atenção Básica",
+          5988512.59
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          1247939.5699999998
+        ]
+      ],
+      "Apiacá": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          7381510.2299999995
+        ],
+        [
+          "Administração Geral",
+          3063583.4899999998
+        ],
+        [
+          "Atenção Básica",
+          2956486.09
+        ],
+        [
+          "Previdência Básica",
+          797885.44
+        ],
+        [
+          "Vigilância Epidemiológica",
+          414370.50999999995
+        ]
+      ],
+      "Alto Rio Novo": [
+        [
+          "Atenção Básica",
+          4811881.21
+        ],
+        [
+          "Administração Geral",
+          3957023.21
+        ],
+        [
+          "Vigilância Epidemiológica",
+          673415.8
+        ]
+      ],
+      "Anchieta": [
+        [
+          "Atenção Básica",
+          30178205.09
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          22230584.669999998
+        ],
+        [
+          "Administração Geral",
+          9212510.56
+        ],
+        [
+          "Vigilância Sanitária",
+          2911887.059999999
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          1415014.34
+        ],
+        [
+          "Vigilância Epidemiológica",
+          1311032.1200000008
+        ]
+      ],
+      "Aracruz": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          77254832.64999998
+        ],
+        [
+          "Administração Geral",
+          42806575.25
+        ],
+        [
+          "Atenção Básica",
+          19553570.320000004
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          2109013.27
+        ],
+        [
+          "Vigilância Epidemiológica",
+          1042355.3699999999
+        ],
+        [
+          "Vigilância Sanitária",
+          28575.260000000002
+        ],
+        [
+          "Formação De Recursos Humanos",
+          880.0
+        ]
+      ],
+      "Atílio Vivácqua": [
+        [
+          "Atenção Básica",
+          11763016.679999998
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          7772049.75
+        ],
+        [
+          "Vigilância Epidemiológica",
+          231408.59000000008
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          152092.43000000002
+        ],
+        [
+          "Vigilância Sanitária",
+          78451.90000000002
+        ]
+      ],
+      "Barra de São Francisco": [
+        [
+          "Atenção Básica",
+          28879942.63999999
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          2095024.92
+        ],
+        [
+          "Vigilância Epidemiológica",
+          831564.0499999998
+        ],
+        [
+          "Vigilância Sanitária",
+          163433.75
+        ]
+      ],
+      "Baixo Guandu": [
+        [
+          "Atenção Básica",
+          11580120.099999998
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          5543192.289999999
+        ],
+        [
+          "Administração Geral",
+          5321663.820000001
+        ],
+        [
+          "Vigilância Sanitária",
+          1371817.5199999998
+        ],
+        [
+          "Vigilância Epidemiológica",
+          1182981.4000000001
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          402369.86999999994
+        ]
+      ],
+      "Boa Esperança": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          8595755.849999998
+        ],
+        [
+          "Atenção Básica",
+          5969548.859999999
+        ],
+        [
+          "Administração Geral",
+          1229576.5799999998
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          270466.81999999995
+        ],
+        [
+          "Vigilância Epidemiológica",
+          253278.63999999996
+        ]
+      ],
+      "Bom Jesus do Norte": [
+        [
+          "Administração Geral",
+          5645680.840000001
+        ],
+        [
+          "Atenção Básica",
+          4733307.049999999
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          2207558.0799999996
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          306975.04
+        ],
+        [
+          "Vigilância Sanitária",
+          230690.40999999997
+        ],
+        [
+          "Vigilância Epidemiológica",
+          3737.8
+        ]
+      ],
+      "Brejetuba": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          8011860.96
+        ],
+        [
+          "Atenção Básica",
+          5019324.5200000005
+        ],
+        [
+          "Administração Geral",
+          1809745.9699999997
+        ],
+        [
+          "Vigilância Epidemiológica",
+          234781.38
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          43585.259999999995
+        ]
+      ],
+      "Cachoeiro de Itapemirim": [
+        [
+          "Atenção Básica",
+          39927512.12
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          26656608.14
+        ],
+        [
+          "Administração Geral",
+          20440545.410000008
+        ],
+        [
+          "Vigilância Epidemiológica",
+          9563282.71
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          2251917.0999999996
+        ],
+        [
+          "Outros Encargos Especiais",
+          681371.0399999997
+        ]
+      ],
+      "Cariacica": [
+        [
+          "Atenção Básica",
+          72919615.44999997
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          70660869.80000003
+        ],
+        [
+          "Administração Geral",
+          21234750.13
+        ],
+        [
+          "Vigilância Epidemiológica",
+          15156885.649999997
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          6319107.49
+        ],
+        [
+          "Vigilância Sanitária",
+          3191713.27
+        ]
+      ],
+      "Castelo": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          21474314.859999996
+        ],
+        [
+          "Atenção Básica",
+          10087647.009999998
+        ],
+        [
+          "Administração Geral",
+          2053874.16
+        ],
+        [
+          "Vigilância Epidemiológica",
+          1456269.99
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          533639.34
+        ],
+        [
+          "Vigilância Sanitária",
+          353680.71
+        ]
+      ],
+      "Conceição da Barra": [
+        [
+          "Administração Geral",
+          10834138.160000002
+        ],
+        [
+          "Atenção Básica",
+          7825358.879999999
+        ],
+        [
+          "Outras Transferências",
+          2695197.23
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          2395819.9699999997
+        ],
+        [
+          "Vigilância Sanitária",
+          990474.11
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          219749.15000000002
+        ],
+        [
+          "Serviços Financeiros",
+          12516.580000000002
+        ]
+      ],
+      "Colatina": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          157683025.46000004
+        ],
+        [
+          "Atenção Básica",
+          42842213.99
+        ],
+        [
+          "Administração Geral",
+          8494563.999999998
+        ],
+        [
+          "Vigilância Epidemiológica",
+          6645719.120000002
+        ],
+        [
+          "Vigilância Sanitária",
+          1065281.7800000003
+        ],
+        [
+          "Direitos Individuais, Coletivos E Difusos",
+          266144.33
+        ],
+        [
+          "Formação De Recursos Humanos",
+          9178.0
+        ]
+      ],
+      "Conceição do Castelo": [
+        [
+          "Atenção Básica",
+          4121834.6899999995
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          3701187.0800000005
+        ],
+        [
+          "Administração Geral",
+          1862475.85
+        ],
+        [
+          "Vigilância Epidemiológica",
+          158848.60000000003
+        ],
+        [
+          "Assistência À Pessoa Com Deficiência",
+          132000.0
+        ],
+        [
+          "Vigilância Sanitária",
+          53313.70999999999
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          31262.08
+        ]
+      ],
+      "Divino de São Lourenço": [
+        [
+          "Atenção Básica",
+          7238470.699999999
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          980578.04
+        ],
+        [
+          "Vigilância Epidemiológica",
+          141173.25
+        ]
+      ],
+      "Domingos Martins": [
+        [
+          "Atenção Básica",
+          16199415.509999998
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          12392821.82
+        ],
+        [
+          "Administração Geral",
+          3819950.0700000003
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          817112.9499999998
+        ],
+        [
+          "Vigilância Epidemiológica",
+          629139.06
+        ],
+        [
+          "Vigilância Sanitária",
+          248728.07
+        ]
+      ],
+      "Dores do Rio Preto": [
+        [
+          "Atenção Básica",
+          8781875.0
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          1058640.4799999997
+        ],
+        [
+          "Vigilância Epidemiológica",
+          180777.06
+        ],
+        [
+          "Vigilância Sanitária",
+          107274.68999999999
+        ]
+      ],
+      "Ecoporanga": [
+        [
+          "Atenção Básica",
+          10329871.88
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          7211688.479999999
+        ],
+        [
+          "Administração Geral",
+          4447549.949999999
+        ],
+        [
+          "Vigilância Epidemiológica",
+          1127290.2800000003
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          210151.19999999998
+        ],
+        [
+          "Vigilância Sanitária",
+          90320.35
+        ]
+      ],
+      "Fundão": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          11740999.280000001
+        ],
+        [
+          "Atenção Básica",
+          5962642.079999999
+        ],
+        [
+          "Administração Geral",
+          4759931.999999999
+        ],
+        [
+          "Vigilância Sanitária",
+          970177.5299999999
+        ],
+        [
+          "Vigilância Epidemiológica",
+          53095.0
+        ]
+      ],
+      "Guaçuí": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          11447616.639999997
+        ],
+        [
+          "Administração Geral",
+          10554883.840000002
+        ],
+        [
+          "Atenção Básica",
+          4258671.78
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          1427853.9499999997
+        ],
+        [
+          "Vigilância Sanitária",
+          910803.0800000002
+        ],
+        [
+          "Vigilância Epidemiológica",
+          157414.0
+        ]
+      ],
+      "Guarapari": [
+        [
+          "Administração Geral",
+          28201492.740000002
+        ],
+        [
+          "Atenção Básica",
+          19546470.010000005
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          17190258.470000003
+        ],
+        [
+          "Vigilância Epidemiológica",
+          9827228.72
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          4203537.05
+        ],
+        [
+          "Tecnologia Da Informação",
+          1963470.44
+        ]
+      ],
+      "Ibatiba": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          13438432.549999999
+        ],
+        [
+          "Administração Geral",
+          6541589.82
+        ],
+        [
+          "Atenção Básica",
+          4089198.35
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          1259987.98
+        ],
+        [
+          "Vigilância Epidemiológica",
+          478168.5700000001
+        ],
+        [
+          "Vigilância Sanitária",
+          170947.51999999996
+        ]
+      ],
+      "Ibiraçu": [
+        [
+          "Administração Geral",
+          7202155.37
+        ],
+        [
+          "Atenção Básica",
+          4843872.459999998
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          2595520.7399999998
+        ],
+        [
+          "Vigilância Sanitária",
+          383959.45999999996
+        ]
+      ],
+      "Ibitirama": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          5066935.84
+        ],
+        [
+          "Administração Geral",
+          2490195.25
+        ],
+        [
+          "Atenção Básica",
+          2001375.25
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          198437.59999999995
+        ],
+        [
+          "Vigilância Epidemiológica",
+          146628.49
+        ],
+        [
+          "Vigilância Sanitária",
+          117023.52000000002
+        ]
+      ],
+      "Iconha": [
+        [
+          "Atenção Básica",
+          11772877.599999996
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          9235841.429999998
+        ],
+        [
+          "Administração Geral",
+          1828589.6600000001
+        ],
+        [
+          "Vigilância Sanitária",
+          813007.3400000003
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          310976.44999999995
+        ],
+        [
+          "Vigilância Epidemiológica",
+          129105.27
+        ]
+      ],
+      "Irupi": [
+        [
+          "Atenção Básica",
+          8736144.09
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          6049336.7
+        ],
+        [
+          "Vigilância Epidemiológica",
+          341235.88
+        ],
+        [
+          "Administração Geral",
+          307887.05
+        ],
+        [
+          "Vigilância Sanitária",
+          132241.82
+        ]
+      ],
+      "Itaguaçu": [
+        [
+          "Atenção Básica",
+          5211167.199999998
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          4828965.4799999995
+        ],
+        [
+          "Administração Geral",
+          1882647.48
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          747844.3800000001
+        ],
+        [
+          "Vigilância Sanitária",
+          386521.53
+        ],
+        [
+          "Vigilância Epidemiológica",
+          11078.7
+        ]
+      ],
+      "Itapemirim": [
+        [
+          "Atenção Básica",
+          43217290.16
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          36746393.449999996
+        ],
+        [
+          "Vigilância Epidemiológica",
+          2346364.3800000004
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          808724.21
+        ],
+        [
+          "Vigilância Sanitária",
+          587229.9099999999
+        ]
+      ],
+      "Itarana": [
+        [
+          "Atenção Básica",
+          11721735.309999997
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          4512728.890000001
+        ],
+        [
+          "Administração Geral",
+          3819187.8099999996
+        ],
+        [
+          "Vigilância Epidemiológica",
+          375192.85
+        ],
+        [
+          "Vigilância Sanitária",
+          158759.66999999995
+        ]
+      ],
+      "Iúna": [
+        [
+          "Atenção Básica",
+          15461047.250000004
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          5204226.090000001
+        ],
+        [
+          "Administração Geral",
+          2532310.5900000003
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          432697.81
+        ],
+        [
+          "Vigilância Epidemiológica",
+          415315.8
+        ],
+        [
+          "Vigilância Sanitária",
+          319644.49
+        ]
+      ],
+      "Jaguaré": [
+        [
+          "Atenção Básica",
+          16004286.77
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          14930576.489999998
+        ],
+        [
+          "Administração Geral",
+          3269312.7899999996
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          660507.27
+        ],
+        [
+          "Vigilância Epidemiológica",
+          230000.0
+        ],
+        [
+          "Alimentação E Nutrição",
+          28220.8
+        ]
+      ],
+      "Jerônimo Monteiro": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          14827007.830000004
+        ],
+        [
+          "Atenção Básica",
+          7434487.000000001
+        ],
+        [
+          "Administração Geral",
+          905154.0000000001
+        ],
+        [
+          "Vigilância Sanitária",
+          621699.4999999997
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          346194.7900000001
+        ]
+      ],
+      "João Neiva": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          6437570.629999999
+        ],
+        [
+          "Atenção Básica",
+          5997661.150000002
+        ],
+        [
+          "Administração Geral",
+          1569127.4400000002
+        ],
+        [
+          "Vigilância Epidemiológica",
+          587669.26
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          322044.5399999999
+        ],
+        [
+          "Vigilância Sanitária",
+          59280.85
+        ]
+      ],
+      "Laranja da Terra": [
+        [
+          "Atenção Básica",
+          13141840.769999998
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          850528.8400000001
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          445149.5800000001
+        ],
+        [
+          "Vigilância Epidemiológica",
+          113462.87999999999
+        ]
+      ],
+      "Mantenópolis": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          5929020.52
+        ],
+        [
+          "Atenção Básica",
+          5153391.48
+        ],
+        [
+          "Administração Geral",
+          2598406.8000000003
+        ],
+        [
+          "Vigilância Epidemiológica",
+          308569.97
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          65946.31999999999
+        ],
+        [
+          "Vigilância Sanitária",
+          61676.3
+        ]
+      ],
+      "Linhares": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          107065616.04999998
+        ],
+        [
+          "Atenção Básica",
+          55268545.449999996
+        ],
+        [
+          "Administração Geral",
+          26349572.85
+        ],
+        [
+          "Vigilância Epidemiológica",
+          4986989.109999998
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          2823801.45
+        ],
+        [
+          "Vigilância Sanitária",
+          474162.54000000004
+        ]
+      ],
+      "Marataízes": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          35719688.339999996
+        ],
+        [
+          "Atenção Básica",
+          13613549.72
+        ],
+        [
+          "Administração Geral",
+          7083479.14
+        ],
+        [
+          "Vigilância Epidemiológica",
+          3027625.32
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          2116000.48
+        ],
+        [
+          "Vigilância Sanitária",
+          402364.82999999996
+        ]
+      ],
+      "Marechal Floriano": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          9910536.739999998
+        ],
+        [
+          "Administração Geral",
+          6693746.34
+        ],
+        [
+          "Atenção Básica",
+          4740490.4799999995
+        ],
+        [
+          "Vigilância Epidemiológica",
+          624236.5900000001
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          219427.95000000004
+        ],
+        [
+          "Vigilância Sanitária",
+          963.6899999999999
+        ]
+      ],
+      "Marilândia": [
+        [
+          "Atenção Básica",
+          9045549.280000001
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          4756364.859999999
+        ],
+        [
+          "Administração Geral",
+          2472286.3699999996
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          676116.52
+        ],
+        [
+          "Vigilância Epidemiológica",
+          436485.67000000004
+        ]
+      ],
+      "Mimoso do Sul": [
+        [
+          "Atenção Básica",
+          11512846.340000002
+        ],
+        [
+          "Administração Geral",
+          10077154.62
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          9874427.899999999
+        ],
+        [
+          "Vigilância Sanitária",
+          270472.00999999995
+        ]
+      ],
+      "Montanha": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          10132255.11
+        ],
+        [
+          "Atenção Básica",
+          9108678.7
+        ],
+        [
+          "Administração Geral",
+          4455261.359999999
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          727764.78
+        ],
+        [
+          "Vigilância Epidemiológica",
+          414772.8499999999
+        ],
+        [
+          "Vigilância Sanitária",
+          131994.40000000002
+        ]
+      ],
+      "Mucurici": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          6986861.999999999
+        ],
+        [
+          "Atenção Básica",
+          3413950.57
+        ],
+        [
+          "Administração Geral",
+          1051424.2700000003
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          203095.97
+        ],
+        [
+          "Vigilância Sanitária",
+          11208.75
+        ]
+      ],
+      "Muniz Freire": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          9353889.86
+        ],
+        [
+          "Atenção Básica",
+          8340052.740000001
+        ],
+        [
+          "Administração Geral",
+          3048429.799999999
+        ],
+        [
+          "Vigilância Sanitária",
+          1197743.65
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          494844.3700000001
+        ]
+      ],
+      "Muqui": [
+        [
+          "Atenção Básica",
+          6898315.750000001
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          6743617.01
+        ],
+        [
+          "Administração Geral",
+          1066534.73
+        ],
+        [
+          "Vigilância Epidemiológica",
+          820995.6999999998
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          438974.54000000004
+        ],
+        [
+          "Vigilância Sanitária",
+          97461.89
+        ]
+      ],
+      "Nova Venécia": [
+        [
+          "Administração Geral",
+          34973296.09
+        ],
+        [
+          "Atenção Básica",
+          9580228.39
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          9387822.559999999
+        ],
+        [
+          "Vigilância Sanitária",
+          1322479.99
+        ],
+        [
+          "Vigilância Epidemiológica",
+          1124372.6
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          1111631.41
+        ],
+        [
+          "Alimentação E Nutrição",
+          37056.0
+        ]
+      ],
+      "Pancas": [
+        [
+          "Atenção Básica",
+          27144475.220000003
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          2342837.2399999998
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          491226.93
+        ],
+        [
+          "Vigilância Epidemiológica",
+          267119.63
+        ],
+        [
+          "Vigilância Sanitária",
+          25951.29
+        ]
+      ],
+      "Pedro Canário": [
+        [
+          "Atenção Básica",
+          18437798.2
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          5591362.389999999
+        ],
+        [
+          "Vigilância Epidemiológica",
+          205432.73
+        ]
+      ],
+      "Piúma": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          11660127.430000007
+        ],
+        [
+          "Atenção Básica",
+          6860506.49
+        ],
+        [
+          "Administração Geral",
+          2985722.56
+        ],
+        [
+          "Vigilância Epidemiológica",
+          1343724.7199999995
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          622126.2300000001
+        ],
+        [
+          "Vigilância Sanitária",
+          268433.1
+        ]
+      ],
+      "Pinheiros": [
+        [
+          "Administração Geral",
+          10786192.920000004
+        ],
+        [
+          "Atenção Básica",
+          10064636.329999998
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          7118205.7
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          1011922.63
+        ],
+        [
+          "Vigilância Epidemiológica",
+          550661.1699999999
+        ],
+        [
+          "Vigilância Sanitária",
+          118539.76000000002
+        ]
+      ],
+      "Ponto Belo": [
+        [
+          "Atenção Básica",
+          9063493.67
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          3381382.1
+        ],
+        [
+          "Administração Geral",
+          232725.03999999998
+        ],
+        [
+          "Vigilância Sanitária",
+          118536.18999999999
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          61438.659999999996
+        ]
+      ],
+      "Presidente Kennedy": [
+        [
+          "Administração Geral",
+          21007331.98
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          14580909.660000002
+        ],
+        [
+          "Atenção Básica",
+          8764995.729999999
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          2929974.29
+        ],
+        [
+          "Vigilância Epidemiológica",
+          677593.67
+        ],
+        [
+          "Vigilância Sanitária",
+          484144.19999999995
+        ],
+        [
+          "Alimentação E Nutrição",
+          172340.27
+        ],
+        [
+          "Tecnologia Da Informação",
+          29700.9
+        ]
+      ],
+      "Rio Bananal": [
+        [
+          "Atenção Básica",
+          9952678.99
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          7583818.959999999
+        ],
+        [
+          "Administração Geral",
+          2405103.54
+        ],
+        [
+          "Vigilância Epidemiológica",
+          1097879.3900000001
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          244817.38000000003
+        ]
+      ],
+      "Rio Novo do Sul": [
+        [
+          "Atenção Básica",
+          6103296.5
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          4865072.149999999
+        ],
+        [
+          "Administração Geral",
+          2189204.73
+        ],
+        [
+          "Vigilância Epidemiológica",
+          610327.4299999999
+        ],
+        [
+          "Vigilância Sanitária",
+          80.0
+        ]
+      ],
+      "Santa Leopoldina": [
+        [
+          "Atenção Básica",
+          8808706.55
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          4625242.14
+        ],
+        [
+          "Vigilância Sanitária",
+          271018.08999999997
+        ],
+        [
+          "Administração Geral",
+          193944.19
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          185326.12
+        ]
+      ],
+      "Santa Maria de Jetibá": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          26249891.46
+        ],
+        [
+          "Atenção Básica",
+          17349948.690000005
+        ],
+        [
+          "Administração Geral",
+          7453940.119999998
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          1216268.3499999996
+        ],
+        [
+          "Vigilância Epidemiológica",
+          1101725.57
+        ],
+        [
+          "Vigilância Sanitária",
+          658541.2400000001
+        ]
+      ],
+      "Santa Teresa": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          17022165.509999998
+        ],
+        [
+          "Atenção Básica",
+          6549349.58
+        ],
+        [
+          "Administração Geral",
+          1487314.4
+        ],
+        [
+          "Vigilância Epidemiológica",
+          878489.7100000003
+        ],
+        [
+          "Vigilância Sanitária",
+          408056.32999999984
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          350472.8300000001
+        ]
+      ],
+      "São Domingos do Norte": [
+        [
+          "Atenção Básica",
+          9483504.69
+        ],
+        [
+          "Administração Geral",
+          1659592.1900000004
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          885453.05
+        ],
+        [
+          "Previdência Do Regime Estatutário",
+          742959.12
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          631824.72
+        ],
+        [
+          "Vigilância Epidemiológica",
+          122783.68000000002
+        ],
+        [
+          "Vigilância Sanitária",
+          74987.38999999998
+        ],
+        [
+          "Assistência Comunitária",
+          30001.809999999998
+        ]
+      ],
+      "São Gabriel da Palha": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          15102931.870000001
+        ],
+        [
+          "Atenção Básica",
+          14918456.010000004
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          1754414.99
+        ],
+        [
+          "Vigilância Epidemiológica",
+          961883.0900000004
+        ],
+        [
+          "Vigilância Sanitária",
+          2486.41
+        ]
+      ],
+      "São José do Calçado": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          8425467.62
+        ],
+        [
+          "Atenção Básica",
+          6560438.1000000015
+        ],
+        [
+          "Vigilância Epidemiológica",
+          86288.84000000003
+        ]
+      ],
+      "São Mateus": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          35718351.519999996
+        ],
+        [
+          "Atenção Básica",
+          24116459.870000005
+        ],
+        [
+          "Vigilância Epidemiológica",
+          4893309.479999999
+        ],
+        [
+          "Administração Geral",
+          3876632.07
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          2874028.8200000003
+        ],
+        [
+          "Vigilância Sanitária",
+          1221095.95
+        ]
+      ],
+      "São Roque do Canaã": [
+        [
+          "Atenção Básica",
+          7671892.97
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          6968048.24
+        ],
+        [
+          "Administração Geral",
+          1855071.23
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          303177.38999999996
+        ],
+        [
+          "Vigilância Sanitária",
+          226209.47999999995
+        ],
+        [
+          "Vigilância Epidemiológica",
+          196680.11000000002
+        ]
+      ],
+      "Serra": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          171664688.48999998
+        ],
+        [
+          "Atenção Básica",
+          115140518.08000001
+        ],
+        [
+          "Vigilância Epidemiológica",
+          33771794.60999999
+        ],
+        [
+          "Administração Geral",
+          31106286.330000002
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          12297265.059999999
+        ],
+        [
+          "Vigilância Sanitária",
+          263638.05000000005
+        ]
+      ],
+      "Sooretama": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          22038208.79
+        ],
+        [
+          "Atenção Básica",
+          9370658.65
+        ],
+        [
+          "Administração Geral",
+          4786908.4399999995
+        ],
+        [
+          "Vigilância Epidemiológica",
+          700423.3200000002
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          646889.42
+        ],
+        [
+          "Vigilância Sanitária",
+          182382.32
+        ]
+      ],
+      "Vargem Alta": [
+        [
+          "Atenção Básica",
+          8288350.400000001
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          7845680.37
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          294591.57
+        ],
+        [
+          "Preservação E Conservação Ambiental",
+          272961.22000000003
+        ],
+        [
+          "Vigilância Epidemiológica",
+          221866.02
+        ],
+        [
+          "Vigilância Sanitária",
+          168507.51999999996
+        ],
+        [
+          "Controle Interno",
+          63406.600000000006
+        ],
+        [
+          "Formação De Recursos Humanos",
+          16010.0
+        ],
+        [
+          "Controle Externo",
+          10223.0
+        ]
+      ],
+      "Venda Nova do Imigrante": [
+        [
+          "Atenção Básica",
+          11048646.399999999
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          7157858.1
+        ],
+        [
+          "Administração Geral",
+          943770.4300000003
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          567861.0900000001
+        ],
+        [
+          "Vigilância Epidemiológica",
+          401434.52
+        ],
+        [
+          "Vigilância Sanitária",
+          141545.18999999997
+        ]
+      ],
+      "Viana": [
+        [
+          "Atenção Básica",
+          26695708.999999996
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          21489427.650000002
+        ],
+        [
+          "Administração Geral",
+          6291471.2
+        ],
+        [
+          "Vigilância Epidemiológica",
+          3701144.2800000007
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          2240669.4
+        ],
+        [
+          "Planejamento E Orçamento",
+          489.6
+        ]
+      ],
+      "Vila Pavão": [
+        [
+          "Atenção Básica",
+          7738416.069999999
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          1221251.27
+        ],
+        [
+          "Vigilância Epidemiológica",
+          167147.72999999998
+        ]
+      ],
+      "Vila Valério": [
+        [
+          "Administração Geral",
+          6948192.8
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          6218356.630000001
+        ],
+        [
+          "Atenção Básica",
+          2953005.0999999996
+        ],
+        [
+          "Vigilância Epidemiológica",
+          206445.16000000003
+        ],
+        [
+          "Vigilância Sanitária",
+          33191.850000000006
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          27600.56
+        ]
+      ],
+      "Vila Velha": [
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          100349594.28
+        ],
+        [
+          "Atenção Básica",
+          93102385.36999999
+        ],
+        [
+          "Administração Geral",
+          62897086.00999998
+        ],
+        [
+          "Vigilância Epidemiológica",
+          12586465.95
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          5422692.07
+        ],
+        [
+          "Previdência Do Regime Estatutário",
+          1792445.27
+        ],
+        [
+          "Vigilância Sanitária",
+          27125.0
+        ]
+      ],
+      "Vitória": [
+        [
+          "Atenção Básica",
+          123921602.18000004
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          92375403.37
+        ],
+        [
+          "Administração Geral",
+          80551407.44999996
+        ],
+        [
+          "Vigilância Epidemiológica",
+          19972173.669999994
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          11662887.34
+        ],
+        [
+          "Vigilância Sanitária",
+          6017108.410000001
+        ],
+        [
+          "Tecnologia Da Informação",
+          5348310.42
+        ]
+      ],
+      "Governador Lindenberg": [
+        [
+          "Administração Geral",
+          6532355.179999999
+        ],
+        [
+          "Assistência Hospitalar E Ambulatorial",
+          4929046.96
+        ],
+        [
+          "Atenção Básica",
+          3979287.210000001
+        ],
+        [
+          "Vigilância Epidemiológica",
+          195961.91
+        ],
+        [
+          "Suporte Profilático E Terapêutico",
+          161641.62
+        ]
+      ]
     },
     "erros": {}
   }
