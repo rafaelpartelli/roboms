@@ -155,7 +155,7 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   <select id="munSel"></select>
   <div class="atalhos"><button type="button" data-u="ES">Panorama geral</button></div><button class="limpar" id="limpar" type="button" style="display:none">Voltar ao panorama</button>
   <span class="ctx" id="ctx"></span>
-  <div class="nav2"><a href="#resumo">Resumo</a><a href="#limite">Limite 15%</a><a href="#evolucao">Evolução</a><a href="#historico">Série histórica</a><a href="#subfuncao">Subfunção</a><a href="#ranking">Municípios</a><a href="#leitura">Leitura estratégica</a></div>
+  <div class="nav2"><a href="#resumo">Resumo</a><a href="#limite">Limite 15%</a><a href="#historico">Série histórica</a><a href="#subfuncao">Subfunção</a><a href="#ranking">Municípios</a><a href="#leitura">Leitura estratégica</a></div>
 </div></div>
 
 <div class="wrap tce">
@@ -185,12 +185,6 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
       <p class="nota" style="margin:0 0 10px">Ordenado do maior para o menor percentual aplicado. A linha vertical marca o mínimo constitucional de 15%.</p>
       <div class="barras" id="limBarras" style="max-height:560px;overflow:auto"></div>
     </div>
-  </section>
-
-  <section id="evolucao">
-    <h2>Evolução da aplicação em saúde <span id="evoTit"></span><span class="ano"></span></h2>
-    <p class="lead" id="evoLead"></p>
-    <div class="card"><h3>Aplicação em saúde por ano (R$ milhões)</h3><div class="chart alto"><canvas id="cEvo"></canvas></div><p class="nota">Linha amarela: variação percentual sobre o ano anterior. O último ano pode estar parcial, conforme a data da extração no painel do TCE-ES.</p></div>
   </section>
 
   <section id="historico">
@@ -289,11 +283,6 @@ const C=k=>getComputedStyle(document.documentElement).getPropertyValue(k).trim()
 Chart.defaults.locale='pt-BR';Chart.defaults.font.family='Arial, Helvetica, sans-serif';
 Chart.defaults.color=C('--muted');Chart.defaults.borderColor=C('--linha');
 if(window.ChartDataLabels)Chart.register(window.ChartDataLabels);
-const chEvo=new Chart(document.getElementById('cEvo'),{data:{labels:D.es.evolucao.map(e=>e[0]),datasets:[
-  {type:'bar',label:'Aplicado em saúde',data:D.es.evolucao.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:C('--azul2'),borderRadius:4,yAxisID:'y',datalabels:{anchor:'end',align:'end',color:C('--azul'),font:{weight:'bold',size:11},formatter:v=>v.toLocaleString('pt-BR',{maximumFractionDigits:1})+' mi'}},
-  {type:'line',label:'Variação sobre o ano anterior',data:D.es.evolucao.map(e=>e[2]==null?null:+(e[2]*100).toFixed(1)),borderColor:C('--amarelo'),backgroundColor:C('--amarelo'),yAxisID:'y1',tension:.25,pointRadius:3,spanGaps:false,datalabels:{align:'top',color:C('--amarelo'),font:{weight:'bold',size:10},formatter:v=>v==null?'':v.toLocaleString('pt-BR')+'%'}}]},
-  options:{maintainAspectRatio:false,layout:{padding:{top:18}},plugins:{tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y1'?' Variação: '+c.parsed.y.toLocaleString('pt-BR')+'%':' '+c.dataset.label+': R$ '+c.parsed.y.toLocaleString('pt-BR',{maximumFractionDigits:2})+' mi'}},legend:{labels:{boxWidth:14}}},scales:{y:{beginAtZero:true,title:{display:true,text:'R$ milhões'}},y1:{position:'right',grid:{display:false},ticks:{callback:v=>v+'%'}}}}});
-
 // ---------- série histórica (8 anos, API REST do TCE-ES: limite constitucional) ----------
 // Normaliza a série do ES ([ano,aplicacao,percentual,perCapita,mediaMun,mediaMunPerCapita])
 // e a do município ([ano,aplicacao,valorDeclarado,percentual,perCapita,rankingAplicacao,rankingPerCapita])
@@ -448,15 +437,6 @@ function render(){
     if(o.limitePercentual!=null&&o.limitePercentual<LIMITE_MIN)al.push(['r',`<b>Abaixo do limite constitucional:</b> ${nome} aplicou ${pc2(o.limitePercentual)} da receita em saúde em ${ANO}, abaixo do mínimo de 15% exigido pela EC 29/LC 141.`]);
   }
   document.getElementById('alertas').innerHTML=al.map(([c,tx])=>`<div class="alerta ${c}">${tx}</div>`).join('');
-  // evolução: ES ou município selecionado
-  const serieEvo=isES()?D.es.evolucao:(o.evolucao||D.es.evolucao);
-  chEvo.data.labels=serieEvo.map(e=>e[0]);
-  chEvo.data.datasets[0].data=serieEvo.map(e=>+(e[1]/1e6).toFixed(2));
-  chEvo.data.datasets[0].label=isES()?'Aplicado em saúde (ES)':'Aplicado em saúde ('+nome+')';
-  chEvo.data.datasets[1].data=serieEvo.map(e=>e[2]==null?null:+(e[2]*100).toFixed(1));
-  chEvo.update();
-  document.getElementById('evoTit').textContent=isES()?'':'· '+nome+' ';
-  document.getElementById('evoLead').innerHTML=isES()?`A aplicação em saúde do Espírito Santo soma <b>${mi(D.es.aplicacao)}</b> em ${ANO}, partindo de ${mi(D.es.evolucao[0][1])} em ${D.es.evolucao[0][0]}.`:(o.evolucao?`A aplicação em saúde de <b>${nome}</b> soma <b>${mi(serieEvo[serieEvo.length-1][1])}</b> em ${ANO}, partindo de ${mi(serieEvo[0][1])} em ${serieEvo[0][0]}.`:`O painel do TCE-ES não trouxe série histórica para ${nome}; exibindo o consolidado do Espírito Santo para referência.`);
   renderSubfuncao(o,nome);
   leitura(o,nome);
   renderLimite(o,nome);
