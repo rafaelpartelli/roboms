@@ -1,5 +1,33 @@
 # Robô TCE-ES: Painel de Controle (recorte saúde)
 
+> **Atualização em 19/10/2026 — série histórica de 8 anos:** a pedido do
+> Rafael ("transportar para o robô todas as informações da API, usando
+> nosso modelo de site para leitura mais dinâmica, com série histórica de
+> 8 anos a contar de hoje"), `extrair.py` passou a chamar
+> `GetSumario` da API REST própria **uma vez por ano, para os últimos 8
+> anos (hoje: 2019-2026)**, para o ES e para cada um dos 78 municípios —
+> em vez de só o ano mais recente. Testamos antes (`testar_historico.py`,
+> resultado em `resultados/teste-historico-tce-es.json`) e confirmamos
+> que `GetSumario` tem dado real desde pelo menos 2015 (a fonte aceita
+> qualquer `anoExercicio`), enquanto `GetGraficosEvolucaoAnualAplicacao`
+> só devolve uma janela fixa de 5 anos terminando no ano pedido — por
+> isso essa segunda consulta deixou de ser chamada, substituída pela
+> série ano a ano (mais anos, e com todos os campos que a API devolve,
+> não só o percentual: valor liquidado, **valor declarado** pelo
+> município, valor por habitante e o **ranking oficial do TCE-ES**, tanto
+> por valor total quanto por habitante). Extração testada de ponta a
+> ponta no GitHub Actions: 632 chamadas (79 entidades × 8 anos), zero
+> erros, menos de 2 minutos. `montar.py` grava essa série em
+> `m[].historico` (por município) e `es.limiteConstitucional.historico`
+> (ES), com degradação graciosa por ano/entidade faltante. O site
+> (`site/tce/index.html`) ganhou a seção **"Série histórica (8 anos)"**,
+> reativa ao filtro de município, com um gráfico (Chart.js, mesmo padrão
+> visual das demais seções) alternável entre três métricas — valor
+> aplicado, percentual da receita (limite de 15%) e valor por habitante —
+> e uma tabela ano a ano com o ranking oficial do TCE-ES. Validado por
+> simulação local via jsdom (sem erros JS, com e sem município
+> selecionado, nas três métricas) antes de publicar.
+>
 > **Situação em 16/10/2026:** completo, testado de ponta a ponta e
 > publicando de verdade, agora com **duas fontes de dados**. Pipeline
 > (`extrair.py` → `montar.py` → `enviar.py`) rodou com sucesso no GitHub
@@ -143,13 +171,30 @@ relatório Power BI, como `/municipio/<ano>/<cidade>/gestaoFiscal/saude`
   `municipios_tce_es.json` (não muda, não precisa reconsultar a cada
   execução).
 - `GET /api/MunicipioControllers/Saude/GetSumario?anoExercicio=<ano>&idEsferaAdministrativa=<id>`
-  → `aplicacao`, `aplicacaoPercentual` (percentual da receita aplicado —
-  **o indicador oficial do limite de 15%**), `aplicacaoPerCapita`,
-  `rankingMunicipal`, por município.
-- `GET /api/MunicipioControllers/Saude/GetGraficosEvolucaoAnualAplicacao?idEsferaAdministrativa=<id>&anoExercicio=<ano>`
-  → evolução anual (valor e percentual) desde 2022, por município.
+  → **todos os campos usados desde 19/10/2026**: `aplicacao` (valor
+  liquidado), `valorDeclarado` (valor declarado pelo próprio ente — pode
+  diferir do liquidado em anos encerrados, por retificação/auditoria;
+  os dois são gravados, nenhum descartado), `aplicacaoPercentual`
+  (percentual da receita aplicado — **o indicador oficial do limite de
+  15%**), `aplicacaoPerCapita`, `participacaoMunicipal`/
+  `participacaoPerCapitaMunicipal` (média de referência do ES naquele
+  ano — mesmo valor em todos os municípios do mesmo ano, por isso
+  tratada como dado do ES, não do município) e `rankingMunicipal`/
+  `rankingPerCapitaMunicipal` (ranking oficial do TCE-ES, por valor
+  total e por habitante). Aceita qualquer `anoExercicio` — testamos
+  (`testar_historico.py`) e confirmamos dado real desde pelo menos 2015.
 - `GET /api/EstadoControllers/Saude/GetSumario?anoExercicio=<ano>` →
-  o mesmo indicador agregado para o Espírito Santo inteiro.
+  o mesmo indicador agregado para o Espírito Santo inteiro (sem
+  `valorDeclarado`, `participacaoMunicipal` nem ranking — campos que só
+  existem na resposta por município).
+- `GET /api/MunicipioControllers/Saude/GetGraficosEvolucaoAnualAplicacao?idEsferaAdministrativa=<id>&anoExercicio=<ano>`
+  → **não é mais chamada desde 19/10/2026**. Descoberta nos testes de
+  profundidade histórica: devolve sempre uma janela fixa de 5 anos
+  terminando no `anoExercicio` pedido (ex.: `anoExercicio=2019` traz
+  2015-2019; `anoExercicio=2026` traz 2022-2026) — nunca acumula mais que
+  isso, então não serve para uma série de 8 anos. Chamar `GetSumario` uma
+  vez por ano cobre mais anos e traz mais campos (ver acima). Mantida
+  apenas como referência histórica desta nota e em `testar_api_rest.py`.
 
 Não depende de sessão, cookie ou token dinâmico — só os parâmetros na URL.
 Testada e confirmada acessível de IP de nuvem compartilhada (GitHub
@@ -172,23 +217,41 @@ até essa descoberta.
   usado pela API REST (`idEsferaAdministrativa`), capturada de
   `api/Settings/GetAll` em 16/10/2026.
 - `extrair.py`: reenvia as consultas Power BI relevantes via HTTP puro,
-  decodifica, **e também** busca o indicador de limite constitucional de
-  cada um dos 78 municípios e do ES na API REST própria (ver seção acima),
-  gravando tudo num único JSON com os dados brutos (ainda não é o formato
-  final do site). Aceita um ano de referência opcional
-  (`python extrair.py saida.json 2025`).
+  decodifica, **e também** chama `extrair_serie_historica_rest()`, que
+  busca TODOS os campos do `GetSumario` da API REST própria (ver seção
+  acima) para o ES e cada um dos 78 municípios, em cada um dos últimos 8
+  anos a contar do ano mais recente (`JANELA_HISTORICO_ANOS`) — 632
+  chamadas HTTP leves, com um pequeno pool de threads (6 workers) e novas
+  tentativas com backoff em falha transitória. Grava tudo num único JSON
+  com os dados brutos (ainda não é o formato final do site). Aceita um
+  ano mais recente opcional (`python extrair.py saida.json 2025` — a
+  janela de 8 anos passa a terminar nesse ano).
 - `testar_api_rest.py`: teste de acesso isolado à API REST (usado para
   confirmar que respondia de IP de nuvem antes de integrar a produção).
+- `testar_historico.py`: teste de profundidade histórica (19/10/2026) —
+  confirmou que `GetSumario` tem dado real desde pelo menos 2015 e que
+  `GetGraficosEvolucaoAnualAplicacao` só devolve uma janela fixa de 5
+  anos (ver seção acima). Resultado em
+  `resultados/teste-historico-tce-es.json`.
 - `montar.py`: transforma a saída de `extrair.py` no `dados.json` final da
-  página (`meta`, `es` com os KPIs, a série `evolucao` por ano e
-  `limiteConstitucional` (percentual, aplicação, per capita e população do
-  ES), `subfuncoes` com valor e variação, `m` com os 78 municípios — valor
-  por habitante, variação, população, cobertura de plano de saúde privado,
-  `limitePercentual` e `limiteEvolucao` por município). Degradação
-  graciosa: se a API REST falhar numa execução, esses campos ficam `null`
-  e o resto do pipeline publica normalmente. Valida (`validar()`) antes de
+  página (`meta` com `anosHistorico`, `es` com os KPIs, a série `evolucao`
+  por ano (Power BI, 2020 em diante) e `limiteConstitucional` (percentual,
+  aplicação, per capita e população do ES mais recentes, **e** `historico`
+  com a série de 8 anos — `[ano, aplicacao, percentual, perCapita,
+  participacaoMediaMunicipal, participacaoPerCapitaMediaMunicipal]`),
+  `subfuncoes` com valor e variação, `m` com os 78 municípios — valor por
+  habitante, variação, população, cobertura de plano de saúde privado,
+  `limitePercentual`/`limiteValorLiquidado`/`limiteValorDeclarado`/
+  `limiteRanking`/`limiteRankingPerCapita` do ano mais recente, **e**
+  `historico` com a série de 8 anos por município — `[ano, aplicacao,
+  valorDeclarado, percentual, perCapita, rankingAplicacao,
+  rankingPerCapita]`. Degradação graciosa: ano ou entidade sem dado na
+  série histórica fica de fora (não trava o pipeline); se a API REST
+  falhar por completo numa execução, os campos de limite/histórico ficam
+  `null` e o resto publica normalmente. Valida (`validar()`) antes de
   gravar: aplicação e valor por habitante positivos, percentual com plano
-  entre 0 e 1, pelo menos 70 municípios.
+  entre 0 e 1, pelo menos 70 municípios, série histórica com pelo menos 6
+  dos 8 anos e presente em pelo menos 60 dos 78 municípios.
   **Exclusão do destaque de maior/menor valor por habitante:** a pedido
   do Rafael em 16/10/2026, `EXCLUIR_DOS_EXTREMOS_PANORAMA` em `montar.py`
   tira Presidente Kennedy do cálculo dos KPIs "Maior/menor valor por
@@ -267,6 +330,21 @@ geral a pedido do Rafael em 16/10/2026.
 > passou a listar os 78 em ordem alfabética (o array de dados em si
 > continua ordenado por valor por habitante, usado como ordenação padrão
 > da tabela; só a lista do `<select>` segue o nome).
+
+> **Atualização de 19/10/2026 (série histórica de 8 anos):** nova seção
+> **"Série histórica (8 anos)"**, reativa ao filtro de município (ou ao
+> panorama do ES), com três métricas alternáveis por botão — valor
+> aplicado, percentual da receita (limite de 15%, com linha tracejada de
+> referência) e valor por habitante — num gráfico de linha (mesmo padrão
+> visual e biblioteca das demais seções). Abaixo, uma tabela ano a ano com
+> valor liquidado, valor declarado (quando município selecionado — os dois
+> podem diferir em anos encerrados, por retificação/auditoria; nenhum é
+> descartado), percentual da receita, valor por habitante e o **ranking
+> oficial do TCE-ES** (por valor total e por habitante). Ao selecionar um
+> município, um texto também mostra sua posição no ranking oficial do ano
+> mais recente. Validado por simulação local via jsdom (sem erros JS) e
+> por execução real do pipeline completo no GitHub Actions antes de
+> publicar.
 
 ## Próximos passos
 

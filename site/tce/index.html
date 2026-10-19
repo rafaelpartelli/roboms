@@ -81,14 +81,14 @@ th.on::after{content:" ▾"} th.on.asc::after{content:" ▴"}
    horizontal - cada célula mostra seu rótulo ao lado do valor. */
 @media(max-width:760px){
   .tabwrap{overflow-x:visible}
-  #tab{width:100%}
-  #tab thead{display:none}
-  #tab,#tab tbody,#tab tr,#tab td{display:block;width:100%}
-  #tab tr{border-bottom:6px solid var(--bg);padding:6px 0}
-  #tab td{text-align:right;white-space:normal;border-bottom:none;padding:4px 10px;display:flex;justify-content:space-between;gap:10px}
-  #tab td::before{content:attr(data-label);font-weight:bold;color:var(--azul);text-align:left}
-  #tab td.txt{font-size:15px;font-weight:bold;text-align:left}
-  #tab td.txt::before{content:none}
+  #tab,#tabHist{width:100%}
+  #tab thead,#tabHist thead{display:none}
+  #tab,#tab tbody,#tab tr,#tab td,#tabHist,#tabHist tbody,#tabHist tr,#tabHist td{display:block;width:100%}
+  #tab tr,#tabHist tr{border-bottom:6px solid var(--bg);padding:6px 0}
+  #tab td,#tabHist td{text-align:right;white-space:normal;border-bottom:none;padding:4px 10px;display:flex;justify-content:space-between;gap:10px}
+  #tab td::before,#tabHist td::before{content:attr(data-label);font-weight:bold;color:var(--azul);text-align:left}
+  #tab td.txt,#tabHist td.txt{font-size:15px;font-weight:bold;text-align:left}
+  #tab td.txt::before,#tabHist td.txt::before{content:none}
 }
 tr:hover td{background:var(--azul-claro)}
 tr.sel td{background:var(--amarelo-claro);font-weight:bold}
@@ -155,7 +155,7 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   <select id="munSel"></select>
   <div class="atalhos"><button type="button" data-u="ES">Panorama geral</button></div><button class="limpar" id="limpar" type="button" style="display:none">Voltar ao panorama</button>
   <span class="ctx" id="ctx"></span>
-  <div class="nav2"><a href="#resumo">Resumo</a><a href="#limite">Limite 15%</a><a href="#evolucao">Evolução</a><a href="#subfuncao">Subfunção</a><a href="#ranking">Municípios</a><a href="#leitura">Leitura estratégica</a></div>
+  <div class="nav2"><a href="#resumo">Resumo</a><a href="#limite">Limite 15%</a><a href="#evolucao">Evolução</a><a href="#historico">Série histórica</a><a href="#subfuncao">Subfunção</a><a href="#ranking">Municípios</a><a href="#leitura">Leitura estratégica</a></div>
 </div></div>
 
 <div class="wrap tce">
@@ -191,6 +191,28 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
     <h2>Evolução da aplicação em saúde <span id="evoTit"></span><span class="ano"></span></h2>
     <p class="lead" id="evoLead"></p>
     <div class="card"><h3>Aplicação em saúde por ano (R$ milhões)</h3><div class="chart alto"><canvas id="cEvo"></canvas></div><p class="nota">Linha amarela: variação percentual sobre o ano anterior. O último ano pode estar parcial, conforme a data da extração no painel do TCE-ES.</p></div>
+  </section>
+
+  <section id="historico">
+    <h2>Série histórica (8 anos) <span id="histTit"></span></h2>
+    <p class="lead" id="histLead"></p>
+    <div class="card">
+      <div class="tools" style="margin-bottom:14px">
+        <div class="atalhos" id="histMetricas">
+          <button type="button" data-m="aplicacao" class="on">Valor aplicado</button>
+          <button type="button" data-m="percentual">% da receita (limite 15%)</button>
+          <button type="button" data-m="perCapita">Valor por habitante</button>
+        </div>
+        <span class="leg" id="histRanking"></span>
+      </div>
+      <div class="chart alto"><canvas id="cHist"></canvas></div>
+      <p class="nota" id="histNota"></p>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>Ano a ano</h3>
+      <div class="tabwrap"><table id="tabHist"><thead></thead><tbody></tbody></table></div>
+      <p class="nota">Valor declarado: valor informado pelo próprio ente ao TCE-ES. Valor liquidado: valor apurado/consolidado pelo tribunal, usado nos demais indicadores desta página. Podem diferir em anos já encerrados por retificação ou auditoria; nenhum dos dois é descartado.</p>
+    </div>
   </section>
 
   <section id="subfuncao">
@@ -273,6 +295,69 @@ const chEvo=new Chart(document.getElementById('cEvo'),{data:{labels:D.es.evoluca
   {type:'line',label:'Variação sobre o ano anterior',data:D.es.evolucao.map(e=>e[2]==null?null:+(e[2]*100).toFixed(1)),borderColor:C('--amarelo'),backgroundColor:C('--amarelo'),yAxisID:'y1',tension:.25,pointRadius:3,spanGaps:false,datalabels:{align:'top',color:C('--amarelo'),font:{weight:'bold',size:10},formatter:v=>v==null?'':v.toLocaleString('pt-BR')+'%'}}]},
   options:{maintainAspectRatio:false,layout:{padding:{top:18}},plugins:{tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y1'?' Variação: '+c.parsed.y.toLocaleString('pt-BR')+'%':' '+c.dataset.label+': R$ '+c.parsed.y.toLocaleString('pt-BR',{maximumFractionDigits:2})+' mi'}},legend:{labels:{boxWidth:14}}},scales:{y:{beginAtZero:true,title:{display:true,text:'R$ milhões'}},y1:{position:'right',grid:{display:false},ticks:{callback:v=>v+'%'}}}}});
 
+// ---------- série histórica (8 anos, API REST do TCE-ES: limite constitucional) ----------
+// Normaliza a série do ES ([ano,aplicacao,percentual,perCapita,mediaMun,mediaMunPerCapita])
+// e a do município ([ano,aplicacao,valorDeclarado,percentual,perCapita,rankingAplicacao,rankingPerCapita])
+// no mesmo formato de objeto, para alimentar gráfico e tabela sem duplicar lógica.
+function historicoNormalizado(o){
+  if(isES()){
+    const h=D.es.limiteConstitucional?.historico||[];
+    return h.map(([ano,aplicacao,percentual,perCapita])=>({ano,aplicacao,percentual,perCapita,valorDeclarado:null,rankingAplicacao:null,rankingPerCapita:null}));
+  }
+  const h=o.historico||[];
+  return h.map(([ano,aplicacao,valorDeclarado,percentual,perCapita,rankingAplicacao,rankingPerCapita])=>({ano,aplicacao,valorDeclarado,percentual,perCapita,rankingAplicacao,rankingPerCapita}));
+}
+let metricaHist='aplicacao';
+const METRICAS_HIST={
+  aplicacao:{titulo:'Valor aplicado em saúde',y:'R$ milhões',val:h=>+(h.aplicacao/1e6).toFixed(2),fmt:v=>v==null?'–':mi(v),ref:null},
+  percentual:{titulo:'Percentual da receita aplicado em saúde',y:'%',val:h=>h.percentual==null?null:+h.percentual.toFixed(2),fmt:v=>v==null?'–':pc2(v),ref:LIMITE_MIN},
+  perCapita:{titulo:'Valor por habitante',y:'R$',val:h=>h.perCapita==null?null:+h.perCapita.toFixed(2),fmt:v=>v==null?'–':brl(v),ref:null},
+};
+const chHist=new Chart(document.getElementById('cHist'),{data:{labels:[],datasets:[
+  {type:'line',label:'',data:[],borderColor:C('--azul2'),backgroundColor:C('--azul2'),tension:.25,pointRadius:3,fill:false,
+   datalabels:{align:'top',color:C('--azul'),font:{weight:'bold',size:10.5},formatter:(v,ctx)=>METRICAS_HIST[metricaHist].fmt(ctx.chart.$valoresHist[ctx.dataIndex])}}
+]},options:{maintainAspectRatio:false,layout:{padding:{top:18}},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+METRICAS_HIST[metricaHist].fmt(chHist.$valoresHist[c.dataIndex])}}},scales:{y:{beginAtZero:true,title:{display:true,text:''}}}}});
+function renderHistorico(o,nome){
+  const serie=historicoNormalizado(o);
+  const m=METRICAS_HIST[metricaHist];
+  document.getElementById('histTit').textContent=isES()?'':'· '+nome;
+  chHist.data.labels=serie.map(h=>h.ano);
+  chHist.data.datasets[0].data=serie.map(m.val);
+  chHist.$valoresHist=serie.map(h=>metricaHist==='aplicacao'?h.aplicacao:(metricaHist==='percentual'?h.percentual:h.perCapita));
+  chHist.data.datasets[0].label=m.titulo+(isES()?' (Espírito Santo)':' ('+nome+')');
+  chHist.options.scales.y.title.text=m.y;
+  // linha de referência do mínimo constitucional, só faz sentido no modo percentual
+  if(m.ref!=null){
+    chHist.data.datasets[1]={type:'line',label:'Mínimo constitucional (15%)',data:serie.map(()=>m.ref),borderColor:C('--vermelho'),borderDash:[6,4],pointRadius:0,fill:false,datalabels:{display:false}};
+  }else{
+    chHist.data.datasets[1]=undefined;
+    chHist.data.datasets=chHist.data.datasets.filter(Boolean);
+  }
+  chHist.update();
+  const primeiro=serie[0],ultimo=serie[serie.length-1];
+  document.getElementById('histLead').innerHTML=isES()
+    ?`Série de ${serie.length} anos (${primeiro?.ano}–${ultimo?.ano}) do indicador oficial de limite constitucional (EC 29/LC 141), direto da API do Painel de Controle do TCE-ES, para o conjunto do Espírito Santo.`
+    :`Série de ${serie.length} anos (${primeiro?.ano}–${ultimo?.ano}) do indicador oficial de limite constitucional (EC 29/LC 141) declarado por <b>${nome}</b> ao TCE-ES.`;
+  document.getElementById('histNota').textContent=m.ref!=null?'A linha tracejada vermelha marca o mínimo constitucional de 15% da receita.':'O último ano costuma estar parcial, pois reflete apenas o já declarado ao TCE-ES até a data da extração.';
+  document.getElementById('histRanking').textContent=(!isES()&&o.limiteRanking!=null)?`Ranking oficial do TCE-ES em ${ANO}: ${o.limiteRanking}º em valor total aplicado, ${o.limiteRankingPerCapita}º em valor por habitante (entre os 78 municípios).`:'';
+  // tabela ano a ano
+  const temColunasMunicipio=!isES();
+  const colsHist=[['ano','Ano',h=>h.ano],['aplicacao','Valor liquidado',h=>mi(h.aplicacao)]];
+  if(temColunasMunicipio)colsHist.push(['valorDeclarado','Valor declarado',h=>h.valorDeclarado!=null?mi(h.valorDeclarado):'–']);
+  colsHist.push(['percentual','% da receita',h=>pc2(h.percentual)],['perCapita','Valor/habitante',h=>brl(h.perCapita)]);
+  if(temColunasMunicipio)colsHist.push(['rankingAplicacao','Posição (valor)',h=>h.rankingAplicacao!=null?h.rankingAplicacao+'º':'–'],['rankingPerCapita','Posição (per capita)',h=>h.rankingPerCapita!=null?h.rankingPerCapita+'º':'–']);
+  const tabHist=document.getElementById('tabHist');
+  tabHist.querySelector('thead').innerHTML='<tr>'+colsHist.map(c=>`<th>${c[1]}</th>`).join('')+'</tr>';
+  tabHist.querySelector('tbody').innerHTML=[...serie].reverse().map(h=>'<tr>'+colsHist.map(c=>`<td data-label="${c[1]}" class="${c[0]==='ano'?'txt':''}">${c[2](h)}</td>`).join('')+'</tr>').join('')
+    ||'<tr><td class="vazio" colspan="'+colsHist.length+'">Sem série histórica disponível nesta extração.</td></tr>';
+}
+document.getElementById('histMetricas').onclick=e=>{
+  const b=e.target.closest('button[data-m]');if(!b)return;
+  metricaHist=b.dataset.m;
+  document.querySelectorAll('#histMetricas button').forEach(x=>x.classList.toggle('on',x===b));
+  renderHistorico(obj(),nomeAtual());
+};
+
 // ---------- gasto por subfunção ----------
 // O painel do TCE-ES só declara subfunção em nível estadual, não por
 // município; por isso esta seção sempre mostra o Espírito Santo, mesmo com
@@ -353,6 +438,7 @@ function render(){
   document.getElementById('subAviso').style.display=isES()?'none':'';
   leitura(o,nome);
   renderLimite(o,nome);
+  renderHistorico(o,nome);
   document.getElementById('ctaTit').textContent=isES()?'Precisa qualificar o planejamento e a prestação de contas da sua saúde?':`Precisa de apoio técnico para a gestão da saúde de ${nome}?`;
   document.title=(isES()?'Painel TCE-ES: Gastos com a Função Saúde':'Painel TCE-ES · '+nome)+' | Rafael Partelli';
   drawRank();

@@ -185,55 +185,115 @@ def montar(R):
     for m in municipios:
         m["percAplicado"] = (m["aplicado"] / total_aplicado_municipios) if (m["aplicado"] is not None and total_aplicado_municipios) else None
 
-    # ---------------- Limite constitucional (EC29/LC141), API REST do TCE-ES ----------------
-    # Percentual da receita aplicado em saude - indicador oficial, distinto
-    # do "percAplicado" acima (que e' fatia do gasto total do ES, nao da
-    # receita do proprio municipio). Fonte: extrair_limite_constitucional()
-    # em extrair.py (API REST propria do Painel de Controle, nao Power BI).
-    # Receita (arrecadação): a API REST só devolve o percentual já calculado
-    # (aplicacaoPercentual), não a receita bruta em R$. Como
-    # percentual = valor liquidado / receita * 100, a receita é obtida por
-    # cálculo simples a partir dos dois valores que a própria fonte declara -
-    # não é um dado novo nem estimado por fora, é derivação direta do
-    # percentual oficial. Fica marcada como "calculada" na página e tem
-    # pequena imprecisão de arredondamento (o percentual vem com 2 casas).
+    # ---------------- Limite constitucional (EC29/LC141) + série histórica de 8 anos ----------------
+    # API REST própria do Painel de Controle (paineldecontrole.tcees.tc.br/api,
+    # não Power BI). Traz o indicador oficial de limite constitucional
+    # (percentual da receita aplicado em saúde, distinto do "percAplicado"
+    # acima, que é fatia do gasto total do ES) e, desde 19/10/2026, uma série
+    # histórica de 8 anos (a contar do ano mais recente, ex.: 2019-2026) com
+    # TODOS os campos que a fonte devolve por ano: valor liquidado
+    # ("aplicacao"), valor declarado pelo município ("valorDeclarado" — pode
+    # diferir do liquidado em anos já encerrados, por retificação/auditoria;
+    # mantido separado, nunca somado nem escolhido um no lugar do outro),
+    # valor por habitante, ranking oficial do TCE-ES (por valor total e por
+    # habitante) e, a nível de ES, a média de referência por município
+    # ("participacaoMunicipal"/"PerCapita" — mesma para todos os municípios
+    # num mesmo ano, por isso tratada como valor único do ES, não por
+    # município). Fonte: extrair_serie_historica_rest() em extrair.py.
+    # Degradação graciosa: ano sem dado (erro pontual na extração) fica de
+    # fora da série, sem travar o restante.
     def receita_calculada(valor_liquidado, percentual):
+        """Receita (arrecadação) não é devolvida pronta pela API — só o
+        percentual já calculado. Como percentual = liquidado / receita * 100,
+        a receita é obtida por cálculo direto a partir dos dois valores que a
+        própria fonte declara (não é dado novo nem estimado por fora). Fica
+        marcada como "calculada" na página; tem pequena imprecisão de
+        arredondamento (percentual vem com 2 casas)."""
         if valor_liquidado is None or not percentual:
             return None
         return valor_liquidado / (percentual / 100)
 
-    lc = R.get("limite_constitucional") or {}
+    sh = R.get("serie_historica_rest") or {}
+    anos_historico = R.get("anos_historico") or []
+    ano_mais_recente = anos_historico[-1] if anos_historico else None
+
+    estado_por_ano = sh.get("estado_por_ano") or {}
+    municipios_por_ano = sh.get("municipios_por_ano") or {}
+
+    # média de referência por município do ES, por ano (mesmo valor em todos
+    # os municípios do mesmo ano na fonte — ver nota acima) - pega de
+    # qualquer município disponível naquele ano
+    media_mun_por_ano = {}
+    for mapa_anos in municipios_por_ano.values():
+        for ano_str, dado in mapa_anos.items():
+            if ano_str not in media_mun_por_ano:
+                media_mun_por_ano[ano_str] = (
+                    num(dado.get("participacaoMunicipal")),
+                    num(dado.get("participacaoPerCapitaMunicipal")),
+                )
+
+    historicoEstado = []
+    for ano in anos_historico:
+        e = estado_por_ano.get(str(ano))
+        if not e:
+            continue
+        media_valor, media_per_capita = media_mun_por_ano.get(str(ano), (None, None))
+        historicoEstado.append(
+            [ano, num(e.get("aplicacao")), num(e.get("aplicacaoPercentual")), num(e.get("aplicacaoPerCapita")), media_valor, media_per_capita]
+        )
+
     limiteEstado = None
-    if lc.get("estado"):
-        e = lc["estado"]
-        percEstado = num(e.get("aplicacaoPercentual"))
-        aplicacaoEstado = num(e.get("aplicacao"))
+    e_atual = estado_por_ano.get(str(ano_mais_recente)) if ano_mais_recente else None
+    if e_atual:
+        percEstado = num(e_atual.get("aplicacaoPercentual"))
+        aplicacaoEstado = num(e_atual.get("aplicacao"))
         limiteEstado = dict(
             percentual=percEstado,
             aplicacao=aplicacaoEstado,
-            aplicacaoPerCapita=num(e.get("aplicacaoPerCapita")),
-            populacao=e.get("populacao"),
+            aplicacaoPerCapita=num(e_atual.get("aplicacaoPerCapita")),
+            populacao=e_atual.get("populacao"),
             receitaCalculada=receita_calculada(aplicacaoEstado, percEstado),
+            # [ano, aplicacao, percentual, perCapita, participacaoMediaMunicipal, participacaoPerCapitaMediaMunicipal]
+            historico=historicoEstado or None,
         )
 
-    limite_mun = lc.get("municipios") or {}
     for m in municipios:
-        info = limite_mun.get(m["n"])
-        if not info:
+        mapa_anos = municipios_por_ano.get(m["n"]) or {}
+        atual = mapa_anos.get(str(ano_mais_recente)) if ano_mais_recente else None
+        if not atual:
             m["limitePercentual"] = None
             m["limiteValorLiquidado"] = None
+            m["limiteValorDeclarado"] = None
             m["limiteReceitaCalculada"] = None
-            m["limiteEvolucao"] = None
+            m["limiteRanking"] = None
+            m["limiteRankingPerCapita"] = None
+            m["historico"] = None
             continue
-        sumario = info.get("sumario") or {}
-        m["limitePercentual"] = num(sumario.get("aplicacaoPercentual"))
-        m["limiteValorLiquidado"] = num(sumario.get("aplicacao"))
+        m["limitePercentual"] = num(atual.get("aplicacaoPercentual"))
+        m["limiteValorLiquidado"] = num(atual.get("aplicacao"))
+        m["limiteValorDeclarado"] = num(atual.get("valorDeclarado"))
         m["limiteReceitaCalculada"] = receita_calculada(m["limiteValorLiquidado"], m["limitePercentual"])
-        evo = info.get("evolucao") or {}
-        pontos_valor = {p["ano"]: num(p.get("valor")) for p in (evo.get("aplicacao") or [])}
-        pontos_perc = {p["ano"]: num(p.get("valor")) for p in (evo.get("percentual") or [])}
-        anos = sorted(set(pontos_valor) | set(pontos_perc))
-        m["limiteEvolucao"] = [[a, pontos_valor.get(a), pontos_perc.get(a)] for a in anos] or None
+        m["limiteRanking"] = atual.get("rankingMunicipal")
+        m["limiteRankingPerCapita"] = atual.get("rankingPerCapitaMunicipal")
+
+        # [ano, aplicacao, valorDeclarado, percentual, perCapita, rankingAplicacao, rankingPerCapita]
+        historico = []
+        for ano in anos_historico:
+            d = mapa_anos.get(str(ano))
+            if not d:
+                continue
+            historico.append(
+                [
+                    ano,
+                    num(d.get("aplicacao")),
+                    num(d.get("valorDeclarado")),
+                    num(d.get("aplicacaoPercentual")),
+                    num(d.get("aplicacaoPerCapita")),
+                    d.get("rankingMunicipal"),
+                    d.get("rankingPerCapitaMunicipal"),
+                ]
+            )
+        m["historico"] = historico or None
 
     D = dict(
         meta=dict(
@@ -245,6 +305,7 @@ def montar(R):
             mesMax=mes_max,
             periodo=periodo_legivel(mes_min, mes_max, anoRef),
             fonte="Painel de Controle do TCE-ES (paineldecontrole.tcees.tc.br), Gastos com a função saúde",
+            anosHistorico=anos_historico or None,
         ),
         es=dict(
             aplicacao=aplicacao,
@@ -282,9 +343,27 @@ def validar(D):
     hoje = __import__("datetime").date.today().year
     if D["meta"]["anoRef"] and not (hoje - 1 <= D["meta"]["anoRef"] <= hoje + 1):
         erros.append(f"ano de referência fora do esperado: {D['meta']['anoRef']}")
+
+    # Série histórica (API REST, 8 anos): checagem tolerante - falhas
+    # pontuais num ano ou município não travam a publicação (degradação
+    # graciosa, já tratada em montar()); só falha se a fonte da série
+    # histórica caiu quase por completo nesta execução.
+    anos_hist = D["meta"].get("anosHistorico") or []
+    com_historico = sum(1 for m in D["m"] if m.get("historico"))
+    if len(anos_hist) < 6:
+        erros.append(f"série histórica com poucos anos: {len(anos_hist)} (esperado 8)")
+    if com_historico < 60:
+        erros.append(f"série histórica ausente na maioria dos municípios: só {com_historico}/{len(D['m'])} com dado")
+
     if erros:
         raise SystemExit("VALIDAÇÃO FALHOU: " + "; ".join(erros))
-    return dict(aplicacao=round(D["es"]["aplicacao"]), valorHab=round(D["es"]["valorHab"], 2), municipios=len(D["m"]))
+    return dict(
+        aplicacao=round(D["es"]["aplicacao"]),
+        valorHab=round(D["es"]["valorHab"], 2),
+        municipios=len(D["m"]),
+        anosHistorico=anos_hist,
+        municipiosComHistorico=com_historico,
+    )
 
 
 if __name__ == "__main__":
