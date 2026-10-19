@@ -1,0 +1,663 @@
+{
+  "sumario_por_ano": {
+    "afonso_claudio": {
+      "2015": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 6522265.99,
+          "valorDeclarado": 7364405.85,
+          "aplicacaoPercentual": 15.85,
+          "aplicacaoPerCapita": 200.96955660319222,
+          "participacaoMunicipal": 15568152.674615385,
+          "participacaoPerCapitaMunicipal": 308.9932338467716,
+          "rankingMunicipal": 36,
+          "rankingPerCapitaMunicipal": 73
+        }
+      },
+      "2016": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 10004954.99,
+          "valorDeclarado": 7473910.43,
+          "aplicacaoPercentual": 22.9,
+          "aplicacaoPerCapita": 308.72820656031104,
+          "participacaoMunicipal": 15496727.079230769,
+          "participacaoPerCapitaMunicipal": 304.18643197506,
+          "rankingMunicipal": 21,
+          "rankingPerCapitaMunicipal": 50
+        }
+      },
+      "2017": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 7218329.87,
+          "valorDeclarado": 8111265.76,
+          "aplicacaoPercentual": 16.52,
+          "aplicacaoPerCapita": 223.0564528290226,
+          "participacaoMunicipal": 15807030.383461539,
+          "participacaoPerCapitaMunicipal": 306.9818437185349,
+          "rankingMunicipal": 37,
+          "rankingPerCapitaMunicipal": 70
+        }
+      },
+      "2018": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 10642402.72,
+          "valorDeclarado": 11716402.72,
+          "aplicacaoPercentual": 22.75,
+          "aplicacaoPerCapita": 346.4323802083333,
+          "participacaoMunicipal": 17390868.874615386,
+          "participacaoPerCapitaMunicipal": 341.479173791684,
+          "rankingMunicipal": 24,
+          "rankingPerCapitaMunicipal": 50
+        }
+      },
+      "2019": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 10385163.3,
+          "valorDeclarado": 11217660.46,
+          "aplicacaoPercentual": 19.99,
+          "aplicacaoPerCapita": 339.539766559864,
+          "participacaoMunicipal": 19578538.29871795,
+          "participacaoPerCapitaMunicipal": 380.00970159133044,
+          "rankingMunicipal": 26,
+          "rankingPerCapitaMunicipal": 57
+        }
+      },
+      "2020": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 11033739.11,
+          "valorDeclarado": 11033739.11,
+          "aplicacaoPercentual": 21.6,
+          "aplicacaoPerCapita": 362.2964738138237,
+          "participacaoMunicipal": 20195934.09051282,
+          "participacaoPerCapitaMunicipal": 387.61385411899255,
+          "rankingMunicipal": 25,
+          "rankingPerCapitaMunicipal": 53
+        }
+      },
+      "2021": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 13356836.61,
+          "valorDeclarado": 13356836.61,
+          "aplicacaoPercentual": 20.08,
+          "aplicacaoPerCapita": 440.441753281013,
+          "participacaoMunicipal": 23308422.394102566,
+          "participacaoPerCapitaMunicipal": 442.51026083921465,
+          "rankingMunicipal": 25,
+          "rankingPerCapitaMunicipal": 53
+        }
+      },
+      "2022": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 20972412.78,
+          "valorDeclarado": 20972412.78,
+          "aplicacaoPercentual": 27.35,
+          "aplicacaoPerCapita": 683.4967012123583,
+          "participacaoMunicipal": 29344612.19025641,
+          "participacaoPerCapitaMunicipal": 597.0400882591076,
+          "rankingMunicipal": 18,
+          "rankingPerCapitaMunicipal": 39
+        }
+      },
+      "2026": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 16646481.67,
+          "valorDeclarado": 16646481.67,
+          "aplicacaoPercentual": 22.78,
+          "aplicacaoPerCapita": 512.5306096246806,
+          "participacaoMunicipal": 26891302.129102565,
+          "participacaoPerCapitaMunicipal": 505.3426190307544,
+          "rankingMunicipal": 24,
+          "rankingPerCapitaMunicipal": 55
+        }
+      }
+    },
+    "vitoria": {
+      "2015": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 210690498.83,
+          "valorDeclarado": 211262660.69,
+          "aplicacaoPercentual": 19.59,
+          "aplicacaoPerCapita": 592.0351214049878,
+          "participacaoMunicipal": 15568152.674615385,
+          "participacaoPerCapitaMunicipal": 308.9932338467716,
+          "rankingMunicipal": 1,
+          "rankingPerCapitaMunicipal": 5
+        }
+      },
+      "2016": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 188457614.74,
+          "valorDeclarado": 187595279.78,
+          "aplicacaoPercentual": 17.93,
+          "aplicacaoPerCapita": 524.1412711268096,
+          "participacaoMunicipal": 15496727.079230769,
+          "participacaoPerCapitaMunicipal": 304.18643197506,
+          "rankingMunicipal": 1,
+          "rankingPerCapitaMunicipal": 6
+        }
+      },
+      "2017": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 193688153.51,
+          "valorDeclarado": 198637725.75,
+          "aplicacaoPercentual": 17.96,
+          "aplicacaoPerCapita": 533.3704728479374,
+          "participacaoMunicipal": 15807030.383461539,
+          "participacaoPerCapitaMunicipal": 306.9818437185349,
+          "rankingMunicipal": 1,
+          "rankingPerCapitaMunicipal": 7
+        }
+      },
+      "2018": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 208862194.58,
+          "valorDeclarado": 209412627.59,
+          "aplicacaoPercentual": 18.04,
+          "aplicacaoPerCapita": 582.9791596211763,
+          "participacaoMunicipal": 17390868.874615386,
+          "participacaoPerCapitaMunicipal": 341.479173791684,
+          "rankingMunicipal": 1,
+          "rankingPerCapitaMunicipal": 6
+        }
+      },
+      "2019": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 232165390.39,
+          "valorDeclarado": 239215081.87,
+          "aplicacaoPercentual": 17.67,
+          "aplicacaoPerCapita": 641.1690524638426,
+          "participacaoMunicipal": 19578538.29871795,
+          "participacaoPerCapitaMunicipal": 380.00970159133044,
+          "rankingMunicipal": 1,
+          "rankingPerCapitaMunicipal": 6
+        }
+      },
+      "2020": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 255311522.34,
+          "valorDeclarado": 255311522.34,
+          "aplicacaoPercentual": 18.27,
+          "aplicacaoPerCapita": 697.8489356165694,
+          "participacaoMunicipal": 20195934.09051282,
+          "participacaoPerCapitaMunicipal": 387.61385411899255,
+          "rankingMunicipal": 1,
+          "rankingPerCapitaMunicipal": 4
+        }
+      },
+      "2021": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 270096175.25,
+          "valorDeclarado": 270096175.25,
+          "aplicacaoPercentual": 16.37,
+          "aplicacaoPerCapita": 730.9102146216586,
+          "participacaoMunicipal": 23308422.394102566,
+          "participacaoPerCapitaMunicipal": 442.51026083921465,
+          "rankingMunicipal": 1,
+          "rankingPerCapitaMunicipal": 10
+        }
+      },
+      "2022": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 312256225.65,
+          "valorDeclarado": 312256225.65,
+          "aplicacaoPercentual": 16.88,
+          "aplicacaoPerCapita": 967.1297822026891,
+          "participacaoMunicipal": 29344612.19025641,
+          "participacaoPerCapitaMunicipal": 597.0400882591076,
+          "rankingMunicipal": 1,
+          "rankingPerCapitaMunicipal": 8
+        }
+      },
+      "2026": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": 286244511.43,
+          "valorDeclarado": 286244511.43,
+          "aplicacaoPercentual": 16.27,
+          "aplicacaoPerCapita": 832.2633969500051,
+          "participacaoMunicipal": 26891302.129102565,
+          "participacaoPerCapitaMunicipal": 505.3426190307544,
+          "rankingMunicipal": 1,
+          "rankingPerCapitaMunicipal": 10
+        }
+      }
+    }
+  },
+  "evolucao_por_ano_parametro": {
+    "afonso_claudio": {
+      "2019": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": [
+            {
+              "ano": 2015,
+              "nome": "2015",
+              "valor": 6522265.99,
+              "displayValue": null
+            },
+            {
+              "ano": 2016,
+              "nome": "2016",
+              "valor": 10004954.99,
+              "displayValue": null
+            },
+            {
+              "ano": 2017,
+              "nome": "2017",
+              "valor": 7218329.87,
+              "displayValue": null
+            },
+            {
+              "ano": 2018,
+              "nome": "2018",
+              "valor": 10642402.72,
+              "displayValue": null
+            },
+            {
+              "ano": 2019,
+              "nome": "2019",
+              "valor": 10385163.3,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2015,
+              "nome": "2015",
+              "valor": 15.85,
+              "displayValue": null
+            },
+            {
+              "ano": 2016,
+              "nome": "2016",
+              "valor": 22.9,
+              "displayValue": null
+            },
+            {
+              "ano": 2017,
+              "nome": "2017",
+              "valor": 16.52,
+              "displayValue": null
+            },
+            {
+              "ano": 2018,
+              "nome": "2018",
+              "valor": 22.75,
+              "displayValue": null
+            },
+            {
+              "ano": 2019,
+              "nome": "2019",
+              "valor": 19.99,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "2022": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": [
+            {
+              "ano": 2018,
+              "nome": "2018",
+              "valor": 10642402.72,
+              "displayValue": null
+            },
+            {
+              "ano": 2019,
+              "nome": "2019",
+              "valor": 10385163.3,
+              "displayValue": null
+            },
+            {
+              "ano": 2020,
+              "nome": "2020",
+              "valor": 11033739.11,
+              "displayValue": null
+            },
+            {
+              "ano": 2021,
+              "nome": "2021",
+              "valor": 13356836.61,
+              "displayValue": null
+            },
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20972412.78,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2018,
+              "nome": "2018",
+              "valor": 22.75,
+              "displayValue": null
+            },
+            {
+              "ano": 2019,
+              "nome": "2019",
+              "valor": 19.99,
+              "displayValue": null
+            },
+            {
+              "ano": 2020,
+              "nome": "2020",
+              "valor": 21.6,
+              "displayValue": null
+            },
+            {
+              "ano": 2021,
+              "nome": "2021",
+              "valor": 20.08,
+              "displayValue": null
+            },
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.35,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "2026": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 20972412.78,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 24308195.81,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 23786235.91,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 23607483.94,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 16646481.67,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 27.35,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 29.08,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 25.42,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 23.63,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 22.78,
+              "displayValue": null
+            }
+          ]
+        }
+      }
+    },
+    "vitoria": {
+      "2019": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": [
+            {
+              "ano": 2015,
+              "nome": "2015",
+              "valor": 210690498.83,
+              "displayValue": null
+            },
+            {
+              "ano": 2016,
+              "nome": "2016",
+              "valor": 188457614.74,
+              "displayValue": null
+            },
+            {
+              "ano": 2017,
+              "nome": "2017",
+              "valor": 193688153.51,
+              "displayValue": null
+            },
+            {
+              "ano": 2018,
+              "nome": "2018",
+              "valor": 208862194.58,
+              "displayValue": null
+            },
+            {
+              "ano": 2019,
+              "nome": "2019",
+              "valor": 232165390.39,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2015,
+              "nome": "2015",
+              "valor": 19.59,
+              "displayValue": null
+            },
+            {
+              "ano": 2016,
+              "nome": "2016",
+              "valor": 17.93,
+              "displayValue": null
+            },
+            {
+              "ano": 2017,
+              "nome": "2017",
+              "valor": 17.96,
+              "displayValue": null
+            },
+            {
+              "ano": 2018,
+              "nome": "2018",
+              "valor": 18.04,
+              "displayValue": null
+            },
+            {
+              "ano": 2019,
+              "nome": "2019",
+              "valor": 17.67,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "2022": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": [
+            {
+              "ano": 2018,
+              "nome": "2018",
+              "valor": 208862194.58,
+              "displayValue": null
+            },
+            {
+              "ano": 2019,
+              "nome": "2019",
+              "valor": 232165390.39,
+              "displayValue": null
+            },
+            {
+              "ano": 2020,
+              "nome": "2020",
+              "valor": 255311522.34,
+              "displayValue": null
+            },
+            {
+              "ano": 2021,
+              "nome": "2021",
+              "valor": 270096175.25,
+              "displayValue": null
+            },
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 312256225.65,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2018,
+              "nome": "2018",
+              "valor": 18.04,
+              "displayValue": null
+            },
+            {
+              "ano": 2019,
+              "nome": "2019",
+              "valor": 17.67,
+              "displayValue": null
+            },
+            {
+              "ano": 2020,
+              "nome": "2020",
+              "valor": 18.27,
+              "displayValue": null
+            },
+            {
+              "ano": 2021,
+              "nome": "2021",
+              "valor": 16.37,
+              "displayValue": null
+            },
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 16.88,
+              "displayValue": null
+            }
+          ]
+        }
+      },
+      "2026": {
+        "status_http": 200,
+        "corpo": {
+          "aplicacao": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 312256225.65,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 368030653.88,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 425070433.52,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 432597552.77,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 286244511.43,
+              "displayValue": null
+            }
+          ],
+          "percentual": [
+            {
+              "ano": 2022,
+              "nome": "2022",
+              "valor": 16.88,
+              "displayValue": null
+            },
+            {
+              "ano": 2023,
+              "nome": "2023",
+              "valor": 17.46,
+              "displayValue": null
+            },
+            {
+              "ano": 2024,
+              "nome": "2024",
+              "valor": 17.98,
+              "displayValue": null
+            },
+            {
+              "ano": 2025,
+              "nome": "2025",
+              "valor": 17.68,
+              "displayValue": null
+            },
+            {
+              "ano": 2026,
+              "nome": "Ago / 2026",
+              "valor": 16.27,
+              "displayValue": null
+            }
+          ]
+        }
+      }
+    }
+  },
+  "erros": {}
+}
