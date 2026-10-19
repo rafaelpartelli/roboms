@@ -22,11 +22,14 @@
 > (ES), com degradação graciosa por ano/entidade faltante. O site
 > (`site/tce/index.html`) ganhou a seção **"Série histórica (8 anos)"**,
 > reativa ao filtro de município, com um gráfico (Chart.js, mesmo padrão
-> visual das demais seções) alternável entre três métricas — valor
-> aplicado, percentual da receita (limite de 15%) e valor por habitante —
-> e uma tabela ano a ano com o ranking oficial do TCE-ES. Validado por
-> simulação local via jsdom (sem erros JS, com e sem município
-> selecionado, nas três métricas) antes de publicar.
+> visual das demais seções) alternável entre duas visões — valor aplicado
+> combinado com percentual da receita (duas escalas: barras + linha, igual
+> ao gráfico de Evolução) e valor por habitante — e uma tabela ano a ano
+> com o ranking oficial do TCE-ES. Validado por simulação local via jsdom
+> (sem erros JS, com e sem município selecionado, nas duas visões) antes
+> de publicar. **Revisão de 19/10/2026:** o gráfico passou de três métricas
+> alternáveis (valor, percentual, per capita) para duas, combinando valor e
+> percentual no mesmo gráfico — ver changelog mais abaixo.
 >
 > **Situação em 16/10/2026:** completo, testado de ponta a ponta e
 > publicando de verdade, agora com **duas fontes de dados**. Pipeline
@@ -83,11 +86,14 @@
 > deixado explícito na página como derivação, não dado bruto da fonte.
 > Gráfico de evolução ganhou rótulos com os valores sobre as barras/linha
 > (plugin `chartjs-plugin-datalabels`). O quadro de "gasto por subfunção"
-> só existe em nível estadual na fonte (não por município); ao selecionar
-> um município a página agora deixa isso explícito em vez de simplesmente
-> continuar mostrando o ES sem aviso — todas as demais seções (KPIs,
-> limite constitucional, evolução, ranking, leitura estratégica) já
-> atualizavam corretamente por município.
+> só existia em nível estadual na consulta Power BI capturada (não por
+> município); ao selecionar um município a página passou a deixar isso
+> explícito em vez de simplesmente continuar mostrando o ES sem aviso —
+> todas as demais seções (KPIs, limite constitucional, evolução, ranking,
+> leitura estratégica) já atualizavam corretamente por município.
+> **Correção de 19/10/2026:** essa limitação não era da fonte, e sim da
+> consulta capturada — ver changelog mais abaixo (gasto por subfunção por
+> município).
 > **Estabelecimentos de saúde** ainda não foi feito: é uma página
 > diferente do mesmo relatório Power BI (CNES), exige descoberta própria
 > (como a feita para esta página) — ver "Próximos passos".
@@ -225,7 +231,13 @@ até essa descoberta.
   tentativas com backoff em falha transitória. Grava tudo num único JSON
   com os dados brutos (ainda não é o formato final do site). Aceita um
   ano mais recente opcional (`python extrair.py saida.json 2025` — a
-  janela de 8 anos passa a terminar nesse ano).
+  janela de 8 anos passa a terminar nesse ano). **Desde 19/10/2026**,
+  também chama `extrair_subfuncao_por_municipio()`: reenvia a mesma
+  consulta Power BI de subfunção, acrescentando ao `Where` um filtro
+  `IN DIM_EsferaAdministrativa.Nome = <município>` (fonte `"d1"` da
+  consulta) — reproduz por HTTP puro o filtro "Esfera administrativa" do
+  painel, que a consulta original capturada não usava. 78 chamadas em
+  paralelo (4 workers), erros tolerados por município.
 - `testar_api_rest.py`: teste de acesso isolado à API REST (usado para
   confirmar que respondia de IP de nuvem antes de integrar a produção).
 - `testar_historico.py`: teste de profundidade histórica (19/10/2026) —
@@ -245,13 +257,18 @@ até essa descoberta.
   `limiteRanking`/`limiteRankingPerCapita` do ano mais recente, **e**
   `historico` com a série de 8 anos por município — `[ano, aplicacao,
   valorDeclarado, percentual, perCapita, rankingAplicacao,
-  rankingPerCapita]`. Degradação graciosa: ano ou entidade sem dado na
-  série histórica fica de fora (não trava o pipeline); se a API REST
-  falhar por completo numa execução, os campos de limite/histórico ficam
-  `null` e o resto publica normalmente. Valida (`validar()`) antes de
-  gravar: aplicação e valor por habitante positivos, percentual com plano
-  entre 0 e 1, pelo menos 70 municípios, série histórica com pelo menos 6
-  dos 8 anos e presente em pelo menos 60 dos 78 municípios.
+  rankingPerCapita]` —, **e** `subfuncoes` (desde 19/10/2026) com o gasto
+  por subfunção do próprio município (mesmo formato de `subfuncoes` do
+  ES, `[nome, valor]`), ou `null` quando o município não teve esse dado
+  nessa extração. Degradação graciosa: ano ou entidade sem dado na série
+  histórica, ou município sem dado de subfunção, fica de fora (não trava
+  o pipeline); se a API REST falhar por completo numa execução, os campos
+  de limite/histórico ficam `null` e o resto publica normalmente. Valida
+  (`validar()`) antes de gravar: aplicação e valor por habitante
+  positivos, percentual com plano entre 0 e 1, pelo menos 70 municípios,
+  série histórica com pelo menos 6 dos 8 anos e presente em pelo menos 60
+  dos 78 municípios, e subfunção por município presente em pelo menos 60
+  dos 78.
   **Exclusão do destaque de maior/menor valor por habitante:** a pedido
   do Rafael em 16/10/2026, `EXCLUIR_DOS_EXTREMOS_PANORAMA` em `montar.py`
   tira Presidente Kennedy do cálculo dos KPIs "Maior/menor valor por
@@ -345,6 +362,38 @@ geral a pedido do Rafael em 16/10/2026.
 > mais recente. Validado por simulação local via jsdom (sem erros JS) e
 > por execução real do pipeline completo no GitHub Actions antes de
 > publicar.
+>
+> **Revisão de 19/10/2026 (pedido do Rafael — verificação pós-publicação):**
+> quatro pontos conferidos/ajustados a partir do painel já publicado.
+> 1) **Evolução da aplicação em saúde:** suspeita de erro de cálculo a
+> partir de 2024 investigada ao vivo, comparando número a número com o
+> painel oficial do TCE-ES (inclusive um teste cruzado acidental para
+> Presidente Kennedy, que também bateu). Conclusão: não há erro de
+> cálculo — os valores batem exatamente com a fonte; o salto visual em
+> 2024 é dado real (aumento de execução declarada ao TCE-ES), não bug do
+> robô. 2) **Série histórica:** o seletor de três métricas (valor,
+> percentual, per capita) virou dois — valor e percentual combinados num
+> único gráfico de duas escalas (barras + linha), igual ao padrão do
+> gráfico de Evolução, e valor por habitante como segunda opção. 3)
+> **Gasto por subfunção por município:** descoberta de que o filtro
+> "Esfera administrativa" do painel (que a consulta Power BI capturada
+> não usava) também funciona via HTTP puro — basta acrescentar uma
+> condição `IN DIM_EsferaAdministrativa.Nome = <município>` ao `Where` da
+> consulta de subfunção já existente. Validado ao vivo no navegador e via
+> teste em GitHub Actions (`resultados/teste-subfuncao-municipio.json`,
+> 3 municípios, totais batendo com `m[].aplicado` já publicado). Isso
+> **corrige a limitação documentada nos itens acima** ("só nível
+> estadual") — não era da fonte, era da consulta capturada sem o filtro.
+> Implementado em `extrair.py` (`extrair_subfuncao_por_municipio()`, 78
+> chamadas em paralelo, erros tolerados por município),  `montar.py`
+> (`m[].subfuncoes`, com degradação graciosa — se um município não tiver
+> esse dado na extração, a página volta a mostrar o panorama do ES com
+> aviso, em vez de quebrar) e `site/tce/index.html`
+> (`renderSubfuncao()`). 4) **Agendamento e textos:** cron confirmado em
+> `30 9 * * 1,3,5` (09:30 UTC = 06:30 Brasília, seg/qua/sex — sem
+> alteração) e os textos deste README/LEIA-ME e do site revisados para
+> não deixar nenhuma referência às "três métricas" antigas ou à
+> limitação de subfunção que não é mais verdadeira.
 
 ## Próximos passos
 
