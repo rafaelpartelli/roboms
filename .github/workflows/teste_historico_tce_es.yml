@@ -1,0 +1,36 @@
+name: Teste de profundidade historica da API REST TCE-ES (temporario)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  teste:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install -q requests
+
+      - name: Testar profundidade historica (paineldecontrole.tcees.tc.br)
+        working-directory: robo_tce_es
+        run: python testar_historico.py teste_historico.json
+        continue-on-error: true
+
+      - name: Guardar resultado no repositorio
+        run: |
+          mkdir -p resultados
+          cp robo_tce_es/teste_historico.json resultados/teste-historico-tce-es.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resultados/teste-historico-tce-es.json
+          git commit -m "Resultado do teste temporario de profundidade historica (API REST TCE-ES)" || echo "sem mudanca para gravar"
+          git push
