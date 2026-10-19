@@ -74,6 +74,21 @@
 > estadual em saúde). Conclusão: nenhuma das fontes atualmente usadas
 > expõe o gasto estadual direto; seria preciso outra fonte (ex.: SIOPS,
 > portal da transparência do Estado) para atender esse pedido.
+> **Reconfirmado em 19/10/2026:** a descoberta do filtro por esfera
+> administrativa (que abriu subfunção por município) reabriu essa
+> pergunta — testamos `kpi_aplicacao_total`, `evolucao_por_ano`,
+> `kpi_valor_medio_habitante` e `tabela_aplicacao_por_subfuncao` trocando
+> o "Not In" que exclui `Estado do Espírito Santo` e `Consórcio do Estado
+> do Espírito Santo` por um "In" explícito para cada uma, usando a mesma
+> medida `Formulas._SomaLiquidado` já validada em produção. Resultado:
+> as 4 consultas voltam vazias/nulas para as duas entidades (ver
+> `resultados/teste-gestao-estadual.json`) — confirma que essas entidades
+> existem na dimensão `DIM_EsferaAdministrativa`, mas não têm registro
+> próprio na tabela de fatos usada neste relatório (plausível que sejam
+> apenas categorias de classificação, sem execução orçamentária
+> lançada diretamente nelas). Mantém-se a conclusão: não dá para extrair
+> o gasto próprio do Governo do Estado a partir deste painel; seria
+> preciso outra fonte.
 >
 > **Pedido do Rafael em 16/10/2026 (ajustes finos):** Presidente Kennedy
 > (distorção por royalties de petróleo) excluído do destaque de
