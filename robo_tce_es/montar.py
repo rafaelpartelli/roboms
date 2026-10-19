@@ -295,6 +295,22 @@ def montar(R):
             )
         m["historico"] = historico or None
 
+    # ---------------- Gasto por subfunção, por município (Power BI) ----------------
+    # Mesma consulta usada para o panorama do ES (tabela_aplicacao_por_subfuncao),
+    # com o filtro de município acrescentado em extrair.py (descoberto e
+    # validado em 19/10/2026 - ver LEIA-ME.md e resultados/teste-subfuncao-municipio.json).
+    # Degradação graciosa: município sem dado nessa execução fica com None
+    # (a página volta a mostrar o panorama do ES para esse caso).
+    subfuncao_mun_bruta = (R.get("subfuncao_por_municipio") or {}).get("municipios") or {}
+    for m in municipios:
+        linhas = subfuncao_mun_bruta.get(m["n"])
+        if not linhas:
+            m["subfuncoes"] = None
+            continue
+        subfuncoes_mun = [[nome_sub, num(valor)] for nome_sub, valor in linhas if nome_sub]
+        subfuncoes_mun.sort(key=lambda x: -(x[1] or 0))
+        m["subfuncoes"] = subfuncoes_mun or None
+
     D = dict(
         meta=dict(
             extracao=dt.datetime.fromisoformat(R["quando_utc"].replace("Z", "+00:00"))
@@ -355,6 +371,13 @@ def validar(D):
     if com_historico < 60:
         erros.append(f"série histórica ausente na maioria dos municípios: só {com_historico}/{len(D['m'])} com dado")
 
+    # Subfunção por município (Power BI, filtro por esfera administrativa):
+    # mesma lógica tolerante - município sem dado volta a mostrar o
+    # panorama do ES na página, não trava a publicação.
+    com_subfuncao_mun = sum(1 for m in D["m"] if m.get("subfuncoes"))
+    if com_subfuncao_mun < 60:
+        erros.append(f"subfunção por município ausente na maioria dos municípios: só {com_subfuncao_mun}/{len(D['m'])} com dado")
+
     if erros:
         raise SystemExit("VALIDAÇÃO FALHOU: " + "; ".join(erros))
     return dict(
@@ -363,6 +386,7 @@ def validar(D):
         municipios=len(D["m"]),
         anosHistorico=anos_hist,
         municipiosComHistorico=com_historico,
+        municipiosComSubfuncao=com_subfuncao_mun,
     )
 
 

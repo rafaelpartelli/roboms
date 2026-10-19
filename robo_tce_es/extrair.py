@@ -133,6 +133,84 @@ def executar_consulta(nome: str, ano: int | None) -> dict:
     return decodificado
 
 
+def filtrar_por_municipio(corpo: dict, municipio: str) -> dict:
+    """Acrescenta um filtro IN DIM_EsferaAdministrativa.Nome = <municipio> ao
+    "Where" da consulta (fonte "d1" - presente em tabela_aplicacao_por_subfuncao
+    e demais consultas que juntam DIM_EsferaAdministrativa). Descoberto
+    19/10/2026 ao testar ao vivo o filtro "Esfera administrativa" do painel:
+    o dashboard interativo aplica esse mesmo filtro client-side; reproduzido
+    aqui via HTTP puro e validado (total bate com o KPI do municipio e com
+    "aplicado" ja extraido por mapa_aplicacao_por_municipio - ver LEIA-ME.md)."""
+    query = corpo["queries"][0]["Query"]["Commands"][0]["SemanticQueryDataShapeCommand"]["Query"]
+    query["Where"].append(
+        {
+            "Condition": {
+                "In": {
+                    "Expressions": [
+                        {"Column": {"Expression": {"SourceRef": {"Source": "d1"}}, "Property": "Nome"}}
+                    ],
+                    "Values": [[{"Literal": {"Value": f"'{municipio}'"}}]],
+                }
+            }
+        }
+    )
+    return corpo
+
+
+def executar_consulta_subfuncao_municipio(municipio: str, ano: int | None, tentativas: int = 3) -> dict:
+    caminho = PASTA_CONSULTAS / "tabela_aplicacao_por_subfuncao.json"
+    ultimo_erro = None
+    for tentativa in range(1, tentativas + 1):
+        try:
+            corpo = json.loads(caminho.read_text(encoding="utf-8"))
+            if ano is not None:
+                corpo = substituir_ano(corpo, ano)
+            corpo = filtrar_por_municipio(corpo, municipio)
+            resp = requests.post(URL, headers=montar_headers(), json=corpo, timeout=30)
+            resp.raise_for_status()
+            return dsr.decodificar_resposta(resp.json())
+        except Exception as e:  # noqa: BLE001
+            ultimo_erro = e
+            if tentativa < tentativas:
+                time.sleep(1.5 * tentativa)
+    raise ultimo_erro
+
+
+def extrair_subfuncao_por_municipio(ano: int | None) -> dict:
+    """Gasto por subfuncao, por municipio (Power BI, mesma consulta usada
+    para o panorama do ES, com o filtro de municipio acrescentado - ver
+    filtrar_por_municipio). Descoberta de 19/10/2026: o LEIA-ME ate aqui
+    dizia que esse detalhamento so existia em nivel estadual, mas o
+    dashboard interativo (navegador) mostrou que filtrar por municipio
+    tambem atualiza essa tabela; testado e validado via HTTP puro antes de
+    integrar aqui (ver resultados/teste-subfuncao-municipio.json)."""
+    resultado = {"municipios": {}, "erros": {}}
+
+    def buscar_um(m):
+        nome = m["nome"]
+        decod = executar_consulta_subfuncao_municipio(nome, ano)
+        subfuncoes = []
+        for linha in decod["linhas"]:
+            nome_sub = linha.get("DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao")
+            if nome_sub is None:
+                continue
+            valor = linha.get("Formulas._SomaLiquidado")
+            subfuncoes.append([nome_sub, float(valor) if valor is not None else None])
+        return nome, subfuncoes
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        futuros = {pool.submit(buscar_um, m): m["nome"] for m in MUNICIPIOS_TCE}
+        for futuro in as_completed(futuros):
+            nome = futuros[futuro]
+            try:
+                _, subfuncoes = futuro.result()
+                resultado["municipios"][nome] = subfuncoes
+            except Exception as e:  # noqa: BLE001
+                resultado["erros"][nome] = str(e)[:300]
+
+    return resultado
+
+
 def get_api_rest(caminho: str, params: dict, tentativas: int = 3) -> dict:
     ultimo_erro = None
     for tentativa in range(1, tentativas + 1):
@@ -218,6 +296,7 @@ def main(out_path: str, ano: int | None) -> int:
     anos_historico = list(range(ano_mais_recente - JANELA_HISTORICO_ANOS + 1, ano_mais_recente + 1))
     resultado["anos_historico"] = anos_historico
     resultado["serie_historica_rest"] = extrair_serie_historica_rest(anos_historico)
+    resultado["subfuncao_por_municipio"] = extrair_subfuncao_por_municipio(ano)
 
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(resultado, f, ensure_ascii=False, indent=2)
@@ -243,11 +322,19 @@ def main(out_path: str, ano: int | None) -> int:
         f"{len(sh['erros'])} erro(s)"
     )
 
+    sfm = resultado["subfuncao_por_municipio"]
+    print(
+        f"Subfuncao por municipio (Power BI, filtro por esfera administrativa): "
+        f"{len(sfm['municipios'])}/{len(MUNICIPIOS_TCE)} municipio(s) OK, {len(sfm['erros'])} erro(s)"
+    )
+
     erros_consultas = 1 if resultado["erros"] else 0
-    # tolera algumas falhas pontuais na serie historica (degradacao graciosa,
-    # tratada em montar.py), so falha a extracao se faltar demais
+    # tolera algumas falhas pontuais na serie historica e na subfuncao por
+    # municipio (degradacao graciosa, tratada em montar.py), so falha a
+    # extracao se faltar demais
     erros_serie_historica = 1 if len(sh["erros"]) > (esperado_estado + esperado_municipios) * 0.1 else 0
-    return 1 if (erros_consultas or erros_serie_historica) else 0
+    erros_subfuncao_mun = 1 if len(sfm["erros"]) > len(MUNICIPIOS_TCE) * 0.1 else 0
+    return 1 if (erros_consultas or erros_serie_historica or erros_subfuncao_mun) else 0
 
 
 if __name__ == "__main__":
