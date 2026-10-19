@@ -30,7 +30,7 @@ def montar_headers():
     }
 
 
-def main(municipio: str):
+def main(municipio: str) -> dict:
     corpo = json.loads(open(str(__import__("pathlib").Path(__file__).parent / "consultas" / "tabela_aplicacao_por_subfuncao.json"), encoding="utf-8").read())
     query = corpo["queries"][0]["Query"]["Commands"][0]["SemanticQueryDataShapeCommand"]["Query"]
     filtro_municipio = {
@@ -49,22 +49,23 @@ def main(municipio: str):
     resp = requests.post(URL, headers=montar_headers(), json=corpo, timeout=30)
     resp.raise_for_status()
     decodificado = dsr.decodificar_resposta(resp.json())
-    print(f"=== Subfuncao filtrado para '{municipio}' ===")
-    total = 0
+    subfuncoes = {}
+    total = 0.0
     for linha in decodificado["linhas"]:
         nome = linha.get("DIM_ClassificacaoFuncionalMunicipio.NomeSubFuncao")
         valor = linha.get("Formulas._SomaLiquidado")
         if nome is None:
-            print("  [linha agregada/subtotal]", linha)
             continue
-        v = float(valor) if valor is not None else 0
+        v = float(valor) if valor is not None else 0.0
+        subfuncoes[nome] = v
         total += v
-        print(f"  {nome}: R$ {v:,.2f}")
-    print(f"  TOTAL (soma das subfuncoes): R$ {total:,.2f}")
-    print()
-    print("avisos:", decodificado["avisos"])
+    return {"municipio": municipio, "subfuncoes": subfuncoes, "total": total, "avisos": decodificado["avisos"]}
 
 
 if __name__ == "__main__":
-    for municipio in (sys.argv[1:] or ["Presidente Kennedy", "Vitória", "Afonso Cláudio"]):
-        main(municipio)
+    municipios = sys.argv[1:] or ["Presidente Kennedy", "Vitória", "Afonso Cláudio"]
+    resultado = [main(m) for m in municipios]
+    print(json.dumps(resultado, ensure_ascii=False, indent=2))
+    out_path = sys.argv[0].replace("testar_subfuncao_municipio.py", "") or "."
+    with open((__import__("pathlib").Path(out_path) / "resultado_subfuncao_municipio.json"), "w", encoding="utf-8") as f:
+        json.dump(resultado, f, ensure_ascii=False, indent=2)
