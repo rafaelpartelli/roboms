@@ -155,13 +155,34 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   <select id="munSel"></select>
   <div class="atalhos"><button type="button" data-u="ES">Panorama geral</button></div><button class="limpar" id="limpar" type="button" style="display:none">Voltar ao panorama</button>
   <span class="ctx" id="ctx"></span>
-  <div class="nav2"><a href="#resumo">Resumo</a><a href="#limite">Limite 15%</a><a href="#historico">Série histórica</a><a href="#subfuncao">Subfunção</a><a href="#ranking">Municípios</a><a href="#leitura">Leitura estratégica</a></div>
+  <div class="nav2"><a href="#resumo">Resumo</a><a href="#historico">Série histórica</a><a href="#limite">Limite 15%</a><a href="#subfuncao">Subfunção</a><a href="#ranking">Municípios</a><a href="#leitura">Leitura estratégica</a></div>
 </div></div>
 
 <div class="wrap tce">
   <section id="resumo">
     <div class="kpis" id="kpis"></div>
     <div class="alertas" id="alertas"></div>
+  </section>
+
+  <section id="historico">
+    <h2>Série histórica (8 anos) <span id="histTit"></span></h2>
+    <p class="lead" id="histLead"></p>
+    <div class="card">
+      <div class="tools" style="margin-bottom:14px">
+        <div class="atalhos" id="histMetricas">
+          <button type="button" data-m="combo" class="on">Valor aplicado + % da receita</button>
+          <button type="button" data-m="perCapita">Valor por habitante</button>
+        </div>
+        <span class="leg" id="histRanking"></span>
+      </div>
+      <div class="chart alto"><canvas id="cHist"></canvas></div>
+      <p class="nota" id="histNota"></p>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>Ano a ano</h3>
+      <div class="tabwrap"><table id="tabHist"><thead></thead><tbody></tbody></table></div>
+      <p class="nota">Valor declarado: valor informado pelo próprio ente ao TCE-ES. Valor liquidado: valor apurado/consolidado pelo tribunal, usado nos demais indicadores desta página. Podem diferir em anos já encerrados por retificação ou auditoria; nenhum dos dois é descartado.</p>
+    </div>
   </section>
 
   <section id="limite">
@@ -184,27 +205,6 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
       <h3>Comparação entre os 78 municípios</h3>
       <p class="nota" style="margin:0 0 10px">Ordenado do maior para o menor percentual aplicado. A linha vertical marca o mínimo constitucional de 15%.</p>
       <div class="barras" id="limBarras" style="max-height:560px;overflow:auto"></div>
-    </div>
-  </section>
-
-  <section id="historico">
-    <h2>Série histórica (8 anos) <span id="histTit"></span></h2>
-    <p class="lead" id="histLead"></p>
-    <div class="card">
-      <div class="tools" style="margin-bottom:14px">
-        <div class="atalhos" id="histMetricas">
-          <button type="button" data-m="combo" class="on">Valor aplicado + % da receita</button>
-          <button type="button" data-m="perCapita">Valor por habitante</button>
-        </div>
-        <span class="leg" id="histRanking"></span>
-      </div>
-      <div class="chart alto"><canvas id="cHist"></canvas></div>
-      <p class="nota" id="histNota"></p>
-    </div>
-    <div class="card" style="margin-top:14px">
-      <h3>Ano a ano</h3>
-      <div class="tabwrap"><table id="tabHist"><thead></thead><tbody></tbody></table></div>
-      <p class="nota">Valor declarado: valor informado pelo próprio ente ao TCE-ES. Valor liquidado: valor apurado/consolidado pelo tribunal, usado nos demais indicadores desta página. Podem diferir em anos já encerrados por retificação ou auditoria; nenhum dos dois é descartado.</p>
     </div>
   </section>
 
