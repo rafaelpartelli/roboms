@@ -1,0 +1,22 @@
+name: Teste temporario - subfuncao filtrada por municipio (Power BI TCE-ES)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  teste:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install -q requests
+
+      - name: Testar filtro de subfuncao por municipio
+        working-directory: robo_tce_es
+        run: python testar_subfuncao_municipio.py
