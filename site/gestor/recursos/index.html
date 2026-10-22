@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Radar de Recursos SUS: repasses, emendas e saldos dos municípios do ES | Rafael Partelli</title>
-<meta name="description" content="Repasses fundo a fundo, emendas parlamentares e saldos em conta dos 78 municípios do Espírito Santo, com filtro por município. Dados dos Painéis InvestSUS do Fundo Nacional de Saúde.">
+<title>Radar de Recursos SUS: repasses, emendas e saldos dos municípios do ES, MG e MA | Rafael Partelli</title>
+<meta name="description" content="Repasses fundo a fundo, emendas parlamentares e saldos em conta dos municípios do Espírito Santo, de Minas Gerais e do Maranhão, com filtro por município. Dados dos Painéis InvestSUS do Fundo Nacional de Saúde.">
 <link rel="canonical" href="https://partelli.pro/gestor/recursos/">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Radar de Recursos SUS · Espírito Santo">
-<meta property="og:description" content="Quanto cada município capixaba recebeu, quanto das emendas foi pago e quanto recurso está parado em conta.">
+<meta property="og:title" content="Radar de Recursos SUS · Espírito Santo, Minas Gerais e Maranhão">
+<meta property="og:description" content="Quanto cada município do ES, de MG e do MA recebeu, quanto das emendas foi pago e quanto recurso está parado em conta.">
 <meta property="og:url" content="https://partelli.pro/gestor/recursos/">
 <meta property="og:image" content="https://partelli.pro/img/og.jpg">
 <meta name="theme-color" content="#0C326F">
@@ -30,7 +30,7 @@
 </script>
 <link rel="stylesheet" href="/styles.css?v=20261012g">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"Radar de Recursos SUS: Espírito Santo","url":"https://partelli.pro/gestor/recursos/","inLanguage":"pt-BR","isPartOf":{"@type":"CollectionPage","name":"Área do Gestor SUS","url":"https://partelli.pro/gestor/"},"author":{"@type":"Person","name":"Rafael Tartaglias Partelli","url":"https://partelli.pro/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://partelli.pro/"},{"@type":"ListItem","position":2,"name":"Área do Gestor","item":"https://partelli.pro/gestor/"},{"@type":"ListItem","position":3,"name":"Radar de Recursos SUS","item":"https://partelli.pro/gestor/recursos/"}]}}
+{"@context":"https://schema.org","@type":"WebPage","name":"Radar de Recursos SUS: Espírito Santo, Minas Gerais e Maranhão","url":"https://partelli.pro/gestor/recursos/","inLanguage":"pt-BR","isPartOf":{"@type":"CollectionPage","name":"Área do Gestor SUS","url":"https://partelli.pro/gestor/"},"author":{"@type":"Person","name":"Rafael Tartaglias Partelli","url":"https://partelli.pro/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://partelli.pro/"},{"@type":"ListItem","position":2,"name":"Área do Gestor","item":"https://partelli.pro/gestor/"},{"@type":"ListItem","position":3,"name":"Radar de Recursos SUS","item":"https://partelli.pro/gestor/recursos/"}]}}
 </script>
 <style>.nav-reuniao .nr-t{display:none}@media(max-width:960px){.nav .nav-reuniao{margin:0!important;padding:10px 12px!important}.nav-reuniao .nr-t{display:inline;margin-left:8px}}@media(min-width:961px) and (max-width:1279px){.nav a{padding-left:9px;padding-right:9px}}</style><style id="nav-biblio">@media(min-width:961px){.topbar-in{justify-content:flex-start}.topbar-in .brand{margin-right:16px;flex:none}.topbar-in .nav{flex:1}.nav .nav-hl{margin-right:auto}}@media(min-width:961px){.nav a{padding-left:9px;padding-right:9px}}</style>
 <style>
@@ -145,6 +145,13 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
 .rr-hero .lead{max-width:78ch;font-size:17px;margin:0}
 .rr-hero h1{margin-bottom:10px}
 .rr-hero .rr-sel{display:inline-block;margin:0 0 12px}
+.uf-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;align-items:center}
+.uf-tabs .l{font-size:14px;font-weight:bold;margin-right:4px}
+.uf-tabs a{display:inline-block;text-decoration:none;font-weight:bold;font-size:15px;padding:8px 16px;border-radius:999px;border:2px solid currentColor;color:inherit;opacity:.85}
+.uf-tabs a:hover,.uf-tabs a:focus-visible{opacity:1}
+.uf-tabs a[aria-current="page"]{background:#FFD54A;border-color:#FFD54A;color:#3A2C00;opacity:1}
+.uf-tabs a.off{opacity:.55}
+.uf-tabs a.off::after{content:" (em preparação)";font-weight:normal;font-size:13px}
 </style>
 </head>
 <body class="gz">
@@ -169,8 +176,9 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   <div class="wrap">
     <p class="crumb"><a href="/">Início</a> &#8250; <a href="/gestor/">Área do Gestor</a> &#8250; Radar de Recursos SUS</p>
     <span class="badge rr-sel">Atualizado em <span class="dt-extracao">...</span></span>
-    <h1>Radar de Recursos SUS: Espírito Santo</h1>
-    <p class="lead">Repasses fundo a fundo, emendas parlamentares e saldos em conta dos 78 municípios capixabas e do Fundo Estadual de Saúde, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.</p>
+    <h1 id="rrH1">Radar de Recursos SUS: Espírito Santo</h1>
+    <p class="lead" id="rrLead">Repasses fundo a fundo, emendas parlamentares e saldos em conta dos 78 municípios capixabas e do Fundo Estadual de Saúde, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.</p>
+    <nav class="uf-tabs" aria-label="Escolha o estado"><span class="l">Estado:</span><a href="/gestor/recursos/" data-uf="ES">Espírito Santo</a><a href="/gestor/recursos/?uf=mg" data-uf="MG">Minas Gerais</a><a href="/gestor/recursos/?uf=ma" data-uf="MA">Maranhão</a></nav>
   </div>
 </section>
 <div class="filtro"><div class="in">
@@ -221,7 +229,7 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
       <div class="tipobar" id="triTipo"></div>
       <div class="kpis tri" id="triKpi"></div>
       <div class="chart alto" style="margin-top:12px"><canvas id="cTri"></canvas></div>
-      <p class="nota">Execução estimada = saldo inicial + repasses do FNS no trimestre − saldo final. Rendimentos de aplicação, transferências entre contas e devoluções não aparecem como repasse e podem reduzir a execução calculada. Trimestres sem saldo publicado no início ou no fim do período não são calculados. Em 2026, cerca de 87% dos repasses do ES estão vinculados a uma conta com tipo identificado; os demais ficam fora desta análise.</p>
+      <p class="nota">Execução estimada = saldo inicial + repasses do FNS no trimestre − saldo final. Rendimentos de aplicação, transferências entre contas e devoluções não aparecem como repasse e podem reduzir a execução calculada. Trimestres sem saldo publicado no início ou no fim do período não são calculados. <span id="notaVinc">Em 2026, cerca de 87% dos repasses do ES estão vinculados a uma conta com tipo identificado; os demais ficam fora desta análise.</span></p>
     </div>
     <div class="card" style="margin-top:14px">
       <h3>Saldo atual por tipo de conta</h3>
@@ -231,7 +239,7 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   </section>
 
   <section id="ranking">
-    <h2 id="rkTit">Panorama dos 78 municípios</h2>
+    <h2 id="rkTit">Panorama dos municípios</h2>
     <p class="lead">Clique em qualquer linha para filtrar a página por aquele ente. A primeira linha traz o Governo do Estado (Fundo Estadual de Saúde). Clique nos títulos para ordenar. O <b>índice de saldo</b> compara o saldo em conta com o repasse fundo a fundo de 2026: acima de 100% significa mais dinheiro parado do que tudo o que entrou no ano.</p>
     <div class="tools"><input type="search" id="busca" placeholder="Buscar município..." aria-label="Buscar município"><span class="leg">Vermelho: índice acima de 100% ou emendas abaixo de 50% pagas. Verde: emendas 100% pagas.</span></div>
     <div class="tabwrap" style="max-height:560px;overflow:auto"><table id="tab"><thead></thead><tbody></tbody></table></div>
@@ -250,7 +258,7 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
 
   <div class="rr-fonte">
     <p><b>Fonte:</b> Fundo Nacional de Saúde, Painéis InvestSUS (Repasses Fundo a Fundo, Saldos de Repasses e Emendas Parlamentares). Extração automática diária; última em <span class="dt-extracao"></span>, com saldos na posição de <span class="dt-saldo"></span>. Última carga do FNS: <span class="dt-fns"></span>.</p>
-    <p><b>Notas:</b> repasses em valores brutos; emendas pelo ano da proposta, incluindo propostas de entidades sediadas no município; repasses, emendas e saldos do Fundo Estadual de Saúde foram separados dos dados de Vitória com base na esfera administrativa registrada no painel; meses com carga incompleta no painel foram omitidos das séries de saldo. População conforme base do próprio painel.</p>
+    <p><b>Notas:</b> repasses em valores brutos; emendas pelo ano da proposta, incluindo propostas de entidades sediadas no município; repasses, emendas e saldos do Fundo Estadual de Saúde foram separados dos dados da capital (<span class="uf-cap">Vitória</span>) com base na esfera administrativa registrada no painel; meses com carga incompleta no painel foram omitidos das séries de saldo. População conforme base do próprio painel.</p>
     <p>Dados públicos de transparência ativa, organizados por Rafael Partelli (CRA/ES 15721). Para valores oficiais, consulte os <a href="https://investsuspaineis.saude.gov.br/extensions/CGIN_InvestsusPaineis/CGIN_InvestsusPaineis.html" target="_blank" rel="noopener">Painéis InvestSUS</a>.</p>
   </div>
 </div>
@@ -268,7 +276,24 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
 <script>if(window.VLibras){new window.VLibras.Widget('https://vlibras.gov.br/app');}</script>
 <script src="/script.js?v=20261012g"></script>
 <script>
+// ---------- estado (UF) exibido ----------
+const UFS={
+  ES:{n:'Espírito Santo',de:'do Espírito Santo',no:'no Espírito Santo',ao:'ao Espírito Santo',gent:'capixabas',cap:'VITORIA',capN:'Vitória',arq:'/fundo/dados.json',q:''},
+  MG:{n:'Minas Gerais',de:'de Minas Gerais',no:'em Minas Gerais',ao:'a Minas Gerais',gent:'mineiros',cap:'BELO HORIZONTE',capN:'Belo Horizonte',arq:'/fundo/dados-mg.json',q:'?uf=mg'},
+  MA:{n:'Maranhão',de:'do Maranhão',no:'no Maranhão',ao:'ao Maranhão',gent:'maranhenses',cap:'SAO LUIS',capN:'São Luís',arq:'/fundo/dados-ma.json',q:'?uf=ma'}};
+let UF='ES';try{const u=(new URLSearchParams(location.search).get('uf')||'').toUpperCase();if(UFS[u])UF=u;}catch(e){}
+const UI=UFS[UF];
+document.querySelectorAll('.uf-tabs a').forEach(a=>{if(a.dataset.uf===UF)a.setAttribute('aria-current','page');
+  if(a.dataset.uf!=='ES')fetch(UFS[a.dataset.uf].arq,{method:'HEAD',cache:'no-store'}).then(r=>{if(!r.ok)a.classList.add('off');}).catch(()=>a.classList.add('off'));});
+document.getElementById('rrH1').textContent='Radar de Recursos SUS: '+UI.n;
+document.querySelectorAll('.uf-cap').forEach(e=>e.textContent=UI.capN);
+if(UF!=='ES'){document.getElementById('notaVinc').textContent='';
+  document.getElementById('rrLead').textContent=`Repasses fundo a fundo, emendas parlamentares e saldos em conta dos municípios ${UI.gent} e do Fundo Estadual de Saúde, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.`;}
+const ACC0={};
 function iniciar(D){
+if(D.acc)Object.assign(ACC0,D.acc);
+const NM=D.m.length;
+document.getElementById('rrLead').textContent=`Repasses fundo a fundo, emendas parlamentares e saldos em conta dos ${NM} municípios ${UI.gent} e do Fundo Estadual de Saúde, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.`;
 const ANO=D.meta.anoFaf;
 document.querySelectorAll('.ano').forEach(e=>e.textContent=ANO);
 document.querySelectorAll('.dt-extracao').forEach(e=>e.textContent=D.meta.extracao);
@@ -276,9 +301,10 @@ document.querySelectorAll('.dt-saldo').forEach(e=>e.textContent=D.meta.saldoData
 const fdt=s=>{try{return new Date(s).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});}catch(e){return s;}};
 document.querySelectorAll('.dt-fns').forEach(e=>e.textContent=`repasses ${fdt(D.meta.fns.FAF)}, saldos ${fdt(D.meta.fns.SAL)} e emendas ${fdt(D.meta.fns.EME)}`);
 // ---------- utilidades ----------
-const ACC={VITORIA:'Vitória',SAO:'São',JOSE:'José',CONCEICAO:'Conceição',AGUA:'Água',AGUIA:'Águia',APIACA:'Apiacá',ATILIO:'Atílio',CLAUDIO:'Cláudio',ESPERANCA:'Esperança',FUNDAO:'Fundão',GUACUI:'Guaçuí',IBIRACU:'Ibiraçu',ITAGUACU:'Itaguaçu',IUNA:'Iúna',JAGUARE:'Jaguaré',JERONIMO:'Jerônimo',JOAO:'João',JETIBA:'Jetibá',LOURENCO:'Lourenço',MANTENOPOLIS:'Mantenópolis',MARATAIZES:'Marataízes',MARILANDIA:'Marilândia',PIUMA:'Piúma',PAVAO:'Pavão',VALERIO:'Valério',VENECIA:'Venécia',CALCADO:'Calçado',CANAA:'Canaã',CANARIO:'Canário',SAUDE:'Saúde',MUNICIPIO:'Município',MISERICORDIA:'Misericórdia',ASSOCIACAO:'Associação',FUNDACAO:'Fundação',CONFERENCIA:'Conferência',CONGREGACAO:'Congregação',EVANGELICA:'Evangélica',MAXIMO:'Máximo',ESPIRITO:'Espírito',SANTENSE:'Santense'};
+const ACC=ACC0;Object.assign(ACC,{VITORIA:'Vitória',SAO:'São',JOSE:'José',CONCEICAO:'Conceição',AGUA:'Água',AGUIA:'Águia',APIACA:'Apiacá',ATILIO:'Atílio',CLAUDIO:'Cláudio',ESPERANCA:'Esperança',FUNDAO:'Fundão',GUACUI:'Guaçuí',IBIRACU:'Ibiraçu',ITAGUACU:'Itaguaçu',IUNA:'Iúna',JAGUARE:'Jaguaré',JERONIMO:'Jerônimo',JOAO:'João',JETIBA:'Jetibá',LOURENCO:'Lourenço',MANTENOPOLIS:'Mantenópolis',MARATAIZES:'Marataízes',MARILANDIA:'Marilândia',PIUMA:'Piúma',PAVAO:'Pavão',VALERIO:'Valério',VENECIA:'Venécia',CALCADO:'Calçado',CANAA:'Canaã',CANARIO:'Canário',SAUDE:'Saúde',MUNICIPIO:'Município',MISERICORDIA:'Misericórdia',ASSOCIACAO:'Associação',FUNDACAO:'Fundação',CONFERENCIA:'Conferência',CONGREGACAO:'Congregação',EVANGELICA:'Evangélica',MAXIMO:'Máximo',ESPIRITO:'Espírito',SANTENSE:'Santense'});
 const LOW=['DE','DA','DO','DOS','DAS','E'];
 const KEEP=['FMS','FES','CAS','AEBES','PMDSL','MAC','PAP','UBS','ES','SUS','F','M','S'];
+const nm=m=>m.nm||tc(m.n);
 const tc=s=>String(s).split(' ').map((w,i)=>{const b=w.replace(/[^A-ZÀ-Ü]/g,'');if(ACC[b])return w.replace(b,ACC[b]);if(KEEP.includes(b))return w;if(i>0&&LOW.includes(w))return w.toLowerCase();return w.charAt(0)+w.slice(1).toLowerCase();}).join(' ');
 const slug=s=>tc(s).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 const brl=v=>v==null||!isFinite(v)?'–':v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
@@ -376,29 +402,29 @@ document.getElementById('triTipo').onclick=e=>{const b=e.target.closest('button[
 
 // ---------- seletor ----------
 const sel=document.getElementById('munSel');
-sel.innerHTML='<option value="ES">Panorama geral: Espírito Santo (todos os municípios)</option>'
+sel.innerHTML=`<option value="ES">Panorama geral: ${UI.n} (todos os municípios)</option>`
  +'<optgroup label="Gestão estadual"><option value="EST">Governo do Estado (Fundo Estadual de Saúde)</option></optgroup>'
- +'<optgroup label="Gestão municipal">'+D.m.map((m,i)=>`<option value="${i}">${tc(m.n)}</option>`).join('')+'</optgroup>';
+ +'<optgroup label="Gestão municipal">'+D.m.map((m,i)=>`<option value="${i}">${nm(m)}</option>`).join('')+'</optgroup>';
 let atual='ES';
 const tipoAtual=()=>atual==='ES'?'ES':atual==='EST'?'EST':'MUN';
 const obj=()=>atual==='ES'?ES:atual==='EST'?D.EST:D.m[+atual];
-const nomeAtual=()=>atual==='ES'?'Espírito Santo':atual==='EST'?'Governo do Estado':tc(D.m[+atual].n);
+const nomeAtual=()=>atual==='ES'?UI.n:atual==='EST'?'Governo do Estado':nm(D.m[+atual]);
 
 function render(){
   const t=tipoAtual(),isES=t==='ES',isEST=t==='EST',i=t==='MUN'?+atual:null,o=obj(),nome=nomeAtual();
-  document.getElementById('ctx').textContent=isES?'Panorama geral: 78 municípios e Fundo Estadual':isEST?'Gestão estadual: Fundo Estadual de Saúde (SESA)':'Gestão municipal: '+nome+(o.pop?' · '+o.pop.toLocaleString('pt-BR')+' habitantes':'');
+  document.getElementById('ctx').textContent=isES?`Panorama geral: ${NM} municípios e Fundo Estadual`:isEST?'Gestão estadual: Fundo Estadual de Saúde (SESA)':'Gestão municipal: '+nome+(o.pop?' · '+o.pop.toLocaleString('pt-BR')+' habitantes':'');
   document.getElementById('limpar').style.display=isES?'none':'';
   document.querySelectorAll('[data-u]').forEach(b=>b.classList.toggle('on',b.dataset.u===atual));
   // ranking logo após o resumo no panorama geral; ao fim nas demais visões
   const rk=document.getElementById('ranking'),main=document.querySelector('.rr');
   if(isES)main.insertBefore(rk,document.getElementById('faf'));else main.insertBefore(rk,document.getElementById('leitura'));
-  document.getElementById('rkTit').textContent=isES?'Panorama dos 78 municípios':'Ranking municipal';
+  document.getElementById('rkTit').textContent=isES?`Panorama dos ${NM} municípios`:'Ranking municipal';
   // KPIs
   const k=[];
-  k.push(['',`Repasse fundo a fundo ${ANO}`,mi(o.fb),isES?`Municípios ${pc(ES.fbMun/ES.fb)} · Estado ${pc(D.EST.fb/ES.fb)}`:isEST?`${pc(o.fb/ES.fb)} de todo o repasse ao ES · ${brl(o.fb/ES.pop)} por habitante`:`${brl(o.pcap)} por habitante · ${rank('pcap',i)}º no ES`]);
-  k.push(['v',`Emendas ${ANO} propostas`,mi(o.ep),isES?`${o.eq} propostas · 78 municípios e Estado`:isEST?`${o.eq} propostas · ${pc(o.ep/ES.ep)} do total do ES`:`${o.eq} propostas · ${rank('ep',i)}º maior valor no ES`]);
+  k.push(['',`Repasse fundo a fundo ${ANO}`,mi(o.fb),isES?`Municípios ${pc(ES.fbMun/ES.fb)} · Estado ${pc(D.EST.fb/ES.fb)}`:isEST?`${pc(o.fb/ES.fb)} de todo o repasse ${UI.ao} · ${brl(o.fb/ES.pop)} por habitante`:`${brl(o.pcap)} por habitante · ${rank('pcap',i)}º no estado`]);
+  k.push(['v',`Emendas ${ANO} propostas`,mi(o.ep),isES?`${o.eq} propostas · ${NM} municípios e Estado`:isEST?`${o.eq} propostas · ${pc(o.ep/ES.ep)} do total do estado`:`${o.eq} propostas · ${rank('ep',i)}º maior valor no estado`]);
   k.push([o.pago==null?'':(o.pago<.5?'r':o.pago<.9?'a':'v'),`Emendas ${ANO} pagas`,pc(o.pago),`${mi(o.eg)} pagos · ${mi(o.apagar)} a pagar`]);
-  k.push(['r','Saldo em conta em '+D.meta.saldoData,mi(o.s),isES?`${ES.nIdx} municípios com saldo maior que o repasse de ${ANO}`:isEST?`Índice de saldo ${pc(o.idx,0)} · ${pc(o.s/ES.s)} do saldo total do ES`:`Índice de saldo ${pc(o.idx,0)} · ${rank('s',i)}º maior saldo`]);
+  k.push(['r','Saldo em conta em '+D.meta.saldoData,mi(o.s),isES?`${ES.nIdx} municípios com saldo maior que o repasse de ${ANO}`:isEST?`Índice de saldo ${pc(o.idx,0)} · ${pc(o.s/ES.s)} do saldo total do estado`:`Índice de saldo ${pc(o.idx,0)} · ${rank('s',i)}º maior saldo`]);
   document.getElementById('kpis').innerHTML=k.map(([c,l,n,d])=>`<div class="kpi ${c}"><div class="l">${l}</div><div class="n">${n}</div><div class="d">${d}</div></div>`).join('');
   // alertas
   const al=[];
@@ -410,7 +436,7 @@ function render(){
     else if(o.ep&&o.pago>=1)al.push(['v',`Todas as emendas de ${ANO} já foram pagas.`]);
     else if(o.ep)al.push(['a',`${pc(o.pago)} das emendas de ${ANO} foram pagas; restam ${brl(o.apagar)} a receber.`]);
     if(!o.ep)al.push(['i',`Não há propostas de emenda de ${ANO} registradas no painel.`]);
-    if(i!=null&&D.m[i].n==='VITORIA')al.push(['i',`Os valores de Vitória referem-se apenas ao fundo municipal. Repasses, emendas e saldo do Fundo Estadual, sediado na capital, estão na opção <b>Governo do Estado</b>.`]);
+    if(i!=null&&D.m[i].n===UI.cap)al.push(['i',`Os valores de ${UI.capN} referem-se apenas ao fundo municipal. Repasses, emendas e saldo do Fundo Estadual, sediado na capital, estão na opção <b>Governo do Estado</b>.`]);
   }
   document.getElementById('alertas').innerHTML=al.map(([c,tx])=>`<div class="alerta ${c}">${tx}</div>`).join('');
   // FAF
@@ -421,14 +447,14 @@ function render(){
   const tot=sum(cl.map(c=>c.v));
   document.getElementById('comp').innerHTML=cl.map(c=>`<div class="item"><div class="top"><span>${c.n}</span><b>${mi(c.v)} · ${pc(c.v/tot)}</b></div><div class="trilho"><i class="${c.b?'est':''}" style="width:${(c.v/cl[0].v*100).toFixed(1)}%"></i></div></div>`).join('');
   const top=cl[0];
-  document.getElementById('fafLead').innerHTML=isES?`O Espírito Santo recebeu <b>${mi(o.fb)}</b> em ${ANO} até a data da extração, sendo ${pc(ES.fbMun/ES.fb)} para os fundos municipais e ${pc(D.EST.fb/ES.fb)} para o Fundo Estadual. O bloco de Estruturação representa ${pc(o.fe/o.fb)} do total.`
-   :isEST?`O Fundo Estadual de Saúde recebeu <b>${brl(o.fb)}</b> em ${ANO} (líquido de ${brl(o.fl)}), ${pc(o.fb/ES.fb)} de todo o repasse fundo a fundo ao Espírito Santo. O principal componente é ${top.n}, com ${pc(top.v/tot)} do total.`
+  document.getElementById('fafLead').innerHTML=isES?`O conjunto ${UI.de} (municípios e Estado) recebeu <b>${mi(o.fb)}</b> em ${ANO} até a data da extração, sendo ${pc(ES.fbMun/ES.fb)} para os fundos municipais e ${pc(D.EST.fb/ES.fb)} para o Fundo Estadual. O bloco de Estruturação representa ${pc(o.fe/o.fb)} do total.`
+   :isEST?`O Fundo Estadual de Saúde recebeu <b>${brl(o.fb)}</b> em ${ANO} (líquido de ${brl(o.fl)}), ${pc(o.fb/ES.fb)} de todo o repasse fundo a fundo ${UI.ao}. O principal componente é ${top.n}, com ${pc(top.v/tot)} do total.`
    :`${nome} recebeu <b>${brl(o.fb)}</b> em ${ANO} (líquido de ${brl(o.fl)}), equivalente a ${brl(o.pcap)} por habitante, ${rank('pcap',i)}º maior valor per capita do estado. O principal componente é ${top.n} (${pc(top.v/tot)}) e a Estruturação da Rede soma ${pc(o.fe/o.fb)}.`;
   // emendas
   const anos=o.ano.filter(a=>a[1]>0);
   chEm.data.labels=anos.map(a=>a[0]);chEm.data.datasets[0].data=anos.map(a=>+(a[1]/1e6).toFixed(2));chEm.data.datasets[1].data=anos.map(a=>+(a[3]/1e6).toFixed(2));chEm.data.datasets[2].data=anos.map(a=>+(a[3]/a[1]*100).toFixed(1));chEm.update();
   const tP=sum(anos.map(a=>a[1])),tG=sum(anos.map(a=>a[3]));
-  const quem=isES?'o Espírito Santo (municípios e Estado)':isEST?'o Governo do Estado':nome;
+  const quem=isES?`o conjunto ${UI.de} (municípios e Estado)`:isEST?'o Governo do Estado':nome;
   document.getElementById('emLead').innerHTML=o.ep?`Em ${ANO}, ${quem} tem <b>${mi(o.ep)}</b> em ${o.eq} propostas de emenda, com ${pc(o.ee/o.ep)} empenhado e <b>${pc(o.pago)} pago</b>. Desde ${anos[0][0]}, foram propostos ${mi(tP)} e pagos ${mi(tG)} (${pc(tG/tP)}).`:`Sem propostas de emenda em ${ANO}. Desde ${anos.length?anos[0][0]:'2014'}, foram propostos ${mi(tP)} e pagos ${mi(tG)}.`;
   document.querySelector('#tabParl tbody').innerHTML=o.parl.length?o.parl.map(([pi,p,g])=>{const r=p?g/p:0;return `<tr><td class="txt">${tc(D.parl[pi])}</td><td>${brl(p)}</td><td>${brl(g)}</td><td class="${r<.5?'alto':r>=.999?'bom':''}">${pc(r)}</td></tr>`;}).join(''):`<tr><td colspan="4" class="vazio">Sem emendas em ${ANO}.</td></tr>`;
   drawProp();
@@ -436,12 +462,12 @@ function render(){
   chSal.data.datasets[0].data=salIdx.map(j=>j<0?null:(o.sal[j]==null?null:+(o.sal[j]/1000).toFixed(2)));chSal.update();
   document.getElementById('salTit').textContent='Saldo total em conta desde '+SERIE_INI+', '+nome+' (R$ milhões)';
   const cresc=o.salJan?(o.s/o.salJan-1):null;
-  document.getElementById('salLead').innerHTML=`Em ${D.meta.saldoData}, ${isES?'os fundos de saúde do ES (municípios e Estado) somavam':isEST?'o Fundo Estadual de Saúde tinha':'o fundo municipal de saúde de '+nome+' tinha'} <b>${mi(o.s)}</b> em conta${cresc!=null?`, variação de ${pc(cresc)} desde janeiro de ${ANO}`:''}.${isES?` Os fundos municipais respondem por ${mi(ES.sMun)} e o Fundo Estadual por ${mi(D.EST.s)}. ${ES.nIdx} municípios têm mais dinheiro em conta do que receberam em todo o ano.`:` O índice de saldo é ${pc(o.idx,0)}.`}`;
+  document.getElementById('salLead').innerHTML=`Em ${D.meta.saldoData}, ${isES?`os fundos de saúde ${UI.de} (municípios e Estado) somavam`:isEST?'o Fundo Estadual de Saúde tinha':'o fundo municipal de saúde de '+nome+' tinha'} <b>${mi(o.s)}</b> em conta${cresc!=null?`, variação de ${pc(cresc)} desde janeiro de ${ANO}`:''}.${isES?` Os fundos municipais respondem por ${mi(ES.sMun)} e o Fundo Estadual por ${mi(D.EST.s)}. ${ES.nIdx} municípios têm mais dinheiro em conta do que receberam em todo o ano.`:` O índice de saldo é ${pc(o.idx,0)}.`}`;
   drawTri();
   drawRank();
   leitura(t,o,i,nome);
   document.getElementById('ctaTit').textContent=isES?'Seu município tem recurso parado ou emenda a receber?':isEST?'Precisa de apoio técnico na gestão estadual dos recursos do SUS?':`Precisa de apoio para executar os recursos de ${nome}?`;
-  document.title=(isES?'Radar de Recursos SUS ES':'Radar de Recursos SUS · '+nome)+' | Rafael Partelli';
+  document.title=(isES?'Radar de Recursos SUS '+UF:'Radar de Recursos SUS · '+nome)+' | Rafael Partelli';
 }
 
 function situacao(p,e,g){if(g>=p&&p>0)return '<span class="pill ok">Paga</span>';if(g>0)return '<span class="pill par">Parcial</span>';if(e>0)return '<span class="pill par">Empenhada</span>';return '<span class="pill pen">Não empenhada</span>';}
@@ -450,7 +476,7 @@ function sitCod(p,e,g){if(g>=p&&p>0)return 'ok';if(g>0)return 'par';if(e>0)retur
 const SIT={ok:['Paga','ok'],par:['Parcial','par'],emp:['Empenhada','par'],pen:['Não empenhada','pen']};
 function drawProp(){
   const isES=atual==='ES',o=obj(),q=document.getElementById('buscaProp').value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
-  let rows=o.prop.map(p=>({id:p[0],ent:tc(D.ent[p[1]]),tipo:TIPO(D.tipo[p[2]]),p:p[3],e:p[4],g:p[5],aut:p[6].map(x=>tc(D.parl[x])).join('; '),mun:p[7]===undefined?'':(p[7]<0?'Governo do Estado':tc(D.m[p[7]].n)),s:sitCod(p[3],p[4],p[5])}));
+  let rows=o.prop.map(p=>({id:p[0],ent:tc(D.ent[p[1]]),tipo:TIPO(D.tipo[p[2]]),p:p[3],e:p[4],g:p[5],aut:p[6].map(x=>tc(D.parl[x])).join('; '),mun:p[7]===undefined?'':(p[7]<0?'Governo do Estado':nm(D.m[p[7]])),s:sitCod(p[3],p[4],p[5])}));
   // resumo por situação
   const res={};rows.forEach(r=>{res[r.s]=res[r.s]||[0,0];res[r.s][0]++;res[r.s][1]+=r.p-r.g;});
   document.getElementById('propSit').innerHTML=`<button type="button" data-s="" class="${propSit===''?'on':''}">Todas <b>${rows.length}</b></button>`+['pen','emp','par','ok'].filter(k=>res[k]).map(k=>`<button type="button" data-s="${k}" class="${propSit===k?'on':''}"><span class="pill ${SIT[k][1]}">${SIT[k][0]}</span> <b>${res[k][0]}</b>${k!=='ok'?` · ${mi(res[k][1])} a receber`:''}</button>`).join('');
@@ -458,7 +484,7 @@ function drawProp(){
   if(q)rows=rows.filter(r=>(r.ent+' '+r.tipo+' '+r.aut+' '+r.mun+' '+r.id).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').includes(q));
   rows.sort((a,b)=>(b.p-b.g)-(a.p-a.g)||b.p-a.p);
   const pend=o.prop.filter(p=>p[5]<p[3]);
-  document.getElementById('propTit').textContent=isES?`Propostas de ${ANO} no Espírito Santo`:`Propostas de ${ANO}`;
+  document.getElementById('propTit').textContent=isES?`Propostas de ${ANO} ${UI.no}`:`Propostas de ${ANO}`;
   document.getElementById('propLead').innerHTML=isES?`${o.prop.length} propostas no estado, das quais <b>${pend.length}</b> ainda têm valor a receber (${brl(sum(pend.map(p=>p[3]-p[5])))}). Ordenadas pelo maior valor pendente; filtre por situação, busque por nome ou escolha um ente no filtro geral.`:`${o.prop.length} propostas, das quais <b>${pend.length}</b> ainda têm valor a receber (${brl(sum(pend.map(p=>p[3]-p[5])))}).`;
   document.querySelector('#tabProp thead').innerHTML=`<tr><th class="txt c1">${isES?'Ente e entidade':'Entidade'}</th><th class="txt c2">Tipo</th><th class="txt c3">Autor</th><th class="c4">Proposto</th><th class="c4">Pago</th><th class="c4">A receber</th><th class="c5">Situação</th></tr>`;
   const vis=rows.slice(0,propLim);
@@ -471,7 +497,7 @@ document.getElementById('propMais').onclick=()=>{propLim+=40;drawProp();};
 document.getElementById('propSit').onclick=e=>{const b=e.target.closest('button[data-s]');if(!b)return;propSit=b.dataset.s;propLim=40;drawProp();};
 document.getElementById('buscaProp').oninput=()=>{propLim=40;drawProp();};
 
-const cols=[['n','Município',m=>tc(m.n),'txt'],['fb',`FAF ${ANO}`,m=>brl(m.fb)],['pcap','Per capita',m=>brl(m.pcap)],['ep',`Emendas ${ANO}`,m=>brl(m.ep)],['pago','% pago',m=>pc(m.pago)],['apagar','A receber',m=>brl(m.apagar)],['s','Saldo em conta',m=>brl(m.s)],['idx','Índice de saldo',m=>pc(m.idx,0)]];
+const cols=[['n','Município',m=>nm(m),'txt'],['fb',`FAF ${ANO}`,m=>brl(m.fb)],['pcap','Per capita',m=>brl(m.pcap)],['ep',`Emendas ${ANO}`,m=>brl(m.ep)],['pago','% pago',m=>pc(m.pago)],['apagar','A receber',m=>brl(m.apagar)],['s','Saldo em conta',m=>brl(m.s)],['idx','Índice de saldo',m=>pc(m.idx,0)]];
 let sk='s',asc=false;
 const tab=document.getElementById('tab');
 tab.querySelector('thead').innerHTML='<tr><th>#</th>'+cols.map(c=>`<th data-k="${c[0]}" class="${c[3]||''}">${c[1]}</th>`).join('')+'</tr>';
@@ -491,21 +517,21 @@ function leitura(t,o,i,nome){
   let h='';const rec=[];
   if(t==='ES'){
     const top=[...D.m].filter(m=>m.idx!=null).sort((a,b)=>b.idx-a.idx).slice(0,5);
-    const e25=ES.ano.find(a=>a[0]===ANO-1);
+    const e25=ES.ano.find(a=>a[0]===ANO-1)||[ANO-1,0,0,0];
     h=`<p><b>Execução de emendas em ${ANO}:</b> ${pc(o.pago)} do valor proposto já foi pago, contra ${pc(e25[3]/e25[1])} de ${ANO-1} no consolidado do ano. O empenho chega a ${pc(o.ee/o.ep)}, o que indica que o gargalo está no pagamento, não na formalização. O Governo do Estado concentra ${pc(D.EST.ep/o.ep)} das emendas propostas, com ${pc(D.EST.pago)} pago.</p>
-    <p><b>Recurso parado:</b> os fundos do ES somam ${mi(o.s)} em conta em ${D.meta.saldoData}, equivalente a ${pc(o.s/o.fb,0)} de todo o repasse fundo a fundo de ${ANO}, com variação de ${pc(o.s/o.salJan-1)} desde janeiro. Os fundos municipais respondem por ${pc(ES.sMun/o.s)} desse saldo.</p>
-    <p><b>Maiores índices de saldo municipais:</b> ${top.map(m=>`${tc(m.n)} (${pc(m.idx,0)})`).join(', ')}.</p>`;
+    <p><b>Recurso parado:</b> os fundos ${UI.de} somam ${mi(o.s)} em conta em ${D.meta.saldoData}, equivalente a ${pc(o.s/o.fb,0)} de todo o repasse fundo a fundo de ${ANO}, com variação de ${pc(o.s/o.salJan-1)} desde janeiro. Os fundos municipais respondem por ${pc(ES.sMun/o.s)} desse saldo.</p>
+    <p><b>Maiores índices de saldo municipais:</b> ${top.map(m=>`${nm(m)} (${pc(m.idx,0)})`).join(', ')}.</p>`;
     rec.push(`Priorizar os ${ES.nBaixo} municípios com menos de 50% das emendas de ${ANO} pagas, que concentram parte dos ${mi(o.apagar)} a receber.`);
     rec.push('Usar o índice de saldo para orientar planos de aplicação e reprogramação, reduzindo o risco de questionamento por ociosidade de recursos.');
     rec.push('Cruzar emendas pagas com a produção SIA/SIH dos estabelecimentos beneficiados para demonstrar resultado assistencial.');
   }else{
     const pend=o.prop.filter(p=>p[5]<p[3]),naoEmp=o.prop.filter(p=>p[4]===0&&p[3]>0),cresc=o.salJan?o.s/o.salJan-1:null;
     if(t==='EST'){
-      h=`<p><b>Repasses:</b> o Fundo Estadual de Saúde recebeu ${brl(o.fb)} fundo a fundo em ${ANO}, ${pc(o.fb/ES.fb)} do total destinado ao Espírito Santo, com predominância da Média e Alta Complexidade.</p>`;
+      h=`<p><b>Repasses:</b> o Fundo Estadual de Saúde recebeu ${brl(o.fb)} fundo a fundo em ${ANO}, ${pc(o.fb/ES.fb)} do total destinado ${UI.ao}${(()=>{const c={};o.comp.forEach(([ci,b,v])=>{c[ci]=(c[ci]||0)+v;});const t=Object.entries(c).sort((a,b)=>b[1]-a[1])[0];const s=sum(Object.values(c));return t&&s?`, com predominância de ${compNome(D.comp[t[0]])} (${pc(t[1]/s)})`:'';})()}.</p>`;
     }else{
-      h=`<p><b>Repasses:</b> ${nome} recebeu ${brl(o.fb)} fundo a fundo em ${ANO}, ${brl(o.pcap)} por habitante (${rank('pcap',i)}º de 78 no per capita). A Estruturação da Rede representa ${pc(o.estr)} do total.</p>`;
+      h=`<p><b>Repasses:</b> ${nome} recebeu ${brl(o.fb)} fundo a fundo em ${ANO}, ${brl(o.pcap)} por habitante (${rank('pcap',i)}º de ${NM} no per capita). A Estruturação da Rede representa ${pc(o.estr)} do total.</p>`;
     }
-    h+=o.ep?`<p><b>Emendas ${ANO}:</b> ${o.eq} propostas somando ${brl(o.ep)}; ${pc(o.pago)} pago, contra ${pc(ES.pago)} no conjunto do ES. Restam ${brl(o.apagar)} a receber em ${pend.length} propostas${naoEmp.length?`, sendo ${naoEmp.length} ainda não empenhada(s)`:''}.</p>`:`<p><b>Emendas ${ANO}:</b> não há propostas registradas no painel.</p>`;
+    h+=o.ep?`<p><b>Emendas ${ANO}:</b> ${o.eq} propostas somando ${brl(o.ep)}; ${pc(o.pago)} pago, contra ${pc(ES.pago)} no conjunto ${UI.de}. Restam ${brl(o.apagar)} a receber em ${pend.length} propostas${naoEmp.length?`, sendo ${naoEmp.length} ainda não empenhada(s)`:''}.</p>`:`<p><b>Emendas ${ANO}:</b> não há propostas registradas no painel.</p>`;
     h+=`<p><b>Saldo em conta:</b> ${brl(o.s)} em ${D.meta.saldoData}${cresc!=null?` (${pc(cresc)} desde janeiro de ${ANO})`:''}, índice de saldo de ${pc(o.idx,0)}${t==='MUN'?`, ${rank('idx',i)}º maior do estado`:''}.</p>`;
     if(o.idx>1)rec.push('Elaborar plano de aplicação para o saldo acumulado, priorizando despesas já previstas na Programação Anual de Saúde e evitando questionamentos por ociosidade.');
     else if(o.idx>.6)rec.push('Acompanhar mensalmente a programação de despesas para impedir o crescimento do saldo parado.');
@@ -533,7 +559,7 @@ let m0='';try{m0=new URLSearchParams(location.search).get('m')||'';}catch(e){}
 const i0=m0==='estado'?'EST':D.m.findIndex(m=>slug(m.n)===m0);
 setSel(i0==='EST'?'EST':(i0>=0?i0:'ES'),false);
 }
-fetch('/fundo/dados.json?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(iniciar).catch(err=>{console.error(err);document.getElementById('kpis').innerHTML='<div class="alerta r">Não foi possível carregar os dados agora. Atualize a página em instantes.</div>';});
+fetch(UI.arq+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(iniciar).catch(err=>{console.error(err);const sem=String(err&&err.message)==='404';document.getElementById('kpis').innerHTML=sem?`<div class="alerta a">Os dados ${UI.de} estão em preparação e aparecem aqui após a próxima extração diária do InvestSUS. Enquanto isso, veja o <a href="/gestor/recursos/">Espírito Santo</a>.</div>`:'<div class="alerta r">Não foi possível carregar os dados agora. Atualize a página em instantes.</div>';});
 
 </script>
 </body>

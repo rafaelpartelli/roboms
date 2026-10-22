@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Envia o dados.json para partelli.pro/fundo por FTP seguro (FTPS).
+"""Envia o JSON de uma UF (dados.json, dados-mg.json, dados-ma.json) para partelli.pro/fundo por FTP seguro (FTPS).
+O arquivo é publicado com o mesmo nome que tem no computador; a versão anterior fica como <nome>_anterior.json.
 
 Credenciais lidas de ~/.config/robo_investsus/.env (criado pelo instalar.sh):
   FTP_HOST, FTP_USUARIO, FTP_SENHA, FTP_PASTA (ex.: domains/partelli.pro/public_html/fundo)
-Uso: python3 enviar.py dados.json
+Uso: python3 enviar.py saida/dados.json  (ou saida/dados-mg.json etc.)
 """
 import ftplib, os, re, sys, pathlib
 
@@ -42,17 +43,21 @@ def conectar(cfg):
 
 
 def enviar(arquivo):
+    nome = pathlib.Path(arquivo).name
+    base = nome[:-5] if nome.endswith('.json') else nome
+    if not re.fullmatch(r'dados(-[a-z]{2})?', base):
+        raise SystemExit('nome de arquivo inesperado: ' + nome)
     cfg = ler_env(); ftp = conectar(cfg)
     nomes = ftp.nlst()
-    if 'dados.json' in nomes:  # guarda a versão anterior
-        try: ftp.delete('dados_anterior.json')
+    if nome in nomes:  # guarda a versão anterior
+        try: ftp.delete(f'{base}_anterior.json')
         except ftplib.error_perm: pass
-        ftp.rename('dados.json', 'dados_anterior.json')
+        ftp.rename(nome, f'{base}_anterior.json')
     with open(arquivo, 'rb') as f:
-        ftp.storbinary('STOR dados_novo.json', f)
-    ftp.rename('dados_novo.json', 'dados.json')
-    tam = ftp.size('dados.json'); ftp.quit()
-    print('envio ok:', tam, 'bytes')
+        ftp.storbinary(f'STOR {base}_novo.json', f)
+    ftp.rename(f'{base}_novo.json', nome)
+    tam = ftp.size(nome); ftp.quit()
+    print('envio ok:', nome, tam, 'bytes')
 
 
 if __name__ == '__main__':

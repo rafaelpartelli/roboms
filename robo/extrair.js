@@ -1,6 +1,6 @@
-// Extração dos Painéis InvestSUS (FNS) para o Radar de Recursos SUS ES.
+// Extração dos Painéis InvestSUS (FNS) para o Radar de Recursos SUS (ES, MG e MA).
 // Executado dentro da página https://investsuspaineis.saude.gov.br/extensions/CGIN_InvestsusPaineis/CGIN_InvestsusPaineis.html
-// Retorna (Promise) um objeto JSON com os dados brutos do Espírito Santo.
+// Retorna (Promise) um objeto JSON com os dados brutos da UF informada (padrão: ES).
 async function extrairInvestsus(UF) {
   UF = UF || 'ES';
   const APPS = {

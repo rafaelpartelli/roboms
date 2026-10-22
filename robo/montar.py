@@ -1,10 +1,38 @@
 #!/usr/bin/env python3
-"""Transforma a extração bruta do InvestSUS (bruto.json) no dados.json do Radar de Recursos SUS ES.
+"""Transforma a extração bruta do InvestSUS (bruto.json) no JSON de uma UF do Radar de Recursos SUS.
 
-Uso: python3 montar.py bruto.json dados.json
+Uso: python3 montar.py bruto.json dados.json [--anterior publicado.json]
+A UF vem do próprio arquivo bruto (campo "uf"). Com --anterior, compara com a última
+publicação e recusa (código 1) variações suspeitas de saldo ou de fundo a fundo.
 """
-import json, sys, statistics, datetime as dt
+import json, sys, statistics, unicodedata, pathlib, datetime as dt
 from collections import defaultdict
+
+# quantidade de municípios por UF (IBGE); a validação recusa extrações incompletas
+ESPERADOS = {'ES': 78, 'MG': 853, 'MA': 217}
+NOMES_IBGE = pathlib.Path(__file__).parent / 'municipios_ibge.json'
+
+
+def sem_acento(s):
+    s = unicodedata.normalize('NFD', s).encode('ascii', 'ignore').decode().upper()
+    return ' '.join(s.replace("'", ' ').replace('-', ' ').split())
+
+
+def nomes_oficiais(uf):
+    """Mapa nome do painel (maiúsculo, sem acento) -> nome oficial do IBGE, e mapa de palavras acentuadas."""
+    try:
+        lista = json.loads(NOMES_IBGE.read_text(encoding='utf-8'))['ufs'].get(uf, [])
+    except Exception:
+        return {}, {}
+    nomes = {sem_acento(n): n for n in lista}
+    pal = defaultdict(set)
+    for n in lista:
+        for w in n.replace('-', ' ').split():
+            b = sem_acento(w)
+            if b != w.upper() and b.isalpha():
+                pal[b].add(w.upper())
+    acc = {k: next(iter(v)).capitalize() for k, v in pal.items() if len(v) == 1}
+    return nomes, acc
 
 MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
 GRUPOS = ['CUSTEIO', 'INVESTIMENTO', 'EMENDAS', 'RIODOCE', 'ENFERMAGEM', 'OUTROS']
@@ -59,6 +87,7 @@ def preencher(serie):
 
 
 def montar(R):
+    uf = R.get('uf', 'ES')
     ano_faf = int(R['fafAno'][0])
     ano_em = int(R['emAnoCorrente'])
     ente_faf = lambda mun, tp: EST if tp == 'ESTADUAL' else mun
@@ -159,10 +188,12 @@ def montar(R):
         auts = [ix(parl_nomes, a.strip()) for a in (aut or '').split(';') if a.strip()]
         prop_d[ente_em(esf, mun)].append([pid, ix(ent_nomes, ent), ix(tipo_nomes, tipo), round(p or 0), round(e or 0), round(g or 0), auts])
 
+    oficiais, acc = nomes_oficiais(uf)
+
     def bloco(e, nome):
         f = entes[e]
         fe = sum(v for (ci, b), v in f['comp'].items() if b == 1)
-        return dict(n=nome, pop=f['pop'], fb=round(f['fb'], 2), fl=round(f['fl'], 2), fe=fe, fm=round(f['fb'] - fe, 2),
+        return dict(n=nome, nm=oficiais.get(sem_acento(nome), '') if e != EST else '', pop=f['pop'], fb=round(f['fb'], 2), fl=round(f['fl'], 2), fe=fe, fm=round(f['fb'] - fe, 2),
                     mes=f['mes'], comp=[[ci, b, v] for (ci, b), v in f['comp'].items()],
                     s=saldo_ult.get(e, 0), sal=serie[e], tri=trimestral(e),
                     ano=sorted([[y] + [round(x) for x in v] for y, v in ano_d[e].items()]),
@@ -170,8 +201,8 @@ def montar(R):
                     prop=sorted(prop_d[e], key=lambda x: -(x[3] - x[5])))
 
     D = dict(meta=dict(extracao=dt.datetime.fromisoformat(R['extraidoEm'].replace('Z', '+00:00')).astimezone(dt.timezone(dt.timedelta(hours=-3))).strftime('%d/%m/%Y %H:%M'),
-                       saldoData=ult.strftime('%d/%m/%Y'), anoFaf=ano_faf, anoEm=ano_em, fns=R.get('apps', {})),
-             months=meses, comp=comp_nomes, parl=parl_nomes, ent=ent_nomes, tipo=tipo_nomes, grupos=GRUPOS,
+                       saldoData=ult.strftime('%d/%m/%Y'), anoFaf=ano_faf, anoEm=ano_em, fns=R.get('apps', {}), uf=uf),
+             acc=acc, months=meses, comp=comp_nomes, parl=parl_nomes, ent=ent_nomes, tipo=tipo_nomes, grupos=GRUPOS,
              tri=[t[0] for t in tri],
              m=[bloco(mn, mn) for mn in municipios], EST=bloco(EST, 'GOVERNO DO ESTADO'))
     # série total do ES (preenchendo pontos removidos de cada ente)
@@ -185,7 +216,12 @@ def montar(R):
 def validar(D):
     """Checagens mínimas antes de publicar. Lança erro se algo estiver fora do esperado."""
     erros = []
-    if len(D['m']) != 78: erros.append(f"esperados 78 municípios, vieram {len(D['m'])}")
+    uf = D['meta'].get('uf', 'ES'); esp = ESPERADOS.get(uf)
+    # tolera até 1% de municípios sem repasse no ano (nunca mais do que o total do IBGE)
+    if esp and not (esp * 0.99 <= len(D['m']) <= esp):
+        erros.append(f"{uf}: esperados {esp} municípios, vieram {len(D['m'])}")
+    elif esp and len(D['m']) != esp:
+        print(f"aviso: {uf} com {len(D['m'])} de {esp} municípios no fundo a fundo")
     fb = sum(m['fb'] for m in D['m']) + D['EST']['fb']
     if fb <= 0: erros.append('repasse fundo a fundo zerado')
     s = sum(m['s'] for m in D['m']) + D['EST']['s']
@@ -196,11 +232,31 @@ def validar(D):
     hoje = datetime.date.today().year
     if not (hoje - 1 <= D['meta']['anoFaf'] <= hoje): erros.append(f"ano do fundo a fundo fora do esperado: {D['meta']['anoFaf']}")
     if erros: raise SystemExit('VALIDAÇÃO FALHOU: ' + '; '.join(erros))
-    return dict(faf=round(fb), saldo=round(s), emendas=round(ep))
+    return dict(uf=uf, municipios=len(D['m']), faf=round(fb), saldo=round(s), emendas=round(ep))
+
+
+def comparar(n, a):
+    """Trava de segurança: recusa publicar se o dado novo variar demais em relação ao publicado."""
+    if not a.get('m') or a.get('meta', {}).get('uf', 'ES') != n['meta'].get('uf', 'ES'):
+        return
+    tot = lambda d: sum(m['s'] for m in d['m']) + d['EST']['s']
+    fb = lambda d: sum(m['fb'] for m in d['m']) + d['EST']['fb']
+    tn, ta = tot(n), tot(a)
+    if n['meta']['anoFaf'] == a['meta']['anoFaf'] and fb(a) and not 0.6 < fb(n) / fb(a) < 1.5:
+        raise SystemExit(f"variação suspeita do fundo a fundo: {fb(a):.0f} -> {fb(n):.0f}; publicação suspensa")
+    if ta and abs(tn / ta - 1) > 0.4:
+        raise SystemExit(f'variação suspeita do saldo total: {ta:.0f} -> {tn:.0f}; publicação suspensa')
+    print(f'saldo total: {ta:.0f} -> {tn:.0f}')
 
 
 if __name__ == '__main__':
-    R = json.load(open(sys.argv[1]))
+    args = sys.argv[1:]
+    anterior = None
+    if '--anterior' in args:
+        i = args.index('--anterior'); anterior = args[i + 1]; del args[i:i + 2]
+    R = json.load(open(args[0], encoding='utf-8'))
     D = montar(R)
     print('conferência:', validar(D))
-    json.dump(D, open(sys.argv[2], 'w'), ensure_ascii=False, separators=(',', ':'))
+    if anterior and pathlib.Path(anterior).exists():
+        comparar(D, json.load(open(anterior, encoding='utf-8')))
+    json.dump(D, open(args[1], 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))

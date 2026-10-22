@@ -1,4 +1,4 @@
-name: Robo InvestSUS (Radar de Recursos SUS ES)
+name: Robo InvestSUS (Radar de Recursos SUS ES, MG e MA)
 
 # Agendamento desligado: o InvestSUS bloqueia os servidores do GitHub (teste de 15/10/2026, HTTP 403).
 # A execucao diaria roda no computador do Rafael. Manter apenas o disparo manual.
@@ -23,35 +23,18 @@ jobs:
           pip install -q playwright
           python -m playwright install --with-deps chromium > /dev/null
 
-      - name: Extrair dados do InvestSUS
+      - name: Extrair dados do InvestSUS (ES, MG e MA)
         working-directory: robo
         run: |
           for t in 1 2 3; do
-            if [ $t -eq 1 ]; then python extrair.py bruto.json && break
-            else xvfb-run -a env HEADLESS=0 python extrair.py bruto.json && break; fi
-            echo "falha na tentativa $t"; [ $t -eq 3 ] && exit 1; sleep 60
+            FALTA=""; for uf in ES MG MA; do [ -s "bruto-$uf.json" ] || FALTA="$FALTA $uf"; done
+            [ -z "$FALTA" ] && break
+            if [ $t -eq 1 ]; then python extrair.py bruto $FALTA || true
+            else xvfb-run -a env HEADLESS=0 python extrair.py bruto $FALTA || true; fi
+            echo "faltando:$FALTA (tentativa $t)"; sleep 60
           done
 
-      - name: Montar e conferir
-        working-directory: robo
-        run: |
-          python montar.py bruto.json dados.json
-          curl -fsS "https://partelli.pro/fundo/dados.json?x=$(date +%s)" -o publicado.json || echo '{}' > publicado.json
-          python - <<'PY'
-          import json, sys
-          n = json.load(open('dados.json')); a = json.load(open('publicado.json'))
-          tot = lambda d: sum(m['s'] for m in d['m']) + d['EST']['s']
-          if a.get('m'):
-              tn, ta = tot(n), tot(a)
-              print(f'saldo total: {ta:.0f} -> {tn:.0f}')
-              fb = lambda d: sum(m['fb'] for m in d['m']) + d['EST']['fb']
-              if n['meta']['anoFaf'] == a['meta']['anoFaf'] and fb(a) and not 0.6 < fb(n) / fb(a) < 1.5:
-                  sys.exit('variacao suspeita do fundo a fundo; publicacao suspensa')
-              if ta and abs(tn / ta - 1) > 0.4:
-                  sys.exit('variacao suspeita do saldo total; publicacao suspensa')
-          PY
-
-      - name: Enviar ao site
+      - name: Montar, conferir e enviar ao site
         working-directory: robo
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
@@ -61,13 +44,20 @@ jobs:
           mkdir -p ~/.config/robo_investsus
           umask 077
           printf 'FTP_HOST=%s\nFTP_USUARIO=%s\nFTP_SENHA=%s\nFTP_PASTA=domains/partelli.pro/public_html/fundo\n' "$FTP_HOST" "$FTP_USUARIO" "$FTP_SENHA" > ~/.config/robo_investsus/.env
-          python enviar.py dados.json
+          ERRO=0
+          for uf in ES MG MA; do
+            A=dados.json; [ $uf != ES ] && A=dados-$(echo $uf | tr A-Z a-z).json
+            [ -s bruto-$uf.json ] || { echo "$uf: sem extração"; ERRO=1; continue; }
+            curl -fsS "https://partelli.pro/fundo/$A?x=$(date +%s)" -o publicado-$uf.json || rm -f publicado-$uf.json
+            python montar.py bruto-$uf.json $A --anterior publicado-$uf.json && python enviar.py $A || { echo "$uf: publicação suspensa"; ERRO=1; }
+          done
+          exit $ERRO
 
       - name: Guardar dados do dia
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: dados-${{ github.run_id }}
-          path: robo/dados.json
+          path: robo/dados*.json
           retention-days: 30
           if-no-files-found: ignore

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Instalação do robô do Radar de Recursos SUS ES no servidor Ubuntu.
+# Instalação do robô do Radar de Recursos SUS (ES, MG e MA) no servidor Ubuntu.
 # Rode uma vez, dentro da pasta do robô:  bash instalar.sh
 set -euo pipefail
 DIR="$(cd "$(dirname "$0")" && pwd)"

@@ -4,17 +4,17 @@ Robôs de Rafael Partelli para acesso a dados do Ministério da Saúde e monitor
 
 | Robô | Pasta | Onde roda | Agenda | Saída |
 |---|---|---|---|---|
-| Radar de Recursos SUS: Espírito Santo (InvestSUS/FNS) | `robo/` | Computador do Rafael (cron); GitHub Actions só manual | Diária | https://partelli.pro/gestor/recursos/ |
+| Radar de Recursos SUS: ES, MG e MA (InvestSUS/FNS) | `robo/` | Computador do Rafael (cron); GitHub Actions só manual | Diária | https://partelli.pro/gestor/recursos/ (MG: `?uf=mg`, MA: `?uf=ma`) |
 | Radar Diário de Portarias MS (DOU/INLABS) | `robo_dou/` | **Hostinger** (cron, dias úteis 8h30 e 11h00). Versão local desativada em 15/10/2026 | Dias úteis | https://partelli.pro/radar/ |
 | Radar Saúde Pública (newsletter) | `tarefas_agendadas/` | Tarefa agendada do Claude (nuvem) | Seg, qua e sex às 06:53 | Newsletter HTML por e-mail |
 | Painel TCE-ES: Gastos com a função saúde | `robo_tce_es/` | **GitHub Actions** (HTTP puro, sem navegador) | Seg, qua e sex às 06:30 | https://partelli.pro/tce |
 
-## 1. Radar de Recursos SUS: Espírito Santo (`robo/`)
+## 1. Radar de Recursos SUS: ES, MG e MA (`robo/`)
 
-Lê diariamente os Painéis InvestSUS do Fundo Nacional de Saúde (repasses fundo a fundo, saldos em conta e emendas parlamentares), monta o arquivo `dados.json` e publica no site por FTP.
+Lê diariamente os Painéis InvestSUS do Fundo Nacional de Saúde (repasses fundo a fundo, saldos em conta e emendas parlamentares) para Espírito Santo, Minas Gerais e Maranhão (estes dois desde 22/10/2026), monta um arquivo por estado (`dados.json`, `dados-mg.json`, `dados-ma.json`) e publica no site por FTP. A página tem abas por estado.
 
-- `robo/extrair.js` e `robo/extrair.py`: abrem o InvestSUS em navegador automático e extraem os dados brutos do ES.
-- `robo/montar.py`: transforma os dados brutos no `dados.json` da página e confere os totais.
+- `robo/extrair.js` e `robo/extrair.py`: abrem o InvestSUS em navegador automático e extraem os dados brutos de cada UF.
+- `robo/montar.py`: transforma os dados brutos no JSON da página, restaura acentos dos nomes (`robo/municipios_ibge.json`) e confere os totais.
 - `robo/enviar.py`: envia ao site e guarda a versão anterior como `dados_anterior.json`.
 - `.github/workflows/robo.yml`: execução manual em Actions › Run workflow. O agendamento diário está desligado porque o InvestSUS bloqueia os servidores do GitHub (teste de 15/10/2026, HTTP 403); a rotina diária roda no computador do Rafael.
 - `.github/workflows/teste.yml`: teste rápido de acesso ao InvestSUS.
@@ -31,7 +31,7 @@ A senha fica só nos segredos do GitHub e nunca aparece no código nem nos regis
 
 ### Trava de segurança
 
-Se o saldo total variar mais de 40% em relação ao que está publicado, o robô não publica e a execução aparece com erro em Actions.
+Se o saldo total de um estado variar mais de 40% em relação ao que está publicado, o robô não publica aquele estado e registra o motivo (no log local ou como erro em Actions).
 
 ## 2. Radar Diário de Portarias MS (`robo_dou/`)
 
