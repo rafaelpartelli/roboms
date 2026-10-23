@@ -212,9 +212,9 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
 <section class="page-hero rr-hero">
   <div class="wrap">
     <p class="crumb"><a href="/">Início</a> &#8250; <a href="/gestor/">Área do Gestor</a> &#8250; Radar de Recursos SUS</p>
-    <p class="rr-sel" id="rrUpd" role="status"><span>Atualizado em <span class="dt-extracao">...</span></span><span class="sub" id="rrUpdSub"></span><span class="idade" id="rrIdade" hidden></span></p>
+    <p class="rr-sel" id="rrUpd" role="status"><span>Atualizado em <span class="dt-extracao">...</span></span><span class="sub" id="rrUpdSub"></span><span class="idade" id="rrIdade" hidden></span><span class="sub" id="rrProx" style="display:block;margin:4px 0 0"></span></p>
     <h1 id="rrH1">Radar de Recursos SUS: Brasil</h1>
-    <p class="lead" id="rrLead">Repasses fundo a fundo, emendas parlamentares e saldos em conta dos 26 estados, do Distrito Federal e dos seus municípios, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. Clique em um estado no mapa ou escolha na lista para ver o detalhe de cada município.</p>
+    <p class="lead" id="rrLead">Repasses fundo a fundo, emendas parlamentares e saldos em conta dos 26 estados, do Distrito Federal e dos seus municípios, atualizados toda sexta-feira, às 15h, a partir dos Painéis InvestSUS do Fundo Nacional de Saúde. Clique em um estado no mapa ou escolha na lista para ver o detalhe de cada município.</p>
     <div class="uf-nav"><a href="/gestor/recursos/" id="lnkBR">Mapa do Brasil</a><label for="ufSel">Estado:</label><select id="ufSel" aria-label="Escolha o estado"><option value="">Escolha um estado</option></select></div>
   </div>
 </section>
@@ -308,7 +308,7 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
   </div>
 
   <div class="rr-fonte">
-    <p><b>Fonte:</b> Fundo Nacional de Saúde, Painéis InvestSUS (Repasses Fundo a Fundo, Saldos de Repasses e Emendas Parlamentares). Extração automática diária; última em <span class="dt-extracao"></span>, com saldos na posição de <span class="dt-saldo"></span>. Última carga do FNS: <span class="dt-fns"></span>.</p>
+    <p><b>Fonte:</b> Fundo Nacional de Saúde, Painéis InvestSUS (Repasses Fundo a Fundo, Saldos de Repasses e Emendas Parlamentares). Extração automática semanal (sextas-feiras, a partir das 15h); última em <span class="dt-extracao"></span>, com saldos na posição de <span class="dt-saldo"></span>. Última carga do FNS: <span class="dt-fns"></span>.</p>
     <p><b>Notas:</b> repasses em valores brutos; emendas pelo ano da proposta, incluindo propostas de entidades sediadas no município; repasses, emendas e saldos do Fundo Estadual de Saúde foram separados dos dados da capital (<span class="uf-cap">Vitória</span>) com base na esfera administrativa registrada no painel; meses com carga incompleta no painel foram omitidos das séries de saldo. População conforme base do próprio painel.</p>
     <p>Dados públicos de transparência ativa, organizados por Rafael Partelli (CRA/ES 15721). Para valores oficiais, consulte os <a href="https://investsuspaineis.saude.gov.br/extensions/CGIN_InvestsusPaineis/CGIN_InvestsusPaineis.html" target="_blank" rel="noopener">Painéis InvestSUS</a>.</p>
   </div>
@@ -340,24 +340,27 @@ const UI=UF?UFS[UF]:null;
 if(UI){document.getElementById('rrH1').textContent='Radar de Recursos SUS: '+UI.n;
 document.querySelectorAll('.uf-cap').forEach(e=>e.textContent=UI.capN);}
 if(UI&&UF!=='ES'){document.getElementById('notaVinc').textContent='';
-  document.getElementById('rrLead').textContent=`Repasses fundo a fundo, emendas parlamentares e saldos em conta dos municípios ${UI.de} e do Fundo Estadual de Saúde, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.`;}
+  document.getElementById('rrLead').textContent=`Repasses fundo a fundo, emendas parlamentares e saldos em conta dos municípios ${UI.de} e do Fundo Estadual de Saúde, atualizados toda sexta-feira, às 15h, a partir dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.`;}
 // ---------- datas de atualização ----------
 const dtBR=s=>{const m=/(\d{2})\/(\d{2})\/(\d{4})(?:\s+(\d{2}):(\d{2}))?/.exec(s||'');return m?new Date(+m[3],m[2]-1,+m[1],+(m[4]||0),+(m[5]||0)):null;};
 const diasDesde=s=>{const d=dtBR(s);return d?Math.floor((Date.now()-d.getTime())/864e5):null;};
+const proximaSexta=()=>{const d=new Date(),dow=d.getDay();let k=(5-dow+7)%7;if(k===0&&d.getHours()>=15)k=7;const p=new Date(d.getFullYear(),d.getMonth(),d.getDate()+k);return p.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'});};
 const idadeTxt=n=>n==null?'':n<=0?'hoje':n===1?'há 1 dia':`há ${n} dias`;
 function marcarAtualizacao(ext,sub){
   document.querySelectorAll('.dt-extracao').forEach(e=>e.textContent=ext||'–');
   document.getElementById('rrUpdSub').textContent=sub||'';
   const n=diasDesde(ext),el=document.getElementById('rrIdade');
   if(n!=null){el.hidden=false;el.textContent=idadeTxt(n);}
-  const bar=document.getElementById('updBar');if(bar)bar.classList.toggle('velho',n!=null&&n>3);
-  if(n!=null&&n>3)el.textContent+=' · dado defasado';
+  // atualização semanal: dado é considerado defasado só depois de 8 dias (perdeu uma sexta-feira)
+  const bar=document.getElementById('updBar');if(bar)bar.classList.toggle('velho',n!=null&&n>8);
+  if(n!=null&&n>8)el.textContent+=' · dado defasado';
+  const px=document.getElementById('rrProx');if(px)px.textContent='Atualização semanal: toda sexta-feira, a partir das 15h · próxima em '+proximaSexta();
 }
 const ACC0={};
 function iniciar(D){
 if(D.acc)Object.assign(ACC0,D.acc);
 const NM=D.m.length;
-document.getElementById('rrLead').textContent=`Repasses fundo a fundo, emendas parlamentares e saldos em conta ${NM?`dos ${NM} municípios ${UI.de} e `:''}do Fundo ${UF==='DF'?'de Saúde do Distrito Federal':'Estadual de Saúde'}, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.`;
+document.getElementById('rrLead').textContent=`Repasses fundo a fundo, emendas parlamentares e saldos em conta ${NM?`dos ${NM} municípios ${UI.de} e `:''}do Fundo ${UF==='DF'?'de Saúde do Distrito Federal':'Estadual de Saúde'}, atualizados toda sexta-feira, às 15h, a partir dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.`;
 const ANO=D.meta.anoFaf;
 document.querySelectorAll('.ano').forEach(e=>e.textContent=ANO);
 marcarAtualizacao(D.meta.extracao,'· saldos em conta na posição de '+D.meta.saldoData);
@@ -623,7 +626,7 @@ let m0='';try{m0=new URLSearchParams(location.search).get('m')||'';}catch(e){}
 const i0=m0==='estado'?'EST':D.m.findIndex(m=>slug(m.n)===m0);
 setSel(i0==='EST'?'EST':(i0>=0?i0:'ES'),false);
 }
-if(UF)fetch(UI.arq+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(iniciar).catch(err=>{console.error(err);const sem=String(err&&err.message)==='404';document.querySelector('#rrUpd span').textContent=sem?'Dados em preparação: ainda sem extração publicada':'Não foi possível ler a data de atualização';document.getElementById('kpis').innerHTML=sem?`<div class="alerta a">Os dados ${UI.de} estão em preparação e aparecem aqui após a próxima extração diária do InvestSUS. Enquanto isso, veja o <a href="/gestor/recursos/">mapa do Brasil</a>.</div>`:'<div class="alerta r">Não foi possível carregar os dados agora. Atualize a página em instantes.</div>';});
+if(UF)fetch(UI.arq+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(iniciar).catch(err=>{console.error(err);const sem=String(err&&err.message)==='404';document.querySelector('#rrUpd span').textContent=sem?'Dados em preparação: ainda sem extração publicada':'Não foi possível ler a data de atualização';document.getElementById('kpis').innerHTML=sem?`<div class="alerta a">Os dados ${UI.de} estão em preparação e aparecem aqui após a próxima atualização semanal (sexta-feira, a partir das 15h). Enquanto isso, veja o <a href="/gestor/recursos/">mapa do Brasil</a>.</div>`:'<div class="alerta r">Não foi possível carregar os dados agora. Atualize a página em instantes.</div>';});
 else Promise.all([fetch('/fundo/brasil.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{meta:{},uf:{}}).catch(()=>({meta:{},uf:{}})),fetch('/gestor/recursos/mapa-brasil.json').then(r=>r.json())]).then(([B,M])=>brasil(B,M)).catch(err=>{console.error(err);document.getElementById('brKpi').innerHTML='<div class="alerta r">Não foi possível carregar o mapa agora. Atualize a página em instantes.</div>';});
 
 // ---------- panorama Brasil: mapa e ranking dos estados ----------
@@ -670,7 +673,7 @@ function brasil(B,M){
   const linha=(a,b)=>`<div class="lin"><span>${a}</span><b>${b}</b></div>`;
   function mostrar(s,ev){
     const u=U[s],n=UFS[s].n;let h=`<b class="t">${n}</b>`;
-    if(!u)h+='<div>Dados em preparação: aparecem após a próxima extração diária.</div>';
+    if(!u)h+='<div>Dados em preparação: aparecem após a próxima atualização semanal (sexta, 15h).</div>';
     else{const v=met.f(u),rk=rank.indexOf(s)+1;
       h+=`<div class="lin dest"><span>${met.l}</span><b>${met.fmt(v)}</b></div><div style="font-size:12px;color:var(--muted)">${rk?rk+'º de '+rank.length+' no ranking':''}</div>`
        +linha('Repasse fundo a fundo',mi(u.fb))+linha('Emendas propostas',mi(u.ep))+linha('Emendas pagas',pc(u.ep?u.eg/u.ep:null))+linha('Saldo em conta',mi(u.s))

@@ -31,10 +31,10 @@ chmod 600 "$CFG/.env"
 echo "4/5 Testando conexão com o site..."
 .venv/bin/python enviar.py --testar
 
-echo "5/5 Agendando: uma atualização por dia, na primeira hora em que o computador estiver ligado entre 8h15 e 22h15..."
+echo "5/5 Agendando: uma atualização por semana, toda sexta-feira a partir das 15h (ou assim que o computador for ligado depois disso)..."
 chmod +x robo.sh
 ( crontab -l 2>/dev/null | grep -v 'robo_investsus/robo.sh' ; echo "@reboot sleep 120 && $DIR/robo.sh"; echo "*/10 * * * * $DIR/robo.sh" ) | crontab -
 
 echo "Rodando a primeira execução agora (cerca de 1 minuto)..."
 "$DIR/robo.sh" --forcar && tail -n 5 "$DIR/logs/$(date +%Y-%m-%d).log"
-echo "Pronto. O robô atualiza o site uma vez por dia, sempre que o computador estiver ligado. Logs em $DIR/logs/"
+echo "Pronto. O robô atualiza o site toda sexta-feira a partir das 15h, sempre que o computador estiver ligado. Logs em $DIR/logs/"

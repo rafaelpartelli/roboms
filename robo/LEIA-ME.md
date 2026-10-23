@@ -1,6 +1,8 @@
 # Robô do Radar de Recursos SUS: Brasil, 26 estados e DF (partelli.pro/fundo)
 
-Atualiza diariamente os arquivos de dados do site com os Painéis InvestSUS do Fundo Nacional de Saúde, um por UF, e o resumo nacional usado no mapa do Brasil:
+**Agenda: semanal, toda sexta-feira a partir das 15h** (decisão de 23/10/2026; antes era diária). O cron confere a cada 10 minutos e ao ligar o computador; a rodada roda na primeira verificação a partir de sexta 15h e, se o computador estiver desligado nesse horário, assim que ele for ligado. A página considera o dado "defasado" após 8 dias e mostra a data da próxima atualização.
+
+Atualiza semanalmente os arquivos de dados do site com os Painéis InvestSUS do Fundo Nacional de Saúde, um por UF, e o resumo nacional usado no mapa do Brasil:
 
 | Arquivo no site | Conteúdo | Página |
 |---|---|---|
@@ -10,7 +12,7 @@ Atualiza diariamente os arquivos de dados do site com os Painéis InvestSUS do F
 
 Histórico: ES desde 13/10/2026; MG e MA incluídos em 22/10/2026; todas as UFs e o mapa do Brasil em 23/10/2026. O DF é tratado como ente único (Fundo de Saúde do DF, sem municípios). Para mudar a lista de UFs, ajuste `UFS` em `robo.sh` (ou rode `UFS="ES MG" ./robo.sh --forcar`) e a quantidade esperada em `montar.py` (`ESPERADOS`).
 
-A página mostra sempre, em destaque no topo, a data da extração (e a idade do dado, com aviso de "dado defasado" acima de 3 dias); no mapa, cada estado tem a sua data no ranking e na caixa de detalhe.
+A página mostra sempre, em destaque no topo, a data da extração, a idade do dado (com aviso de "dado defasado" acima de 8 dias) e a data da próxima atualização; no mapa, cada estado tem a sua data no ranking e na caixa de detalhe.
 
 ## O que ele faz
 
@@ -31,7 +33,7 @@ cd ~/robo_investsus
 bash instalar.sh
 ```
 
-O instalador cria o ambiente Python, instala o navegador automático, pede as credenciais FTP (gravadas só no servidor, em `~/.config/robo_investsus/.env`, com acesso restrito ao seu usuário), testa a conexão, agenda a execução diária e já roda a primeira atualização.
+O instalador cria o ambiente Python, instala o navegador automático, pede as credenciais FTP (gravadas só no servidor, em `~/.config/robo_investsus/.env`, com acesso restrito ao seu usuário), testa a conexão, agenda a execução semanal (sextas, 15h) e já roda a primeira atualização.
 
 Se você criar uma conta FTP restrita à pasta `fundo`, informe `.` quando o instalador pedir a pasta do site.
 
@@ -43,11 +45,11 @@ No computador onde ele roda:
 bash ~/robo_investsus/atualizar.sh
 ```
 
-O script baixa a versão do GitHub, mantém o agendamento e roda uma atualização completa na hora (com as 27 UFs, conte cerca de 1 hora).
+O script baixa a versão do GitHub e mantém o agendamento; só roda a extração se a rodada da semana estiver pendente. Para forçar uma rodada completa agora (cerca de 1 hora): `bash ~/robo_investsus/atualizar.sh --forcar`.
 
 ## Acompanhamento
 
-- Logs diários: `~/robo_investsus/logs/AAAA-MM-DD.log`
+- Logs (um arquivo por dia de execução): `~/robo_investsus/logs/AAAA-MM-DD.log`
 - Rodar manualmente: `~/robo_investsus/robo.sh --forcar` (todas as UFs) ou `UFS=MG ~/robo_investsus/robo.sh --forcar` (só uma)
 - Marcas de publicação do dia: `saida/ultimo_ok_<UF>` (uma por UF)
 - Ver agendamento: `crontab -l`

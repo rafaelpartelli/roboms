@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Robô diário do Radar de Recursos SUS (partelli.pro/fundo): 26 estados e Distrito Federal
+# Robô semanal (sextas, 15h) do Radar de Recursos SUS (partelli.pro/fundo): 26 estados e Distrito Federal
 # extrai do InvestSUS -> monta o JSON de cada UF -> confere -> envia ao site -> atualiza o resumo do mapa (brasil.json)
 # Cada UF é publicada de forma independente: falha em uma não impede as outras.
 set -euo pipefail
@@ -16,10 +16,17 @@ publicado() { [ "$1" = ES ] && echo saida/publicado.json || echo "saida/publicad
 # migração: marca antiga de execução do ES
 [ -f saida/ultimo_ok ] && [ ! -f saida/ultimo_ok_ES ] && cp saida/ultimo_ok saida/ultimo_ok_ES
 
-# UFs que ainda não foram publicadas hoje (o agendamento confere a cada 10 minutos e ao ligar o computador)
+# Atualização SEMANAL: toda sexta-feira a partir das 15h (decisão de 23/10/2026).
+# ALVO = data da sexta-feira mais recente cujo horário das 15h já passou. O agendamento confere a cada
+# 10 minutos e ao ligar o computador; se o computador estiver desligado na sexta às 15h, a rodada
+# acontece assim que ele for ligado. Cada UF publicada a partir do ALVO não roda de novo até a próxima sexta.
+DOW=$(date +%u); HM=$(date +%H%M)
+if [ "$DOW" -eq 5 ] && [ "$HM" -ge 1500 ]; then VOLTA=0; else VOLTA=$(( (DOW - 5 + 7) % 7 )); [ "$VOLTA" -eq 0 ] && VOLTA=7; fi
+ALVO=$(date -d "-$VOLTA days" +%Y-%m-%d)
 PEND=()
 for uf in $UFS; do
-  if [ $FORCAR -eq 1 ] || [ "$(cat "saida/ultimo_ok_$uf" 2>/dev/null)" != "$HOJE" ]; then PEND+=("$uf"); fi
+  ULT="$(cat "saida/ultimo_ok_$uf" 2>/dev/null || echo 0000-00-00)"
+  if [ $FORCAR -eq 1 ] || [[ "$ULT" < "$ALVO" ]]; then PEND+=("$uf"); fi
 done
 [ ${#PEND[@]} -eq 0 ] && exit 0
 
