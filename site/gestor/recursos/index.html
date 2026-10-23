@@ -701,7 +701,7 @@ function brasil(B,M){
       else{p.classList.remove('sem');p.setAttribute('fill',RAMP[c]);L[s].setAttribute('fill',TXT[c]);}
       p.setAttribute('aria-label',`${nome}: `+(c==null?'dados em preparação':`${met.l} ${met.fmt(val(s))}, ${rank.indexOf(s)+1}º de ${n}`));});
     // legenda por faixa
-    const fx=[4,3,2,1,0].map(c=>{const m=rank.filter(s=>cls[s]===c);return m.length?`<span><i style="background:${RAMP[c]}"></i>${met.fmt(val(m[m.length-1]))} a ${met.fmt(val(m[0]))} (${m.length} UF${m.length>1?'s':''})</span>`:'';}).join('');
+    const fx=[4,3,2,1,0].map(c=>{const m=rank.filter(s=>cls[s]===c);return m.length?`<span><i style="background:${RAMP[c]}"></i>${met.fmt(val(m[m.length-1]))===met.fmt(val(m[0]))?met.fmt(val(m[0])):met.fmt(val(m[m.length-1]))+' a '+met.fmt(val(m[0]))} (${m.length} UF${m.length>1?'s':''})</span>`:'';}).join('');
     document.getElementById('brLeg').innerHTML=`<b style="color:var(--txt)">Faixas do ranking (${met.t}):</b>`+fx+(n<27?`<span><i class="sem"></i>Em preparação (${27-n})</span>`:'');
     // ranking
     const max=Math.max(...rank.map(val),0);
