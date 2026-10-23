@@ -51,8 +51,11 @@ for tentativa in 1 2 3; do
   for uf in "${PEND[@]}"; do [ -s "bruto/$HOJE-$uf.json" ] || FALTA+=("$uf"); done
   [ ${#FALTA[@]} -eq 0 ] && break
   [ $tentativa -gt 1 ] && { echo "falha na extração de ${FALTA[*]} (tentativa $((tentativa - 1)))"; sleep 120; }
-  if [ $tentativa -eq 1 ]; then "$PY" extrair.py "bruto/$HOJE" "${FALTA[@]}" || true
-  else xvfb-run -a env HEADLESS=0 "$PY" extrair.py "bruto/$HOJE" "${FALTA[@]}" || true; fi
+  # um processo por UF: libera a memória a cada estado (no notebook de 4 GB o processo único foi encerrado por falta de memória em 23/10/2026)
+  for uf in "${FALTA[@]}"; do
+    if [ $tentativa -eq 1 ]; then "$PY" -u extrair.py "bruto/$HOJE" "$uf" || true
+    else xvfb-run -a env HEADLESS=0 "$PY" -u extrair.py "bruto/$HOJE" "$uf" || true; fi
+  done
 done
 
 ERROS=0; NOVAS=0

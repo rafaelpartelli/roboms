@@ -14,7 +14,7 @@ A página mostra sempre, em destaque no topo, a data da extração (e a idade do
 
 ## O que ele faz
 
-1. **extrair.py**: abre o InvestSUS em um navegador automático e executa as consultas do `extrair.js` (repasses fundo a fundo, saldos por tipo de conta, repasses por conta e emendas) para cada UF, gravando `bruto/AAAA-MM-DD-UF.json`. Um navegador novo é aberto para cada UF. O ES leva cerca de 15 segundos; estimativa para as 27 UFs: de 20 a 40 minutos por dia, a confirmar na primeira execução. Falha em uma UF não impede as outras.
+1. **extrair.py**: abre o InvestSUS em um navegador automático e executa as consultas do `extrair.js` (repasses fundo a fundo, saldos por tipo de conta, repasses por conta e emendas) para cada UF, gravando `bruto/AAAA-MM-DD-UF.json`. O `robo.sh` chama o `extrair.py` uma vez por UF (processo e navegador novos a cada estado), o que libera memória e escreve o progresso no log em tempo real. Primeira rodada completa (23/10/2026, notebook de 4 GB): 27 UFs publicadas em 1 hora (17:50 a 18:49); UFs pequenas levam de 15 a 60 segundos, MG e SP vários minutos. Nessa rodada, ainda com um processo único, o sistema encerrou a extração por falta de memória no último estado (TO), recuperado na segunda tentativa; por isso a mudança para um processo por UF. Falha em uma UF não impede as outras.
 2. **montar.py**: transforma os dados brutos no JSON do site, restaura os acentos dos nomes de municípios (lista oficial do IBGE em `municipios_ibge.json`) e confere o resultado (quantidade de municípios da UF, totais acima de zero). Com `--anterior`, compara com a última publicação daquela UF.
 3. **robo.sh**: executa tudo, UF por UF. Se a extração falhar, tenta mais duas vezes com intervalo de 2 minutos; depois disso, o agendamento tenta de novo no máximo 4 rodadas por dia. Se o saldo total de uma UF variar mais de 40% (ou o fundo a fundo sair da faixa de 60% a 150%) em relação à última publicação, **aquela UF não é publicada** e o motivo vai para o log.
 4. **enviar.py**: envia cada arquivo por FTP com o mesmo nome e guarda a versão anterior como `dados_anterior.json`, `dados-mg_anterior.json` etc.
@@ -43,7 +43,7 @@ No computador onde ele roda:
 bash ~/robo_investsus/atualizar.sh
 ```
 
-O script baixa a versão do GitHub, mantém o agendamento e roda uma atualização completa na hora (com as 27 UFs, conte de 20 a 40 minutos).
+O script baixa a versão do GitHub, mantém o agendamento e roda uma atualização completa na hora (com as 27 UFs, conte cerca de 1 hora).
 
 ## Acompanhamento
 
