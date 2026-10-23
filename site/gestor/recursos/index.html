@@ -479,9 +479,9 @@ function render(){
   document.getElementById('ctx').textContent=isES?`Panorama geral: ${NM} municípios e Fundo Estadual`:isEST?'Gestão estadual: Fundo Estadual de Saúde (SESA)':'Gestão municipal: '+nome+(o.pop?' · '+o.pop.toLocaleString('pt-BR')+' habitantes':'');
   document.getElementById('limpar').style.display=isES?'none':'';
   document.querySelectorAll('[data-u]').forEach(b=>b.classList.toggle('on',b.dataset.u===atual));
-  // ranking logo após o resumo no panorama geral; ao fim nas demais visões
+  // gráficos primeiro; panorama dos municípios sempre depois do saldo, antes da leitura estratégica
   const rk=document.getElementById('ranking'),main=document.querySelector('.rr');
-  if(isES)main.insertBefore(rk,document.getElementById('faf'));else main.insertBefore(rk,document.getElementById('leitura'));
+  main.insertBefore(rk,document.getElementById('leitura'));
   document.getElementById('rkTit').textContent=isES?`Panorama dos ${NM} municípios`:'Ranking municipal';
   // KPIs
   const k=[];
