@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Robô diário do Radar de Recursos SUS (partelli.pro/fundo): ES, MG e MA
-# extrai do InvestSUS -> monta o JSON de cada UF -> confere -> envia ao site
+# Robô diário do Radar de Recursos SUS (partelli.pro/fundo): 26 estados e Distrito Federal
+# extrai do InvestSUS -> monta o JSON de cada UF -> confere -> envia ao site -> atualiza o resumo do mapa (brasil.json)
 # Cada UF é publicada de forma independente: falha em uma não impede as outras.
 set -euo pipefail
 DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$DIR"
 HOJE=$(date +%Y-%m-%d)
-UFS="${UFS:-ES MG MA}"
+UFS="${UFS:-ES AC AL AP AM BA CE DF GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO}"
 FORCAR=0; [ "${1:-}" = "--forcar" ] && FORCAR=1
 mkdir -p bruto saida logs
 
@@ -55,7 +55,7 @@ for tentativa in 1 2 3; do
   else xvfb-run -a env HEADLESS=0 "$PY" extrair.py "bruto/$HOJE" "${FALTA[@]}" || true; fi
 done
 
-ERROS=0
+ERROS=0; NOVAS=0
 for uf in "${PEND[@]}"; do
   B="bruto/$HOJE-$uf.json"; A="saida/$(arquivo "$uf")"; P="$(publicado "$uf")"
   if [ ! -s "$B" ]; then echo "$uf: extração falhou nas 3 tentativas"; ERROS=1; continue; fi
@@ -65,8 +65,14 @@ for uf in "${PEND[@]}"; do
   cp "$A" "$P"
   echo "$HOJE" > "saida/ultimo_ok_$uf"
   [ "$uf" = ES ] && echo "$HOJE" > saida/ultimo_ok
-  echo "$uf: publicado"
+  echo "$uf: publicado"; NOVAS=1
 done
+
+# resumo nacional para o mapa do Brasil, com a última versão publicada de cada UF
+if [ $NOVAS -eq 1 ] || [ $FORCAR -eq 1 ]; then
+  if "$PY" montar.py --resumo saida/brasil.json saida/publicado*.json && "$PY" enviar.py saida/brasil.json; then echo "resumo nacional publicado"
+  else echo "falha no resumo nacional"; ERROS=1; fi
+fi
 
 # mantém 60 dias de histórico bruto e logs
 find bruto -name '*.json' -mtime +60 -delete; find logs -name '*.log' -mtime +60 -delete

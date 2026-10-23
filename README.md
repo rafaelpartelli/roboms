@@ -4,14 +4,14 @@ Robôs de Rafael Partelli para acesso a dados do Ministério da Saúde e monitor
 
 | Robô | Pasta | Onde roda | Agenda | Saída |
 |---|---|---|---|---|
-| Radar de Recursos SUS: ES, MG e MA (InvestSUS/FNS) | `robo/` | Computador do Rafael (cron); GitHub Actions só manual | Diária | https://partelli.pro/gestor/recursos/ (MG: `?uf=mg`, MA: `?uf=ma`) |
+| Radar de Recursos SUS: Brasil, 26 estados e DF (InvestSUS/FNS) | `robo/` | Computador do Rafael (cron); GitHub Actions só manual | Diária | https://partelli.pro/gestor/recursos/ (mapa do Brasil; cada UF em `?uf=xx`) |
 | Radar Diário de Portarias MS (DOU/INLABS) | `robo_dou/` | **Hostinger** (cron, dias úteis 8h30 e 11h00). Versão local desativada em 15/10/2026 | Dias úteis | https://partelli.pro/radar/ |
 | Radar Saúde Pública (newsletter) | `tarefas_agendadas/` | Tarefa agendada do Claude (nuvem) | Seg, qua e sex às 06:53 | Newsletter HTML por e-mail |
 | Painel TCE-ES: Gastos com a função saúde | `robo_tce_es/` | **GitHub Actions** (HTTP puro, sem navegador) | Seg, qua e sex às 06:30 | https://partelli.pro/tce |
 
-## 1. Radar de Recursos SUS: ES, MG e MA (`robo/`)
+## 1. Radar de Recursos SUS: Brasil, 26 estados e DF (`robo/`)
 
-Lê diariamente os Painéis InvestSUS do Fundo Nacional de Saúde (repasses fundo a fundo, saldos em conta e emendas parlamentares) para Espírito Santo, Minas Gerais e Maranhão (estes dois desde 22/10/2026), monta um arquivo por estado (`dados.json`, `dados-mg.json`, `dados-ma.json`) e publica no site por FTP. A página tem abas por estado.
+Lê diariamente os Painéis InvestSUS do Fundo Nacional de Saúde (repasses fundo a fundo, saldos em conta e emendas parlamentares) para as 27 UFs (todas desde 23/10/2026), monta um arquivo por UF (`dados.json` do ES, `dados-xx.json` das demais) e o resumo nacional `brasil.json`, e publica no site por FTP. A página abre no mapa interativo do Brasil, com ranking dos estados por escala de cor (6 indicadores), e cada estado abre o detalhe por município. A data de atualização fica sempre em destaque. Mapa: SVG Maps (@svg-maps/brazil), licença CC BY 4.0, em `site/gestor/recursos/mapa-brasil.json`.
 
 - `robo/extrair.js` e `robo/extrair.py`: abrem o InvestSUS em navegador automático e extraem os dados brutos de cada UF.
 - `robo/montar.py`: transforma os dados brutos no JSON da página, restaura acentos dos nomes (`robo/municipios_ibge.json`) e confere os totais.

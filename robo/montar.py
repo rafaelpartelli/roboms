@@ -2,14 +2,19 @@
 """Transforma a extração bruta do InvestSUS (bruto.json) no JSON de uma UF do Radar de Recursos SUS.
 
 Uso: python3 montar.py bruto.json dados.json [--anterior publicado.json]
+     python3 montar.py --resumo brasil.json saida/publicado*.json
 A UF vem do próprio arquivo bruto (campo "uf"). Com --anterior, compara com a última
 publicação e recusa (código 1) variações suspeitas de saldo ou de fundo a fundo.
+Com --resumo, junta os totais de cada UF publicada no brasil.json usado pelo mapa do Brasil.
 """
 import json, sys, statistics, unicodedata, pathlib, datetime as dt
 from collections import defaultdict
 
-# quantidade de municípios por UF (IBGE); a validação recusa extrações incompletas
-ESPERADOS = {'ES': 78, 'MG': 853, 'MA': 217}
+# quantidade de municípios por UF (IBGE, 5.570 municípios; o DF é ente único sem municípios)
+# a validação recusa extrações incompletas (abaixo de 97% do esperado)
+ESPERADOS = dict(AC=22, AL=102, AP=16, AM=62, BA=417, CE=184, DF=1, ES=78, GO=246, MA=217, MT=142, MS=79,
+                 MG=853, PA=144, PB=223, PR=399, PE=185, PI=224, RJ=92, RN=167, RS=497, RO=52, RR=15,
+                 SC=295, SP=645, SE=75, TO=139)
 NOMES_IBGE = pathlib.Path(__file__).parent / 'municipios_ibge.json'
 
 
@@ -94,9 +99,13 @@ def montar(R):
 
     # ---------------- Repasses fundo a fundo do ano corrente ----------------
     entes = defaultdict(lambda: dict(fb=0, fl=0, pop=None, mes=[0] * 12, comp={}))
+    pop_est = None
     for mun, tp, b, l, pop in R['fafTot']:
         e = entes[ente_faf(mun, tp)]; e['fb'] += b or 0; e['fl'] += l or 0
         if tp != 'ESTADUAL': e['pop'] = pop
+        elif isinstance(pop, (int, float)): pop_est = max(pop_est or 0, pop)
+    if uf == 'DF' and pop_est:  # DF: ente único, população vem dos repasses estaduais
+        entes[EST]['pop'] = pop_est
     for mun, tp, mes, v in R['fafMes']:
         entes[ente_faf(mun, tp)]['mes'][mes_num(mes) - 1] += round(v or 0)
     comp_nomes = []
@@ -217,10 +226,12 @@ def validar(D):
     """Checagens mínimas antes de publicar. Lança erro se algo estiver fora do esperado."""
     erros = []
     uf = D['meta'].get('uf', 'ES'); esp = ESPERADOS.get(uf)
-    # tolera até 1% de municípios sem repasse no ano (nunca mais do que o total do IBGE)
-    if esp and not (esp * 0.99 <= len(D['m']) <= esp):
+    # tolera até 3% de municípios fora do fundo a fundo e 2 a mais (municípios novos, distritos estaduais)
+    if uf == 'DF':
+        if len(D['m']) > 1: erros.append(f"DF: esperado ente único, vieram {len(D['m'])} municípios")
+    elif esp and not (esp * 0.97 <= len(D['m']) <= esp + 2):
         erros.append(f"{uf}: esperados {esp} municípios, vieram {len(D['m'])}")
-    elif esp and len(D['m']) != esp:
+    elif esp and uf != 'DF' and len(D['m']) != esp:
         print(f"aviso: {uf} com {len(D['m'])} de {esp} municípios no fundo a fundo")
     fb = sum(m['fb'] for m in D['m']) + D['EST']['fb']
     if fb <= 0: erros.append('repasse fundo a fundo zerado')
@@ -249,8 +260,34 @@ def comparar(n, a):
     print(f'saldo total: {ta:.0f} -> {tn:.0f}')
 
 
+def resumo(arquivos):
+    """Totais por UF para o mapa do Brasil (brasil.json)."""
+    U = {}
+    for arq in arquivos:
+        try:
+            D = json.load(open(arq, encoding='utf-8'))
+        except Exception as erro:
+            print('resumo: ignorado', arq, erro); continue
+        uf = D['meta'].get('uf', 'ES'); E = D['EST']; todos = D['m'] + [E]; ano = D['meta']['anoEm']
+        em = [sum(a[i] for m in todos for a in m['ano'] if a[0] == ano) for i in (1, 2, 3)]
+        pop = sum(m['pop'] or 0 for m in D['m']) or (E.get('pop') or 0)
+        U[uf] = dict(mun=len(D['m']), pop=pop,
+                     fb=round(sum(m['fb'] for m in todos)), fbEst=round(E['fb']),
+                     ep=round(em[0]), ee=round(em[1]), eg=round(em[2]), eq=sum(len(m['prop']) for m in todos),
+                     s=round(sum(m['s'] for m in todos)), sEst=round(E['s']),
+                     nIdx=sum(1 for m in D['m'] if m['fb'] and m['s'] / m['fb'] > 1),
+                     anoFaf=D['meta']['anoFaf'], anoEm=ano, saldoData=D['meta']['saldoData'], extracao=D['meta']['extracao'])
+    agora = dt.datetime.now(dt.timezone(dt.timedelta(hours=-3))).strftime('%d/%m/%Y %H:%M')
+    return dict(meta=dict(gerado=agora, ufs=len(U)), uf=dict(sorted(U.items())))
+
+
 if __name__ == '__main__':
     args = sys.argv[1:]
+    if args and args[0] == '--resumo':
+        B = resumo(args[2:])
+        if not B['uf']: raise SystemExit('resumo vazio: nenhuma UF publicada')
+        json.dump(B, open(args[1], 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+        print('resumo ok:', ', '.join(B['uf'])); sys.exit(0)
     anterior = None
     if '--anterior' in args:
         i = args.index('--anterior'); anterior = args[i + 1]; del args[i:i + 2]

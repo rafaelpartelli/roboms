@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Radar de Recursos SUS: repasses, emendas e saldos dos municípios do ES, MG e MA | Rafael Partelli</title>
-<meta name="description" content="Repasses fundo a fundo, emendas parlamentares e saldos em conta dos municípios do Espírito Santo, de Minas Gerais e do Maranhão, com filtro por município. Dados dos Painéis InvestSUS do Fundo Nacional de Saúde.">
+<title>Radar de Recursos SUS: mapa do Brasil com repasses, emendas e saldos por estado e município | Rafael Partelli</title>
+<meta name="description" content="Mapa interativo do Brasil com repasses fundo a fundo, emendas parlamentares e saldos em conta dos 26 estados, do Distrito Federal e de cada município, com ranking por estado. Dados dos Painéis InvestSUS do Fundo Nacional de Saúde.">
 <link rel="canonical" href="https://partelli.pro/gestor/recursos/">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Radar de Recursos SUS · Espírito Santo, Minas Gerais e Maranhão">
-<meta property="og:description" content="Quanto cada município do ES, de MG e do MA recebeu, quanto das emendas foi pago e quanto recurso está parado em conta.">
+<meta property="og:title" content="Radar de Recursos SUS · Brasil, estados e municípios">
+<meta property="og:description" content="Mapa do Brasil com o ranking dos estados em repasses do SUS, emendas pagas e dinheiro parado em conta, com detalhe por município.">
 <meta property="og:url" content="https://partelli.pro/gestor/recursos/">
 <meta property="og:image" content="https://partelli.pro/img/og.jpg">
 <meta name="theme-color" content="#0C326F">
@@ -30,7 +30,7 @@
 </script>
 <link rel="stylesheet" href="/styles.css?v=20261012g">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"Radar de Recursos SUS: Espírito Santo, Minas Gerais e Maranhão","url":"https://partelli.pro/gestor/recursos/","inLanguage":"pt-BR","isPartOf":{"@type":"CollectionPage","name":"Área do Gestor SUS","url":"https://partelli.pro/gestor/"},"author":{"@type":"Person","name":"Rafael Tartaglias Partelli","url":"https://partelli.pro/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://partelli.pro/"},{"@type":"ListItem","position":2,"name":"Área do Gestor","item":"https://partelli.pro/gestor/"},{"@type":"ListItem","position":3,"name":"Radar de Recursos SUS","item":"https://partelli.pro/gestor/recursos/"}]}}
+{"@context":"https://schema.org","@type":"WebPage","name":"Radar de Recursos SUS: Brasil, estados e municípios","url":"https://partelli.pro/gestor/recursos/","inLanguage":"pt-BR","isPartOf":{"@type":"CollectionPage","name":"Área do Gestor SUS","url":"https://partelli.pro/gestor/"},"author":{"@type":"Person","name":"Rafael Tartaglias Partelli","url":"https://partelli.pro/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://partelli.pro/"},{"@type":"ListItem","position":2,"name":"Área do Gestor","item":"https://partelli.pro/gestor/"},{"@type":"ListItem","position":3,"name":"Radar de Recursos SUS","item":"https://partelli.pro/gestor/recursos/"}]}}
 </script>
 <style>.nav-reuniao .nr-t{display:none}@media(max-width:960px){.nav .nav-reuniao{margin:0!important;padding:10px 12px!important}.nav-reuniao .nr-t{display:inline;margin-left:8px}}@media(min-width:961px) and (max-width:1279px){.nav a{padding-left:9px;padding-right:9px}}</style><style id="nav-biblio">@media(min-width:961px){.topbar-in{justify-content:flex-start}.topbar-in .brand{margin-right:16px;flex:none}.topbar-in .nav{flex:1}.nav .nav-hl{margin-right:auto}}@media(min-width:961px){.nav a{padding-left:9px;padding-right:9px}}</style>
 <style>
@@ -144,14 +144,51 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
 .rr-hero .badge{font-size:12px;margin-left:0}
 .rr-hero .lead{max-width:78ch;font-size:17px;margin:0}
 .rr-hero h1{margin-bottom:10px}
-.rr-hero .rr-sel{display:inline-block;margin:0 0 12px}
-.uf-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;align-items:center}
-.uf-tabs .l{font-size:14px;font-weight:bold;margin-right:4px}
-.uf-tabs a{display:inline-block;text-decoration:none;font-weight:bold;font-size:15px;padding:8px 16px;border-radius:999px;border:2px solid currentColor;color:inherit;opacity:.85}
-.uf-tabs a:hover,.uf-tabs a:focus-visible{opacity:1}
-.uf-tabs a[aria-current="page"]{background:#FFD54A;border-color:#FFD54A;color:#3A2C00;opacity:1}
-.uf-tabs a.off{opacity:.55}
-.uf-tabs a.off::after{content:" (em preparação)";font-weight:normal;font-size:13px}
+.rr-hero .rr-sel{display:table;max-width:100%;margin:0 0 14px;font-size:14px;line-height:1.4;padding:8px 14px;border-radius:8px;background:#FFD54A;color:#3A2C00;font-weight:bold}
+.rr-sel .sub{font-weight:normal;margin-left:8px}
+.rr-sel .idade{display:inline-block;margin-left:8px}
+.rr-sel .idade{background:#3A2C00;color:#FFD54A;border-radius:4px;padding:1px 6px;font-size:12.5px}
+.upd{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:bold;color:#3A2C00;background:#FFF1B8;border:1px solid #F2C94C;border-radius:999px;padding:5px 10px}
+.upd.velho{background:var(--vermelho-claro);border-color:var(--vermelho);color:#7A1F16}
+.uf-nav{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 0;align-items:center}
+.uf-nav label{font-size:14px;font-weight:bold}
+.uf-nav select{font:inherit;font-size:15px;font-weight:bold;padding:8px 10px;border-radius:8px;border:2px solid #FFD54A;background:#fff;color:#1F2933;min-width:240px;max-width:100%}
+.uf-nav a{display:inline-block;text-decoration:none;font-weight:bold;font-size:15px;padding:8px 16px;border-radius:999px;border:2px solid currentColor;color:inherit}
+.uf-nav a[aria-current="page"]{background:#FFD54A;border-color:#FFD54A;color:#3A2C00}
+.br{max-width:1120px;margin:0 auto;padding:6px 20px 30px}
+.br h2{margin:26px 0 6px}
+.br .metbar{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 4px}
+.br .metbar button{font:inherit;font-size:13.5px;padding:7px 12px;border-radius:999px;border:1px solid var(--azul2);background:var(--card);color:var(--azul);cursor:pointer}
+.br .metbar button.on{background:var(--azul2);color:#fff}
+.br .metbar button:focus-visible{outline:3px solid #FFD54A;outline-offset:2px}
+.br-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;margin-top:12px}
+@media(max-width:900px){.br-grid{grid-template-columns:1fr}}
+.br .painel{background:var(--card);border:1px solid var(--linha);border-radius:10px;padding:14px}
+.br-mapa{position:relative}
+.br-mapa svg{width:100%;height:auto;display:block}
+.br-mapa path{stroke:#fff;stroke-width:1;cursor:pointer;transition:opacity .15s}
+.br-mapa path:hover,.br-mapa path:focus{stroke:#1F2933;stroke-width:2;outline:none}
+.br-mapa path.sem{fill:url(#semDados)}
+.br-mapa text{font:bold 10px Arial,sans-serif;pointer-events:none;text-anchor:middle;dominant-baseline:central}
+.br-tip{position:absolute;pointer-events:none;background:#fff;border:1px solid var(--linha);box-shadow:0 4px 14px rgba(12,50,111,.18);border-radius:8px;padding:10px 12px;font-size:13px;min-width:210px;max-width:260px;z-index:5;display:none;color:var(--txt)}
+.br-tip b.t{display:block;font-size:14px;color:var(--azul);margin-bottom:4px}
+.br-tip .lin{display:flex;justify-content:space-between;gap:10px;margin-top:2px}
+.br-tip .lin span{color:var(--muted)}
+.br-tip .dest{background:var(--azul-claro);border-radius:6px;padding:4px 6px;margin:4px 0}
+.br-leg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.br-leg i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-3px;margin-right:5px;border:1px solid rgba(0,0,0,.08)}
+.br-leg i.sem{background:repeating-linear-gradient(45deg,#E5E7EB 0 3px,#F8FAFC 3px 6px)}
+.br-rank{max-height:560px;overflow:auto}
+.br-rank h3{font-size:15px;margin:0 0 8px;color:var(--azul)}
+.br-rank ol{list-style:none;margin:0;padding:0}
+.br-rank li a{display:grid;grid-template-columns:26px 1fr auto;gap:2px 8px;align-items:center;padding:6px 6px;border-radius:6px;text-decoration:none;color:var(--txt);font-size:13.5px}
+.br-rank li a:hover,.br-rank li a:focus-visible{background:var(--azul-claro)}
+.br-rank li .p{color:var(--muted);font-size:12px;text-align:right}
+.br-rank li .v{font-weight:bold;text-align:right}
+.br-rank li .b{grid-column:2/4;height:7px;background:var(--bg);border-radius:4px;overflow:hidden}
+.br-rank li .b i{display:block;height:100%;border-radius:0 4px 4px 0}
+.br-rank li.sem a{color:var(--muted)}
+.br .nota{font-size:12.5px;color:var(--muted);margin-top:10px}
 </style>
 </head>
 <body class="gz">
@@ -175,21 +212,35 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
 <section class="page-hero rr-hero">
   <div class="wrap">
     <p class="crumb"><a href="/">Início</a> &#8250; <a href="/gestor/">Área do Gestor</a> &#8250; Radar de Recursos SUS</p>
-    <span class="badge rr-sel">Atualizado em <span class="dt-extracao">...</span></span>
-    <h1 id="rrH1">Radar de Recursos SUS: Espírito Santo</h1>
-    <p class="lead" id="rrLead">Repasses fundo a fundo, emendas parlamentares e saldos em conta dos 78 municípios capixabas e do Fundo Estadual de Saúde, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.</p>
-    <nav class="uf-tabs" aria-label="Escolha o estado"><span class="l">Estado:</span><a href="/gestor/recursos/" data-uf="ES">Espírito Santo</a><a href="/gestor/recursos/?uf=mg" data-uf="MG">Minas Gerais</a><a href="/gestor/recursos/?uf=ma" data-uf="MA">Maranhão</a></nav>
+    <p class="rr-sel" id="rrUpd" role="status"><span>Atualizado em <span class="dt-extracao">...</span></span><span class="sub" id="rrUpdSub"></span><span class="idade" id="rrIdade" hidden></span></p>
+    <h1 id="rrH1">Radar de Recursos SUS: Brasil</h1>
+    <p class="lead" id="rrLead">Repasses fundo a fundo, emendas parlamentares e saldos em conta dos 26 estados, do Distrito Federal e dos seus municípios, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. Clique em um estado no mapa ou escolha na lista para ver o detalhe de cada município.</p>
+    <div class="uf-nav"><a href="/gestor/recursos/" id="lnkBR">Mapa do Brasil</a><label for="ufSel">Estado:</label><select id="ufSel" aria-label="Escolha o estado"><option value="">Escolha um estado</option></select></div>
   </div>
 </section>
-<div class="filtro"><div class="in">
+<section class="br" id="brasil" hidden>
+  <div class="kpis" id="brKpi"></div>
+  <h2>Ranking dos estados no mapa</h2>
+  <p class="nota" id="brLead" style="font-size:15px;color:var(--txt)">Escolha o indicador. A cor de cada estado mostra a faixa em que ele está no ranking: quanto mais escuro, maior o valor.</p>
+  <div class="metbar" id="brMet" role="group" aria-label="Indicador do mapa"></div>
+  <div class="br-grid">
+    <div class="painel br-mapa" id="brMapa"><div class="br-tip" id="brTip" role="status"></div></div>
+    <div class="painel br-rank"><h3 id="brRankTit">Ranking</h3><ol id="brRank"></ol></div>
+  </div>
+  <div class="br-leg" id="brLeg"></div>
+  <p class="nota" id="brNota"></p>
+  <p class="nota">Totais de cada estado somam o Fundo Estadual de Saúde e os fundos municipais. Repasse por habitante usa a população da base do próprio painel. O índice de saldo compara o saldo em conta com o repasse fundo a fundo do ano. Estados hachurados ainda não têm dados publicados. Mapa: SVG Maps (@svg-maps/brazil), licença CC BY 4.0.</p>
+</section>
+<div class="filtro" id="filtroUF"><div class="in">
   <label for="munSel">Filtrar por ente</label>
   <select id="munSel"></select>
   <div class="atalhos"><button type="button" data-u="ES">Panorama geral</button><button type="button" data-u="EST">Gestão estadual</button></div><button class="limpar" id="limpar" type="button" style="display:none">Voltar ao panorama</button>
+  <span class="upd" id="updBar" title="Data da última extração dos Painéis InvestSUS">Dados de <span class="dt-extracao">...</span></span>
   <span class="ctx" id="ctx"></span>
   <div class="nav2"><a href="#resumo">Resumo</a><a href="#faf">Fundo a fundo</a><a href="#emendas">Emendas</a><a href="#saldo">Saldo em conta</a><a href="#ranking">Municípios</a><a href="#leitura">Leitura estratégica</a></div>
 </div></div>
 
-<div class="wrap rr">
+<div class="wrap rr" id="detUF">
   <section id="resumo">
     <div class="kpis" id="kpis"></div>
     <div class="alertas" id="alertas"></div>
@@ -277,26 +328,39 @@ ul.rec{margin:6px 0 0;padding-left:18px} ul.rec li{margin:6px 0}
 <script src="/script.js?v=20261012g"></script>
 <script>
 // ---------- estado (UF) exibido ----------
-const UFS={
-  ES:{n:'Espírito Santo',de:'do Espírito Santo',no:'no Espírito Santo',ao:'ao Espírito Santo',gent:'capixabas',cap:'VITORIA',capN:'Vitória',arq:'/fundo/dados.json',q:''},
-  MG:{n:'Minas Gerais',de:'de Minas Gerais',no:'em Minas Gerais',ao:'a Minas Gerais',gent:'mineiros',cap:'BELO HORIZONTE',capN:'Belo Horizonte',arq:'/fundo/dados-mg.json',q:'?uf=mg'},
-  MA:{n:'Maranhão',de:'do Maranhão',no:'no Maranhão',ao:'ao Maranhão',gent:'maranhenses',cap:'SAO LUIS',capN:'São Luís',arq:'/fundo/dados-ma.json',q:'?uf=ma'}};
-let UF='ES';try{const u=(new URLSearchParams(location.search).get('uf')||'').toUpperCase();if(UFS[u])UF=u;}catch(e){}
-const UI=UFS[UF];
-document.querySelectorAll('.uf-tabs a').forEach(a=>{if(a.dataset.uf===UF)a.setAttribute('aria-current','page');
-  if(a.dataset.uf!=='ES')fetch(UFS[a.dataset.uf].arq,{method:'HEAD',cache:'no-store'}).then(r=>{if(!r.ok)a.classList.add('off');}).catch(()=>a.classList.add('off'));});
-document.getElementById('rrH1').textContent='Radar de Recursos SUS: '+UI.n;
-document.querySelectorAll('.uf-cap').forEach(e=>e.textContent=UI.capN);
-if(UF!=='ES'){document.getElementById('notaVinc').textContent='';
-  document.getElementById('rrLead').textContent=`Repasses fundo a fundo, emendas parlamentares e saldos em conta dos municípios ${UI.gent} e do Fundo Estadual de Saúde, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.`;}
+const UFT=[['AC','Acre','o','RIO BRANCO','Rio Branco'],['AL','Alagoas','','MACEIO','Maceió'],['AP','Amapá','o','MACAPA','Macapá'],['AM','Amazonas','o','MANAUS','Manaus'],['BA','Bahia','a','SALVADOR','Salvador'],['CE','Ceará','o','FORTALEZA','Fortaleza'],['DF','Distrito Federal','o','BRASILIA','Brasília'],['ES','Espírito Santo','o','VITORIA','Vitória'],['GO','Goiás','','GOIANIA','Goiânia'],['MA','Maranhão','o','SAO LUIS','São Luís'],['MT','Mato Grosso','','CUIABA','Cuiabá'],['MS','Mato Grosso do Sul','','CAMPO GRANDE','Campo Grande'],['MG','Minas Gerais','','BELO HORIZONTE','Belo Horizonte'],['PA','Pará','o','BELEM','Belém'],['PB','Paraíba','a','JOAO PESSOA','João Pessoa'],['PR','Paraná','o','CURITIBA','Curitiba'],['PE','Pernambuco','','RECIFE','Recife'],['PI','Piauí','o','TERESINA','Teresina'],['RJ','Rio de Janeiro','o','RIO DE JANEIRO','Rio de Janeiro'],['RN','Rio Grande do Norte','o','NATAL','Natal'],['RS','Rio Grande do Sul','o','PORTO ALEGRE','Porto Alegre'],['RO','Rondônia','','PORTO VELHO','Porto Velho'],['RR','Roraima','','BOA VISTA','Boa Vista'],['SC','Santa Catarina','','FLORIANOPOLIS','Florianópolis'],['SP','São Paulo','','SAO PAULO','São Paulo'],['SE','Sergipe','','ARACAJU','Aracaju'],['TO','Tocantins','o','PALMAS','Palmas']];
+const UFS={};UFT.forEach(([s,n,a,cap,capN])=>{UFS[s]={s,n,cap,capN,de:a?'d'+a+' '+n:'de '+n,no:a?'n'+a+' '+n:'em '+n,ao:a?(a==='o'?'ao ':'à ')+n:'a '+n,arq:s==='ES'?'/fundo/dados.json':'/fundo/dados-'+s.toLowerCase()+'.json',q:'?uf='+s.toLowerCase()};});
+let UF=null;try{const q=new URLSearchParams(location.search),u=(q.get('uf')||'').toUpperCase();if(UFS[u])UF=u;else if(q.get('m'))UF='ES';}catch(e){}
+const UI=UF?UFS[UF]:null;
+(()=>{const sel=document.getElementById('ufSel');sel.innerHTML+=UFT.map(([s,n])=>`<option value="${s}">${n}</option>`).join('');sel.value=UF||'';
+  sel.onchange=()=>{location.href='/gestor/recursos/'+(sel.value?'?uf='+sel.value.toLowerCase():'');};
+  if(!UF)document.getElementById('lnkBR').setAttribute('aria-current','page');
+  document.getElementById('brasil').hidden=!!UF;document.getElementById('filtroUF').hidden=!UF;document.getElementById('detUF').hidden=!UF;})();
+
+if(UI){document.getElementById('rrH1').textContent='Radar de Recursos SUS: '+UI.n;
+document.querySelectorAll('.uf-cap').forEach(e=>e.textContent=UI.capN);}
+if(UI&&UF!=='ES'){document.getElementById('notaVinc').textContent='';
+  document.getElementById('rrLead').textContent=`Repasses fundo a fundo, emendas parlamentares e saldos em conta dos municípios ${UI.de} e do Fundo Estadual de Saúde, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.`;}
+// ---------- datas de atualização ----------
+const dtBR=s=>{const m=/(\d{2})\/(\d{2})\/(\d{4})(?:\s+(\d{2}):(\d{2}))?/.exec(s||'');return m?new Date(+m[3],m[2]-1,+m[1],+(m[4]||0),+(m[5]||0)):null;};
+const diasDesde=s=>{const d=dtBR(s);return d?Math.floor((Date.now()-d.getTime())/864e5):null;};
+const idadeTxt=n=>n==null?'':n<=0?'hoje':n===1?'há 1 dia':`há ${n} dias`;
+function marcarAtualizacao(ext,sub){
+  document.querySelectorAll('.dt-extracao').forEach(e=>e.textContent=ext||'–');
+  document.getElementById('rrUpdSub').textContent=sub||'';
+  const n=diasDesde(ext),el=document.getElementById('rrIdade');
+  if(n!=null){el.hidden=false;el.textContent=idadeTxt(n);}
+  const bar=document.getElementById('updBar');if(bar)bar.classList.toggle('velho',n!=null&&n>3);
+  if(n!=null&&n>3)el.textContent+=' · dado defasado';
+}
 const ACC0={};
 function iniciar(D){
 if(D.acc)Object.assign(ACC0,D.acc);
 const NM=D.m.length;
-document.getElementById('rrLead').textContent=`Repasses fundo a fundo, emendas parlamentares e saldos em conta dos ${NM} municípios ${UI.gent} e do Fundo Estadual de Saúde, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.`;
+document.getElementById('rrLead').textContent=`Repasses fundo a fundo, emendas parlamentares e saldos em conta ${NM?`dos ${NM} municípios ${UI.de} e `:''}do Fundo ${UF==='DF'?'de Saúde do Distrito Federal':'Estadual de Saúde'}, extraídos todos os dias dos Painéis InvestSUS do Fundo Nacional de Saúde. A página abre no panorama geral; use o filtro para ver a gestão estadual ou qualquer município.`;
 const ANO=D.meta.anoFaf;
 document.querySelectorAll('.ano').forEach(e=>e.textContent=ANO);
-document.querySelectorAll('.dt-extracao').forEach(e=>e.textContent=D.meta.extracao);
+marcarAtualizacao(D.meta.extracao,'· saldos em conta na posição de '+D.meta.saldoData);
 document.querySelectorAll('.dt-saldo').forEach(e=>e.textContent=D.meta.saldoData);
 const fdt=s=>{try{return new Date(s).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});}catch(e){return s;}};
 document.querySelectorAll('.dt-fns').forEach(e=>e.textContent=`repasses ${fdt(D.meta.fns.FAF)}, saldos ${fdt(D.meta.fns.SAL)} e emendas ${fdt(D.meta.fns.EME)}`);
@@ -333,7 +397,7 @@ const ES=(()=>{const o={},U=[...D.m,D.EST];
   const anos={};U.forEach(m=>m.ano.forEach(([y,p,e,g])=>{anos[y]=anos[y]||[y,0,0,0];anos[y][1]+=p;anos[y][2]+=e;anos[y][3]+=g;}));o.ano=Object.values(anos).sort((a,b)=>a[0]-b[0]);
   const pr={};U.forEach(m=>m.parl.forEach(([pi,p,g])=>{pr[pi]=pr[pi]||[pi,0,0];pr[pi][1]+=p;pr[pi][2]+=g;}));o.parl=Object.values(pr).sort((a,b)=>b[1]-a[1]);
   o.prop=[...D.m.flatMap((m,i)=>m.prop.map(p=>[...p,i])),...D.EST.prop.map(p=>[...p,-1])];
-  const a26=o.ano.find(a=>a[0]===ANO);o.ep=a26[1];o.ee=a26[2];o.eg=a26[3];o.apagar=o.ep-o.eg;o.pago=o.eg/o.ep;o.eq=o.prop.length;
+  const a26=o.ano.find(a=>a[0]===ANO)||[ANO,0,0,0];o.ep=a26[1];o.ee=a26[2];o.eg=a26[3];o.apagar=o.ep-o.eg;o.pago=o.eg/o.ep;o.eq=o.prop.length;
   o.pop=sum(D.m.map(m=>m.pop));
   o.nIdx=D.m.filter(m=>m.idx>1).length;o.nBaixo=D.m.filter(m=>m.ep&&m.pago<.5).length;o.nMun=D.m.filter(m=>m.ep>0).length;
   return o;})();
@@ -520,7 +584,7 @@ function leitura(t,o,i,nome){
     const e25=ES.ano.find(a=>a[0]===ANO-1)||[ANO-1,0,0,0];
     h=`<p><b>Execução de emendas em ${ANO}:</b> ${pc(o.pago)} do valor proposto já foi pago, contra ${pc(e25[3]/e25[1])} de ${ANO-1} no consolidado do ano. O empenho chega a ${pc(o.ee/o.ep)}, o que indica que o gargalo está no pagamento, não na formalização. O Governo do Estado concentra ${pc(D.EST.ep/o.ep)} das emendas propostas, com ${pc(D.EST.pago)} pago.</p>
     <p><b>Recurso parado:</b> os fundos ${UI.de} somam ${mi(o.s)} em conta em ${D.meta.saldoData}, equivalente a ${pc(o.s/o.fb,0)} de todo o repasse fundo a fundo de ${ANO}, com variação de ${pc(o.s/o.salJan-1)} desde janeiro. Os fundos municipais respondem por ${pc(ES.sMun/o.s)} desse saldo.</p>
-    <p><b>Maiores índices de saldo municipais:</b> ${top.map(m=>`${nm(m)} (${pc(m.idx,0)})`).join(', ')}.</p>`;
+    ${top.length?`<p><b>Maiores índices de saldo municipais:</b> ${top.map(m=>`${nm(m)} (${pc(m.idx,0)})`).join(', ')}.</p>`:''}`;
     rec.push(`Priorizar os ${ES.nBaixo} municípios com menos de 50% das emendas de ${ANO} pagas, que concentram parte dos ${mi(o.apagar)} a receber.`);
     rec.push('Usar o índice de saldo para orientar planos de aplicação e reprogramação, reduzindo o risco de questionamento por ociosidade de recursos.');
     rec.push('Cruzar emendas pagas com a produção SIA/SIH dos estabelecimentos beneficiados para demonstrar resultado assistencial.');
@@ -559,7 +623,99 @@ let m0='';try{m0=new URLSearchParams(location.search).get('m')||'';}catch(e){}
 const i0=m0==='estado'?'EST':D.m.findIndex(m=>slug(m.n)===m0);
 setSel(i0==='EST'?'EST':(i0>=0?i0:'ES'),false);
 }
-fetch(UI.arq+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(iniciar).catch(err=>{console.error(err);const sem=String(err&&err.message)==='404';document.getElementById('kpis').innerHTML=sem?`<div class="alerta a">Os dados ${UI.de} estão em preparação e aparecem aqui após a próxima extração diária do InvestSUS. Enquanto isso, veja o <a href="/gestor/recursos/">Espírito Santo</a>.</div>`:'<div class="alerta r">Não foi possível carregar os dados agora. Atualize a página em instantes.</div>';});
+if(UF)fetch(UI.arq+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(iniciar).catch(err=>{console.error(err);const sem=String(err&&err.message)==='404';document.querySelector('#rrUpd span').textContent=sem?'Dados em preparação: ainda sem extração publicada':'Não foi possível ler a data de atualização';document.getElementById('kpis').innerHTML=sem?`<div class="alerta a">Os dados ${UI.de} estão em preparação e aparecem aqui após a próxima extração diária do InvestSUS. Enquanto isso, veja o <a href="/gestor/recursos/">mapa do Brasil</a>.</div>`:'<div class="alerta r">Não foi possível carregar os dados agora. Atualize a página em instantes.</div>';});
+else Promise.all([fetch('/fundo/brasil.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{meta:{},uf:{}}).catch(()=>({meta:{},uf:{}})),fetch('/gestor/recursos/mapa-brasil.json').then(r=>r.json())]).then(([B,M])=>brasil(B,M)).catch(err=>{console.error(err);document.getElementById('brKpi').innerHTML='<div class="alerta r">Não foi possível carregar o mapa agora. Atualize a página em instantes.</div>';});
+
+// ---------- panorama Brasil: mapa e ranking dos estados ----------
+function brasil(B,M){
+  const RAMP=['#cde2fb','#86b6ef','#3987e5','#1c5cab','#0d366b'];   // sequencial azul, claro -> escuro
+  const TXT=['#0C326F','#0C326F','#fff','#fff','#fff'];
+  const fnum=(v,d=0)=>v.toLocaleString('pt-BR',{maximumFractionDigits:d,minimumFractionDigits:d});
+  const mi=v=>v==null||!isFinite(v)?'–':Math.abs(v)>=1e9?'R$ '+fnum(v/1e9,2)+' bi':Math.abs(v)>=1e6?'R$ '+fnum(v/1e6,1)+' mi':'R$ '+fnum(v/1e3)+' mil';
+  const brl=v=>v==null||!isFinite(v)?'–':'R$ '+fnum(v,2);
+  const pc=(v,d=1)=>v==null||!isFinite(v)?'–':fnum(v*100,d)+'%';
+  const MET=[
+    {k:'pcap',l:'Repasse por habitante',f:u=>u.pop?u.fb/u.pop:null,fmt:brl,t:'repasse fundo a fundo por habitante'},
+    {k:'fb',l:'Repasse fundo a fundo',f:u=>u.fb,fmt:mi,t:'repasse fundo a fundo do ano'},
+    {k:'ep',l:'Emendas propostas',f:u=>u.ep,fmt:mi,t:'valor das emendas propostas no ano'},
+    {k:'pago',l:'% das emendas pagas',f:u=>u.ep?u.eg/u.ep:null,fmt:v=>pc(v),t:'percentual das emendas do ano já pago'},
+    {k:'s',l:'Saldo em conta',f:u=>u.s,fmt:mi,t:'saldo em conta dos fundos de saúde'},
+    {k:'idx',l:'Índice de saldo',f:u=>u.fb?u.s/u.fb:null,fmt:v=>pc(v,0),t:'saldo em conta sobre o repasse do ano'}];
+  let met=MET[0];try{const q=new URLSearchParams(location.search).get('ind');const x=MET.find(m=>m.k===q);if(x)met=x;}catch(e){}
+  const U=B.uf||{},ufs=Object.keys(U);
+  // atualização em destaque
+  const exts=ufs.map(s=>U[s].extracao).filter(Boolean).sort((a,b)=>dtBR(a)-dtBR(b));
+  const maisRec=exts[exts.length-1],maisAnt=exts[0];
+  marcarAtualizacao(maisRec||B.meta.gerado,ufs.length?`· ${ufs.length} de 27 UFs com dados`+(maisAnt&&maisAnt!==maisRec?` · extrações entre ${maisAnt.slice(0,10)} e ${maisRec.slice(0,10)}`:''):'· dados em preparação');
+  // KPIs nacionais (soma das UFs com dados)
+  const soma=k=>ufs.reduce((a,s)=>a+(U[s][k]||0),0);
+  const fb=soma('fb'),ep=soma('ep'),eg=soma('eg'),sa=soma('s'),pop=soma('pop');
+  const ano=ufs.length?U[ufs[0]].anoFaf:'';
+  document.getElementById('brKpi').innerHTML=[
+    ['',`Repasse fundo a fundo ${ano}`,mi(fb),ufs.length?`${brl(fb/pop)} por habitante · soma de ${ufs.length} UF${ufs.length>1?'s':''}`:'Aguardando a primeira extração'],
+    ['v',`Emendas ${ano} propostas`,mi(ep),`${fnum(soma('eq'))} propostas`],
+    [ep&&eg/ep<.5?'r':ep&&eg/ep<.9?'a':'v',`Emendas ${ano} pagas`,pc(ep?eg/ep:null),`${mi(eg)} pagos · ${mi(ep-eg)} a pagar`],
+    ['r','Saldo em conta',mi(sa),`${pc(fb?sa/fb:null,0)} do repasse do ano · ${fnum(soma('nIdx'))} municípios com saldo maior que o repasse`]
+  ].map(([c,l,n,d])=>`<div class="kpi ${c}"><div class="l">${l}</div><div class="n">${n}</div><div class="d">${d}</div></div>`).join('');
+  // mapa
+  const box=document.getElementById('brMapa');
+  const svgNS='http://www.w3.org/2000/svg';
+  const svg=document.createElementNS(svgNS,'svg');svg.setAttribute('viewBox',M.viewBox);svg.setAttribute('role','group');svg.setAttribute('aria-label','Mapa do Brasil por estado');
+  svg.innerHTML='<defs><pattern id="semDados" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#F1F4F8"/><rect width="3" height="6" fill="#DCE2EA"/></pattern></defs>';
+  const P={},L={};
+  UFT.forEach(([s,n])=>{const p=document.createElementNS(svgNS,'path');p.setAttribute('d',M.uf[s]);p.setAttribute('tabindex','0');p.setAttribute('role','link');p.dataset.uf=s;svg.appendChild(p);P[s]=p;});
+  box.appendChild(svg);
+  UFT.forEach(([s])=>{const b=P[s].getBBox(),t=document.createElementNS(svgNS,'text');t.setAttribute('x',b.x+b.width/2+({DF:0,ES:6,RJ:4,SE:5,AL:7,PE:10,PB:12,RN:6,SC:3,GO:-6,PI:-4}[s]||0));t.setAttribute('y',b.y+b.height/2+({DF:0,MG:6,GO:10,RJ:2,AL:2,PE:3,MA:8,PR:-2,MS:4}[s]||0));t.textContent=s;svg.appendChild(t);L[s]=t;if(['DF','SE','AL','RN','PB','ES','RJ'].includes(s))t.style.fontSize='8px';});
+  const tip=document.getElementById('brTip');
+  const linha=(a,b)=>`<div class="lin"><span>${a}</span><b>${b}</b></div>`;
+  function mostrar(s,ev){
+    const u=U[s],n=UFS[s].n;let h=`<b class="t">${n}</b>`;
+    if(!u)h+='<div>Dados em preparação: aparecem após a próxima extração diária.</div>';
+    else{const v=met.f(u),rk=rank.indexOf(s)+1;
+      h+=`<div class="lin dest"><span>${met.l}</span><b>${met.fmt(v)}</b></div><div style="font-size:12px;color:var(--muted)">${rk?rk+'º de '+rank.length+' no ranking':''}</div>`
+       +linha('Repasse fundo a fundo',mi(u.fb))+linha('Emendas propostas',mi(u.ep))+linha('Emendas pagas',pc(u.ep?u.eg/u.ep:null))+linha('Saldo em conta',mi(u.s))
+       +`<div style="margin-top:6px;font-size:12px;color:#3A2C00;background:#FFF1B8;border-radius:4px;padding:3px 6px"><b>Atualizado em ${u.extracao}</b> (${idadeTxt(diasDesde(u.extracao))}) · saldos em ${u.saldoData}</div>`;}
+    tip.innerHTML=h+'<div style="margin-top:6px;font-size:12px;color:var(--azul2)">Clique para ver os municípios</div>';tip.style.display='block';
+    const r=box.getBoundingClientRect();let x,y;
+    if(ev&&ev.clientX!=null){x=ev.clientX-r.left+14;y=ev.clientY-r.top+14;}else{const b=P[s].getBoundingClientRect();x=b.right-r.left+6;y=b.top-r.top;}
+    const w=tip.offsetWidth,hh=tip.offsetHeight;if(x+w>r.width)x=Math.max(4,x-w-28);if(y+hh>r.height)y=Math.max(4,r.height-hh-4);
+    tip.style.left=x+'px';tip.style.top=y+'px';
+  }
+  const esconder=()=>{tip.style.display='none';};
+  const ir=s=>{location.href='/gestor/recursos/?uf='+s.toLowerCase();};
+  Object.entries(P).forEach(([s,p])=>{p.addEventListener('mousemove',e=>mostrar(s,e));p.addEventListener('mouseleave',esconder);p.addEventListener('focus',()=>mostrar(s));p.addEventListener('blur',esconder);p.addEventListener('click',()=>ir(s));p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();ir(s);}});});
+  // indicadores
+  const bar=document.getElementById('brMet');
+  bar.innerHTML=MET.map(m=>`<button type="button" data-k="${m.k}" aria-pressed="false">${m.l}</button>`).join('');
+  bar.onclick=e=>{const b=e.target.closest('button[data-k]');if(!b)return;met=MET.find(m=>m.k===b.dataset.k);desenhar();};
+  let rank=[];
+  function desenhar(){
+    bar.querySelectorAll('button').forEach(b=>{const on=b.dataset.k===met.k;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);});
+    const val=s=>U[s]?met.f(U[s]):null;
+    rank=ufs.filter(s=>val(s)!=null&&isFinite(val(s))).sort((a,b)=>val(b)-val(a));
+    const n=rank.length,cls={};
+    // faixas do ranking: até 5 grupos de tamanho igual (quintis), do maior para o menor
+    rank.forEach((s,i)=>{const j=rank.findIndex(x=>val(x)===val(s));cls[s]=n===1?2:4-Math.min(4,Math.floor(j*5/n));});
+    UFT.forEach(([s,nome])=>{const p=P[s],c=cls[s];
+      if(c==null){p.classList.add('sem');p.removeAttribute('fill');L[s].setAttribute('fill','#6B7280');}
+      else{p.classList.remove('sem');p.setAttribute('fill',RAMP[c]);L[s].setAttribute('fill',TXT[c]);}
+      p.setAttribute('aria-label',`${nome}: `+(c==null?'dados em preparação':`${met.l} ${met.fmt(val(s))}, ${rank.indexOf(s)+1}º de ${n}`));});
+    // legenda por faixa
+    const fx=[4,3,2,1,0].map(c=>{const m=rank.filter(s=>cls[s]===c);return m.length?`<span><i style="background:${RAMP[c]}"></i>${met.fmt(val(m[m.length-1]))} a ${met.fmt(val(m[0]))} (${m.length} UF${m.length>1?'s':''})</span>`:'';}).join('');
+    document.getElementById('brLeg').innerHTML=`<b style="color:var(--txt)">Faixas do ranking (${met.t}):</b>`+fx+(n<27?`<span><i class="sem"></i>Em preparação (${27-n})</span>`:'');
+    // ranking
+    const max=Math.max(...rank.map(val),0);
+    document.getElementById('brRankTit').textContent='Ranking: '+met.l;
+    document.getElementById('brRank').innerHTML=rank.map((s,i)=>`<li><a href="?uf=${s.toLowerCase()}"><span class="p">${i+1}º</span><span>${UFS[s].n}<span style="display:block;font-size:11.5px;color:var(--muted)">atualizado em ${U[s].extracao.slice(0,10)}</span></span><span class="v">${met.fmt(val(s))}</span><span></span><span class="b"><i style="width:${max>0?Math.max(2,val(s)/max*100).toFixed(1):0}%;background:${RAMP[cls[s]]}"></i></span></a></li>`).join('')
+      +UFT.filter(([s])=>!rank.includes(s)).map(([s,nome])=>`<li class="sem"><a href="?uf=${s.toLowerCase()}"><span class="p">–</span><span>${nome}</span><span class="v" style="font-weight:normal;font-size:12px">em preparação</span></a></li>`).join('');
+    const top=rank.slice(0,3).map(s=>`${UFS[s].n} (${met.fmt(val(s))})`),fim=rank.slice(-3).reverse().map(s=>`${UFS[s].n} (${met.fmt(val(s))})`);
+    document.getElementById('brNota').innerHTML=n>=6?`<b>Leitura:</b> maiores valores em ${top.join(', ')}; menores em ${fim.join(', ')}.`:n?`<b>Leitura:</b> o ranking fica completo à medida que os demais estados forem extraídos (${n} de 27 até agora).`:'';
+    esconder();
+    try{const q=new URLSearchParams(location.search);if(met.k===MET[0].k)q.delete('ind');else q.set('ind',met.k);history.replaceState(null,'','/gestor/recursos/'+(q.toString()?'?'+q:''));}catch(e){}
+  }
+  desenhar();
+}
+
 
 </script>
 </body>

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Envia o JSON de uma UF (dados.json, dados-mg.json, dados-ma.json) para partelli.pro/fundo por FTP seguro (FTPS).
+"""Envia o JSON de uma UF (dados.json do ES, dados-mg.json etc.) ou o resumo brasil.json para partelli.pro/fundo por FTP seguro (FTPS).
 O arquivo é publicado com o mesmo nome que tem no computador; a versão anterior fica como <nome>_anterior.json.
 
 Credenciais lidas de ~/.config/robo_investsus/.env (criado pelo instalar.sh):
@@ -45,7 +45,7 @@ def conectar(cfg):
 def enviar(arquivo):
     nome = pathlib.Path(arquivo).name
     base = nome[:-5] if nome.endswith('.json') else nome
-    if not re.fullmatch(r'dados(-[a-z]{2})?', base):
+    if not re.fullmatch(r'dados(-[a-z]{2})?|brasil', base):
         raise SystemExit('nome de arquivo inesperado: ' + nome)
     cfg = ler_env(); ftp = conectar(cfg)
     nomes = ftp.nlst()

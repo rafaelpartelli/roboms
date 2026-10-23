@@ -2,7 +2,7 @@
 """Abre os Painéis InvestSUS em um navegador automático e extrai os dados brutos por UF.
 
 Uso:
-  python3 extrair.py bruto/2026-10-22 ES MG MA   -> grava bruto/2026-10-22-ES.json, -MG.json, -MA.json
+  python3 extrair.py bruto/2026-10-23 ES MG MA   -> grava bruto/2026-10-23-ES.json, -MG.json, -MA.json (qualquer UF)
   python3 extrair.py saida.json                  -> só ES, no arquivo indicado (forma antiga)
 
 Cada UF é extraída de forma independente: se uma falhar, as demais são gravadas.
@@ -31,24 +31,25 @@ def abrir(pw):
 def main(destino, ufs):
     falhas = []
     with sync_playwright() as pw:
-        nav, pag = abrir(pw)
         for uf in ufs:
             saida = destino if destino.endswith('.json') else f'{destino}-{uf}.json'
-            t0 = time.time()
+            t0 = time.time(); nav = None
             try:
+                # navegador novo a cada UF: libera memória (MG e SP são grandes) e isola falhas
+                nav, pag = abrir(pw)
                 bruto = pag.evaluate("uf => extrairInvestsus(uf)", uf)
             except Exception as erro:
                 print(f'{uf}: falha na extração: {str(erro)[:300]}')
                 falhas.append(uf)
-                # recomeça o navegador para a próxima UF
-                try: nav.close()
-                except Exception: pass
-                nav, pag = abrir(pw)
                 continue
+            finally:
+                if nav:
+                    try: nav.close()
+                    except Exception: pass
             pathlib.Path(saida).write_text(json.dumps(bruto, ensure_ascii=False), encoding='utf-8')
             resumo = {k: (len(v) if isinstance(v, list) else v) for k, v in bruto.items() if k not in ('apps', 'uf')}
             print(f'{uf}: extração ok em {time.time() - t0:.0f}s', resumo)
-        nav.close()
+    if falhas: print('UFs com falha:', ' '.join(falhas))
     return 1 if falhas else 0
 
 

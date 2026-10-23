@@ -1,4 +1,4 @@
-name: Robo InvestSUS (Radar de Recursos SUS ES, MG e MA)
+name: Robo InvestSUS (Radar de Recursos SUS, 27 UFs)
 
 # Agendamento desligado: o InvestSUS bloqueia os servidores do GitHub (teste de 15/10/2026, HTTP 403).
 # A execucao diaria roda no computador do Rafael. Manter apenas o disparo manual.
@@ -7,10 +7,13 @@ on:
 
 concurrency: robo-investsus
 
+env:
+  UFS: ES AC AL AP AM BA CE DF GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO
+
 jobs:
   atualizar:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -23,11 +26,11 @@ jobs:
           pip install -q playwright
           python -m playwright install --with-deps chromium > /dev/null
 
-      - name: Extrair dados do InvestSUS (ES, MG e MA)
+      - name: Extrair dados do InvestSUS (todas as UFs)
         working-directory: robo
         run: |
           for t in 1 2 3; do
-            FALTA=""; for uf in ES MG MA; do [ -s "bruto-$uf.json" ] || FALTA="$FALTA $uf"; done
+            FALTA=""; for uf in $UFS; do [ -s "bruto-$uf.json" ] || FALTA="$FALTA $uf"; done
             [ -z "$FALTA" ] && break
             if [ $t -eq 1 ]; then python extrair.py bruto $FALTA || true
             else xvfb-run -a env HEADLESS=0 python extrair.py bruto $FALTA || true; fi
@@ -45,12 +48,13 @@ jobs:
           umask 077
           printf 'FTP_HOST=%s\nFTP_USUARIO=%s\nFTP_SENHA=%s\nFTP_PASTA=domains/partelli.pro/public_html/fundo\n' "$FTP_HOST" "$FTP_USUARIO" "$FTP_SENHA" > ~/.config/robo_investsus/.env
           ERRO=0
-          for uf in ES MG MA; do
+          for uf in $UFS; do
             A=dados.json; [ $uf != ES ] && A=dados-$(echo $uf | tr A-Z a-z).json
             [ -s bruto-$uf.json ] || { echo "$uf: sem extração"; ERRO=1; continue; }
             curl -fsS "https://partelli.pro/fundo/$A?x=$(date +%s)" -o publicado-$uf.json || rm -f publicado-$uf.json
             python montar.py bruto-$uf.json $A --anterior publicado-$uf.json && python enviar.py $A || { echo "$uf: publicação suspensa"; ERRO=1; }
           done
+          python montar.py --resumo brasil.json $(for uf in $UFS; do A=dados.json; [ $uf != ES ] && A=dados-$(echo $uf | tr A-Z a-z).json; if [ -s $A ]; then echo $A; elif [ -s publicado-$uf.json ]; then echo publicado-$uf.json; fi; done) && python enviar.py brasil.json || ERRO=1
           exit $ERRO
 
       - name: Guardar dados do dia
