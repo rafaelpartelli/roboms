@@ -1,0 +1,71 @@
+name: Radar DOU - Portarias MS
+
+# Radar DOU no GitHub Actions. Alvo: todos os dias 01:46 Brasilia (04:46 UTC; cron do GitHub e sempre em UTC),
+# com reforcos 03:46 e 05:46 que so rodam se nenhuma execucao agendada terminou com sucesso no dia.
+# A versao da Hostinger (cron) segue como alternativa enquanto o login do INLABS nao for validado a partir daqui.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '46 4 * * *'  # 01:46 Brasilia (principal)
+    - cron: '46 6 * * *'  # 03:46 Brasilia (reforco)
+    - cron: '46 8 * * *'  # 05:46 Brasilia (reforco)
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      executar: ${{ steps.d.outputs.executar }}
+    steps:
+      - id: d
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENTO: ${{ github.event_name }}
+        run: |
+          export TZ=America/Sao_Paulo
+          inicio="$(date -d "$(date +%F) 00:00" -u +%Y-%m-%dT%H:%M:%SZ)"
+          feitas="$(gh run list -R "$GITHUB_REPOSITORY" --workflow radar-dou.yml --status success --limit 30 --json databaseId,createdAt,event --jq "[.[] | select(.databaseId != $GITHUB_RUN_ID and .event == \"schedule\" and .createdAt >= \"$inicio\")] | length")"
+          if [ "$EVENTO" = "schedule" ] && [ "${feitas:-0}" != "0" ]; then echo "executar=false" >> "$GITHUB_OUTPUT"; else echo "executar=true" >> "$GITHUB_OUTPUT"; fi
+
+  radar-dou:
+    needs: verificar
+    if: needs.verificar.outputs.executar == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install -r robo_dou/requirements.txt
+
+      - name: Rodar robo DOU (login INLABS + gerar radar.json)
+        working-directory: robo_dou
+        env:
+          INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
+          INLABS_SENHA: ${{ secrets.INLABS_SENHA }}
+        run: python3 robo_dou.py --days 1
+
+      - name: Publicar radar.json no site (FTP/TLS)
+        working-directory: robo_dou
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
+          FTP_DIR: ${{ secrets.FTP_DIR }}
+          FTP_CERT_HOST: ${{ secrets.FTP_CERT_HOST }}
+        run: bash publicar_radar.sh
+
+      - name: Guardar radar.json gerado (artefato de depuracao)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-json
+          path: robo_dou/saida/radar.json
+          if-no-files-found: ignore

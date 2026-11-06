@@ -2,19 +2,42 @@ name: Robo Painel TCE-ES (Gastos com a funcao saude)
 
 # Extracao validada por HTTP puro, sem navegador e sem bloqueio de IP (ver
 # robo_tce_es/LEIA-ME.md). Agendamento: segunda, quarta e sexta, 06:30
-# Brasilia (combinado com o Rafael em 15/10/2026).
+# Brasilia (combinado com o Rafael em 15/10/2026). Desde 06/11/2026: todos os dias
+# 01:46 Brasilia (04:46 UTC; cron do GitHub e sempre em UTC), com reforcos 03:46 e 05:46
+# que so rodam se nenhuma execucao agendada terminou com sucesso no dia.
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 9 * * 1,3,5'  # 06:30 Brasilia (UTC-3), seg/qua/sex
+    - cron: '46 4 * * *'  # 01:46 Brasilia (principal)
+    - cron: '46 6 * * *'  # 03:46 Brasilia (reforco)
+    - cron: '46 8 * * *'  # 05:46 Brasilia (reforco)
 
 permissions:
   contents: write
+  actions: read
 
 concurrency: robo-tce-es
 
 jobs:
+  verificar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      executar: ${{ steps.d.outputs.executar }}
+    steps:
+      - id: d
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENTO: ${{ github.event_name }}
+        run: |
+          export TZ=America/Sao_Paulo
+          inicio="$(date -d "$(date +%F) 00:00" -u +%Y-%m-%dT%H:%M:%SZ)"
+          feitas="$(gh run list -R "$GITHUB_REPOSITORY" --workflow robo_tce_es.yml --status success --limit 30 --json databaseId,createdAt,event --jq "[.[] | select(.databaseId != $GITHUB_RUN_ID and .event == \"schedule\" and .createdAt >= \"$inicio\")] | length")"
+          if [ "$EVENTO" = "schedule" ] && [ "${feitas:-0}" != "0" ]; then echo "executar=false" >> "$GITHUB_OUTPUT"; else echo "executar=true" >> "$GITHUB_OUTPUT"; fi
+
   atualizar:
+    needs: verificar
+    if: needs.verificar.outputs.executar == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
