@@ -3,14 +3,14 @@ name: Robo Painel TCE-ES (Gastos com a funcao saude)
 # Extracao validada por HTTP puro, sem navegador e sem bloqueio de IP (ver
 # robo_tce_es/LEIA-ME.md). Agendamento: segunda, quarta e sexta, 06:30
 # Brasilia (combinado com o Rafael em 15/10/2026). Desde 06/11/2026: todos os dias
-# 01:46 Brasilia (04:46 UTC; cron do GitHub e sempre em UTC), com reforcos 03:46 e 05:46
+# 20:00 Brasilia (23:00 UTC; cron do GitHub e sempre em UTC), com reforcos 22:00 e 23:00
 # que so rodam se nenhuma execucao agendada terminou com sucesso no dia.
 on:
   workflow_dispatch:
   schedule:
-    - cron: '46 4 * * *'  # 01:46 Brasilia (principal)
-    - cron: '46 6 * * *'  # 03:46 Brasilia (reforco)
-    - cron: '46 8 * * *'  # 05:46 Brasilia (reforco)
+    - cron: '0 23 * * *'  # 20:00 Brasilia (principal)
+    - cron: '0 1 * * *'   # 22:00 Brasilia (reforco)
+    - cron: '0 2 * * *'   # 23:00 Brasilia (reforco)
 
 permissions:
   contents: write
